@@ -1,0 +1,16 @@
+
+Results:
+Total articles: 102
+Articles found: 102
+Articles with missing files: 0
+Articles with missing images: 0
+Articles with multiple images: 0
+Articles with image path mismatch: 0
+
+Missing files:
+
+Missing images:
+
+Multiple images:
+
+Image path mismatch:

@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "front-desk-attire-making-a-great-first-impression-in-ksa-hotels",
+    "status": "FIXED",
+    "message": "Added image: /images/hospitality/Hotel_reception_uniforms_Front_desk_uniforms.jpeg"
+  },
+  {
+    "slug": "choosing-the-right-workwear-for-saudi-arabia-s-industrial-sector-safety-first",
+    "status": "FIXED",
+    "message": "Added image: /images/industrial/Safety_workwear_PPE_apparel.jpeg"
+  },
+  {
+    "slug": "communication-equipment-integration-features-for-security-uniforms",
+    "status": "ERROR",
+    "message": "Could not find h2 tag"
+  },
+  {
+    "slug": "custom-security-name-tags-professional-identification-solutions",
+    "status": "ERROR",
+    "message": "Could not find h2 tag"
+  }
+]

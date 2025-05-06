@@ -1,0 +1,765 @@
+[
+  {
+    "slug": "the-role-of-modesty-in-saudi-school-uniform-design",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/education/School_uniforms.jpg",
+    "originalImages": [
+      "/images/blog/saudi-modest-school-uniforms.jpg",
+      "/images/blog/saudi-cultural-modesty.jpg",
+      "/images/blog/functional-modest-uniforms.jpg",
+      "/images/blog/diverse-modest-uniforms.jpg",
+      "/images/blog/future-modest-uniforms.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/saudi-modest-school-uniforms.jpg"
+    ]
+  },
+  {
+    "slug": "the-evolution-of-school-uniform-styles-in-saudi-arabia",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/education/School_uniforms_Saudi_Arabia_KSA.jpg",
+    "originalImages": [
+      "/images/blog/saudi-school-uniform-evolution.jpg",
+      "/images/blog/early-saudi-school-uniforms.jpg",
+      "/images/blog/1980s-saudi-school-uniforms.jpg",
+      "/images/blog/diverse-saudi-school-uniforms.jpg",
+      "/images/blog/modern-saudi-student-uniforms.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/saudi-school-uniform-evolution.jpg"
+    ]
+  },
+  {
+    "slug": "the-evolution-of-nursing-uniforms-in-saudi-arabia",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/healthcare/Nurse_uniforms.jpg",
+    "originalImages": [
+      "/images/blog/saudi-nursing-uniforms-evolution.jpg",
+      "/images/blog/early-saudi-nursing-uniforms.jpg",
+      "/images/blog/multicultural-saudi-nursing.jpg",
+      "/images/blog/modern-saudi-nursing-uniforms.jpg",
+      "/images/blog/functional-modest-nursing-uniform.jpg",
+      "/images/blog/future-saudi-nursing-uniforms.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/saudi-nursing-uniforms-evolution.jpg"
+    ]
+  },
+  {
+    "slug": "technological-advancements-in-fabrics-for-government-duty-wear",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/government/approved_government_fabrics.jpg",
+    "originalImages": [
+      "/images/blog/government-tech-fabrics.jpg",
+      "/images/blog/climate-adaptive-fabrics.jpg",
+      "/images/blog/smart-uniform-technology.jpg",
+      "/images/blog/specialized-function-fabrics.jpg",
+      "/images/blog/future-government-fabrics.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/government-tech-fabrics.jpg"
+    ]
+  },
+  {
+    "slug": "sustainable-and-ethical-uniform-solutions-for-the-saudi-public-sector",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/government/Public_sector_uniforms.jpg",
+    "originalImages": [
+      "/images/blog/sustainable-public-uniforms.jpg",
+      "/images/blog/sustainable-fabric-swatches.jpg",
+      "/images/blog/ethical-uniform-production.jpg",
+      "/images/blog/uniform-recycling-process.jpg",
+      "/images/blog/future-sustainable-government-uniforms.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/sustainable-public-uniforms.jpg"
+    ]
+  },
+  {
+    "slug": "the-future-of-hospitality-uniforms-tech-integration-and-personalization",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/hospitality/modern_hospitality_design_uniforms.jpeg",
+    "originalImages": [
+      "/images/blog/tech-hospitality-uniforms.jpg",
+      "/images/blog/saudi-luxury-hospitality.jpg",
+      "/images/blog/wearable-tech-hospitality.jpg",
+      "/images/blog/personalized-hospitality-uniforms.jpg",
+      "/images/blog/traditional-modern-hospitality-uniforms.jpg",
+      "/images/blog/sustainable-tech-uniforms.jpg",
+      "/images/blog/future-hospitality-technology.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/tech-hospitality-uniforms.jpg"
+    ]
+  },
+  {
+    "slug": "teacher-and-staff-attire-setting-professional-standards-in-ksa-educational-institutions",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/education/School_staff_uniforms.jpg",
+    "originalImages": [
+      "/images/blog/teacher-professional-attire.jpg",
+      "/images/blog/educational-professional-standards.jpg",
+      "/images/blog/international-school-staff-attire.jpg",
+      "/images/blog/educational-staff-policy-guide.jpg",
+      "/images/blog/future-educational-attire.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/teacher-professional-attire.jpg"
+    ]
+  },
+  {
+    "slug": "sustainable-uniform-programs-for-eco-conscious-hotels-in-saudi-arabia",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/hospitality/Hotel_uniforms.jpeg",
+    "originalImages": [
+      "/images/blog/sustainable-hotel-uniforms.jpg",
+      "/images/blog/sustainable-hotel-fabrics.jpg",
+      "/images/blog/hotel-uniform-lifecycle.jpg",
+      "/images/blog/hotel-staff-sustainable-uniforms.jpg",
+      "/images/blog/future-sustainable-uniforms.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/sustainable-hotel-uniforms.jpg"
+    ]
+  },
+  {
+    "slug": "stain-resistance-and-easy-care-fabrics-for-younger-students",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/education/easy_care_school_uniforms.jpg",
+    "originalImages": [
+      "/images/blog/easy-care-uniforms.jpg",
+      "/images/blog/stain-resistant-technology.jpg",
+      "/images/blog/comfortable-durable-uniforms.jpg",
+      "/images/blog/uniform-care-demonstration.jpg",
+      "/images/blog/sustainable-uniform-innovations.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/easy-care-uniforms.jpg"
+    ]
+  },
+  {
+    "slug": "sports-kits-and-pe-uniforms-for-saudi-schools",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/education/uniforms_sports_kits.jpg",
+    "originalImages": [
+      "/images/blog/saudi-pe-uniforms.jpg",
+      "/images/blog/saudi-modest-sportswear.jpg",
+      "/images/blog/saudi-performance-pe-uniforms.jpg",
+      "/images/blog/saudi-pe-uniform-distribution.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/saudi-pe-uniforms.jpg"
+    ]
+  },
+  {
+    "slug": "sizing-guides-and-best-practices-for-ordering-school-uniforms-in-bulk",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/education/school_uniform_purchase.jpg",
+    "originalImages": [
+      "/images/blog/school-uniform-bulk-ordering.jpg",
+      "/images/blog/uniform-measurement-guide.jpg",
+      "/images/blog/uniform-ordering-timeline.jpg",
+      "/images/blog/uniform-inventory-management.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/school-uniform-bulk-ordering.jpg"
+    ]
+  },
+  {
+    "slug": "sustainable-and-eco-friendly-school-uniform-options",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/education/School_uniform_fabrics.jpg",
+    "originalImages": [
+      "/images/blog/sustainable-school-uniforms.jpg",
+      "/images/blog/recycled-polyester-uniforms.jpg",
+      "/images/blog/ethical-uniform-manufacturing.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/sustainable-school-uniforms.jpg"
+    ]
+  },
+  {
+    "slug": "sustainable-and-disposable-uniform-options-in-healthcare-settings",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/healthcare/disposable_medical_gowns.jpg",
+    "originalImages": [
+      "/images/blog/sustainable-healthcare-uniforms.jpg",
+      "/images/blog/sustainable-medical-fabrics.jpg",
+      "/images/blog/biodegradable-medical-ppe.jpg",
+      "/images/blog/healthcare-staff-training.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/sustainable-healthcare-uniforms.jpg"
+    ]
+  },
+  {
+    "slug": "seasonal-uniform-considerations-for-schools-across-saudi-arabia",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/education/school_summer_uniforms.jpg",
+    "originalImages": [
+      "/images/blog/seasonal-school-uniforms-saudi.jpg",
+      "/images/blog/summer-school-uniforms-saudi.jpg",
+      "/images/blog/winter-school-uniforms-saudi.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/seasonal-school-uniforms-saudi.jpg"
+    ]
+  },
+  {
+    "slug": "saudi-ministry-of-health-moh-uniform-guidelines-for-healthcare-workers",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/healthcare/Medical_staff_uniforms.jpg",
+    "originalImages": [
+      "/images/blog/saudi-moh-healthcare-uniforms.jpg",
+      "/images/blog/saudi-healthcare-identification.jpg",
+      "/images/blog/saudi-nursing-uniforms.jpg",
+      "/images/blog/saudi-healthcare-compliance.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/saudi-moh-healthcare-uniforms.jpg"
+    ]
+  },
+  {
+    "slug": "saudi-ministry-of-education-school-uniform-guidelines-an-overview",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/education/School_uniform_companies_in_Saudi_Arabia.jpg",
+    "originalImages": [
+      "/images/blog/saudi-moe-uniform-guidelines.jpg",
+      "/images/blog/saudi-elementary-uniforms.jpg",
+      "/images/blog/saudi-secondary-uniforms.jpg",
+      "/images/blog/saudi-modern-school-uniforms.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/saudi-moe-uniform-guidelines.jpg"
+    ]
+  },
+  {
+    "slug": "safety-features-in-school-uniforms",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/education/School_uniform_fabrics.jpg",
+    "originalImages": [
+      "/images/blog/school-uniform-safety-features.jpg",
+      "/images/blog/specialized-uniform-fabrics.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/school-uniform-safety-features.jpg"
+    ]
+  },
+  {
+    "slug": "uniform-considerations-for-government-representatives-attending-international-events",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/government/Formal_attire_for_government_events.jpg",
+    "originalImages": [
+      "/images/blog/saudi-international-representation.jpg",
+      "/images/blog/saudi-delegation-international.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/saudi-international-representation.jpg"
+    ]
+  },
+  {
+    "slug": "the-significance-of-uniforms-in-projecting-government-authority-and-trust-in-ksa",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/government/Official_government_suits.jpg",
+    "originalImages": [
+      "/images/blog/ksa-government-authority-uniforms.jpg",
+      "/images/blog/security-authority-uniforms.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/ksa-government-authority-uniforms.jpg"
+    ]
+  },
+  {
+    "slug": "the-role-of-uniforms-in-promoting-a-safety-culture-on-ksa-work-sites",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/Safety_workwear_PPE_apparel.jpeg"
+  },
+  {
+    "slug": "the-role-of-uniforms-in-building-esprit-de-corps-among-government-teams",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/government/government_office_uniforms.jpg",
+    "originalImages": [
+      "/images/blog/government-team-uniforms.jpg",
+      "/images/blog/government-team-identification.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/government-team-uniforms.jpg"
+    ]
+  },
+  {
+    "slug": "the-role-of-uniforms-in-creating-a-cohesive-brand-experience-across-hotel-chains-in-ksa",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/hospitality/Hospitality_uniforms.jpeg",
+    "originalImages": [
+      "/images/hospitality/hotel-chain-uniforms.jpg",
+      "/images/hospitality/brand-uniform-consistency.jpg",
+      "/images/hospitality/hotel-staff-roles.jpg",
+      "/images/hospitality/saudi-heritage-uniform-elements.jpg",
+      "/images/team/hospitality-specialist.jpg"
+    ],
+    "ogImages": [
+      "/images/hospitality/hotel-chain-uniforms.jpg"
+    ]
+  },
+  {
+    "slug": "the-role-of-uniforms-in-passenger-perceptions-of-airline-quality",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/aviation/aviation_uniforms.jpg",
+    "originalImages": [
+      "/images/aviation/passenger-perception-uniforms.jpg",
+      "/images/aviation/perception-timeline-diagram.jpg",
+      "/images/aviation/quality-perception-factors.jpg",
+      "/images/aviation/uniform-precision-elements.jpg",
+      "/images/team/aviation-perception-specialist.jpg"
+    ],
+    "ogImages": [
+      "/images/aviation/passenger-perception-uniforms.jpg"
+    ]
+  },
+  {
+    "slug": "the-psychology-of-color-in-healthcare-environments-and-uniforms",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/healthcare/Healthcare_uniforms.jpg",
+    "originalImages": [
+      "/images/blog/healthcare-color-psychology.jpg",
+      "/images/blog/healthcare-color-wheel.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/healthcare-color-psychology.jpg"
+    ]
+  },
+  {
+    "slug": "the-importance-of-proper-fit-for-safety-and-comfort-in-industrial-uniforms",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/industrial/industrial_uniform_fittings.jpeg",
+    "originalImages": [
+      "/images/industrial/proper-uniform-fit.jpg",
+      "/images/industrial/uniform-fit-safety-diagram.jpg",
+      "/images/industrial/measurement-points-industrial.jpg",
+      "/images/team/industrial-specialist.jpg"
+    ],
+    "ogImages": [
+      "/images/industrial/proper-uniform-fit.jpg"
+    ]
+  },
+  {
+    "slug": "the-importance-of-color-coding-uniforms-in-large-saudi-hospitals",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/healthcare/Hospital_uniforms.jpg",
+    "originalImages": [
+      "/images/blog/hospital-color-coding.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/hospital-color-coding.jpg"
+    ]
+  },
+  {
+    "slug": "the-link-between-professional-uniforms-and-citizen-confidence",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/government/Civil_service_uniforms.jpg",
+    "originalImages": [
+      "/images/blog/government-uniform-confidence.jpg",
+      "/images/blog/security-uniform-confidence.jpg"
+    ],
+    "ogImages": [
+      "/images/blog/government-uniform-confidence.jpg"
+    ]
+  },
+  {
+    "slug": "the-importance-of-brand-representation-through-aviation-uniforms",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/aviation/aviation_uniform_embroidery.jpg",
+    "originalImages": [
+      "/images/aviation/airline-brand-uniform.jpg",
+      "/images/aviation/airline-brand-elements.jpg",
+      "/images/aviation/saudi-airline-cultural-elements.jpg",
+      "/images/team/aviation-specialist.jpg"
+    ],
+    "ogImages": [
+      "/images/aviation/airline-brand-uniform.jpg"
+    ]
+  },
+  {
+    "slug": "case-study-improving-staff-morale-with-new-uniforms-in-a-saudi-clinic",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/healthcare/Clinic_uniforms.jpg"
+  },
+  {
+    "slug": "how-uniforms-support-branding-for-private-healthcare-providers-in-ksa",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/healthcare/Medical_uniform_fabrics.jpg"
+  },
+  {
+    "slug": "temperature-regulating-fabrics-for-enhanced-comfort-during-shifts",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/healthcare/breathable_healthcare_fabrics.jpg"
+  },
+  {
+    "slug": "maintaining-sterility-best-practices-for-laundering-healthcare-uniforms",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/healthcare/healthcare_uniform_management.jpg"
+  },
+  {
+    "slug": "housekeeping-uniforms-ensuring-comfort-durability-and-professionalism",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/Housekeeping_uniforms.jpeg"
+  },
+  {
+    "slug": "restaurant-and-f-b-staff-uniforms-style-meets-practicality-in-saudi-dining",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/Restaurant_uniforms.jpeg"
+  },
+  {
+    "slug": "front-desk-attire-making-a-great-first-impression-in-ksa-hotels",
+    "status": "NO_IMAGES_FOUND",
+    "message": "No images found in the article"
+  },
+  {
+    "slug": "designing-elegant-and-functional-hotel-uniforms-for-the-luxury-saudi-market",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/boutique_hotel_staff_uniforms.jpeg"
+  },
+  {
+    "slug": "future-trends-smart-uniforms-in-healthcare",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg"
+  },
+  {
+    "slug": "safety-features-in-paramedic-and-emergency-response-uniforms-in-ksa",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/healthcare/Medical_staff_uniforms.jpg"
+  },
+  {
+    "slug": "airport-security-uniforms-balancing-authority-functionality-and-passenger-assurance",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg"
+  },
+  {
+    "slug": "fabric-choices-for-hospitality-wear-stain-resistance-and-easy-maintenance",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/breathable_hospitality_fabrics.jpeg"
+  },
+  {
+    "slug": "integrating-saudi-cultural-elements-into-hospitality-uniform-design",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg"
+  },
+  {
+    "slug": "concierge-and-bell-staff-uniforms-reflecting-service-excellence",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/concierge_suits.jpeg"
+  },
+  {
+    "slug": "chef-whites-and-kitchen-staff-uniforms-hygiene-and-safety-standards-in-ksa",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/Chef_uniforms_Chef_wear.jpeg"
+  },
+  {
+    "slug": "medical-uniform-design-combining-functionality-and-comfort-for-healthcare-professionals",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg"
+  },
+  {
+    "slug": "spa-and-wellness-center-uniforms-promoting-relaxation-and-professionalism",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/spa_therapist_uniforms.jpeg"
+  },
+  {
+    "slug": "customization-options-embroidery-name-tags-and-accessories",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/education/School_logo_embroidery.jpg"
+  },
+  {
+    "slug": "color-trends-in-modern-hospitality-uniform-design-in-the-middle-east",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/modern_hospitality_design_uniforms.jpeg"
+  },
+  {
+    "slug": "how-uniforms-impact-staff-morale-and-guest-satisfaction-scores",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/Hotel_staff_apparel.jpeg"
+  },
+  {
+    "slug": "maintaining-uniform-quality-laundry-and-upkeep-tips",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/hotel_uniform_stock_management.jpeg"
+  },
+  {
+    "slug": "aprons-styles-and-functional-choices-for-different-hospitality-roles",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/Waiter_aprons_Server_aprons.jpeg"
+  },
+  {
+    "slug": "footwear-recommendations-for-staff-standing-long-hours",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/Hotel_staff_apparel.jpeg"
+  },
+  {
+    "slug": "flame-resistant-fr-workwear-protecting-workers-in-oil-gas-and-manufacturing",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/Fire_resistant_uniforms_FR_clothing.jpeg"
+  },
+  {
+    "slug": "high-visibility-clothing-standards-and-their-importance-in-ksa",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/High_visibility_clothing_Hi_vis_uniforms.jpeg"
+  },
+  {
+    "slug": "choosing-the-right-workwear-for-saudi-arabia-s-industrial-sector-safety-first",
+    "status": "NO_IMAGES_FOUND",
+    "message": "No images found in the article"
+  },
+  {
+    "slug": "uniform-considerations-for-theme-parks-and-entertainment-venues-in-ksa",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/Banquet_staff_uniforms_Event_staff_uniforms.jpeg"
+  },
+  {
+    "slug": "sizing-challenges-and-solutions-for-diverse-hospitality-teams",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/hospitality/hospitality_uniform_consulting.jpeg"
+  },
+  {
+    "slug": "uniform-solutions-for-theme-parks-and-entertainment-venues",
+    "status": "FILE_NOT_FOUND",
+    "message": "Article file not found: app\\blog\\uniform-solutions-for-theme-parks-and-entertainment-venues\\page.tsx"
+  },
+  {
+    "slug": "uniform-needs-for-specific-industries-construction-manufacturing-oil-gas-logistics-in-ksa",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/Industrial_workwear_Saudi_Arabia_KSA.jpeg"
+  },
+  {
+    "slug": "climate-control-breathable-and-cooling-fabrics-for-hot-saudi-workplaces",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/breathable_industrial_fabrics.jpeg"
+  },
+  {
+    "slug": "head-protection-and-other-ppe-integration-with-industrial-uniforms",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/industrial_site_ppe_management.jpeg"
+  },
+  {
+    "slug": "safety-footwear-requirements-for-industrial-sites-in-ksa",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/Safety_workwear_PPE_apparel.jpeg"
+  },
+  {
+    "slug": "selecting-coveralls-vs-two-piece-workwear-pros-and-cons",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/Work_coveralls_overalls.jpeg"
+  },
+  {
+    "slug": "durable-fabrics-for-heavy-duty-industrial-environments-in-saudi-arabia",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/Heavy_duty_workwear_Durable_workwear.jpeg"
+  },
+  {
+    "slug": "chemical-resistant-clothing-for-hazardous-environments",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/chemical_resistant_clothing.jpeg"
+  },
+  {
+    "slug": "anti-static-workwear-essential-for-specific-saudi-industries",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/anti_static_uniforms.jpeg"
+  },
+  {
+    "slug": "integration-of-reflective-material-in-industrial-workwear",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/High_visibility_clothing_Hi_vis_uniforms.jpeg"
+  },
+  {
+    "slug": "reflective-tape-placement-for-maximum-visibility",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/Safety_vests.jpeg"
+  },
+  {
+    "slug": "workwear-considerations-for-female-employees-in-saudi-industrial-settings",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/Factory_worker_uniforms.jpeg"
+  },
+  {
+    "slug": "innovations-in-protective-textile-technology",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/Industrial_uniforms.jpeg"
+  },
+  {
+    "slug": "communication-equipment-integration-features-for-security-uniforms",
+    "status": "NO_IMAGES_FOUND",
+    "message": "No images found in the article"
+  },
+  {
+    "slug": "custom-security-name-tags-professional-identification-solutions",
+    "status": "NO_IMAGES_FOUND",
+    "message": "No images found in the article"
+  },
+  {
+    "slug": "arc-flash-protective-clothing-standards-relevant-to-ksa",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/arc_flash_rated_clothing.jpeg"
+  },
+  {
+    "slug": "sustainable-options-in-industrial-workwear",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/industrial/customized_workwear_programs.jpeg"
+  },
+  {
+    "slug": "distinguishing-ranks-and-roles-through-security-uniform-insignia-in-ksa",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/security_patches_and_badges.jpeg"
+  },
+  {
+    "slug": "choosing-the-right-materials-for-security-uniforms-in-the-saudi-climate",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/security/breathable_security_shirts.jpeg",
+    "originalImages": [
+      "/images/security/security_uniform_materials.jpg",
+      "/images/team/security-specialist.jpg"
+    ],
+    "ogImages": [
+      "/images/security/security_uniform_materials.jpg"
+    ]
+  },
+  {
+    "slug": "key-features-of-effective-security-uniforms-visibility-durability-functionality",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/High_visibility_security_uniforms.jpeg"
+  },
+  {
+    "slug": "the-psychological-impact-of-security-uniforms-on-deterrence-and-public-perception",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/authoritative_security_appearance.jpeg"
+  },
+  {
+    "slug": "maintaining-a-sharp-and-professional-appearance-uniform-care-tips",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/Security_suit_uniform_Full_security_uniform.jpeg"
+  },
+  {
+    "slug": "custom-patches-and-embroidery-for-security-company-branding",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/Custom_security_uniforms.jpeg"
+  },
+  {
+    "slug": "formal-vs-patrol-duty-uniforms-for-security-staff",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/class_a_security_dress_uniforms.jpeg"
+  },
+  {
+    "slug": "ballistic-vest-carriers-and-body-armor-integration",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/security_outer_vest_carriers.jpeg"
+  },
+  {
+    "slug": "footwear-for-security-personnel-comfort-support-and-durability",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/Security_uniform_accessories_(belts_epaulettes).jpeg"
+  },
+  {
+    "slug": "footwear-options-for-security-guards-in-saudi-arabia",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/Security_guard_attire.jpeg"
+  },
+  {
+    "slug": "women-s-uniform-options-in-the-saudi-security-sector",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/Security_company_uniforms.jpeg"
+  },
+  {
+    "slug": "accessories-for-security-uniforms-belts-pouches-communication-device-holders",
+    "status": "FIXED",
+    "message": "Updated to use image: /images/security/duty_belt_keepers.jpeg",
+    "originalImages": [
+      "/images/security/duty_belt_keepers.jpeg"
+    ],
+    "ogImages": [
+      "/images/security/duty_belt_keepers.jpeg"
+    ]
+  },
+  {
+    "slug": "case-study-upgrading-security-uniforms-for-a-large-saudi-facility",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/Facility_security_uniforms.jpeg"
+  },
+  {
+    "slug": "epaulettes-and-insignia-understanding-ranks-in-saudi-aviation-attire",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/aviation/pilot_epaulettes.jpg"
+  },
+  {
+    "slug": "uniforms-for-event-security-vs-static-guarding-in-saudi-arabia",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/event_security_staff_vests.jpeg"
+  },
+  {
+    "slug": "sourcing-durable-hardware-buttons-zippers-and-buckles-for-security-wear",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/Security_uniform_supplier_KSA.jpeg"
+  },
+  {
+    "slug": "breathable-armor-carriers-and-base-layers-for-comfort-under-vests",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/Security_vest.jpeg"
+  },
+  {
+    "slug": "headwear-options-caps-berets-and-climate-considerations",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/Security_cap_hat.jpeg"
+  },
+  {
+    "slug": "comfort-considerations-for-long-security-shifts",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/security/all_weather_security_gear.jpeg"
+  },
+  {
+    "slug": "cabin-crew-attire-professionalism-and-functionality-at-30000-feet-saudi-perspective",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/aviation/Cabin_crew_uniforms.jpg"
+  },
+  {
+    "slug": "bulk-ordering-aviation-uniforms-in-saudi-arabia-a-checklist",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/aviation/Buy_aviation_uniforms.jpg"
+  },
+  {
+    "slug": "how-uniform-fit-impacts-performance-and-morale-in-aviation-staff",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/aviation/Aviation_uniform_manufacturer.jpg"
+  },
+  {
+    "slug": "fire-resistant-materials-in-aviation-workwear-safety-first",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/aviation/durable_aviation_fabrics.jpg"
+  },
+  {
+    "slug": "accessorizing-aviation-uniforms-ties-scarves-and-pins",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/aviation/Aviation_uniform_accessories.jpg"
+  },
+  {
+    "slug": "ensuring-comfort-during-long-haul-flights-fabric-choices-matter",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/aviation/aviation_winter_wear.jpg"
+  },
+  {
+    "slug": "the-psychology-of-color-in-aviation-uniform-design",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/aviation/Official_aviation_attire.jpg"
+  },
+  {
+    "slug": "case-study-successful-uniform-rollout-for-a-saudi-regional-airline",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/aviation/aviation_uniforms_riyadh.jpg"
+  },
+  {
+    "slug": "innovations-in-aviation-uniform-technology",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/aviation/Aviation_uniforms_Saudi_Arabia_KSA.jpg"
+  },
+  {
+    "slug": "cleaning-and-maintenance-tips-for-aviation-uniforms",
+    "status": "NO_CHANGE_NEEDED",
+    "message": "Image already correct: /images/aviation/aviation_winter_wear.jpg"
+  }
+]
