@@ -5,13 +5,13 @@ import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: 'Strategic Accessory Architecture in Aviation Attire: 2025 Brand Expression Systems | UniformSA',
-    description: 'Comprehensive analysis of how aviation uniform accessories function as sophisticated brand communication systems for Saudi airlines, balancing corporate identity, operational requirements, and cultural nuance.',
-    keywords: 'aviation uniform accessories 2025, Saudi airline brand signifiers, strategic scarves and ties design, symbolic aviation pins systems, cultural aviation accessories, operational identity elements',
+    title: 'Strategic Accessory Architecture in Aviation Attire: 2025 Brand Expression Systems',
+    description: 'Explore how carefully engineered aviation uniform accessories serve as critical brand signifiers, operational function indicators, and cultural expression elements for Saudi airlines.',
+    keywords: 'aviation accessories, airline uniform pins, Saudi airline scarves, pilot insignia, cabin crew accessories, aviation neckwear design',
     openGraph: {
-      images: ['/images/aviation/aviation_accessories_collection.jpg'],
+      images: ['/images/aviation/Aviation_uniform_accessories.jpg'],
       title: 'Strategic Accessory Architecture in Aviation Attire: 2025 Brand Expression Systems',
-      description: 'Expert examination of how sophisticated accessory systems enhance Saudi airline brand communication through carefully engineered visual elements, functional design, and cultural integration.'
+      description: 'Comprehensive analysis of how aviation accessories create sophisticated identity systems through strategic design, material selection, and cultural integration for Saudi carriers.'
     },
   }
 }
@@ -31,13 +31,13 @@ export default function BlogPost() {
               Blog
             </Link>
             <span>&gt;</span>
-            <span className="text-gray-700 dark:text-white">Strategic Accessory Architecture in Aviation Attire</span>
+            <span className="text-gray-700 dark:text-white">Aviation Accessories</span>
           </nav>
 
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/aviation/aviation_accessories_collection.jpg"
+              src="/images/aviation/Aviation_uniform_accessories.jpg"
               alt="Sophisticated collection of Saudi airline uniform accessories featuring culturally-influenced scarves, ties, pins and insignia arranged in a precise compositional display"
               width={1000}
               height={600}
