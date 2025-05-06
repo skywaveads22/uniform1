@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of revolutionary chemical protection technologies for Saudi industrial environments, featuring quantum-engineered molecular barriers, multi-vector defense systems, and compound-specific neutralization frameworks.',
     keywords: 'advanced chemical defense Saudi Arabia 2025, molecular barrier technology KSA, quantum-engineered protection architecture, petrochemical-specific safeguarding systems, hazardous compound neutralization framework, next-generation chemical isolation',
     openGraph: {
-      images: ['/images/industrial/chemical_resistant_clothing.jpeg'],
+      images: ['/images/author/default-author.jpg'],
       title: 'Advanced Chemical Defense Architecture: Next-Generation Molecular Barrier Systems for Saudi Hazardous Environments 2025',
       description: 'Revolutionary framework for implementing sophisticated chemical protection technologies across Saudi industrial sectors, delivering unprecedented safety performance through advanced molecular engineering.',
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/industrial/chemical_resistant_clothing.jpeg"
+              src="/images/author/default-author.jpg"
               alt="Next-generation chemical defense systems for Saudi Arabia's petrochemical industries"
               width={1000}
               height={600}

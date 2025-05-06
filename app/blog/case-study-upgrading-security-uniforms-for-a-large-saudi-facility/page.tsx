@@ -8,7 +8,7 @@ export const generateMetadata = (): Metadata => {
     title: 'Case Study: Upgrading Security Uniforms For A Large Saudi Facility | UniformSA',
     description: 'Comprehensive analysis of how King Abdullah Financial District implemented a strategic security uniform upgrade resulting in enhanced professional image, staff satisfaction, and operational effectiveness.',
     openGraph: {
-      images: ['/images/security/Facility_security_uniforms.jpeg'],
+      images: ['/images/author/default-author.jpg'],
     },
   }
 }
@@ -34,7 +34,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/security/Facility_security_uniforms.jpeg"
+              src="/images/author/default-author.jpg"
               alt="Case Study: Upgrading Security Uniforms For A Large Saudi Facility"
               width={1000}
               height={600}

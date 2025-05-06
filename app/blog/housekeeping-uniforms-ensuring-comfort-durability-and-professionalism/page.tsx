@@ -273,7 +273,7 @@ export default function BlogPost() {
                 <h3 className="text-2xl font-semibold mb-4">About the Author</h3>
                 <div className="flex items-start gap-4">
                   <Image
-                    src="/images/team/ergonomics_specialist.jpg"
+                    src="/images/author/default-author.jpg"
                     alt="Dr. Abdullah Al-Saud"
                     width={80}
                     height={80}

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Uniform Considerations for Government Representatives Attending International Events',
     description: 'Learn how Saudi Arabia balances cultural identity, diplomatic protocol, and national branding through strategic uniform choices for government representatives at global events.',
-    images: ['/images/government/Formal_attire_for_government_events.jpg'],
+    images: ['/images/author/default-author.jpg'],
   },
 };
 
@@ -39,7 +39,7 @@ export default function BlogPost() {
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
                 <Image
-                  src="/images/government/Formal_attire_for_government_events.jpg"
+                  src="/images/author/default-author.jpg"
                   alt="Saudi government delegation in formal attire representing the Kingdom at an international summit"
                   width={1408}
                   height={960}

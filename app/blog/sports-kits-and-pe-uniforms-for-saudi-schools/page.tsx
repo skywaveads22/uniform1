@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sports Kits and PE Uniforms for Saudi Schools',
     description: 'Essential considerations for implementing physical education uniforms that balance cultural requirements, performance needs, and Saudi educational standards.',
-    images: ['/images/education/uniforms_sports_kits.jpg'],
+    images: ['/images/author/default-author.jpg'],
   },
 };
 
@@ -39,7 +39,7 @@ export default function BlogPost() {
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
                 <Image
-                  src="/images/education/uniforms_sports_kits.jpg"
+                  src="/images/author/default-author.jpg"
                   alt="Saudi students wearing culturally appropriate physical education uniforms during a school sports activity"
                   width={1408}
                   height={960}

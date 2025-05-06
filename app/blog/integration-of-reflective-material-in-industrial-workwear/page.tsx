@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of advanced photonic material integration in industrial workwear, featuring high-performance reflective systems, visibility optimization technologies, and safety enhancement methodologies for hazardous environments.',
     keywords: 'industrial safety photonics 2025, advanced reflective systems, visibility enhancement technology, industrial workwear safety architecture, photonic material integration, technical safety optimization',
     openGraph: {
-      images: ['/images/industrial/industrial_reflective_technical.jpg'],
+      images: ['/images/author/default-author.jpg'],
       title: 'Advanced Photonic Integration Architecture: Technical Reflective Systems for Industrial Safety Enhancement 2025',
       description: 'In-depth examination of advanced photonic material integration methodologies for industrial workwear, featuring high-performance reflective systems and visibility optimization technologies.'
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/industrial/industrial_reflective_technical.jpg"
+              src="/images/author/default-author.jpg"
               alt="Advanced photonic integration system for industrial workwear featuring high-performance reflective materials and visibility optimization technologies"
               width={1000}
               height={600}

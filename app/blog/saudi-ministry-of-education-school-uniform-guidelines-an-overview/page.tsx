@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Saudi Ministry of Education School Uniform Guidelines: An Overview',
     description: 'A comprehensive guide to official uniform policies, standards, and implementation guidelines across Saudi Arabian educational institutions.',
-    images: ['/images/education/School_uniform_companies_in_Saudi_Arabia.jpg'],
+    images: ['/images/author/default-author.jpg'],
   },
 };
 
@@ -39,7 +39,7 @@ export default function BlogPost() {
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
                 <Image
-                  src="/images/education/School_uniform_companies_in_Saudi_Arabia.jpg"
+                  src="/images/author/default-author.jpg"
                   alt="Saudi students in standardized school uniforms according to Ministry of Education guidelines"
                   width={1408}
                   height={960}

@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Explore quantum-textile innovations revolutionizing crew endurance on 20+ hour flights, featuring Saudi Arabia\'s leadership in smart fabric integration and biometric-responsive aviation uniforms.',
     keywords: 'quantum-textile aviation 2025, biometric-responsive flight uniforms, ultra-long-haul crew endurance, Saudi smart uniform integration, aerospace-grade thermoregulation, cabin pressure-adaptive fabrics',
     openGraph: {
-      images: ['/images/aviation/quantum_textile_aviation.jpg'],
+      images: ['/images/author/default-author.jpg'],
       title: 'Aerospace-Grade Thermoregulation: Next-Gen Flight Fabrics in 2025',
       description: 'Strategic analysis of breakthrough textile technologies delivering unprecedented crew performance during extreme-duration flights, showcasing Saudi Arabia\'s pioneering implementation of quantum-responsive fabrics.'
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/aviation/quantum_textile_aviation.jpg"
+              src="/images/author/default-author.jpg"
               alt="Flight attendant wearing quantum-responsive thermoregulation uniform fabric during extreme-duration transcontinental flight operations"
               width={1000}
               height={600}

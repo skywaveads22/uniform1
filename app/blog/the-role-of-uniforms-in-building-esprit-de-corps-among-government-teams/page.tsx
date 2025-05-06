@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Role of Uniforms in Building Esprit de Corps among Government Teams',
     description: 'Discover how thoughtfully designed uniforms strengthen institutional identity, enhance teamwork, and promote excellence across Saudi government organizations.',
-    images: ['/images/government/government_office_uniforms.jpg'],
+    images: ['/images/author/default-author.jpg'],
   },
 };
 
@@ -39,7 +39,7 @@ export default function BlogPost() {
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
                 <Image
-                  src="/images/government/government_office_uniforms.jpg"
+                  src="/images/author/default-author.jpg"
                   alt="Saudi government team members in professional uniforms demonstrating unity and collective identity during a team gathering"
                   width={1408}
                   height={960}

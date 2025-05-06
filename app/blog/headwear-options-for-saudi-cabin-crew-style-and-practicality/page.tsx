@@ -8,7 +8,7 @@ export const generateMetadata = (): Metadata => {
     title: 'Headwear Options For Saudi Cabin Crew Style And Practicality | UniformSA',
     description: 'Learn more about uniforms and professional attire in Saudi Arabia.',
     openGraph: {
-      images: ['/images/placeholder-image.jpg'],
+      images: ['/images/author/default-author.jpg'],
     },
   }
 }
@@ -34,7 +34,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/placeholder-image.jpg"
+              src="/images/author/default-author.jpg"
               alt="Headwear Options For Saudi Cabin Crew Style And Practicality"
               width={1000}
               height={600}

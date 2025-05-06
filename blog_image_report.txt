@@ -1,16 +1,451 @@
+Found 75 blog posts with missing images out of 125 total posts.
 
-Results:
-Total articles: 102
-Articles found: 102
-Articles with missing files: 0
-Articles with missing images: 0
-Articles with multiple images: 0
-Articles with image path mismatch: 0
-
-Missing files:
-
+File: app\blog\airline-pilot-uniform-standards-in-saudi-arabia-design-regulations-and-evolution\page.tsx
 Missing images:
+- /images/aviation/Saudi_pilot_uniform_standards.jpg
 
-Multiple images:
+---
 
-Image path mismatch:
+File: app\blog\airport-security-uniforms-balancing-authority-functionality-and-passenger-assurance\page.tsx
+Missing images:
+- /images/security/Airport_Security_Saudi_Arabia.jpg
+- /images/team/aviation_security_specialist.jpg
+
+---
+
+File: app\blog\aprons-styles-and-functional-choices-for-different-hospitality-roles\page.tsx
+Missing images:
+- /images/team/identity_specialist.jpg
+
+---
+
+File: app\blog\arc-flash-protective-clothing-standards-relevant-to-ksa\page.tsx
+Missing images:
+- /images/industrial/arc_flash_rated_clothing.jpeg
+
+---
+
+File: app\blog\ballistic-vest-carriers-and-body-armor-integration\page.tsx
+Missing images:
+- /images/security/tactical_security_vest.jpg
+
+---
+
+File: app\blog\cabin-crew-attire-professionalism-and-functionality-at-30-000-feet-saudi-perspective\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\case-study-upgrading-security-uniforms-for-a-large-saudi-facility\page.tsx
+Missing images:
+- /images/security/Facility_security_uniforms.jpeg
+
+---
+
+File: app\blog\chef-whites-and-kitchen-staff-uniforms-hygiene-and-safety-standards-in-ksa\page.tsx
+Missing images:
+- /images/team/culinary_safety_specialist.jpg
+
+---
+
+File: app\blog\chemical-resistant-clothing-for-hazardous-environments\page.tsx
+Missing images:
+- /images/industrial/chemical_resistant_clothing.jpeg
+
+---
+
+File: app\blog\choosing-the-right-fabrics-for-saudi-aviation-uniforms-balancing-durability-and-climate-comfort\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\choosing-the-right-materials-for-security-uniforms-in-the-saudi-climate\page.tsx
+Missing images:
+- /images/security/breathable_security_shirts.jpeg
+
+---
+
+File: app\blog\choosing-the-right-workwear-for-saudi-arabia-s-industrial-sector-safety-first\page.tsx
+Missing images:
+- /images/author/author-avatar.jpg
+
+---
+
+File: app\blog\cleaning-and-maintenance-tips-for-aviation-uniforms\page.tsx
+Missing images:
+- /images/aviation/Aviation_uniform_maintenance.jpg
+
+---
+
+File: app\blog\color-trends-in-modern-hospitality-uniform-design-in-the-middle-east\page.tsx
+Missing images:
+- /images/team/color_specialist.jpg
+
+---
+
+File: app\blog\communication-equipment-integration-features-for-security-uniforms\page.tsx
+Missing images:
+- /images/security/radio_holder_uniforms.jpeg
+
+---
+
+File: app\blog\concierge-and-bell-staff-uniforms-reflecting-service-excellence\page.tsx
+Missing images:
+- /images/team/luxury_hospitality_specialist.jpg
+
+---
+
+File: app\blog\custom-aviation-uniform-design-reflecting-your-airline-s-identity\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\custom-patches-and-embroidery-for-security-company-branding\page.tsx
+Missing images:
+- /images/security/Custom_security_uniforms.jpeg
+
+---
+
+File: app\blog\custom-security-name-tags-professional-identification-solutions\page.tsx
+Missing images:
+- /images/security/security_identification_patches.jpeg
+
+---
+
+File: app\blog\customization-options-embroidery-name-tags-and-accessories\page.tsx
+Missing images:
+- /images/team/identity_specialist.jpg
+
+---
+
+File: app\blog\distinguishing-ranks-and-roles-through-security-uniform-insignia-in-ksa\page.tsx
+Missing images:
+- /images/security/security_patches_and_badges.jpeg
+
+---
+
+File: app\blog\ensuring-comfort-during-long-haul-flights-fabric-choices-matter\page.tsx
+Missing images:
+- /images/aviation/quantum_textile_aviation.jpg
+
+---
+
+File: app\blog\epaulettes-and-insignia-understanding-ranks-in-saudi-aviation-attire\page.tsx
+Missing images:
+- /images/aviation/rank_comparison_chart.jpg
+
+---
+
+File: app\blog\fabric-choices-for-hospitality-wear-stain-resistance-and-easy-maintenance\page.tsx
+Missing images:
+- /images/team/materials_specialist.jpg
+
+---
+
+File: app\blog\fire-resistant-materials-for-aviation-uniforms-safety-standards-in-saudi-operations\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\flame-resistant-fr-workwear-protecting-workers-in-oil-gas-and-manufacturing\page.tsx
+Missing images:
+- /images/industrial/Fire_resistant_uniforms_FR_clothing.jpeg
+
+---
+
+File: app\blog\footwear-for-security-personnel-comfort-support-and-durability\page.tsx
+Missing images:
+- /images/security/security_footwear_technical.jpg
+
+---
+
+File: app\blog\footwear-options-for-security-guards-in-saudi-arabia\page.tsx
+Missing images:
+- /images/security/Security_guard_attire.jpeg
+
+---
+
+File: app\blog\footwear-recommendations-for-staff-standing-long-hours\page.tsx
+Missing images:
+- /images/team/biomechanics_specialist.jpg
+
+---
+
+File: app\blog\footwear-standards-for-aviation-professionals-in-ksa\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\formal-vs-patrol-duty-uniforms-for-security-staff\page.tsx
+Missing images:
+- /images/security/class_a_security_dress_uniforms.jpeg
+
+---
+
+File: app\blog\future-trends-in-aviation-uniform-design-post-2025\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\future-trends-smart-uniforms-in-healthcare\page.tsx
+Missing images:
+- /images/team/medical_technology_specialist.jpg
+
+---
+
+File: app\blog\ground-staff-uniforms-ensuring-visibility-and-safety-at-saudi-airports\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\headwear-options-for-saudi-cabin-crew-style-and-practicality\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\high-visibility-elements-for-night-patrols-and-low-light-conditions-in-saudi-arabia\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\housekeeping-uniforms-ensuring-comfort-durability-and-professionalism\page.tsx
+Missing images:
+- /images/team/ergonomics_specialist.jpg
+
+---
+
+File: app\blog\how-uniforms-impact-staff-morale-and-guest-satisfaction-scores\page.tsx
+Missing images:
+- /images/team/performance_specialist.jpg
+
+---
+
+File: app\blog\in-flight-uniform-evolution-the-changing-face-of-saudi-cabin-crew-attire\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\innovations-in-aviation-uniform-technology\page.tsx
+Missing images:
+- /images/aviation/aviation_technical_uniform.jpg
+
+---
+
+File: app\blog\integrating-saudi-cultural-elements-into-hospitality-uniform-design\page.tsx
+Missing images:
+- /images/team/cultural_design_specialist.jpg
+
+---
+
+File: app\blog\integration-of-reflective-material-in-industrial-workwear\page.tsx
+Missing images:
+- /images/industrial/industrial_reflective_technical.jpg
+
+---
+
+File: app\blog\maintaining-uniform-quality-laundry-and-upkeep-tips\page.tsx
+Missing images:
+- /images/team/lifecycle_specialist.jpg
+
+---
+
+File: app\blog\maintenance-crew-workwear-prioritizing-safety-and-durability\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\medical-uniform-design-combining-functionality-and-comfort-for-healthcare-professionals\page.tsx
+Missing images:
+- /images/team/healthcare_systems_specialist.jpg
+
+---
+
+File: app\blog\meeting-gaca-regulations-what-you-need-to-know-about-aviation-uniform-compliance-in-saudi-arabia\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\pilot-uniform-standards-in-ksa-a-complete-guide\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\safety-features-in-paramedic-and-emergency-response-uniforms-in-ksa\page.tsx
+Missing images:
+- /images/healthcare/Paramedic_Uniform_Saudi_Arabia.jpg
+- /images/team/emergency_systems_specialist.jpg
+
+---
+
+File: app\blog\safety-features-in-school-uniforms\page.tsx
+Missing images:
+- /images/education/School_uniform_fabrics.jpg
+
+---
+
+File: app\blog\saudi-ministry-of-education-school-uniform-guidelines-an-overview\page.tsx
+Missing images:
+- /images/education/School_uniform_companies_in_Saudi_Arabia.jpg
+
+---
+
+File: app\blog\seasonal-uniform-considerations-for-schools-across-saudi-arabia\page.tsx
+Missing images:
+- /images/education/school_summer_uniforms.jpg
+
+---
+
+File: app\blog\sizing-challenges-and-solutions-for-diverse-hospitality-teams\page.tsx
+Missing images:
+- /images/hospitality/hospitality_uniform_consulting.jpeg
+
+---
+
+File: app\blog\sizing-guides-and-best-practices-for-ordering-school-uniforms-in-bulk\page.tsx
+Missing images:
+- /images/education/school_uniform_purchase.jpg
+
+---
+
+File: app\blog\sports-kits-and-pe-uniforms-for-saudi-schools\page.tsx
+Missing images:
+- /images/education/uniforms_sports_kits.jpg
+
+---
+
+File: app\blog\stain-resistance-and-easy-care-fabrics-for-younger-students\page.tsx
+Missing images:
+- /images/education/easy_care_school_uniforms.jpg
+
+---
+
+File: app\blog\summer-vs-winter-aviation-uniforms-for-the-saudi-climate\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\sustainable-and-disposable-uniform-options-in-healthcare-settings\page.tsx
+Missing images:
+- /images/healthcare/disposable_medical_gowns.jpg
+
+---
+
+File: app\blog\sustainable-and-eco-friendly-school-uniform-options\page.tsx
+Missing images:
+- /images/education/School_uniform_fabrics.jpg
+
+---
+
+File: app\blog\sustainable-fabric-options-for-eco-conscious-airlines-in-ksa\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\sustainable-options-in-industrial-workwear\page.tsx
+Missing images:
+- /images/industrial/customized_workwear_programs.jpeg
+
+---
+
+File: app\blog\tactical-gear-integration-pockets-loops-and-reinforcements\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\teacher-and-staff-attire-setting-professional-standards-in-ksa-educational-institutions\page.tsx
+Missing images:
+- /images/education/School_staff_uniforms.jpg
+
+---
+
+File: app\blog\technological-advancements-in-fabrics-for-government-duty-wear\page.tsx
+Missing images:
+- /images/government/approved_government_fabrics.jpg
+
+---
+
+File: app\blog\the-importance-of-proper-fit-for-safety-and-comfort-in-industrial-uniforms\page.tsx
+Missing images:
+- /images/industrial/industrial_uniform_fittings.jpeg
+
+---
+
+File: app\blog\the-psychological-impact-of-security-uniforms-on-deterrence-and-public-perception\page.tsx
+Missing images:
+- /images/security/security_force_presentation.jpeg
+
+---
+
+File: app\blog\the-role-of-uniforms-in-building-esprit-de-corps-among-government-teams\page.tsx
+Missing images:
+- /images/government/government_office_uniforms.jpg
+
+---
+
+File: app\blog\uniform-considerations-for-government-representatives-attending-international-events\page.tsx
+Missing images:
+- /images/government/Formal_attire_for_government_events.jpg
+
+---
+
+File: app\blog\uniform-considerations-for-theme-parks-and-entertainment-venues-in-ksa\page.tsx
+Missing images:
+- /images/hospitality/Banquet_staff_uniforms_Event_staff_uniforms.jpeg
+
+---
+
+File: app\blog\uniform-logistics-for-airlines-managing-inventory-and-distribution-in-saudi-arabia\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\uniform-regulations-for-private-security-companies-in-ksa\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\uniform-solutions-for-theme-parks-and-entertainment-venues\page.tsx
+Missing images:
+- /images/hospitality/Banquet_staff_uniforms_Event_staff_uniforms.jpeg
+
+---
+
+File: app\blog\weather-appropriate-outerwear-for-security-guards-in-ksa\page.tsx
+Missing images:
+- /images/placeholder-image.jpg
+
+---
+
+File: app\blog\women-s-uniform-options-in-the-saudi-security-sector\page.tsx
+Missing images:
+- /images/security/Security_company_uniforms.jpeg
+
+---
+
+File: app\blog\workwear-considerations-for-female-employees-in-saudi-industrial-settings\page.tsx
+Missing images:
+- /images/industrial/Factory_worker_uniforms.jpeg
+
+---
+
+File: app\blog\[slug]\page.tsx
+Missing images:
+- /images/placeholder.jpg

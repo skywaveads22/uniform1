@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sustainable and Disposable Uniform Options in Healthcare Settings',
     description: 'Comprehensive analysis of balancing sustainability with safety in Saudi Arabian healthcare uniform programs.',
-    images: ['/images/healthcare/disposable_medical_gowns.jpg'],
+    images: ['/images/author/default-author.jpg'],
   },
 };
 
@@ -39,7 +39,7 @@ export default function BlogPost() {
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
                 <Image
-                  src="/images/healthcare/disposable_medical_gowns.jpg"
+                  src="/images/author/default-author.jpg"
                   alt="Healthcare professionals wearing sustainable uniforms alongside necessary disposable protective elements in a Saudi hospital setting"
                   width={1408}
                   height={960}

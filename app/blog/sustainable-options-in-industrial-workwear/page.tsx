@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of next-generation sustainable industrial workwear technologies for Saudi industries, featuring regenerative materials, zero-waste manufacturing, and performance-enhancing eco-innovations.',
     keywords: 'sustainable industrial workwear 2025, circular economy uniforms KSA, zero-waste manufacturing workwear, biodegradable industrial uniforms, Saudi green industrial apparel, eco-performance workwear innovations',
     openGraph: {
-      images: ['/images/industrial/customized_workwear_programs.jpeg'],
+      images: ['/images/author/default-author.jpg'],
       title: 'Advanced Sustainable Industrial Workwear: 2025 Circular Economy Innovations',
       description: 'Expert examination of cutting-edge sustainable industrial uniform solutions balancing environmental responsibility with enhanced protection, durability, and operational efficiency in Saudi industrial environments.'
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/industrial/customized_workwear_programs.jpeg"
+              src="/images/author/default-author.jpg"
               alt="Advanced sustainable industrial workwear featuring recycled materials and modular design for Saudi petrochemical operations"
               width={1000}
               height={600}

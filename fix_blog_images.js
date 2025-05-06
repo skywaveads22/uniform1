@@ -1,156 +1,155 @@
 const fs = require('fs');
 const path = require('path');
 
-// Read the articles.md file
-const articlesFile = fs.readFileSync('articles.md', 'utf8');
+// Read the image inventory
+const imageInventory = fs.readFileSync('img.md', 'utf8');
 
-// Parse the articles
-const articles = [];
-const lines = articlesFile.split('\n');
-let currentArticle = null;
+// Extract all image paths from the inventory by category
+const imagesByCategory = {
+  aviation: [],
+  security: [],
+  hospitality: [],
+  healthcare: [],
+  industrial: [],
+  education: [],
+  government: [],
+  author: [],
+  blog: []
+};
 
-for (const line of lines) {
-  // Match article title and path
-  const articleMatch = line.match(/\d+\.\s+(.+?)\s+-\s+\(المسار\/الرابط الداخلي:\s+(.+?)\)/);
+// Parse the inventory by sections
+const sections = imageInventory.split('## ');
+for (const section of sections) {
+  if (section.includes('صور الطيران')) {
+    extractImagesForCategory(section, 'aviation');
+  } else if (section.includes('صور الأمن والحماية')) {
+    extractImagesForCategory(section, 'security');
+  } else if (section.includes('صور الضيافة والفنادق')) {
+    extractImagesForCategory(section, 'hospitality');
+  } else if (section.includes('صور الرعاية الصحية')) {
+    extractImagesForCategory(section, 'healthcare');
+  } else if (section.includes('صور الصناعة')) {
+    extractImagesForCategory(section, 'industrial');
+  } else if (section.includes('صور التعليم')) {
+    extractImagesForCategory(section, 'education');
+  } else if (section.includes('صور الحكومة')) {
+    extractImagesForCategory(section, 'government');
+  } else if (section.includes('صور المؤلفين')) {
+    extractImagesForCategory(section, 'author');
+  } else if (section.includes('صور المدونة العامة')) {
+    extractImagesForCategory(section, 'blog');
+  }
+}
+
+function extractImagesForCategory(section, category) {
+  const regex = /- `([^`]+)`/g;
+  let match;
+  while ((match = regex.exec(section)) !== null) {
+    imagesByCategory[category].push(match[1]);
+  }
+}
+
+// Function to get a replacement image for a missing image
+function getReplacementImage(missingImage) {
+  // Determine which category the missing image belongs to
+  const categories = ['aviation', 'security', 'hospitality', 'healthcare', 'industrial', 'education', 'government', 'blog'];
+  let category = 'aviation'; // Default category
   
-  if (articleMatch) {
-    const title = articleMatch[1].trim();
-    const path = articleMatch[2].trim();
-    currentArticle = { title, path, imagePaths: [] };
-    articles.push(currentArticle);
-    continue;
+  for (const cat of categories) {
+    if (missingImage.includes(cat)) {
+      category = cat;
+      break;
+    }
   }
-
-  // Match image paths
-  const imageMatch = line.match(/صور التصنيفات:\s+(.+)/);
-  if (imageMatch && currentArticle) {
-    const imagePaths = imageMatch[1].split(',').map(img => img.trim());
-    currentArticle.imagePaths = imagePaths;
+  
+  // Special case for team/author images
+  if (missingImage.includes('team') || missingImage.includes('author')) {
+    return imagesByCategory.author.length > 0 ? imagesByCategory.author[0] : '/images/author/default-author.jpg';
   }
+  
+  // Get an appropriate replacement from the same category
+  if (imagesByCategory[category].length > 0) {
+    return imagesByCategory[category][0]; // Use the first available image in the category
+  }
+  
+  // Fallback to any available image
+  for (const cat of categories) {
+    if (imagesByCategory[cat].length > 0) {
+      return imagesByCategory[cat][0];
+    }
+  }
+  
+  return '/images/author/default-author.jpg'; // Ultimate fallback
 }
 
-console.log(`Found ${articles.length} articles in articles.md`);
+// Read the report of missing images
+const reportContent = fs.readFileSync('blog_image_report.txt', 'utf8');
+const fileBlocks = reportContent.split('---').filter(block => block.trim());
 
-// Create a directory for backup files
-if (!fs.existsSync('backups')) {
-  fs.mkdirSync('backups');
+const filesToFix = [];
+
+for (const block of fileBlocks) {
+  const lines = block.trim().split('\n');
+  const filePath = lines[0].replace('File: ', '').trim();
+  
+  if (!lines[1].includes('Missing images:')) continue;
+  
+  const missingImages = [];
+  for (let i = 2; i < lines.length; i++) {
+    if (lines[i].startsWith('- ')) {
+      missingImages.push(lines[i].substring(2).trim());
+    }
+  }
+  
+  filesToFix.push({ filePath, missingImages });
 }
 
-// Process each article
-let fixedCount = 0;
-let skippedCount = 0;
-let errorCount = 0;
+console.log(`Found ${filesToFix.length} files to fix`);
 
-console.log('Starting fixes...');
+// Fix each file
+let fixedFiles = 0;
+let errors = 0;
 
-for (const article of articles) {
+for (const file of filesToFix) {
   try {
-    // Extract the slug from the path
-    const slug = article.path.replace('/blog/', '');
-    const articleFilePath = path.join('app/blog', slug, 'page.tsx');
+    let content = fs.readFileSync(file.filePath, 'utf8');
+    let modified = false;
     
-    // Check if the article file exists
-    if (!fs.existsSync(articleFilePath)) {
-      console.log(`Skipping missing file: ${articleFilePath}`);
-      skippedCount++;
-      continue;
-    }
-    
-    // Read the article file
-    const originalContent = fs.readFileSync(articleFilePath, 'utf8');
-    
-    // Process the image paths
-    let expectedImagePath = article.imagePaths[0];
-    
-    // Convert from public/images/... to /images/...
-    if (expectedImagePath && expectedImagePath.startsWith('public/')) {
-      expectedImagePath = expectedImagePath.substring(6);
-    }
-    
-    if (!expectedImagePath) {
-      console.log(`No image path specified for ${article.title}. Skipping.`);
-      skippedCount++;
-      continue;
-    }
-    
-    // Look for Image components
-    const hasImages = originalContent.includes('<Image');
-    
-    if (!hasImages) {
-      console.log(`No images found in ${article.title}. Skipping.`);
-      skippedCount++;
-      continue;
-    }
-    
-    // Create a backup of the original file
-    const backupFilePath = path.join('backups', `${slug}.tsx.bak`);
-    fs.writeFileSync(backupFilePath, originalContent);
-    
-    // Find all Image components and extract their props
-    const imageRegex = /<Image[^>]*src="([^"]+)"[^>]*>/g;
-    const imageMatches = [...originalContent.matchAll(imageRegex)];
-    
-    if (imageMatches.length === 0) {
-      console.log(`No image components found in ${article.title} despite hasImages being true. Skipping.`);
-      skippedCount++;
-      continue;
-    }
-    
-    // Find the best image to keep
-    let bestImageIndex = 0;
-    
-    // Try to find an image that matches the expected path
-    for (let i = 0; i < imageMatches.length; i++) {
-      const imagePath = imageMatches[i][1];
-      if (imagePath.includes(expectedImagePath)) {
-        bestImageIndex = i;
-        break;
+    for (const missingImage of file.missingImages) {
+      const replacement = getReplacementImage(missingImage);
+      
+      // Replace in metadata
+      const metadataRegex = new RegExp(`images: \\[\\s*['"]${escapeRegExp(missingImage)}['"]\\s*\\]`, 'g');
+      if (metadataRegex.test(content)) {
+        content = content.replace(metadataRegex, `images: ['${replacement}']`);
+        modified = true;
+      }
+      
+      // Replace in Image components
+      const imageComponentRegex = new RegExp(`src=\\s*['"]${escapeRegExp(missingImage)}['"]`, 'g');
+      if (imageComponentRegex.test(content)) {
+        content = content.replace(imageComponentRegex, `src="${replacement}"`);
+        modified = true;
       }
     }
     
-    // If no match found, use the first main image (outside of secondary sections)
-    if (bestImageIndex === -1) {
-      bestImageIndex = 0;
+    if (modified) {
+      fs.writeFileSync(file.filePath, content);
+      fixedFiles++;
+      console.log(`Fixed: ${file.filePath}`);
     }
-    
-    // Extract the first image and its surrounding context
-    const primaryImage = imageMatches[bestImageIndex][0];
-    const actualImagePath = imageMatches[bestImageIndex][1];
-    
-    // Replace content with a version that only has the primary image
-    let newContent = originalContent;
-    
-    // Remove all other images except the primary one
-    for (let i = 0; i < imageMatches.length; i++) {
-      if (i !== bestImageIndex) {
-        const imgMatch = imageMatches[i][0];
-        // Replace the image component with an empty string, but keep its container
-        newContent = newContent.replace(imgMatch, '');
-      }
-    }
-    
-    // Update the primary image src to match the expected path if needed
-    if (!actualImagePath.includes(expectedImagePath)) {
-      newContent = newContent.replace(
-        actualImagePath,
-        expectedImagePath
-      );
-    }
-    
-    // Write the updated content
-    fs.writeFileSync(articleFilePath, newContent);
-    console.log(`Fixed article: ${article.title}`);
-    fixedCount++;
-    
   } catch (error) {
-    console.error(`Error processing ${article.title}: ${error.message}`);
-    errorCount++;
+    console.error(`Error fixing ${file.filePath}:`, error.message);
+    errors++;
   }
 }
 
-console.log('\nSummary:');
-console.log(`Total articles processed: ${articles.length}`);
-console.log(`Articles fixed: ${fixedCount}`);
-console.log(`Articles skipped: ${skippedCount}`);
-console.log(`Errors encountered: ${errorCount}`);
-console.log('\nBackups created in the "backups" directory.'); 
+console.log(`\nSummary:`);
+console.log(`Total files to fix: ${filesToFix.length}`);
+console.log(`Fixed successfully: ${fixedFiles}`);
+console.log(`Errors: ${errors}`);
+
+// Helper function to escape special characters in string for use in regex
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+} 

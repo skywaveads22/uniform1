@@ -8,7 +8,7 @@ export const generateMetadata = (): Metadata => {
     title: 'Pilot Uniform Standards In Ksa A Complete Guide | UniformSA',
     description: 'Learn more about uniforms and professional attire in Saudi Arabia.',
     openGraph: {
-      images: ['/images/placeholder-image.jpg'],
+      images: ['/images/author/default-author.jpg'],
     },
   }
 }
@@ -34,7 +34,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/placeholder-image.jpg"
+              src="/images/author/default-author.jpg"
               alt="Pilot Uniform Standards In Ksa A Complete Guide"
               width={1000}
               height={600}

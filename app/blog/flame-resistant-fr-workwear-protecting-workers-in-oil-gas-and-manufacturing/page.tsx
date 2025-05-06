@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of cutting-edge thermal defense technologies for Saudi hydrocarbon environments, featuring quantum-engineered flame inhibition matrices, multi-vector thermal protection systems, and AI-optimized combustion prevention frameworks.',
     keywords: 'advanced flame resistance Saudi Arabia 2025, thermal defense architecture KSA, quantum-engineered FR systems, petrochemical fire prevention technology, multi-vector combustion inhibition, extreme heat protection systems, intelligent thermal defense',
     openGraph: {
-      images: ['/images/industrial/Fire_resistant_uniforms_FR_clothing.jpeg'],
+      images: ['/images/author/default-author.jpg'],
       title: 'Advanced Thermal Defense Architecture: Next-Generation Flame Resistance Systems for Saudi Petrochemical Operations 2025',
       description: 'Strategic framework for implementing sophisticated flame resistance technologies across Saudi energy sectors, delivering unprecedented thermal protection through advanced combustion prevention engineering.',
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/industrial/Fire_resistant_uniforms_FR_clothing.jpeg"
+              src="/images/author/default-author.jpg"
               alt="Next-generation flame resistance systems for Saudi Arabia's petrochemical environments"
               width={1000}
               height={600}

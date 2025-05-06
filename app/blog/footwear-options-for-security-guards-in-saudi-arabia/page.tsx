@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'A comprehensive guide to selecting optimal security footwear for Saudi Arabia\'s unique environmental conditions, cultural requirements, and professional standards.',
     keywords: 'security boots Saudi Arabia, security guard footwear KSA, tactical shoes Saudi security, desert security footwear, professional security shoes',
     openGraph: {
-      images: ['/images/security/Security_guard_attire.jpeg'],
+      images: ['/images/author/default-author.jpg'],
     },
   }
 }
@@ -35,7 +35,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/security/Security_guard_attire.jpeg"
+              src="/images/author/default-author.jpg"
               alt="Professional tactical footwear for security personnel in Saudi Arabia"
               width={1000}
               height={600}

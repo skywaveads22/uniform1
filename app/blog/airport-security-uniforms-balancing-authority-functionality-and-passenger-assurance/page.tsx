@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: `Comprehensive analysis of next-generation airport security attire for Saudi aviation environments, featuring authority signification frameworks, operational enhancement systems, and passenger confidence methodologies aligned with Vision 2030 aviation security standards.`,
     keywords: `authority projection architecture Saudi Arabia 2025, aviation security systems KSA, passenger confidence methodology, operational enhancement frameworks, security personnel attire, Saudi airport security, passenger assurance architecture`,
     openGraph: {
-      images: ['/images/security/Airport_Security_Saudi_Arabia.jpg'],
+      images: ['/images/author/default-author.jpg'],
       title: `Authority Projection Architecture: Advanced Uniform Systems for Aviation Security Personnel 2025`,
       description: `Strategic implementation framework for deploying sophisticated security attire systems across Saudi aviation facilities, delivering unprecedented operational capability through advanced psychological design engineering.`,
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
             <Image
-              src="/images/security/Airport_Security_Saudi_Arabia.jpg"
+              src="/images/author/default-author.jpg"
               alt="Authority Projection Architecture: Advanced Uniform Systems for Aviation Security Personnel 2025"
               fill
               className="object-cover"
@@ -284,7 +284,7 @@ export default function BlogPost() {
                 <h3 className="text-2xl font-semibold mb-4">About the Author</h3>
                 <div className="flex items-start gap-4">
                   <Image
-                    src="/images/team/aviation_security_specialist.jpg"
+                    src="/images/author/default-author.jpg"
                     alt="Dr. Ibrahim Al-Qahtani"
                     width={80}
                     height={80}

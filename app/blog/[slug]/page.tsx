@@ -268,7 +268,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
             <Image
-              src="/images/placeholder.jpg"
+              src="/images/author/default-author.jpg"
               alt={getArticleTitle()}
               fill
               className="object-cover"

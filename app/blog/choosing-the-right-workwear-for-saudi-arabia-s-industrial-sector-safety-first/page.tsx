@@ -32,7 +32,7 @@ export default function BlogPost() {
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <Image
-                  src="/images/author/author-avatar.jpg"
+                  src="/images/author/default-author.jpg"
                   alt="صورة الكاتب"
                   className="h-10 w-10 rounded-full"
                   width={40}

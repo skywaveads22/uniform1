@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of advanced identity systems for Saudi security organizations, featuring data-driven approaches that enhance brand recognition, operational effectiveness, and organizational cohesion.',
     keywords: 'security identity systems 2025, advanced embroidery technology Saudi Arabia, tactical identification design, security organization branding, corporate visual integration security sector, emblem engineering security uniforms',
     openGraph: {
-      images: ['/images/security/Custom_security_uniforms.jpeg'],
+      images: ['/images/author/default-author.jpg'],
       title: 'Strategic Identity Integration: Advanced Visual Branding Systems 2025',
       description: 'Expert examination of cutting-edge techniques for incorporating sophisticated visual identity elements into security uniforms, optimizing brand projection while enhancing operational efficiency and personnel cohesion.'
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/security/Custom_security_uniforms.jpeg"
+              src="/images/author/default-author.jpg"
               alt="Advanced security uniform system featuring precision-engineered identity elements and sophisticated brand integration"
               width={1000}
               height={600}

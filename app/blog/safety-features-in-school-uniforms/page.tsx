@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Safety Features in School Uniforms',
     description: 'Discover how specialized safety features in school uniforms protect Saudi Arabian students while enhancing visibility, comfort, and institutional security.',
-    images: ['/images/education/School_uniform_fabrics.jpg'],
+    images: ['/images/author/default-author.jpg'],
   },
 };
 
@@ -39,7 +39,7 @@ export default function BlogPost() {
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
                 <Image
-                  src="/images/education/School_uniform_fabrics.jpg"
+                  src="/images/author/default-author.jpg"
                   alt="Saudi Arabian students in school uniforms with reflective safety features visible during an outdoor activity"
                   width={1408}
                   height={960}

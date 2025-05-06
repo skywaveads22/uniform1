@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: `Comprehensive analysis of next-generation operational attire architectures for Saudi entertainment venues, featuring immersive experience optimization, cross-functional performance engineering, and integrated team efficiency frameworks calibrated for Vision 2030 experiential objectives.`,
     keywords: `immersive attire architecture Saudi Arabia 2025, entertainment venue performance systems KSA, operational efficiency frameworks, experience-aligned uniform engineering, Vision 2030 entertainment ecosystems, integrated staff performance systems, destination optimization technology`,
     openGraph: {
-      images: ['/images/hospitality/Banquet_staff_uniforms_Event_staff_uniforms.jpeg'],
+      images: ['/images/author/default-author.jpg'],
       title: `Immersive Environment Attire Systems: Operational Performance Frameworks for Saudi Entertainment Destination Ecosystems 2025`,
       description: `Strategic framework for implementing sophisticated operational attire architectures across Saudi entertainment venues, delivering unprecedented team performance through advanced experience-aligned engineering systems.`,
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/hospitality/Banquet_staff_uniforms_Event_staff_uniforms.jpeg"
+              src="/images/author/default-author.jpg"
               alt="Next-generation operational attire architectures for Saudi Arabia's immersive entertainment environments"
               width={1000}
               height={600}

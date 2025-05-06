@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of cutting-edge technologies transforming Saudi aviation uniforms, featuring integrated smart systems, advanced materials, and enhanced crew performance capabilities for next-generation operations.',
     keywords: 'aviation uniform innovation 2025, smart textile aviation technology, Saudi airline integrated wearables, technical performance crew attire, sustainable aviation uniform materials, biometric crew garment systems',
     openGraph: {
-      images: ['/images/aviation/aviation_technical_uniform.jpg'],
+      images: ['/images/author/default-author.jpg'],
       title: 'Breakthrough Innovations in Aviation Uniform Technology: 2025 Technical Advancements',
       description: 'Expert examination of revolutionary technologies enhancing Saudi aviation crew effectiveness through integrated functionality, adaptive performance, and data-enabled operational capabilities.'
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/aviation/aviation_technical_uniform.jpg"
+              src="/images/author/default-author.jpg"
               alt="Advanced aviation crew uniform featuring integrated smart textile technology and biometric monitoring systems for enhanced operational performance"
               width={1000}
               height={600}

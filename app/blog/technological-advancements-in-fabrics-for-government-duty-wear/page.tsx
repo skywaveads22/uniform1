@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Technological Advancements in Fabrics for Government Duty Wear',
     description: 'How innovative textile technologies are transforming Saudi Arabian government and public sector uniforms with enhanced functionality, comfort, and protection for diverse operational environments.',
-    images: ['/images/government/approved_government_fabrics.jpg'],
+    images: ['/images/author/default-author.jpg'],
   },
 };
 
@@ -39,7 +39,7 @@ export default function BlogPost() {
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
                 <Image
-                  src="/images/government/approved_government_fabrics.jpg"
+                  src="/images/author/default-author.jpg"
                   alt="Saudi government personnel wearing uniforms made with advanced technical fabrics for enhanced performance and protection"
                   width={1408}
                   height={960}

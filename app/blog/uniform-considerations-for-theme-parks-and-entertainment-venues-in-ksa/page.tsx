@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of next-generation experiential uniform architectures for Saudi entertainment venues, featuring immersive brand integration systems, climate-adaptive performance technologies, and cultural resonance frameworks calibrated for Vision 2030 tourism objectives.',
     keywords: 'experiential uniform architecture Saudi Arabia 2025, entertainment destination identity systems KSA, immersive brand integration technology, theme park attire engineering, climate-adaptive performance apparel, Saudi cultural entertainment design, Vision 2030 tourism experience',
     openGraph: {
-      images: ['/images/hospitality/Banquet_staff_uniforms_Event_staff_uniforms.jpeg'],
+      images: ['/images/author/default-author.jpg'],
       title: 'Advanced Experiential Attire Engineering: Strategic Identity Systems for Saudi Arabian Entertainment Destinations 2025',
       description: 'Revolutionary framework for implementing sophisticated experiential uniform architectures across Saudi entertainment venues, delivering unprecedented guest engagement through advanced identity integration systems.',
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/hospitality/Banquet_staff_uniforms_Event_staff_uniforms.jpeg"
+              src="/images/author/default-author.jpg"
               alt="Next-generation experiential uniform systems for Saudi Arabia's entertainment destinations"
               width={1000}
               height={600}

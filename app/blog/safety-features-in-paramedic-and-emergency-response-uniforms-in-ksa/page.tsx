@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: `Comprehensive analysis of next-generation paramedic attire technology for Saudi emergency environments, featuring hazard mitigation frameworks, identification optimization systems, and performance enhancement methodologies aligned with Vision 2030 healthcare safety standards.`,
     keywords: `protective integration architecture Saudi Arabia 2025, emergency medical safety systems KSA, hazard mitigation frameworks, paramedic attire technology, Saudi emergency response systems, EMS safety architecture, first responder optimization`,
     openGraph: {
-      images: ['/images/healthcare/Paramedic_Uniform_Saudi_Arabia.jpg'],
+      images: ['/images/author/default-author.jpg'],
       title: `Protective Integration Architecture: Advanced Safety Systems for Saudi Emergency Medical Personnel 2025`,
       description: `Strategic implementation framework for deploying sophisticated paramedic attire technologies across Saudi emergency services, delivering unprecedented personnel protection through advanced safety integration.`,
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
             <Image
-              src="/images/healthcare/Paramedic_Uniform_Saudi_Arabia.jpg"
+              src="/images/author/default-author.jpg"
               alt="Protective Integration Architecture: Advanced Safety Systems for Saudi Emergency Medical Personnel 2025"
               fill
               className="object-cover"
@@ -298,7 +298,7 @@ export default function BlogPost() {
                 <h3 className="text-2xl font-semibold mb-4">About the Author</h3>
                 <div className="flex items-start gap-4">
                   <Image
-                    src="/images/team/emergency_systems_specialist.jpg"
+                    src="/images/author/default-author.jpg"
                     alt="Dr. Khalid Al-Otaibi"
                     width={80}
                     height={80}

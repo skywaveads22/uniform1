@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of specialized workwear engineering for Saudi Arabia\'s expanding female industrial workforce, featuring ergonomic design principles, cultural adaptations, and performance-enhancing innovations.',
     keywords: 'female industrial workwear Saudi Arabia 2025, women\'s protective apparel KSA, gender-inclusive safety standards, thermal regulation workwear women, Vision 2030 industrial inclusion, culturally appropriate safety attire',
     openGraph: {
-      images: ['/images/industrial/Factory_worker_uniforms.jpeg'],
+      images: ['/images/author/default-author.jpg'],
       title: 'Gender-Optimized Industrial Workwear: Advanced Solutions for Female Professionals in Saudi Industrial Environments',
       description: 'Strategic framework for implementing gender-inclusive protective apparel systems across Saudi industrial sectors, balancing performance parameters with cultural considerations and workplace safety requirements.'
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/industrial/Factory_worker_uniforms.jpeg"
+              src="/images/author/default-author.jpg"
               alt="Female engineer in specialized industrial workwear designed for Saudi production environments"
               width={1000}
               height={600}

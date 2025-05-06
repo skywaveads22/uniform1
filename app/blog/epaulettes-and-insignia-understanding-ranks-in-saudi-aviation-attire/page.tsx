@@ -165,7 +165,7 @@ export default function BlogPost() {
 
               <div className="not-prose my-8">
                 <Image 
-                  src="/images/aviation/rank_comparison_chart.jpg" 
+                  src="/images/author/default-author.jpg" 
                   alt="Comparison chart of Saudi aviation rank insignia across different organizations"
                   width={800}
                   height={400}

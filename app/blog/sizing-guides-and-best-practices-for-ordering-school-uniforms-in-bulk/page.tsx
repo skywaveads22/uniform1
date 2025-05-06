@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sizing Guides and Best Practices for Ordering School Uniforms in Bulk',
     description: 'Essential strategies for Saudi educational institutions to streamline the bulk uniform ordering process while ensuring proper fit and quality.',
-    images: ['/images/education/school_uniform_purchase.jpg'],
+    images: ['/images/author/default-author.jpg'],
   },
 };
 
@@ -39,7 +39,7 @@ export default function BlogPost() {
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
                 <Image
-                  src="/images/education/school_uniform_purchase.jpg"
+                  src="/images/author/default-author.jpg"
                   alt="School administrators reviewing uniform size charts and inventory records for bulk ordering in a Saudi Arabian school"
                   width={1408}
                   height={960}

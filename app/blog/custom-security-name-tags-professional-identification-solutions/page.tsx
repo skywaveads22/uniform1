@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of next-generation security identification solutions for Saudi organizations, featuring integrated authentication technologies, visual identity engineering, and strategic implementation frameworks.',
     keywords: 'security identification systems 2025, credential architecture Saudi Arabia, advanced name tags technology, biometric identification integration, multilingual security badges, anti-counterfeit identification KSA',
     openGraph: {
-      images: ['/images/security/security_identification_patches.jpeg'],
+      images: ['/images/author/default-author.jpg'],
       title: 'Advanced Security Identification Architecture: Strategic Credentialing Systems 2025',
       description: 'Expert examination of contemporary security identification methodologies, balancing operational security requirements with personnel management principles for Saudi organizations.',
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/security/security_identification_patches.jpeg"
+              src="/images/author/default-author.jpg"
               alt="Advanced security identification systems featuring multilayered credential technologies"
               width={1000}
               height={600}

@@ -8,7 +8,7 @@ export const generateMetadata = (): Metadata => {
     title: 'Fire Resistant Materials For Aviation Uniforms Safety Standards In Saudi Operations | UniformSA',
     description: 'Learn more about uniforms and professional attire in Saudi Arabia.',
     openGraph: {
-      images: ['/images/placeholder-image.jpg'],
+      images: ['/images/author/default-author.jpg'],
     },
   }
 }
@@ -34,7 +34,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/placeholder-image.jpg"
+              src="/images/author/default-author.jpg"
               alt="Fire Resistant Materials For Aviation Uniforms Safety Standards In Saudi Operations"
               width={1000}
               height={600}

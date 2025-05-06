@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Learn how well-fitted industrial uniforms enhance worker safety, productivity, and wellbeing in Saudi industrial environments, with expert guidance on implementing proper sizing programs.',
   keywords: 'industrial uniform fit, safety workwear, proper sizing, comfortable workwear, KSA industrial uniforms, worker safety uniforms, ergonomic workwear, industrial safety standards',
   openGraph: {
-    images: ['/images/industrial/industrial_uniform_fittings.jpeg'],
+    images: ['/images/author/default-author.jpg'],
   },
 }
 
@@ -18,7 +18,7 @@ export default function BlogPost() {
       {/* Hero Section */}
       <div className="relative h-[400px] w-full overflow-hidden">
         <Image
-          src="/images/industrial/industrial_uniform_fittings.jpeg"
+          src="/images/author/default-author.jpg"
           alt="Industrial worker wearing properly fitted safety uniform in Saudi industrial facility"
           fill
           className="object-cover"

@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'A comprehensive examination of the evolving uniform requirements for female security professionals in Saudi Arabia, balancing cultural considerations with functional needs.',
     keywords: 'women security uniforms Saudi Arabia, female security officers KSA, modest security attire, professional women\'s security wear',
     openGraph: {
-      images: ['/images/security/Security_company_uniforms.jpeg'],
+      images: ['/images/author/default-author.jpg'],
     },
   }
 }
@@ -35,7 +35,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/security/Security_company_uniforms.jpeg"
+              src="/images/author/default-author.jpg"
               alt="Female security professionals in modern Saudi-appropriate uniforms"
               width={1000}
               height={600}

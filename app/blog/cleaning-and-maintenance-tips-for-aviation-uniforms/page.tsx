@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive guide to aviation uniform maintenance strategies for Saudi airlines, featuring advanced lifecycle management systems that enhance longevity, appearance, and technical performance.',
     keywords: 'aviation uniform maintenance 2025, Saudi airline garment care systems, technical textile preservation methods, uniform lifecycle management KSA, professional aviation attire cleaning protocols, sustainability-oriented maintenance practices',
     openGraph: {
-      images: ['/images/aviation/Aviation_uniform_maintenance.jpg'],
+      images: ['/images/author/default-author.jpg'],
       title: 'Advanced Maintenance Protocols for Aviation Uniforms: 2025 Lifecycle Optimization Framework',
       description: 'Expert analysis of best practices for maintaining advanced aviation uniforms in Saudi operational environments, including scientific approaches to preserving appearance, functionality, and technical properties.'
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/aviation/Aviation_uniform_maintenance.jpg"
+              src="/images/author/default-author.jpg"
               alt="Advanced aviation uniform maintenance facility with specialized equipment for preserving technical performance properties in Saudi Arabia"
               width={1000}
               height={600}

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Learn how to select appropriate fabrics and materials for security uniforms that provide comfort, durability, and professional appearance in Saudi Arabia\'s unique climate conditions.',
   keywords: 'security uniform materials, Saudi security uniforms, durable fabrics, breathable security uniform, climate-appropriate uniforms, KSA uniform fabrics',
   openGraph: {
-    images: ['/images/security/breathable_security_shirts.jpeg'],
+    images: ['/images/author/default-author.jpg'],
   },
 }
 
@@ -18,7 +18,7 @@ export default function BlogPost() {
       {/* Hero Section */}
       <div className="relative h-[400px] w-full overflow-hidden">
         <Image
-          src="/images/security/breathable_security_shirts.jpeg"
+          src="/images/author/default-author.jpg"
           alt="Security guard uniforms made with climate-appropriate materials for Saudi Arabia"
           fill
           className="object-cover"

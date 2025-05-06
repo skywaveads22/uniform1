@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Teacher and Staff Attire: Setting Professional Standards in KSA Educational Institutions',
     description: 'How Saudi Arabian educational institutions are establishing professional attire standards that balance cultural authenticity, institutional identity, and educational authority.',
-    images: ['/images/education/School_staff_uniforms.jpg'],
+    images: ['/images/author/default-author.jpg'],
   },
 };
 
@@ -39,7 +39,7 @@ export default function BlogPost() {
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
                 <Image
-                  src="/images/education/School_staff_uniforms.jpg"
+                  src="/images/author/default-author.jpg"
                   alt="Saudi Arabian teachers and educational staff wearing professional attire in a modern school environment"
                   width={1408}
                   height={960}

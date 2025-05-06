@@ -8,7 +8,7 @@ export const generateMetadata = (): Metadata => {
     title: 'Arc Flash Protective Clothing Standards Relevant To Ksa | UniformSA',
     description: 'Learn more about uniforms and professional attire in Saudi Arabia.',
     openGraph: {
-      images: ['/images/industrial/arc_flash_rated_clothing.jpeg'],
+      images: ['/images/author/default-author.jpg'],
     },
   }
 }
@@ -34,7 +34,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/industrial/arc_flash_rated_clothing.jpeg"
+              src="/images/author/default-author.jpg"
               alt="Arc Flash Protective Clothing Standards Relevant To Ksa"
               width={1000}
               height={600}

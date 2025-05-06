@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Seasonal Uniform Considerations for Schools Across Saudi Arabia',
     description: 'Comprehensive guide to adapting school uniforms for Saudi Arabia\'s diverse climate conditions throughout the academic year.',
-    images: ['/images/education/school_summer_uniforms.jpg'],
+    images: ['/images/author/default-author.jpg'],
   },
 };
 
@@ -39,7 +39,7 @@ export default function BlogPost() {
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
                 <Image
-                  src="/images/education/school_summer_uniforms.jpg"
+                  src="/images/author/default-author.jpg"
                   alt="Saudi students in seasonally-appropriate school uniforms that adapt to regional climate conditions"
                   width={1408}
                   height={960}

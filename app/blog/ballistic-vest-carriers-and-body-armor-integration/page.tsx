@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of advanced ballistic protection integration technologies for Saudi security forces, featuring innovative carrier systems balancing optimal protection with tactical mobility and climate adaptation.',
     keywords: 'advanced ballistic protection 2025, Saudi security body armor systems, integrated protective carriers, covert ballistic solutions KSA, tactical mobility armor technology, climate-optimized body armor',
     openGraph: {
-      images: ['/images/security/tactical_security_vest.jpg'],
+      images: ['/images/author/default-author.jpg'],
       title: 'Next-Generation Ballistic Protection Systems: 2025 Integration Advances for Saudi Security Forces',
       description: 'Expert examination of cutting-edge ballistic protection technologies enhancing Saudi security operations through strategic integration, ergonomic design, and tactical optimization for specific operational contexts.'
     },
@@ -37,7 +37,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/security/tactical_security_vest.jpg"
+              src="/images/author/default-author.jpg"
               alt="Advanced ballistic protection system with integrated carrier designed specifically for Saudi security operations in urban environments"
               width={1000}
               height={600}

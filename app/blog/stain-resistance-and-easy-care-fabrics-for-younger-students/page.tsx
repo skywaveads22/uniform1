@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Stain Resistance and Easy-Care Fabrics for Younger Students',
     description: 'Practical fabric solutions for Saudi elementary school uniforms that balance durability and easy maintenance with comfort and cultural appropriateness.',
-    images: ['/images/education/easy_care_school_uniforms.jpg'],
+    images: ['/images/author/default-author.jpg'],
   },
 };
 
@@ -39,7 +39,7 @@ export default function BlogPost() {
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
                 <Image
-                  src="/images/education/easy_care_school_uniforms.jpg"
+                  src="/images/author/default-author.jpg"
                   alt="Young Saudi elementary school students wearing durable, stain-resistant uniforms during classroom activities"
                   width={1408}
                   height={960}

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sustainable and Eco-Friendly School Uniform Options',
     description: 'Comprehensive guide to implementing environmentally responsible school uniform programs in Saudi Arabian educational institutions.',
-    images: ['/images/education/School_uniform_fabrics.jpg'],
+    images: ['/images/author/default-author.jpg'],
   },
 };
 
@@ -39,7 +39,7 @@ export default function BlogPost() {
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
                 <Image
-                  src="/images/education/School_uniform_fabrics.jpg"
+                  src="/images/author/default-author.jpg"
                   alt="Saudi students wearing eco-friendly school uniforms made from sustainable materials in a modern school environment"
                   width={1408}
                   height={960}
