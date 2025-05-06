@@ -7,15 +7,18 @@
   NODE_VERSION = "18.17.0"
   NPM_VERSION = "9.6.7"
   NEXT_TELEMETRY_DISABLED = "1"
+  NODE_ENV = "production"
+  NPM_FLAGS = "--production=false"
 
 # Explicitly set production branch to 'main'
 [context.production]
   base = "/"
   publish = ".next"
-  command = "npm run build"
+  command = "npm run netlify-build"
 
 [context.production.environment]
   NODE_ENV = "production"
+  NPM_FLAGS = "--production=false"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

@@ -16,6 +16,39 @@ console.log('Starting Netlify build process...');
 console.log(`Node version: ${process.version}`);
 console.log(`Build environment: ${process.env.CONTEXT || 'development'}`);
 
+// Ensure critical dependencies are installed
+console.log('Verifying CSS dependencies are installed...');
+try {
+  // Check for autoprefixer and install if needed
+  try {
+    require.resolve('autoprefixer');
+    console.log('autoprefixer is already installed');
+  } catch (e) {
+    console.log('Installing autoprefixer...');
+    execSync('npm install --no-save autoprefixer', { stdio: 'inherit' });
+  }
+  
+  // Check for postcss and install if needed
+  try {
+    require.resolve('postcss');
+    console.log('postcss is already installed');
+  } catch (e) {
+    console.log('Installing postcss...');
+    execSync('npm install --no-save postcss', { stdio: 'inherit' });
+  }
+  
+  // Check for tailwindcss and install if needed
+  try {
+    require.resolve('tailwindcss');
+    console.log('tailwindcss is already installed');
+  } catch (e) {
+    console.log('Installing tailwindcss...');
+    execSync('npm install --no-save tailwindcss', { stdio: 'inherit' });
+  }
+} catch (error) {
+  console.warn('Warning: Error verifying CSS dependencies:', error);
+}
+
 // Check if we need to create a special environment file for the build
 if (process.env.CONTEXT === 'production') {
   console.log('Creating production environment configuration...');
