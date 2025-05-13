@@ -16,6 +16,12 @@ console.log('Starting Netlify build process...');
 console.log(`Node version: ${process.version}`);
 console.log(`Build environment: ${process.env.CONTEXT || 'development'}`);
 
+// Define variables at a higher scope so they're accessible in the finally block
+let tsConfigExists = false;
+let originalTsConfig = null;
+let nextConfigExists = false;
+let originalNextConfig = null;
+
 // Install all dependencies at once instead of one by one
 try {
   console.log('Installing required build dependencies...');
@@ -45,8 +51,6 @@ try {
 
   // Temporarily modify tsconfig.json to exclude scripts directory
   console.log('Modifying TypeScript configuration for build...');
-  let tsConfigExists = false;
-  let originalTsConfig = null;
   
   if (fs.existsSync('tsconfig.json')) {
     tsConfigExists = true;
@@ -96,8 +100,6 @@ if (process.env.CONTEXT === 'production') {
 
 // Remove headers and redirects in next.config.js temporarily
 console.log('Adjusting Next.js configuration for static export...');
-let nextConfigExists = false;
-let originalNextConfig = null;
 
 if (fs.existsSync('next.config.js')) {
   nextConfigExists = true;
