@@ -24,9 +24,6 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  [plugins.inputs]
-    skipInstall = true
-    skipBuild = false
 
 # Headers for static files
 [[headers]]

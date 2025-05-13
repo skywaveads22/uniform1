@@ -6,8 +6,8 @@ import { Menu } from "lucide-react"
 import { ThemeToggle } from "./ThemeToggle"
 
 const services = [
-  { name: "Uniform Program Management", href: "/services/program-management" },
-  { name: "Custom Design & Branding", href: "/services/custom-design" },
+  { name: "Uniform Program Management", href: "/services/uniform-program-management" },
+  { name: "Custom Design & Branding", href: "/services/custom-design-branding" },
   { name: "Bulk Ordering", href: "/services/bulk-ordering" },
   { name: "Measurement Services", href: "/services/measurement" },
   { name: "Corporate Uniform Policies", href: "/services/uniform-policies" },
