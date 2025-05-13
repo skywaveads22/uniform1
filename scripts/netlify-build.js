@@ -17,9 +17,9 @@ console.log(`Node version: ${process.version}`);
 console.log(`Build environment: ${process.env.CONTEXT || 'development'}`);
 
 // Ensure critical dependencies are installed
-console.log('Verifying CSS dependencies are installed...');
+console.log('Verifying dependencies are installed...');
 try {
-  // Check for autoprefixer and install if needed
+  // Check for CSS dependencies
   try {
     require.resolve('autoprefixer');
     console.log('autoprefixer is already installed');
@@ -28,7 +28,6 @@ try {
     execSync('npm install --no-save autoprefixer', { stdio: 'inherit' });
   }
   
-  // Check for postcss and install if needed
   try {
     require.resolve('postcss');
     console.log('postcss is already installed');
@@ -37,7 +36,6 @@ try {
     execSync('npm install --no-save postcss', { stdio: 'inherit' });
   }
   
-  // Check for tailwindcss and install if needed
   try {
     require.resolve('tailwindcss');
     console.log('tailwindcss is already installed');
@@ -45,8 +43,22 @@ try {
     console.log('Installing tailwindcss...');
     execSync('npm install --no-save tailwindcss', { stdio: 'inherit' });
   }
+  
+  // Install ESLint plugins
+  console.log('Installing ESLint dependencies...');
+  execSync('npm install --no-save eslint-plugin-jsx-a11y', { stdio: 'inherit' });
+
+  // Install next-on-netlify which might be needed
+  try {
+    require.resolve('next-on-netlify');
+    console.log('next-on-netlify is already installed');
+  } catch (e) {
+    console.log('Installing next-on-netlify...');
+    execSync('npm install --no-save next-on-netlify', { stdio: 'inherit' });
+  }
+  
 } catch (error) {
-  console.warn('Warning: Error verifying CSS dependencies:', error);
+  console.warn('Warning: Error verifying dependencies:', error);
 }
 
 // Check if we need to create a special environment file for the build

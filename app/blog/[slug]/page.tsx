@@ -3,6 +3,69 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, Share2 } from 'lucide-react'
+import fs from 'fs'
+import path from 'path'
+
+// Generate static paths for all blog posts 
+export async function generateStaticParams() {
+  // A list of all available blog slugs
+  const blogSlugs = [
+    "designing-professional-security-guard-uniforms-for-ksa-context",
+    "key-features-of-effective-security-uniforms-visibility-durability-functionality",
+    "choosing-the-right-materials-for-security-uniforms-in-the-saudi-climate",
+    "airport-security-uniforms-balancing-authority-functionality-and-passenger-assurance",
+    "cabin-crew-attire-professionalism-and-functionality-at-30000-feet-saudi-perspective",
+    "case-study-improving-staff-morale-with-new-uniforms-in-a-saudi-clinic",
+    "case-study-upgrading-security-uniforms-for-a-large-saudi-facility",
+    "chef-whites-and-kitchen-staff-uniforms-hygiene-and-safety-standards-in-ksa",
+    "climate-control-breathable-and-cooling-fabrics-for-hot-saudi-workplaces",
+    "color-trends-in-modern-hospitality-uniform-design-in-the-middle-east",
+    "comfort-considerations-for-long-security-shifts",
+    "communication-equipment-integration-features-for-security-uniforms",
+    "concierge-and-bell-staff-uniforms-reflecting-service-excellence",
+    "custom-patches-and-embroidery-for-security-company-branding",
+    "designing-elegant-and-functional-hotel-uniforms-for-the-luxury-saudi-market",
+    "distinguishing-ranks-and-roles-through-security-uniform-insignia-in-ksa",
+    "epaulettes-and-insignia-understanding-ranks-in-saudi-aviation-attire",
+    "fabric-choices-for-hospitality-wear-stain-resistance-and-easy-maintenance",
+    "flame-resistant-fr-workwear-protecting-workers-in-oil-gas-and-manufacturing",
+    "formal-vs-patrol-duty-uniforms-for-security-staff",
+    "front-desk-attire-making-a-great-first-impression-in-ksa-hotels",
+    "headwear-options-caps-berets-and-climate-considerations",
+    "high-visibility-clothing-standards-and-their-importance-in-ksa",
+    "housekeeping-uniforms-ensuring-comfort-durability-and-professionalism",
+    "how-uniforms-impact-staff-morale-and-guest-satisfaction-scores",
+    "how-uniforms-support-branding-for-private-healthcare-providers-in-ksa",
+    "integrating-saudi-cultural-elements-into-hospitality-uniform-design",
+    "maintaining-sterility-best-practices-for-laundering-healthcare-uniforms",
+    "maintaining-uniform-quality-laundry-and-upkeep-tips",
+    "medical-uniform-design-combining-functionality-and-comfort-for-healthcare-professionals",
+    "restaurant-and-f-b-staff-uniforms-style-meets-practicality-in-saudi-dining",
+    "safety-features-in-paramedic-and-emergency-response-uniforms-in-ksa",
+    "saudi-ministry-of-health-moh-uniform-guidelines-for-healthcare-workers",
+    "seasonal-uniform-considerations-for-schools-across-saudi-arabia",
+    "sustainable-and-eco-friendly-school-uniform-options",
+    "sustainable-uniform-programs-for-eco-conscious-hotels-in-saudi-arabia",
+    "the-evolution-of-nursing-uniforms-in-saudi-arabia",
+    "the-evolution-of-school-uniform-styles-in-saudi-arabia",
+    "the-future-of-hospitality-uniforms-tech-integration-and-personalization",
+    "the-importance-of-color-coding-uniforms-in-large-saudi-hospitals",
+    "the-link-between-professional-uniforms-and-citizen-confidence",
+    "the-psychological-impact-of-security-uniforms-on-deterrence-and-public-perception",
+    "the-psychology-of-color-in-healthcare-environments-and-uniforms",
+    "the-role-of-modesty-in-saudi-school-uniform-design",
+    "the-role-of-uniforms-in-building-esprit-de-corps-among-government-teams",
+    "the-role-of-uniforms-in-creating-a-cohesive-brand-experience-across-hotel-chains-in-ksa",
+    "uniform-considerations-for-government-representatives-attending-international-events",
+    "uniform-considerations-for-theme-parks-and-entertainment-venues-in-ksa",
+    "uniform-solutions-for-theme-parks-and-entertainment-venues"
+  ];
+  
+  // Return an array of objects with the slug parameter
+  return blogSlugs.map(slug => ({
+    slug
+  }));
+}
 
 // This is a dynamic route for blog posts
 export default function BlogPost({ params }: { params: { slug: string } }) {
