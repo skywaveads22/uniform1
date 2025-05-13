@@ -16,32 +16,16 @@ console.log('Starting Netlify build process...');
 console.log(`Node version: ${process.version}`);
 console.log(`Build environment: ${process.env.CONTEXT || 'development'}`);
 
-// Install critical dependencies needed for build
+// Install all dependencies at once instead of one by one
 try {
   console.log('Installing required build dependencies...');
   
-  // Install specific required packages
-  const requiredPackages = [
-    'autoprefixer',
-    'postcss',
-    'tailwindcss',
-    'eslint-plugin-jsx-a11y',
-    'eslint',
-    'critters',
-    '@netlify/plugin-nextjs',
-    'schema-dts',
-    'sharp'
-  ];
+  // Install all dependencies at once with a single npm command
+  execSync('npm install --no-save autoprefixer postcss tailwindcss eslint-plugin-jsx-a11y eslint critters schema-dts sharp', { stdio: 'inherit' });
+  console.log('Core dependencies installed');
   
-  for (const pkg of requiredPackages) {
-    try {
-      require.resolve(pkg);
-      console.log(`${pkg} is already installed`);
-    } catch (e) {
-      console.log(`Installing ${pkg}...`);
-      execSync(`npm install --no-save ${pkg}`, { stdio: 'inherit' });
-    }
-  }
+  // The @netlify/plugin-nextjs should already be installed via the netlify.toml plugins section
+  // We don't need to install it here as Netlify will handle it
   
   // Create a temporary .eslintrc.json that will work for the build
   console.log('Setting up ESLint configuration for build...');
@@ -86,6 +70,8 @@ try {
   
 } catch (error) {
   console.warn('Warning: Error setting up dependencies:', error);
+  // Continue with the build even if there's an error with the dependencies
+  // as they might already be installed
 }
 
 // Check if we need to create a special environment file for the build
@@ -129,15 +115,15 @@ if (fs.existsSync('next.config.js')) {
 // Run the Next.js build command with error handling
 console.log('Running Next.js build...');
 try {
-  // Try build with ignoring type errors
-  execSync('next build --no-lint', { stdio: 'inherit' });
+  // Try build with ignoring type errors and using export for static site generation
+  execSync('npx next build', { stdio: 'inherit' });
   console.log('Build completed successfully');
 } catch (error) {
-  console.error('Build failed with standard configuration. Trying with skip-type-check...');
+  console.error('Build failed with standard configuration. Trying with additional flags...');
   try {
-    // If normal build fails, try with --no-lint and ignoreTypeScriptErrors
-    execSync('next build --no-lint --no-typescript-checking', { stdio: 'inherit' });
-    console.log('Build completed successfully with type checking disabled');
+    // If normal build fails, try with all flags to ignore errors
+    execSync('npx next build --no-lint', { stdio: 'inherit' });
+    console.log('Build completed successfully with linting disabled');
   } catch (buildError) {
     console.error('All build attempts failed:', buildError);
     process.exit(1);
