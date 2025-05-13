@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
+import { getImagePath } from '@/lib/image-helper'
 
 interface HeroProps {
   title: string
@@ -20,12 +21,15 @@ export function Hero({
   children,
   className,
 }: HeroProps) {
+  // Use the helper function to get the correct image path
+  const imagePath = getImagePath(image)
+  
   return (
     <section className={cn("relative overflow-hidden", className)}>
       {/* Hero Image - Using next/image with priority for LCP optimization */}
       <div className="absolute inset-0">
         <Image
-          src={image}
+          src={imagePath}
           alt={imageAlt}
           fill
           priority

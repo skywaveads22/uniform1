@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC, useState } from 'react'
+import { getImagePath } from '@/lib/image-helper'
 
 interface BlogPostCardProps {
   title: string
@@ -17,20 +18,18 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
 }) => {
   const [imageError, setImageError] = useState(false)
   
-  // Determine image path and handle formatting
-  const formattedImagePath = imagePath && imagePath.startsWith('public/') 
-    ? imagePath.replace('public/', '/') 
-    : imagePath
+  // Determine image path and handle formatting with the helper function
+  const formattedImagePath = getImagePath(imagePath)
   
   // Check if path is tiny 1 byte file (fabric-selection.jpg)
   const isTinyImage = formattedImagePath.includes('fabric-selection.jpg')
   
   // Use a placeholder if no image path, image has error, or it's the tiny image file
-  const shouldUsePlaceholder = imageError || !formattedImagePath || isTinyImage
+  const shouldUsePlaceholder = imageError || !imagePath || isTinyImage
   
   // Get category from image path
   const categories = ['aviation', 'education', 'government', 'healthcare', 'hospitality', 'industrial', 'security']
-  const category = categories.find(cat => formattedImagePath.toLowerCase().includes(`/images/${cat}/`))
+  const category = categories.find(cat => imagePath.toLowerCase().includes(`/images/${cat}/`))
   
   // Create placeholder with title first letter if no image
   const firstLetter = title.charAt(0)
@@ -48,6 +47,9 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
       default: return 'bg-primary'
     }
   }
+
+  // Get error placeholder image path
+  const errorPlaceholderPath = getImagePath('/images/error-404.svg')
 
   return (
     <Link href={internalLink} className="group">

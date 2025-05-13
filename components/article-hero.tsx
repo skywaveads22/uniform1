@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { getImagePath } from '@/lib/image-helper'
 
 interface ArticleHeroProps {
   title: string
@@ -6,10 +7,9 @@ interface ArticleHeroProps {
 }
 
 export default function ArticleHero({ title, imagePath }: ArticleHeroProps) {
-  // Format image path if it exists and starts with 'public/'
-  const formattedImagePath = imagePath && imagePath.startsWith('public/') 
-    ? imagePath.replace('public/', '/') 
-    : imagePath || '/images/error-404.svg'
+  // Format image path using the helper function
+  const formattedImagePath = getImagePath(imagePath || '/images/error-404.svg')
+  const errorImagePath = getImagePath('/images/error-404.svg')
   
   return (
     <div className="relative mb-8 h-64 w-full overflow-hidden rounded-xl md:h-80 lg:h-96">
@@ -22,7 +22,7 @@ export default function ArticleHero({ title, imagePath }: ArticleHeroProps) {
         onError={(e) => {
           // Fallback to error image if the specified image fails to load
           const target = e.target as HTMLImageElement
-          target.src = '/images/error-404.svg'
+          target.src = errorImagePath
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />

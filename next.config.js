@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/uniform1',
+  assetPrefix: '/uniform1/',
   images: {
+    unoptimized: true,
     domains: ['seeklogo.com'],
-    unoptimized: false,
     remotePatterns: [
       {
         protocol: 'https',
@@ -113,10 +116,6 @@ const nextConfig = {
     });
     
     return config;
-  },
-  i18n: {
-    locales: ['en', 'ar'],
-    defaultLocale: 'en',
   },
   experimental: {
     scrollRestoration: true,

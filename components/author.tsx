@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { getImagePath } from '@/lib/image-helper'
 
 interface AuthorProps {
   name?: string
@@ -7,6 +8,10 @@ interface AuthorProps {
 }
 
 export default function Author({ name = 'Uniform SA Team', image = '/images/author/placeholder.png', date }: AuthorProps) {
+  // Format image paths
+  const imagePath = getImagePath(image)
+  const placeholderPath = getImagePath('/images/author/placeholder.png')
+  
   // Format date if provided
   const formattedDate = date ? new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -22,13 +27,13 @@ export default function Author({ name = 'Uniform SA Team', image = '/images/auth
     <div className="mb-8 flex items-center">
       <div className="relative h-10 w-10 overflow-hidden rounded-full">
         <Image
-          src={image}
+          src={imagePath}
           alt={name}
           fill
           className="object-cover"
           onError={(e) => {
             const target = e.target as HTMLImageElement
-            target.src = '/images/author/placeholder.png'
+            target.src = placeholderPath
           }}
         />
       </div>
