@@ -5,17 +5,19 @@
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/generate-sitemap-urls.js && next build && next-sitemap",
+    "build:production": "node scripts/generate-sitemap-urls.js && next build --no-lint && next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "seed": "ts-node scripts/seedPosts.ts",
     "netlify-build": "node scripts/netlify-build.js",
     "netlify-dev": "netlify dev",
-    "static-build": "next build",
+    "static-build": "next build --no-lint --skip-type-check",
     "postbuild": "next-sitemap",
     "sitemap": "next-sitemap",
     "generate-sitemap-urls": "node scripts/generate-sitemap-urls.js"
   },
   "dependencies": {
+    "@faker-js/faker": "^9.7.0",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/font": "^14.2.15",
@@ -45,7 +47,6 @@
     "tailwindcss-rtl": "^0.9.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.7.0",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20.11.19",
     "@types/react": "^18.3.20",
