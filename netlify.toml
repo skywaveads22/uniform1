@@ -11,6 +11,11 @@
   NPM_FLAGS = "--production=false"
   SKIP_INSTALL_DEPS = "true"
   NETLIFY_USE_YARN = "false"
+  NEXT_PUBLIC_SITE_URL = "https://willowy-mochi-145885.netlify.app"
+  NEXT_PUBLIC_BASE_PATH = ""
+  NETLIFY = "true"
+  NEXT_PUBLIC_NETLIFY_CONTEXT = "production"
+  NEXT_PUBLIC_DEFAULT_LOCALE = "ar"
 
 # Explicitly set production branch to 'main'
 [context.production]
@@ -21,6 +26,11 @@
 [context.production.environment]
   NODE_ENV = "production"
   NPM_FLAGS = "--production=false"
+  NEXT_PUBLIC_SITE_URL = "https://willowy-mochi-145885.netlify.app"
+  NEXT_PUBLIC_BASE_PATH = ""
+  NETLIFY = "true"
+  NEXT_PUBLIC_NETLIFY_CONTEXT = "production"
+  NEXT_PUBLIC_DEFAULT_LOCALE = "ar"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
