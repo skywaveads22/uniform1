@@ -7,6 +7,11 @@ import { ChevronLeft, ChevronRight, ArrowRight, Star, Award, Users, Shield } fro
 import { PartnerLogo } from './components/PartnerLogo'
 import { motion, AnimatePresence } from 'framer-motion'
 
+// Preload slider images to improve LCP
+const PRELOADED_IMAGES = [
+  "/images/aviation/Aviation_uniforms_Saudi_Arabia_KSA.jpg",
+]
+
 // Slider data with images from different categories
 const sliderData = [
   {
@@ -50,6 +55,31 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [autoplay, setAutoplay] = useState(true);
   const sliderRef = useRef<HTMLDivElement>(null);
+  
+  // Fix for preventing Cumulative Layout Shift
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  
+  // Preload essential images
+  useEffect(() => {
+    // Preload first slider image
+    const preloadedImages = PRELOADED_IMAGES.map(src => {
+      const img = new window.Image();
+      img.src = src;
+      return img;
+    });
+    
+    // Mark images as loaded
+    Promise.all(
+      preloadedImages.map(img => {
+        return new Promise<void>((resolve) => {
+          img.onload = () => resolve();
+          img.onerror = () => resolve(); // Continue even if loading fails
+        });
+      })
+    ).then(() => {
+      setImagesLoaded(true);
+    });
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === sliderData.length - 1 ? 0 : prev + 1));
@@ -80,57 +110,83 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       {/* Hero Slider Section */}
-      <section className="relative h-[90vh] w-full overflow-hidden" ref={sliderRef}>
-        {sliderData.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-            }`}
-          >
-            {/* Background Image with Overlay */}
-            <div className="absolute inset-0">
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                fill
-                className="object-cover"
-                priority={index === 0}
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
-            </div>
-            
-            {/* Slide Content */}
-            <div className="absolute inset-0 z-20 flex items-center">
-              <div className="container mx-auto px-6">
-                <div className="max-w-3xl">
-                  <span className="mb-3 inline-block rounded-full bg-primary/20 px-4 py-1 text-sm font-semibold uppercase tracking-wider text-primary backdrop-blur-sm">{slide.subtitle}</span>
-                  <h1 className="mb-4 text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">
-                    {slide.title}
-                  </h1>
-                  <p className="mb-8 text-xl leading-relaxed text-white/90 md:text-2xl">
-                    {slide.description}
-                  </p>
-                  <div className="flex flex-wrap gap-4">
-                    <Link
-                      href={slide.link}
-                      className="group flex items-center rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-primary/90"
-                    >
-                      Explore Solutions
-                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                    <Link
-                      href="/contact/quote"
-                      className="rounded-lg border-2 border-white bg-transparent px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white/10"
-                    >
-                      Request Quote
-                    </Link>
+      <section 
+        className="relative h-[90vh] w-full overflow-hidden" 
+        ref={sliderRef}
+        style={{ 
+          // Set min-height to prevent CLS during image loading
+          minHeight: '600px' 
+        }}
+      >
+        {imagesLoaded ? (
+          sliderData.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
+            >
+              {/* Background Image with Overlay */}
+              <div className="absolute inset-0">
+                <Image
+                  src={slide.image}
+                  alt={slide.title}
+                  fill
+                  className="object-cover"
+                  priority={index === 0}
+                  sizes="100vw"
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+              </div>
+              
+              {/* Slide Content */}
+              <div className="absolute inset-0 z-20 flex items-center">
+                <div className="container mx-auto px-6">
+                  <div className="max-w-3xl">
+                    <span className="mb-3 inline-block rounded-full bg-primary/20 px-4 py-1 text-sm font-semibold uppercase tracking-wider text-primary backdrop-blur-sm">{slide.subtitle}</span>
+                    <h1 className="mb-4 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
+                      {slide.title}
+                    </h1>
+                    <p className="mb-8 text-xl leading-relaxed text-white/90 md:text-2xl">
+                      {slide.description}
+                    </p>
+                    <div className="flex flex-wrap gap-4">
+                      <Link
+                        href={slide.link}
+                        className="group flex items-center rounded-lg bg-primary px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-primary/90"
+                      >
+                        Explore Solutions
+                        <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                      <Link
+                        href="/contact/quote"
+                        className="rounded-lg border-2 border-white bg-transparent px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white/10"
+                      >
+                        Request Quote
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+          ))
+        ) : (
+          // Placeholder while images load to prevent CLS
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
+            <div className="container mx-auto px-6">
+              <div className="max-w-3xl">
+                <div className="h-6 w-32 animate-pulse rounded-full bg-gray-700 mb-3"></div>
+                <div className="h-16 w-full animate-pulse rounded-lg bg-gray-700 mb-4"></div>
+                <div className="h-12 w-3/4 animate-pulse rounded-lg bg-gray-700 mb-8"></div>
+                <div className="flex gap-4">
+                  <div className="h-14 w-48 animate-pulse rounded-lg bg-gray-700"></div>
+                  <div className="h-14 w-48 animate-pulse rounded-lg bg-gray-700"></div>
+                </div>
+              </div>
+            </div>
           </div>
-        ))}
+        )}
 
         {/* Navigation Arrows */}
         <div className="absolute bottom-8 right-8 z-30 flex items-center gap-2">
@@ -162,6 +218,7 @@ export default function Home() {
                   : 'bg-white/50 w-2.5 hover:bg-white/80'
               }`}
               aria-label={`Go to slide ${index + 1}`}
+              aria-current={index === currentSlide ? 'true' : 'false'}
             />
           ))}
         </div>

@@ -40,7 +40,7 @@ export default function BulkOrderingPage() {
           <div className="mb-16">
             <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <h2 className="mb-4 text-3xl font-bold">Efficient Uniform Procurement</h2>
+                <h1 className="mb-4 text-3xl font-bold">Efficient Uniform Procurement</h1>
                 <p className="mb-4 text-muted-foreground">
                   Equipping your entire team with uniforms shouldn't be complicated. 
                   UniformSA offers comprehensive bulk ordering services designed specifically 

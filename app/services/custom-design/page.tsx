@@ -40,7 +40,7 @@ export default function CustomDesignPage() {
           <div className="mb-16">
             <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <h2 className="mb-4 text-3xl font-bold">Expert Uniform Design Services</h2>
+                <h1 className="mb-4 text-3xl font-bold">Expert Uniform Design Services</h1>
                 <p className="mb-4 text-muted-foreground">
                   Our custom design service helps organizations across Saudi Arabia create 
                   distinctive uniforms that perfectly blend brand identity, functionality, 

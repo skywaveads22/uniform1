@@ -39,7 +39,7 @@ export default function UniformPoliciesPage() {
           <div className="mb-16">
             <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <h2 className="mb-4 text-3xl font-bold">Strategic Uniform Policy Development</h2>
+                <h1 className="mb-4 text-3xl font-bold">Strategic Uniform Policy Development</h1>
                 <p className="mb-4 text-muted-foreground">
                   A well-designed uniform policy does more than just standardize appearance—it reinforces 
                   your organization's values, professionalism, and brand identity while ensuring 

@@ -39,7 +39,7 @@ export default function MeasurementServicePage() {
           <div className="mb-16">
             <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <h2 className="mb-4 text-3xl font-bold">Perfect Fit Guarantee</h2>
+                <h1 className="mb-4 text-3xl font-bold">Perfect Fit Guarantee</h1>
                 <p className="mb-4 text-muted-foreground">
                   At UniformSA, we understand that properly fitting uniforms are essential for comfort, 
                   professionalism, and functionality. Our comprehensive measurement services ensure 

@@ -42,7 +42,7 @@ export default function ProgramManagementPage() {
           <div className="mb-16">
             <div className="grid gap-8 lg:grid-cols-2">
               <div>
-                <h2 className="mb-4 text-3xl font-bold">Streamline Your Uniform Operations</h2>
+                <h1 className="mb-4 text-3xl font-bold">Streamline Your Uniform Operations</h1>
                 <p className="mb-4 text-muted-foreground">
                   Managing a uniform program involves complex logistics, significant administrative 
                   effort, and ongoing maintenance. Our comprehensive management services allow 
