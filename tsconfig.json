@@ -23,9 +23,14 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ]
     },
-    "types": ["node", "@faker-js/faker"]
+    "types": [
+      "node",
+      "@faker-js/faker"
+    ]
   },
   "include": [
     "next-env.d.ts",
