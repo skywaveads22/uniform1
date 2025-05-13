@@ -1,11 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  // Conditionally apply basePath and assetPrefix only for non-Netlify environments
-  ...(process.env.NETLIFY ? {} : {
-    basePath: '/uniform1',
-    assetPrefix: '/uniform1/',
-  }),
+  basePath: process.env.NETLIFY ? '' : '/uniform1',
+  assetPrefix: process.env.NETLIFY ? '' : '/uniform1/',
   images: {
     unoptimized: true,
     domains: ['seeklogo.com'],
