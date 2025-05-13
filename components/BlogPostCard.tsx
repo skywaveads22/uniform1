@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC, useState } from 'react'
+import { FC, useState, useEffect } from 'react'
 import { getImagePath } from '@/lib/image-helper'
 
 interface BlogPostCardProps {
@@ -17,24 +17,31 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
   internalLink,
 }) => {
   const [imageError, setImageError] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(false)
   
-  // Determine image path and handle formatting with the helper function
+  // استخدام خطاف useEffect للتأكد من أن وظيفة getImagePath تعمل بالتزامن مع تحديثات متغيرات البيئة في Netlify
+  useEffect(() => {
+    // تحديث متغير imageLoaded عند تحميل الصفحة لضمان الحصول على القيمة الصحيحة من متغيرات البيئة
+    setImageLoaded(true)
+  }, [])
+  
+  // تحديد مسار الصورة ومعالجة التنسيق باستخدام الدالة المساعدة
   const formattedImagePath = getImagePath(imagePath)
   
-  // Check if path is tiny 1 byte file (fabric-selection.jpg)
+  // التحقق مما إذا كان المسار هو ملف صغير الحجم (fabric-selection.jpg)
   const isTinyImage = formattedImagePath.includes('fabric-selection.jpg')
   
-  // Use a placeholder if no image path, image has error, or it's the tiny image file
+  // استخدام صورة placeholder إذا لم يكن هناك مسار للصورة، أو إذا كان هناك خطأ في الصورة، أو إذا كان الملف صغير جدًا
   const shouldUsePlaceholder = imageError || !imagePath || isTinyImage
   
-  // Get category from image path
+  // الحصول على الفئة من مسار الصورة
   const categories = ['aviation', 'education', 'government', 'healthcare', 'hospitality', 'industrial', 'security']
-  const category = categories.find(cat => imagePath.toLowerCase().includes(`/images/${cat}/`))
+  const category = categories.find(cat => imagePath?.toLowerCase().includes(`/images/${cat}/`))
   
-  // Create placeholder with title first letter if no image
-  const firstLetter = title.charAt(0)
+  // إنشاء placeholder باستخدام الحرف الأول من العنوان إذا لم تكن هناك صورة
+  const firstLetter = title.charAt(0).toUpperCase()
   
-  // Pick a color based on the category or fallback to a default color
+  // اختيار لون بناءً على الفئة أو الرجوع إلى لون افتراضي
   const getCategoryColor = () => {
     switch(category) {
       case 'aviation': return 'bg-blue-600'
@@ -68,6 +75,7 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               priority={false}
               onError={() => setImageError(true)}
+              onLoad={() => setImageLoaded(true)}
             />
           )}
         </div>

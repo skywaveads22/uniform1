@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Clock, Calendar, Tag, Share2 } from 'lucide-react'
 import fs from 'fs'
 import path from 'path'
+import { getImagePath } from '@/lib/image-helper'
 
 // Generate static paths for all blog posts 
 export async function generateStaticParams() {
@@ -311,6 +312,32 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       .join(' ');
   };
 
+  // تحديد صورة المقال بناء على slug
+  // استخدام صورة الفئة المناسبة إذا كان اسم المقال يحتوي على كلمات مفتاحية محددة
+  const getArticleImagePath = () => {
+    const categoryKeywords = {
+      'aviation': ['aviation', 'pilot', 'airline', 'cabin', 'crew', 'airport'],
+      'healthcare': ['healthcare', 'medical', 'nurse', 'hospital', 'doctor', 'paramedic', 'clinic'],
+      'hospitality': ['hospitality', 'hotel', 'restaurant', 'chef', 'concierge', 'housekeeping'],
+      'education': ['education', 'school', 'teacher', 'student', 'uniform'],
+      'government': ['government', 'public', 'ministry', 'official'],
+      'industrial': ['industrial', 'workwear', 'factory', 'construction', 'safety'],
+      'security': ['security', 'guard', 'tactical', 'protection']
+    };
+    
+    // تحديد الفئة بناء على وجود الكلمات المفتاحية في slug
+    for (const [category, keywords] of Object.entries(categoryKeywords)) {
+      if (keywords.some(keyword => slug.includes(keyword))) {
+        return `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms_Saudi_Arabia_KSA.jpg`;
+      }
+    }
+    
+    // استخدم صورة افتراضية إذا لم يتم العثور على فئة مناسبة
+    return '/images/default-article-image.jpg';
+  };
+
+  const articleImagePath = getImagePath(getArticleImagePath());
+
   return (
     <div className="relative bg-white py-12 dark:bg-gray-900">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -331,10 +358,11 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
             <Image
-              src="/images/author/default-author.jpg"
+              src={articleImagePath}
               alt={getArticleTitle()}
               fill
               className="object-cover"
+              priority
             />
           </div>
 

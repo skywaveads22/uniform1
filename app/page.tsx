@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { ChevronLeft, ChevronRight, ArrowRight, Star, Award, Users, Shield } from 'lucide-react'
 import { PartnerLogo } from './components/PartnerLogo'
 import { motion, AnimatePresence } from 'framer-motion'
+import { getImagePath } from '@/lib/image-helper'
 
 // Preload slider images to improve LCP
 const PRELOADED_IMAGES = [
@@ -63,8 +64,9 @@ export default function Home() {
   useEffect(() => {
     // Preload first slider image
     const preloadedImages = PRELOADED_IMAGES.map(src => {
+      const formattedSrc = getImagePath(src);
       const img = new window.Image();
-      img.src = src;
+      img.src = formattedSrc;
       return img;
     });
     
@@ -129,7 +131,7 @@ export default function Home() {
               {/* Background Image with Overlay */}
               <div className="absolute inset-0">
                 <Image
-                  src={slide.image}
+                  src={getImagePath(slide.image)}
                   alt={slide.title}
                   fill
                   className="object-cover"
@@ -318,7 +320,7 @@ export default function Home() {
               >
                 <div className="relative h-64 overflow-hidden">
                   <Image
-                    src={category.image}
+                    src={getImagePath(category.image)}
                     alt={category.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"

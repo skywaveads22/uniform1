@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Shield, Clock, Star, Eye, BookOpen, FileBadge } from 'lucide-react'
 import { notFound } from 'next/navigation'
+import { getImagePath } from '@/lib/image-helper'
 
 interface Post {
   id: string
@@ -119,6 +120,7 @@ export default function CategoryPage({ params }: PageProps) {
   const posts = getPostsByCategory(params.category)
   const categoryName = params.category.charAt(0).toUpperCase() + params.category.slice(1)
   const categoryImage = CATEGORY_METADATA[params.category as keyof typeof CATEGORY_METADATA].image
+  const formattedCategoryImage = getImagePath(categoryImage)
 
   return (
     <main className="min-h-screen bg-white">
@@ -142,7 +144,7 @@ export default function CategoryPage({ params }: PageProps) {
             </div>
             <div className="relative h-[300px] lg:h-[400px]">
               <Image
-                src={categoryImage}
+                src={formattedCategoryImage}
                 alt={`Professional ${categoryName} in Saudi Arabia`}
                 fill
                 className="rounded-lg object-cover"
@@ -170,7 +172,7 @@ export default function CategoryPage({ params }: PageProps) {
                 <Link href={`/blog/${post.slug}`}>
                   <div className="relative h-48 w-full overflow-hidden">
                 <Image
-                  src={post.image}
+                  src={getImagePath(post.image)}
                   alt={post.title}
                   fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -221,7 +223,7 @@ export default function CategoryPage({ params }: PageProps) {
               <div key={index} className="group overflow-hidden rounded-xl border bg-white shadow-lg transition-all hover:shadow-xl">
                 <div className="relative h-48">
                   <Image
-                    src={category.image}
+                    src={getImagePath(category.image)}
                     alt={category.title + ` - ${categoryName} Uniforms Saudi Arabia`}
                     fill
                     className="object-cover transition-transform group-hover:scale-105"
@@ -311,7 +313,7 @@ export default function CategoryPage({ params }: PageProps) {
                   <Link href={`/blog/${post.slug}`} className="flex h-full flex-col md:flex-row">
                     <div className="relative h-48 w-full md:h-auto md:w-1/3">
                       <Image
-                        src={post.image}
+                        src={getImagePath(post.image)}
                         alt={post.title}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
