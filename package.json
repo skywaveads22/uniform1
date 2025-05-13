@@ -9,6 +9,8 @@
     "lint": "next lint",
     "seed": "ts-node scripts/seedPosts.ts",
     "netlify-build": "node scripts/netlify-build.js",
+    "netlify-dev": "netlify dev",
+    "static-build": "next build",
     "postbuild": "next-sitemap",
     "sitemap": "next-sitemap",
     "generate-sitemap-urls": "node scripts/generate-sitemap-urls.js"
