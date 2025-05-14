@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC, useState, useEffect } from 'react'
-import { getImagePath } from '@/lib/image-helper'
+import { getImagePath, getFallbackImage } from '@/lib/image-helper'
 
 interface BlogPostCardProps {
   title: string
@@ -25,18 +25,15 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
     setImageLoaded(true)
   }, [])
   
-  // تحديد مسار الصورة ومعالجة التنسيق باستخدام الدالة المساعدة
-  const formattedImagePath = getImagePath(imagePath)
-  
-  // التحقق مما إذا كان المسار هو ملف صغير الحجم (fabric-selection.jpg)
-  const isTinyImage = formattedImagePath.includes('fabric-selection.jpg')
-  
-  // استخدام صورة placeholder إذا لم يكن هناك مسار للصورة، أو إذا كان هناك خطأ في الصورة، أو إذا كان الملف صغير جدًا
-  const shouldUsePlaceholder = imageError || !imagePath || isTinyImage
-  
   // الحصول على الفئة من مسار الصورة
   const categories = ['aviation', 'education', 'government', 'healthcare', 'hospitality', 'industrial', 'security']
-  const category = categories.find(cat => imagePath?.toLowerCase().includes(`/images/${cat}/`))
+  const category = categories.find(cat => imagePath?.toLowerCase().includes(`/images/${cat}/`)) || 'default'
+  
+  // تحديد مسار الصورة ومعالجة التنسيق باستخدام الدالة المساعدة
+  const formattedImagePath = imagePath ? getImagePath(imagePath) : getFallbackImage(category)
+  
+  // استخدام صورة placeholder فقط إذا كان هناك خطأ في الصورة أو إذا لم يتم تحديد مسار للصورة
+  const shouldUsePlaceholder = imageError || !imagePath
   
   // إنشاء placeholder باستخدام الحرف الأول من العنوان إذا لم تكن هناك صورة
   const firstLetter = title.charAt(0).toUpperCase()
@@ -55,9 +52,6 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
     }
   }
 
-  // Get error placeholder image path
-  const errorPlaceholderPath = getImagePath('/images/error-404.svg')
-
   return (
     <Link href={internalLink} className="group">
       <div className="overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-lg">
@@ -74,7 +68,10 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               priority={false}
-              onError={() => setImageError(true)}
+              onError={() => {
+                setImageError(true)
+                console.error(`Failed to load image: ${formattedImagePath}`)
+              }}
               onLoad={() => setImageLoaded(true)}
             />
           )}
