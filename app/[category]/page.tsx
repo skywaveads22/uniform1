@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Shield, Clock, Star, Eye, BookOpen, FileBadge } from 'lucide-react'
 import { notFound } from 'next/navigation'
-import { getImagePath } from '@/lib/image-helper'
+import { getImagePath, getFallbackImage } from '@/lib/image-helper'
 
 interface Post {
   id: string
@@ -175,8 +175,12 @@ export default function CategoryPage({ params }: PageProps) {
                   src={getImagePath(post.image)}
                   alt={post.title}
                   fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = getFallbackImage(params.category);
+                  }}
+                />
                   </div>
                   <div className="p-6">
                     <h3 className="mb-2 text-xl font-semibold text-gray-900 transition-colors group-hover:text-primary">
@@ -317,6 +321,10 @@ export default function CategoryPage({ params }: PageProps) {
                         alt={post.title}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = getFallbackImage(params.category);
+                        }}
                       />
                     </div>
                     <div className="flex flex-1 flex-col justify-between p-6">
