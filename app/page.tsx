@@ -6,49 +6,65 @@ import Link from 'next/link'
 import { ChevronLeft, ChevronRight, ArrowRight, Star, Award, Users, Shield } from 'lucide-react'
 import { PartnerLogo } from './components/PartnerLogo'
 import { motion, AnimatePresence } from 'framer-motion'
-import { getImagePath } from '@/lib/image-helper'
+import { getImagePath, logImageError, getFallbackImage } from '@/lib/image-helper'
+import { Button } from "@/components/ui/button";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { FaShareAlt } from "react-icons/fa";
+import { Metadata } from "next";
+import SliderImage from './components/SliderImage';
 
-// Preload slider images to improve LCP
+// Preload all slider images to improve LCP
 const PRELOADED_IMAGES = [
-  "/images/aviation/Aviation_uniforms_Saudi_Arabia_KSA.jpg",
-]
+  "/images/aviation/aviation_uniforms.jpg",
+  "/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg", 
+  "/images/hospitality/Hospitality_uniforms.jpeg",
+  "/images/education/School_uniforms.jpg",
+  "/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg"
+];
 
 // Slider data with images from different categories
 const sliderData = [
   {
-    image: "/images/aviation/Aviation_uniforms_Saudi_Arabia_KSA.jpg",
+    image: "/images/aviation/aviation_uniforms.jpg",
     title: "Elevating Aviation Standards",
     subtitle: "Premium Aviation Uniforms",
     description: "Distinctive uniforms crafted for performance in Saudi Arabia's aviation sector",
-    link: "/services/aviation"
+    link: "/services",
+    category: "aviation"
   },
   {
     image: "/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg",
     title: "Healthcare Excellence",
     subtitle: "Medical-Grade Uniforms",
     description: "Professional attire designed for comfort, hygiene, and functionality in healthcare settings",
-    link: "/services/healthcare"
+    link: "/services/healthcare",
+    category: "healthcare"
   },
   {
-    image: "/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg",
+    image: "/images/hospitality/Hospitality_uniforms.jpeg",
     title: "Hospitality Distinction",
     subtitle: "Elegant Service Attire",
     description: "Refined uniforms that enhance guest experiences in Saudi Arabia's hospitality industry",
-    link: "/services/hospitality"
+    link: "/services/hospitality",
+    category: "hospitality"
   },
   {
-    image: "/images/education/School_uniforms_Saudi_Arabia_KSA.jpg",
+    image: "/images/education/School_uniforms.jpg",
     title: "Educational Identity",
     subtitle: "Distinguished School Uniforms",
     description: "Quality attire that builds institutional pride and unity across educational institutions",
-    link: "/services/education"
+    link: "/services/education",
+    category: "education"
   },
   {
     image: "/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg",
     title: "Security & Authority",
     subtitle: "Professional Security Attire",
     description: "Commanding uniforms engineered for durability, functionality, and professional presence",
-    link: "/services/security"
+    link: "/services/security",
+    category: "security"
   }
 ];
 
@@ -59,28 +75,30 @@ export default function Home() {
   
   // Fix for preventing Cumulative Layout Shift
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
   
   // Preload essential images
   useEffect(() => {
-    // Preload first slider image
-    const preloadedImages = PRELOADED_IMAGES.map(src => {
-      const formattedSrc = getImagePath(src);
-      const img = new window.Image();
-      img.src = formattedSrc;
-      return img;
-    });
+    // Show slider immediately to prevent layout shift
+    setImagesLoaded(true);
     
-    // Mark images as loaded
-    Promise.all(
-      preloadedImages.map(img => {
-        return new Promise<void>((resolve) => {
-          img.onload = () => resolve();
-          img.onerror = () => resolve(); // Continue even if loading fails
-        });
-      })
-    ).then(() => {
-      setImagesLoaded(true);
-    });
+    const preloadImages = () => {
+      PRELOADED_IMAGES.forEach(src => {
+        const img = new window.Image();
+        img.src = src;
+        img.onload = () => {
+          console.log(`Image loaded successfully: ${src}`);
+        };
+        img.onerror = () => {
+          console.error(`Failed to load image: ${src}`);
+          // Mark this image as having an error
+          setImageErrors(prev => ({...prev, [src]: true}));
+        };
+      });
+    };
+    
+    // Load images after displaying slider immediately
+    preloadImages();
   }, []);
 
   const nextSlide = () => {
@@ -111,6 +129,9 @@ export default function Home() {
 
   return (
     <main className="overflow-hidden">
+      {/* Main Heading - Hidden visually but present for SEO and accessibility */}
+      <h1 className="sr-only">يونيفورم بلوج - حلول الملابس الموحدة المتميزة في المملكة العربية السعودية</h1>
+      
       {/* Hero Slider Section */}
       <section 
         className="relative h-[90vh] w-full overflow-hidden" 
@@ -130,14 +151,11 @@ export default function Home() {
             >
               {/* Background Image with Overlay */}
               <div className="absolute inset-0">
-                <Image
-                  src={getImagePath(slide.image)}
+                <SliderImage
+                  src={slide.image}
                   alt={slide.title}
-                  fill
-                  className="object-cover"
-                  priority={index === 0}
-                  sizes="100vw"
-                  fetchPriority={index === 0 ? "high" : "auto"}
+                  fallbackSrc={getFallbackImage(slide.category)}
+                  priority={index === currentSlide}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
               </div>
@@ -209,21 +227,7 @@ export default function Home() {
         </div>
 
         {/* Navigation Dots */}
-        <div className="absolute bottom-8 left-8 z-30 flex items-center space-x-2">
-          {sliderData.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`h-2.5 rounded-full transition-all ${
-                index === currentSlide
-                  ? 'bg-primary w-8'
-                  : 'bg-white/50 w-2.5 hover:bg-white/80'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-              aria-current={index === currentSlide ? 'true' : 'false'}
-            />
-          ))}
-        </div>
+        {/* تمت إزالة نقاط التنقل بناءًا على الطلب */}
         
         {/* Statistics Bar */}
         <div className="absolute bottom-0 left-0 right-0 z-20 bg-white/10 backdrop-blur-md">
@@ -279,7 +283,7 @@ export default function Home() {
             {[
               {
                 title: "Aviation",
-                image: "/images/aviation/Aviation_uniforms_Saudi_Arabia_KSA.jpg",
+                image: "/images/aviation/aviation_uniforms.jpg",
                 description: "Premium uniforms for airlines and airport staff that combine elegance with functionality.",
                 features: ["Custom Airline Branding", "Cabin Crew Attire", "Ground Staff Uniforms"]
               },
@@ -291,19 +295,19 @@ export default function Home() {
               },
               {
                 title: "Hospitality",
-                image: "/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg",
+                image: "/images/hospitality/Hospitality_uniforms.jpeg",
                 description: "Elegant and practical uniforms that enhance your hospitality brand experience.",
                 features: ["Hotel Staff Attire", "Restaurant Uniforms", "Event Staff Clothing"]
               },
               {
                 title: "Education",
-                image: "/images/education/School_uniforms_Saudi_Arabia_KSA.jpg",
+                image: "/images/education/School_uniforms.jpg",
                 description: "Quality school uniforms that promote unity and pride across educational institutions.",
                 features: ["School Uniforms", "Sports Kits", "Faculty Attire"]
               },
               {
                 title: "Government",
-                image: "/images/government/Government_uniforms_Saudi_Arabia_KSA.jpg",
+                image: "/images/government/Government_uniforms.jpg",
                 description: "Official uniforms designed to represent government institutions with dignity.",
                 features: ["Official Attire", "Ceremonial Uniforms", "Department-Specific Designs"]
               },
@@ -324,6 +328,12 @@ export default function Home() {
                     alt={category.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    onError={(e) => {
+                      // Set fallback image on error
+                      const target = e.target as HTMLImageElement;
+                      target.onerror = null; // Prevent infinite error loop
+                      target.src = `/images/placeholder-image.jpg`;
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
                   <div className="absolute inset-0 flex items-end p-6 opacity-0 transition-opacity group-hover:opacity-100">
@@ -369,21 +379,33 @@ export default function Home() {
             <div className="relative order-2 md:order-1">
               <div className="relative z-10 overflow-hidden rounded-2xl shadow-xl">
                 <Image
-                  src="/images/industrial/Industrial_uniforms.jpeg"
+                  src={getImagePath("/images/industrial/Industrial_uniforms.jpeg")}
                   alt="Industrial Uniforms"
                   width={600}
                   height={700}
                   className="h-full w-full object-cover"
+                  onError={(e) => {
+                    // Set fallback image on error
+                    const target = e.target as HTMLImageElement;
+                    target.onerror = null; // Prevent infinite error loop
+                    target.src = `/placeholder-image.jpg`;
+                  }}
                 />
               </div>
               <div className="absolute -top-6 -left-6 z-0 h-full w-full rounded-2xl border-2 border-primary"></div>
               <div className="absolute right-0 bottom-0 z-20 overflow-hidden rounded-lg shadow-xl">
                 <Image
-                  src="/images/healthcare/Medical_staff_uniforms.jpg"
+                  src={getImagePath("/images/healthcare/Medical_staff_uniforms.jpg")}
                   alt="Medical Staff Uniforms"
                   width={300}
                   height={200}
                   className="h-full w-full object-cover"
+                  onError={(e) => {
+                    // Set fallback image on error
+                    const target = e.target as HTMLImageElement;
+                    target.onerror = null; // Prevent infinite error loop
+                    target.src = `/placeholder-image.jpg`;
+                  }}
                 />
               </div>
             </div>
@@ -496,7 +518,7 @@ export default function Home() {
 
           <div className="mt-12 text-center">
             <Link
-              href="/case-studies"
+              href="/testimonials"
               className="inline-flex items-center rounded-lg border border-primary bg-white px-6 py-3 font-semibold text-primary transition-colors hover:bg-primary/5"
             >
               View Customer Success Stories
@@ -576,10 +598,15 @@ export default function Home() {
       <section className="relative overflow-hidden bg-primary py-20">
         <div className="absolute inset-0 z-0 overflow-hidden opacity-10">
           <Image 
-            src="/images/uniform_pattern_bg.jpg" 
+            src={getImagePath("/images/uniform_pattern_bg.jpg")}
             alt="Uniform Pattern Background"
             fill
             className="object-cover"
+            onError={(e) => {
+              // Just hide the image on error since it's decorative
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+            }}
           />
         </div>
         <div className="container relative z-10 mx-auto px-6 text-center">

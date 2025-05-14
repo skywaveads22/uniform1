@@ -7,77 +7,354 @@ import fs from 'fs'
 import path from 'path'
 import { getImagePath } from '@/lib/image-helper'
 
+// Generate metadata for the page
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const slug = params.slug;
+  
+  let title = slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  let description = "Learn about uniform solutions and best practices for professional settings in Saudi Arabia.";
+  let image = '/images/default-article-image.jpg';
+  
+  // Get category from slug to help determine image path
+  const getCategory = (slug: string): string => {
+    if (slug.includes('security') || slug.includes('guard')) return 'security';
+    if (slug.includes('school') || slug.includes('education') || slug.includes('kindergarten')) return 'education';
+    if (slug.includes('hospital') || slug.includes('healthcare') || slug.includes('medical') || slug.includes('nurse') || slug.includes('scrub')) return 'healthcare';
+    if (slug.includes('government') || slug.includes('public-sector') || slug.includes('official') || slug.includes('civil-service')) return 'government';
+    if (slug.includes('hotel') || slug.includes('hospitality') || slug.includes('restaurant') || slug.includes('chef') || slug.includes('catering')) return 'hospitality';
+    if (slug.includes('aviation') || slug.includes('airline') || slug.includes('pilot') || slug.includes('cabin-crew') || slug.includes('flight')) return 'aviation';
+    if (slug.includes('industrial') || slug.includes('factory') || slug.includes('construction') || slug.includes('workwear')) return 'industrial';
+    return 'blog';
+  };
+  
+  // Determine an appropriate image based on category
+  const category = getCategory(slug);
+  const defaultCategoryImage = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms_Saudi_Arabia_KSA.jpg`;
+  
+  // Specific metadata for known articles
+  switch(slug) {
+    case 'designing-professional-security-guard-uniforms-for-ksa-context':
+      title = 'Designing Professional Security Guard Uniforms for KSA Context';
+      description = 'Discover the key considerations for designing effective security guard uniforms that meet Saudi Arabia\'s unique requirements and standards.';
+      image = '/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg';
+      break;
+    case 'key-features-of-effective-security-uniforms-visibility-durability-functionality':
+      title = 'Key Features of Effective Security Uniforms: Visibility, Durability, Functionality';
+      description = 'Learn about the essential features that make security uniforms effective, including visibility elements, durable materials, and functional design.';
+      image = '/images/security/High_visibility_security_uniforms.jpeg';
+      break;
+    case 'choosing-the-right-materials-for-security-uniforms-in-the-saudi-climate':
+      title = 'Choosing the Right Materials for Security Uniforms in the Saudi Climate';
+      description = 'Explore the best fabric options for security uniforms in Saudi Arabia\'s challenging climate conditions, balancing comfort and professionalism.';
+      image = '/images/security/breathable_security_shirts.jpeg';
+      break;
+    case 'kindergarten-uniforms-prioritizing-comfort-safety-and-playfulness':
+      title = 'Kindergarten Uniforms: Prioritizing Comfort, Safety, and Playfulness';
+      description = 'Discover the unique approach to designing kindergarten uniforms that balance institutional identity with the practical needs of young children in Saudi Arabia.';
+      image = '/images/education/primary_school_uniforms.jpg';
+      break;
+    case 'how-uniform-fit-impacts-performance-and-morale-in-aviation-staff':
+      title = 'How Uniform Fit Impacts Performance and Morale in Aviation Staff';
+      description = 'Explore the crucial relationship between proper uniform fit and the performance, comfort, and morale of aviation personnel in Saudi Arabia.';
+      image = '/images/aviation/aviation_uniform_embroidery.jpg';
+      break;
+    case 'head-coverings-and-modesty-considerations-in-saudi-healthcare-uniforms':
+      title = 'Head Coverings and Modesty Considerations in Saudi Healthcare Uniforms';
+      description = 'An in-depth look at how Saudi healthcare uniforms incorporate modesty requirements while maintaining professionalism and practicality.';
+      image = '/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg';
+      break;
+    case 'choosing-the-right-scrubs-for-saudi-hospitals-comfort-hygiene-and-professionalism':
+      title = 'Choosing the Right Scrubs for Saudi Hospitals: Comfort, Hygiene, and Professionalism';
+      description = 'A guide to selecting appropriate scrubs that meet hygiene standards while providing comfort for healthcare professionals in Saudi Arabian hospitals.';
+      image = '/images/healthcare/Scrubs_uniforms.jpg';
+      break;
+    case 'designing-hotel-uniforms-that-balance-functionality-and-brand-identity':
+      title = 'Designing Hotel Uniforms That Balance Functionality and Brand Identity';
+      description = 'How hotel uniforms in Saudi Arabia can effectively represent brand values while meeting the practical needs of different staff roles.';
+      image = '/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg';
+      break;
+    case 'benefits-of-school-uniforms-in-fostering-discipline-and-equality-in-saudi-schools':
+      title = 'Benefits of School Uniforms in Fostering Discipline and Equality in Saudi Schools';
+      description = 'An examination of how school uniforms contribute to educational environments in Saudi Arabia by promoting discipline and reducing social barriers.';
+      image = '/images/education/School_uniforms_Saudi_Arabia_KSA.jpg';
+      break;
+    case 'footwear-guide-for-healthcare-workers-prioritizing-comfort-and-safety':
+      title = 'Footwear Guide for Healthcare Workers: Prioritizing Comfort and Safety';
+      description = 'Essential considerations for selecting appropriate footwear for healthcare professionals in Saudi Arabian medical facilities.';
+      image = '/images/healthcare/Medical_staff_uniforms.jpg';
+      break;
+    case 'infection-control-features-in-modern-healthcare-uniforms':
+      title = 'Infection Control Features in Modern Healthcare Uniforms';
+      description = 'How innovative fabric technologies and design elements in healthcare uniforms help prevent cross-contamination in Saudi healthcare settings.';
+      image = '/images/healthcare/antimicrobial_scrubs.jpg';
+      break;
+    case 'fabric-guide-best-materials-for-student-uniforms':
+      title = 'Fabric Guide: Best Materials for Student Uniforms';
+      description = 'A comprehensive analysis of fabrics suited for school uniforms in Saudi Arabia\'s climate while ensuring durability and comfort for students.';
+      image = '/images/education/School_uniform_fabrics.jpg';
+      break;
+    case 'dress-codes-and-uniform-policies-in-saudi-public-sector-offices':
+      title = 'Dress Codes and Uniform Policies in Saudi Public Sector Offices';
+      description = 'Understanding the formal dress requirements and uniform standards across various government departments in Saudi Arabia.';
+      image = '/images/government/Government_employee_uniforms.jpg';
+      break;
+    case 'ensuring-comfort-for-government-employees-working-outdoors-in-ksa':
+      title = 'Ensuring Comfort for Government Employees Working Outdoors in KSA';
+      description = 'Specialized uniform solutions for Saudi government personnel who work in challenging outdoor environments.';
+      image = '/images/government/government_field_staff_wear.jpg';
+      break;
+    case 'durable-workwear-for-field-operatives-in-government-agencies':
+      title = 'Durable Workwear for Field Operatives in Government Agencies';
+      description = 'How specially designed uniforms support the practical needs of government field staff while maintaining professional appearance.';
+      image = '/images/government/government_outerwear_jackets.jpg';
+      break;
+    case 'case-study-rebranding-a-saudi-hotel-through-new-uniform-concepts':
+      title = 'Case Study: Rebranding a Saudi Hotel Through New Uniform Concepts';
+      description = 'How a strategic uniform redesign helped transform guest perception and staff morale in a prominent Saudi Arabian hotel.';
+      image = '/images/hospitality/modern_hospitality_design_uniforms.jpeg';
+      break;
+    case 'future-trends-integrating-wearable-technology-into-security-uniforms':
+      title = 'Future Trends: Integrating Wearable Technology into Security Uniforms';
+      description = 'Emerging innovations in smart textiles and wearable devices that are revolutionizing security uniforms in Saudi Arabia.';
+      image = '/images/security/High_visibility_security_uniforms.jpeg';
+      break;
+    case 'temperature-regulating-fabrics-for-security-uniforms-in-saudi-arabia':
+      title = 'Temperature-Regulating Fabrics for Security Uniforms in Saudi Arabia';
+      description = 'Advanced textile technologies that help security personnel maintain comfort in extreme Saudi Arabian climate conditions.';
+      image = '/images/security/breathable_security_shirts.jpeg';
+      break;
+    case 'different-uniform-needs-doctors-vs-nurses-vs-lab-technicians-vs-support-staff-in-ksa':
+      title = 'Different Uniform Needs: Doctors vs Nurses vs Lab Technicians vs Support Staff in KSA';
+      description = 'Comprehensive analysis of the distinct uniform requirements for various healthcare professionals in Saudi Arabian medical facilities.';
+      image = '/images/healthcare/Medical_staff_uniforms.jpg';
+      break;
+    case 'layering-systems-for-varying-temperatures-in-industrial-settings':
+      title = 'Layering Systems for Varying Temperatures in Industrial Settings';
+      description = 'Strategic approaches to layered workwear that allows industrial personnel to adapt to Saudi Arabia\'s extreme temperature fluctuations while maintaining safety and comfort.';
+      image = '/images/industrial/Industrial_workwear_Saudi_Arabia_KSA.jpeg';
+      break;
+    case 'choosing-durable-and-comfortable-school-uniforms-for-the-ksa-climate':
+      title = 'Choosing Durable and Comfortable School Uniforms for the KSA Climate';
+      description = 'Expert guidance on selecting school uniform fabrics and designs that withstand Saudi Arabia\'s harsh climate while ensuring student comfort throughout the academic year.';
+      image = '/images/education/School_uniforms_Saudi_Arabia_KSA.jpg';
+      break;
+    case 'accessorizing-school-uniforms-approved-items-in-ksa-schools':
+      title = 'Accessorizing School Uniforms: Approved Items in KSA Schools';
+      description = 'Comprehensive guide to permissible school uniform accessories within Saudi Arabian educational institutions, balancing school policies with practical and cultural considerations.';
+      image = '/images/education/school_uniform_accessories.jpg';
+      break;
+    case 'iron-free-school-uniform-options-a-parent-s-guide':
+      title = 'Iron-Free School Uniform Options: A Parent\'s Guide';
+      description = 'Practical solutions for busy Saudi families seeking low-maintenance, wrinkle-resistant school uniform options that maintain a professional appearance with minimal effort.';
+      image = '/images/education/easy_care_school_uniforms.jpg';
+      break;
+    case 'choosing-appropriate-fabrics-for-official-government-attire-in-the-saudi-climate':
+      title = 'Choosing Appropriate Fabrics for Official Government Attire in the Saudi Climate';
+      description = 'Expert analysis of optimal textiles for government uniforms that balance professional appearance with comfort in Saudi Arabia\'s challenging climate conditions.';
+      image = '/images/government/Government_employee_uniforms.jpg';
+      break;
+    case 'incorporating-national-symbols-and-colors-in-government-uniform-design':
+      title = 'Incorporating National Symbols and Colors in Government Uniform Design';
+      description = 'Learn about the significance of national symbols and colors in Saudi Arabian government uniforms and how they are incorporated into design.';
+      image = '/images/government/national_symbols.jpg';
+      break;
+    case 'designing-culturally-appropriate-school-uniforms-in-saudi-arabia':
+      title = 'Designing Culturally Appropriate School Uniforms in Saudi Arabia';
+      description = 'Discover how to design school uniforms that respect and reflect Saudi Arabian cultural norms while maintaining functionality and professional standards.';
+      image = '/images/education/cultural_uniforms.jpg';
+      break;
+    case 'uniform-standards-across-different-saudi-government-ministries-a-comparative-look':
+      title = 'Uniform Standards Across Different Saudi Government Ministries: A Comparative Look';
+      description = 'Explore the uniform standards and practices across various Saudi government ministries and how they compare.';
+      image = '/images/government/uniform_standards.jpg';
+      break;
+    case 'climate-appropriate-uniforms-for-outdoor-hospitality-staff-in-saudi-arabia':
+      title = 'Climate-Appropriate Uniforms for Outdoor Hospitality Staff in Saudi Arabia';
+      description = 'Discover the best uniforms for outdoor hospitality staff in Saudi Arabia, including lightweight and breathable options.';
+      image = '/images/hospitality/hospitality_uniforms.jpg';
+      break;
+    case 'choosing-the-right-scrubs-for-saudi-hospitals-comfort-hygiene-and-professionalism':
+      title = 'Choosing the Right Scrubs for Saudi Hospitals: Comfort, Hygiene, and Professionalism';
+      description = 'A guide to selecting appropriate scrubs that meet hygiene standards while providing comfort for healthcare professionals in Saudi Arabian hospitals.';
+      image = '/images/healthcare/Scrubs_uniforms.jpg';
+      break;
+    case 'advanced-materials-in-security-equipment':
+      title = 'Advanced Materials in Security Equipment';
+      description = 'Discover the latest advancements in security equipment materials, including high-performance fabrics and durable components.';
+      image = '/images/security/security_equipment.jpg';
+      break;
+    case 'ergonomic-optimization-architecture-advanced-systems-for-workplace-injury-prevention-2025':
+      title = 'Ergonomic Optimization Architecture: Advanced Systems for Workplace Injury Prevention 2025';
+      description = 'Explore the latest ergonomic design principles and technologies for preventing workplace injuries in the 21st century.';
+      image = '/images/ergonomics/ergonomic_design.jpg';
+      break;
+    case 'material-science-architecture-advanced-substrate-engineering-for-hospitality-performance-enhancement-2025':
+      title = 'Material Science Architecture: Advanced Substrate Engineering for Hospitality Performance Enhancement 2025';
+      description = 'Discover how advanced substrate engineering is transforming the hospitality industry through improved material performance.';
+      image = '/images/hospitality/hospitality_materials.jpg';
+      break;
+    case 'temperature-regulating-fabrics-for-security-uniforms-in-saudi-arabia':
+      title = 'Temperature-Regulating Fabrics for Security Uniforms in Saudi Arabia';
+      description = 'Advanced textile technologies that help security personnel maintain comfort in extreme Saudi Arabian climate conditions.';
+      image = '/images/security/breathable_security_shirts.jpeg';
+      break;
+    case 'designing-hotel-uniforms-that-balance-functionality-and-brand-identity':
+      title = 'Designing Hotel Uniforms That Balance Functionality and Brand Identity';
+      description = 'How hotel uniforms in Saudi Arabia can effectively represent brand values while meeting the practical needs of different staff roles.';
+      image = '/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg';
+      break;
+    case 'bulk-ordering-and-inventory-management-for-security-firms-in-ksa':
+      title = 'Bulk Ordering and Inventory Management for Security Firms in KSA';
+      description = 'Discover the best practices for bulk ordering and inventory management in the security industry in Saudi Arabia.';
+      image = '/images/security/security_inventory.jpg';
+      break;
+    case 'heat-management-technologies-for-security-operations':
+      title = 'Heat Management Technologies for Security Operations';
+      description = 'Discover the latest heat management technologies for security operations in Saudi Arabia.';
+      image = '/images/security/heat_management.jpg';
+      break;
+    case 'color-choices-for-security-uniforms-practicality-and-perception':
+      title = 'Color Choices for Security Uniforms: Practicality and Perception';
+      description = 'Discover the best color choices for security uniforms that balance practicality with professional appearance.';
+      image = '/images/security/color_choices.jpg';
+      break;
+    case 'the-impact-of-uniform-comfort-on-healthcare-worker-performance':
+      title = 'The Impact of Uniform Comfort on Healthcare Worker Performance';
+      description = 'Discover how uniform comfort can impact the performance and well-being of healthcare professionals in Saudi Arabia.';
+      image = '/images/healthcare/healthcare_uniforms.jpg';
+      break;
+    case 'biodigital-integration-architecture-advanced-attire-systems-for-healthcare-performance-optimization-2025':
+      title = 'Biodigital Integration Architecture: Advanced Attire Systems for Healthcare Performance Optimization 2025';
+      description = 'Explore the latest advancements in biodigital integration for healthcare performance optimization.';
+      image = '/images/healthcare/healthcare_technology.jpg';
+      break;
+    case 'designing-authoritative-and-professional-security-guard-uniforms-for-ksa':
+      title = 'Designing Authoritative and Professional Security Guard Uniforms for KSA';
+      description = 'Discover the key considerations for designing effective security guard uniforms that meet Saudi Arabia\'s unique requirements and standards.';
+      image = '/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg';
+      break;
+    case 'operational-attire-engineering-advanced-comfort-systems-for-hospitality-maintenance-personnel-2025':
+      title = 'Operational Attire Engineering: Advanced Comfort Systems for Hospitality Maintenance Personnel 2025';
+      description = 'Discover the latest operational attire engineering solutions for hospitality maintenance personnel in Saudi Arabia.';
+      image = '/images/hospitality/hospitality_attire.jpg';
+      break;
+    default:
+      // For any other articles, use the default category image
+      image = defaultCategoryImage;
+  }
+  
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [image],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [image],
+    }
+  };
+}
+
 // Generate static paths for all blog posts 
 export async function generateStaticParams() {
-  // A list of all available blog slugs
-  const blogSlugs = [
+  // Get all directories in the blog folder
+  const blogDir = path.join(process.cwd(), 'app', 'blog');
+  
+  // Define all hardcoded slugs that should be available
+  const hardcodedSlugs = [
     "designing-professional-security-guard-uniforms-for-ksa-context",
     "key-features-of-effective-security-uniforms-visibility-durability-functionality",
     "choosing-the-right-materials-for-security-uniforms-in-the-saudi-climate",
-    "airport-security-uniforms-balancing-authority-functionality-and-passenger-assurance",
-    "cabin-crew-attire-professionalism-and-functionality-at-30000-feet-saudi-perspective",
-    "case-study-improving-staff-morale-with-new-uniforms-in-a-saudi-clinic",
-    "case-study-upgrading-security-uniforms-for-a-large-saudi-facility",
-    "chef-whites-and-kitchen-staff-uniforms-hygiene-and-safety-standards-in-ksa",
-    "climate-control-breathable-and-cooling-fabrics-for-hot-saudi-workplaces",
-    "color-trends-in-modern-hospitality-uniform-design-in-the-middle-east",
-    "comfort-considerations-for-long-security-shifts",
-    "communication-equipment-integration-features-for-security-uniforms",
-    "concierge-and-bell-staff-uniforms-reflecting-service-excellence",
-    "custom-patches-and-embroidery-for-security-company-branding",
-    "designing-elegant-and-functional-hotel-uniforms-for-the-luxury-saudi-market",
-    "distinguishing-ranks-and-roles-through-security-uniform-insignia-in-ksa",
-    "epaulettes-and-insignia-understanding-ranks-in-saudi-aviation-attire",
-    "fabric-choices-for-hospitality-wear-stain-resistance-and-easy-maintenance",
-    "flame-resistant-fr-workwear-protecting-workers-in-oil-gas-and-manufacturing",
-    "formal-vs-patrol-duty-uniforms-for-security-staff",
-    "front-desk-attire-making-a-great-first-impression-in-ksa-hotels",
-    "headwear-options-caps-berets-and-climate-considerations",
-    "high-visibility-clothing-standards-and-their-importance-in-ksa",
-    "housekeeping-uniforms-ensuring-comfort-durability-and-professionalism",
-    "how-uniforms-impact-staff-morale-and-guest-satisfaction-scores",
-    "how-uniforms-support-branding-for-private-healthcare-providers-in-ksa",
-    "integrating-saudi-cultural-elements-into-hospitality-uniform-design",
-    "maintaining-sterility-best-practices-for-laundering-healthcare-uniforms",
-    "maintaining-uniform-quality-laundry-and-upkeep-tips",
-    "medical-uniform-design-combining-functionality-and-comfort-for-healthcare-professionals",
-    "restaurant-and-f-b-staff-uniforms-style-meets-practicality-in-saudi-dining",
-    "safety-features-in-paramedic-and-emergency-response-uniforms-in-ksa",
-    "saudi-ministry-of-health-moh-uniform-guidelines-for-healthcare-workers",
-    "seasonal-uniform-considerations-for-schools-across-saudi-arabia",
-    "sustainable-and-eco-friendly-school-uniform-options",
-    "sustainable-uniform-programs-for-eco-conscious-hotels-in-saudi-arabia",
-    "the-evolution-of-nursing-uniforms-in-saudi-arabia",
-    "the-evolution-of-school-uniform-styles-in-saudi-arabia",
-    "the-future-of-hospitality-uniforms-tech-integration-and-personalization",
-    "the-importance-of-color-coding-uniforms-in-large-saudi-hospitals",
-    "the-link-between-professional-uniforms-and-citizen-confidence",
-    "the-psychological-impact-of-security-uniforms-on-deterrence-and-public-perception",
-    "the-psychology-of-color-in-healthcare-environments-and-uniforms",
-    "the-role-of-modesty-in-saudi-school-uniform-design",
-    "the-role-of-uniforms-in-building-esprit-de-corps-among-government-teams",
-    "the-role-of-uniforms-in-creating-a-cohesive-brand-experience-across-hotel-chains-in-ksa",
-    "uniform-considerations-for-government-representatives-attending-international-events",
-    "uniform-considerations-for-theme-parks-and-entertainment-venues-in-ksa",
-    "uniform-solutions-for-theme-parks-and-entertainment-venues"
+    "kindergarten-uniforms-prioritizing-comfort-safety-and-playfulness",
+    "how-uniform-fit-impacts-performance-and-morale-in-aviation-staff",
+    "ceremonial-vs-duty-uniforms-for-saudi-government-officials",
+    "procurement-processes-for-government-uniforms-in-saudi-arabia",
+    "head-coverings-and-modesty-considerations-in-saudi-healthcare-uniforms",
+    
+    // Additional blog slugs
+    "benefits-of-school-uniforms-in-fostering-discipline-and-equality-in-saudi-schools",
+    "footwear-guide-for-healthcare-workers-prioritizing-comfort-and-safety",
+    "infection-control-features-in-modern-healthcare-uniforms",
+    "fabric-guide-best-materials-for-student-uniforms",
+    "dress-codes-and-uniform-policies-in-saudi-public-sector-offices",
+    "ensuring-comfort-for-government-employees-working-outdoors-in-ksa",
+    "durable-workwear-for-field-operatives-in-government-agencies",
+    "case-study-rebranding-a-saudi-hotel-through-new-uniform-concepts",
+    "future-trends-integrating-wearable-technology-into-security-uniforms",
+    "breathable-fabrics-for-medical-staff-working-in-hot-saudi-climates",
+    "different-uniform-needs-doctors-vs-nurses-vs-lab-technicians-vs-support-staff-in-ksa",
+    "layering-systems-for-varying-temperatures-in-industrial-settings",
+    "choosing-durable-and-comfortable-school-uniforms-for-the-ksa-climate",
+    "accessorizing-school-uniforms-approved-items-in-ksa-schools",
+    "iron-free-school-uniform-options-a-parent-s-guide",
+    "choosing-appropriate-fabrics-for-official-government-attire-in-the-saudi-climate",
+    "incorporating-national-symbols-and-colors-in-government-uniform-design",
+    "designing-culturally-appropriate-school-uniforms-in-saudi-arabia",
+    "uniform-standards-across-different-saudi-government-ministries-a-comparative-look",
+    "climate-appropriate-uniforms-for-outdoor-hospitality-staff-in-saudi-arabia",
+    "choosing-the-right-scrubs-for-saudi-hospitals-comfort-hygiene-and-professionalism",
+    "advanced-materials-in-security-equipment",
+    "ergonomic-optimization-architecture-advanced-systems-for-workplace-injury-prevention-2025",
+    "material-science-architecture-advanced-substrate-engineering-for-hospitality-performance-enhancement-2025",
+    "temperature-regulating-fabrics-for-security-uniforms-in-saudi-arabia",
+    "designing-hotel-uniforms-that-balance-functionality-and-brand-identity",
+    "bulk-ordering-and-inventory-management-for-security-firms-in-ksa",
+    "heat-management-technologies-for-security-operations",
+    "color-choices-for-security-uniforms-practicality-and-perception",
+    "the-impact-of-uniform-comfort-on-healthcare-worker-performance",
+    "biodigital-integration-architecture-advanced-attire-systems-for-healthcare-performance-optimization-2025",
+    "designing-authoritative-and-professional-security-guard-uniforms-for-ksa",
+    "operational-attire-engineering-advanced-comfort-systems-for-hospitality-maintenance-personnel-2025"
   ];
   
-  // Return an array of objects with the slug parameter
-  return blogSlugs.map(slug => ({
-    slug
-  }));
+  // Define the type for blogSlugs array items
+  type BlogSlug = { slug: string };
+  let blogSlugs: BlogSlug[] = [];
+  
+  // Try to read the directory, but don't fail if it doesn't work
+  try {
+    const dirEntries = fs.readdirSync(blogDir, { withFileTypes: true });
+    const directoryBasedSlugs = dirEntries
+      .filter(dirent => dirent.isDirectory() && !dirent.name.includes('[') && dirent.name !== 'category')
+      .map(dirent => ({
+        slug: dirent.name
+      }));
+    
+    blogSlugs = [...directoryBasedSlugs];
+  } catch (error) {
+    console.error('Error reading blog directory:', error);
+    // Continue with hardcoded slugs if directory read fails
+  }
+  
+  // Add all hardcoded slugs that aren't already included
+  hardcodedSlugs.forEach(slug => {
+    if (!blogSlugs.some(item => item.slug === slug)) {
+      blogSlugs.push({ slug });
+    }
+  });
+  
+  console.log('Generated static paths for slugs:', blogSlugs.map(item => item.slug));
+  return blogSlugs;
 }
 
 // This is a dynamic route for blog posts
-export default function BlogPost({ params }: { params: { slug: string } }) {
+export default function BlogPost({ params }: { params: { slug: string } }): JSX.Element {
   // Get the slug from params
-  const slug = params.slug;
+  const { slug } = params;
   
   // Function to render article content based on slug
-  const renderArticleContent = () => {
+  const renderArticleContent = (): JSX.Element => {
+    let content: JSX.Element;
+    
     switch(slug) {
       case 'designing-professional-security-guard-uniforms-for-ksa-context':
-        return (
+        content = (
           <>
             <p className="mb-4">
               Designing security guard uniforms for Saudi Arabia requires a careful balance of authority, professionalism, and practical functionality. In a country where security personnel play a vital role across various sectors, from corporate facilities to government institutions, the right uniform makes a significant statement about capability and trustworthiness.
@@ -119,224 +396,84 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </p>
           </>
         );
-      
-      case 'key-features-of-effective-security-uniforms-visibility-durability-functionality':
-        return (
-          <>
-            <p className="mb-4">
-              Security uniforms serve multiple essential purposes beyond simply identifying personnel. They communicate authority, instill confidence, and provide practical functionality for security professionals facing diverse challenges. The most effective security uniforms combine three critical elements: visibility, durability, and functionality.
-            </p>
-            <h2 className="mb-4 mt-8 text-2xl font-bold">Enhanced Visibility Features</h2>
-            <p className="mb-4">
-              Visibility is paramount for security personnel, especially those working in low-light conditions, night shifts, or outdoor environments. Effective visibility features include:
-            </p>
-            <ul className="mb-6 list-inside list-disc space-y-2 pl-4">
-              <li><strong>Reflective Elements:</strong> Strategically placed high-visibility strips on chest, back, and arms that catch and reflect light</li>
-              <li><strong>Contrast Coloring:</strong> Using contrasting colors (like bright yellow or orange against dark blue or black) to increase visibility from a distance</li>
-              <li><strong>Fluorescent Materials:</strong> Incorporating fluorescent fabrics that enhance visibility in daylight and dawn/dusk conditions</li>
-              <li><strong>Illuminated Badges:</strong> Advanced options include retroreflective badge holders and identification panels</li>
-            </ul>
-            <p className="mb-4">
-              These visibility enhancements serve dual purposes: they make security personnel easily identifiable to those seeking assistance and increase safety for officers working in traffic areas, construction sites, or nighttime environments.
-            </p>
-            <h2 className="mb-4 mt-8 text-2xl font-bold">Superior Durability Requirements</h2>
-            <p className="mb-4">
-              Security work is physically demanding, exposing uniforms to considerable wear and tear. Durable security uniforms incorporate:
-            </p>
-            <ul className="mb-6 list-inside list-disc space-y-2 pl-4">
-              <li><strong>Ripstop Fabrics:</strong> Special weave patterns that prevent tears from spreading</li>
-              <li><strong>Reinforced Seams:</strong> Double or triple stitching at high-stress points including shoulders, pockets, and seat areas</li>
-              <li><strong>Quality Hardware:</strong> Heavy-duty zippers, buttons, and fasteners that withstand frequent use</li>
-              <li><strong>Abrasion Resistance:</strong> Materials that resist wearing thin at elbows, knees, and other friction points</li>
-              <li><strong>Color Retention:</strong> Fabrics treated to resist fading from UV exposure and frequent washing</li>
-            </ul>
-            <p className="mb-4">
-              Investing in durable uniforms ultimately reduces replacement costs and ensures consistent professional appearance throughout the uniform's lifecycle.
-            </p>
-            <h2 className="mb-4 mt-8 text-2xl font-bold">Functional Design Elements</h2>
-            <p className="mb-4">
-              Functionality in security uniforms addresses the practical needs of personnel during various duties. Key functional elements include:
-            </p>
-            <ul className="mb-6 list-inside list-disc space-y-2 pl-4">
-              <li><strong>Strategic Pocket Placement:</strong> Accessible storage for essential equipment like radios, notebooks, and flashlights</li>
-              <li><strong>Tactical Features:</strong> Reinforced belt loops, equipment attachment points, and hidden document pockets</li>
-              <li><strong>Range of Motion:</strong> Articulated design at knees and elbows, gusseted crotch, and stretch panels for unrestricted movement</li>
-              <li><strong>Climate Adaptation:</strong> Moisture-wicking properties, ventilation zones, and layering options for year-round comfort</li>
-              <li><strong>Specialized Accessories:</strong> Compatible design for duty belts, radio holders, and other equipment carriers</li>
-            </ul>
-            <p className="mb-4">
-              Functional uniforms enhance officer performance by eliminating distractions and providing intuitive access to necessary tools and equipment during critical situations.
-            </p>
-            <h2 className="mb-4 mt-8 text-2xl font-bold">Balancing Professional Appearance with Practical Needs</h2>
-            <p className="mb-4">
-              The most effective security uniforms achieve a balance between professional appearance and practical functionality. A sharply designed uniform projects authority and competence while including the technical features necessary for security professionals to perform their duties effectively.
-            </p>
-            <p className="mb-4">
-              When selecting security uniforms, organizations should evaluate options based on specific deployment environments, duty requirements, and climate conditions. The investment in quality uniforms that incorporate visibility, durability, and functionality pays dividends in staff morale, public perception, and operational effectiveness.
-            </p>
-          </>
-        );
-      
-      case 'choosing-the-right-materials-for-security-uniforms-in-the-saudi-climate':
-        return (
-          <>
-            <p className="mb-4">
-              Saudi Arabia's unique climate presents significant challenges for security uniform design and material selection. With temperatures regularly exceeding 45°C (113°F) in summer months, coupled with low humidity in most regions and occasional sandstorms, security personnel require specially designed workwear that balances professional appearance with comfort and protection.
-            </p>
-            <h2 className="mb-4 mt-8 text-2xl font-bold">Climate Challenges in Saudi Arabia</h2>
-            <p className="mb-4">
-              Security personnel in Saudi Arabia face multiple climate-related challenges:
-            </p>
-            <ul className="mb-6 list-inside list-disc space-y-2 pl-4">
-              <li><strong>Extreme Heat:</strong> Daytime temperatures that can make heavy traditional uniforms unbearable</li>
-              <li><strong>UV Radiation:</strong> Intense sun exposure that damages fabrics and can cause health concerns</li>
-              <li><strong>Dust and Sand:</strong> Particulate matter that affects both comfort and uniform longevity</li>
-              <li><strong>Temperature Fluctuations:</strong> Significant drops in temperature at night, especially in desert regions</li>
-            </ul>
-            <p className="mb-4">
-              These conditions demand thoughtful material selection that can withstand harsh conditions while providing comfort during long security shifts.
-            </p>
-            <h2 className="mb-4 mt-8 text-2xl font-bold">Optimal Fabric Selections</h2>
-            <p className="mb-4">
-              Several fabric options have proven particularly effective for security uniforms in the Saudi climate:
-            </p>
-            <h3 className="mb-2 mt-4 text-xl font-semibold">1. Performance Poly-Cotton Blends</h3>
-            <p className="mb-4">
-              Blended fabrics combining 65% polyester with 35% cotton offer an excellent balance of properties:
-            </p>
-            <ul className="mb-6 list-inside list-disc space-y-2 pl-4">
-              <li>Sufficient durability from the polyester component</li>
-              <li>Enhanced breathability from the cotton content</li>
-              <li>Better wrinkle resistance than pure cotton</li>
-              <li>Good moisture management capabilities</li>
-              <li>Ability to maintain professional appearance in high temperatures</li>
-            </ul>
-            <h3 className="mb-2 mt-4 text-xl font-semibold">2. Technical Synthetic Fabrics</h3>
-            <p className="mb-4">
-              Advanced synthetic materials engineered specifically for hot climates offer significant advantages:
-            </p>
-            <ul className="mb-6 list-inside list-disc space-y-2 pl-4">
-              <li><strong>Moisture-Wicking Properties:</strong> Materials that actively draw sweat away from the body</li>
-              <li><strong>Quick-Drying Capabilities:</strong> Rapid evaporation that enhances cooling effect</li>
-              <li><strong>Antimicrobial Treatments:</strong> Protection against odor-causing bacteria in high-temperature environments</li>
-              <li><strong>Mechanical Stretch:</strong> Flexibility without compromising professional appearance</li>
-            </ul>
-            <h3 className="mb-2 mt-4 text-xl font-semibold">3. Ripstop and Tactical Fabrics</h3>
-            <p className="mb-4">
-              For more demanding security roles, specialized tactical fabrics provide additional benefits:
-            </p>
-            <ul className="mb-6 list-inside list-disc space-y-2 pl-4">
-              <li>Enhanced tear resistance through ripstop construction</li>
-              <li>Treatment with protective finishes against UV radiation</li>
-              <li>Sand and dust-resistant coatings</li>
-              <li>Reduced infrared signature for specialized applications</li>
-            </ul>
-            <h2 className="mb-4 mt-8 text-2xl font-bold">Material Considerations for Different Garment Components</h2>
-            <p className="mb-4">
-              Different uniform components may require specialized materials:
-            </p>
-            <ul className="mb-6 list-inside list-disc space-y-2 pl-4">
-              <li><strong>Base Layers:</strong> Lightweight, moisture-wicking fabrics that sit directly against the skin</li>
-              <li><strong>Shirts and Trousers:</strong> Breathable yet professional-looking poly-cotton or performance blends</li>
-              <li><strong>Outerwear:</strong> Lightweight shell materials for wind and occasional rain protection</li>
-              <li><strong>Headwear:</strong> Breathable fabrics with UV protection and moisture management</li>
-            </ul>
-            <h2 className="mb-4 mt-8 text-2xl font-bold">Practical Material Recommendations</h2>
-            <p className="mb-4">
-              Based on extensive experience with security uniforms in Saudi Arabia, we recommend:
-            </p>
-            <ul className="mb-6 list-inside list-disc space-y-2 pl-4">
-              <li>Shirts: 65/35 poly-cotton blend with mechanical stretch in a medium weight (5-6 oz)</li>
-              <li>Trousers: Tactical ripstop fabric with reinforced knee and seat areas</li>
-              <li>Jackets: Lightweight shell material with mesh lining for air circulation</li>
-              <li>Caps: Moisture-wicking fabrics with built-in UV protection (UPF 50+)</li>
-            </ul>
-            <p className="mb-4">
-              By selecting appropriate materials specifically designed for the Saudi climate, security companies can ensure their personnel remain comfortable, professional, and protected throughout their shifts. This attention to material selection leads to improved officer performance, reduced uniform replacement costs, and enhanced professional appearance.
-            </p>
-          </>
-        );
-      
+        break;
       default:
-        // Generate generic content for other articles
-        return (
+        content = (
           <>
             <p className="mb-4">
-              Security uniforms play a crucial role in establishing authority, ensuring visibility, and providing necessary functionality for security personnel. Professional security attire combines practical design elements with durable materials to meet the demands of security work in Saudi Arabia and beyond.
-            </p>
-            <p className="mb-4">
-              In the context of security and protective workwear, professionals require specialized uniform solutions that address specific challenges while maintaining a professional and authoritative appearance. This article explores key considerations, best practices, and innovative approaches to security uniforms.
-            </p>
-            <h2 className="mb-4 mt-8 text-2xl font-bold">Key Considerations</h2>
-            <p className="mb-4">
-              When evaluating security uniforms for professional applications, several factors must be considered:
-            </p>
-            <ul className="mb-6 list-inside list-disc space-y-2 pl-4">
-              <li><strong>Professional Appearance:</strong> Uniforms that project authority and instill confidence</li>
-              <li><strong>Functional Design:</strong> Practical features supporting security personnel's daily tasks</li>
-              <li><strong>Climate Adaptation:</strong> Materials suitable for Saudi Arabia's demanding environment</li>
-              <li><strong>Durability:</strong> Construction that withstands the rigors of security work</li>
-              <li><strong>Comfort:</strong> Ergonomic design for extended wear during long shifts</li>
-            </ul>
-            <p className="mb-4">
-              Security uniform solutions must balance these sometimes competing requirements to provide optimal performance in the field. This article examines innovative approaches and best practices for achieving this balance.
-            </p>
-            <h2 className="mb-4 mt-8 text-2xl font-bold">Best Practices</h2>
-            <p className="mb-4">
-              Industry leaders in security uniform design and manufacturing have established several best practices:
-            </p>
-            <ul className="mb-6 list-inside list-disc space-y-2 pl-4">
-              <li>Incorporating feedback from security professionals into design processes</li>
-              <li>Testing materials under actual field conditions before production</li>
-              <li>Providing size options that accommodate different body types</li>
-              <li>Ensuring consistent quality control throughout manufacturing</li>
-              <li>Offering customization options that maintain uniform integrity</li>
-            </ul>
-            <p className="mb-4">
-              By following these established practices, security uniform suppliers can deliver products that meet the demanding requirements of security operations in Saudi Arabia and other challenging environments.
-            </p>
-            <p className="mb-4">
-              As security challenges evolve, so too must the uniforms that support security personnel. Continued innovation in materials, design, and functionality ensures that security uniforms remain effective tools for professionals protecting people, property, and assets.
+              Article content not found.
             </p>
           </>
         );
     }
+    
+    return content;
   };
 
   // Function to get article title based on slug
-  const getArticleTitle = () => {
-    // Replace hyphens with spaces and capitalize each word
-    return slug
-      .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+  const getArticleTitle = (slug: string): string => {
+    switch(slug) {
+      case 'designing-professional-security-guard-uniforms-for-ksa-context':
+        return 'Designing Professional Security Guard Uniforms for KSA Context';
+      case 'key-features-of-effective-security-uniforms-visibility-durability-functionality':
+        return 'Key Features of Effective Security Uniforms: Visibility, Durability, Functionality';
+      case 'choosing-the-right-materials-for-security-uniforms-in-the-saudi-climate':
+        return 'Choosing the Right Materials for Security Uniforms in the Saudi Climate';
+      case 'kindergarten-uniforms-prioritizing-comfort-safety-and-playfulness':
+        return 'Kindergarten Uniforms: Prioritizing Comfort, Safety, and Playfulness';
+      default:
+        // Convert slug to title case
+        return slug.split('-').map((word: string) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    }
   };
 
-  // تحديد صورة المقال بناء على slug
-  // استخدام صورة الفئة المناسبة إذا كان اسم المقال يحتوي على كلمات مفتاحية محددة
-  const getArticleImagePath = () => {
-    const categoryKeywords = {
-      'aviation': ['aviation', 'pilot', 'airline', 'cabin', 'crew', 'airport'],
-      'healthcare': ['healthcare', 'medical', 'nurse', 'hospital', 'doctor', 'paramedic', 'clinic'],
-      'hospitality': ['hospitality', 'hotel', 'restaurant', 'chef', 'concierge', 'housekeeping'],
-      'education': ['education', 'school', 'teacher', 'student', 'uniform'],
-      'government': ['government', 'public', 'ministry', 'official'],
-      'industrial': ['industrial', 'workwear', 'factory', 'construction', 'safety'],
-      'security': ['security', 'guard', 'tactical', 'protection']
+  // Function to get article image path based on slug
+  const getArticleImagePath = (slug: string): string => {
+    // Get category from slug to help determine image path
+    const getCategory = (slug: string): string => {
+      if (slug.includes('security') || slug.includes('guard')) return 'security';
+      if (slug.includes('school') || slug.includes('education') || slug.includes('kindergarten')) return 'education';
+      if (slug.includes('hospital') || slug.includes('healthcare') || slug.includes('medical') || slug.includes('nurse') || slug.includes('scrub')) return 'healthcare';
+      if (slug.includes('government') || slug.includes('public-sector') || slug.includes('official') || slug.includes('civil-service')) return 'government';
+      if (slug.includes('hotel') || slug.includes('hospitality') || slug.includes('restaurant') || slug.includes('chef') || slug.includes('catering')) return 'hospitality';
+      if (slug.includes('aviation') || slug.includes('airline') || slug.includes('pilot') || slug.includes('cabin-crew') || slug.includes('flight')) return 'aviation';
+      if (slug.includes('industrial') || slug.includes('factory') || slug.includes('construction') || slug.includes('workwear')) return 'industrial';
+      return 'blog';
     };
     
-    // تحديد الفئة بناء على وجود الكلمات المفتاحية في slug
-    for (const [category, keywords] of Object.entries(categoryKeywords)) {
-      if (keywords.some(keyword => slug.includes(keyword))) {
-        return `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms_Saudi_Arabia_KSA.jpg`;
-      }
-    }
+    // Default image based on category
+    const category = getCategory(slug);
+    const defaultCategoryImage = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms_Saudi_Arabia_KSA.jpg`;
     
-    // استخدم صورة افتراضية إذا لم يتم العثور على فئة مناسبة
-    return '/images/default-article-image.jpg';
+    // Specific images for common articles
+    switch(slug) {
+      case 'designing-professional-security-guard-uniforms-for-ksa-context':
+        return '/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg';
+      case 'key-features-of-effective-security-uniforms-visibility-durability-functionality':
+        return '/images/security/High_visibility_security_uniforms.jpeg';
+      case 'choosing-the-right-materials-for-security-uniforms-in-the-saudi-climate':
+        return '/images/security/breathable_security_shirts.jpeg';
+      case 'kindergarten-uniforms-prioritizing-comfort-safety-and-playfulness':
+        return '/images/education/primary_school_uniforms.jpg';
+      default:
+        // Check file extension for the default category image
+        const jpgPath = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms_Saudi_Arabia_KSA.jpg`;
+        const jpegPath = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms_Saudi_Arabia_KSA.jpeg`;
+        
+        // Default to one of these paths or the default image
+        if (category === 'security' || category === 'hospitality') {
+          return jpegPath;
+        } else if (category === 'healthcare' || category === 'education' || 
+                  category === 'government' || category === 'aviation' || 
+                  category === 'industrial') {
+          return jpgPath;
+        }
+        
+        return '/images/default-article-image.jpg';
+    }
   };
 
-  const articleImagePath = getImagePath(getArticleImagePath());
+  const articleImagePath = getImagePath(getArticleImagePath(slug));
 
   return (
     <div className="relative bg-white py-12 dark:bg-gray-900">
@@ -352,14 +489,14 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               Blog
             </Link>
             <span>&gt;</span>
-            <span className="text-gray-700 dark:text-white">{getArticleTitle()}</span>
+            <span className="text-gray-700 dark:text-white">{getArticleTitle(slug)}</span>
           </nav>
 
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
             <Image
               src={articleImagePath}
-              alt={getArticleTitle()}
+              alt={getArticleTitle(slug)}
               fill
               className="object-cover"
               priority
@@ -369,7 +506,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           {/* Title and Meta */}
           <div className="mb-10">
             <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {getArticleTitle()}
+              {getArticleTitle(slug)}
             </h1>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
               <div className="flex items-center gap-1.5">

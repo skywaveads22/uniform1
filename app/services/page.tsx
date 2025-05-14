@@ -9,7 +9,7 @@ const serviceCategories = [
     title: "Industry Uniforms",
     description: "Specialized uniform solutions for various industries",
     items: [
-      { name: "Aviation", href: "/aviation" },
+      { name: "Aviation", href: "/services" },
       { name: "Healthcare", href: "/healthcare" },
       { name: "Hospitality", href: "/hospitality" },
       { name: "Security", href: "/security" },

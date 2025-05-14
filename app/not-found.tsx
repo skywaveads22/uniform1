@@ -7,7 +7,7 @@ import { ArrowLeft, Home, RefreshCw } from 'lucide-react'
 export default function NotFound() {
   // Categories to suggest for navigation
   const categories = [
-    { name: "Aviation", href: "/aviation" },
+    { name: "Aviation", href: "/services" },
     { name: "Education", href: "/education" },
     { name: "Government", href: "/government" },
     { name: "Healthcare", href: "/healthcare" },

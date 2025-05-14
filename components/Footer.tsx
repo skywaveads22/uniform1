@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react"
 
 const categories = [
-  { name: "Aviation", href: "/aviation" },
+  { name: "Aviation", href: "/services" },
   { name: "Education", href: "/education" },
   { name: "Government", href: "/government" },
   { name: "Healthcare", href: "/healthcare" },

@@ -9,7 +9,7 @@ export default function UniformProgramManagementPage() {
       <section className="relative">
         <div className="absolute inset-0">
           <Image
-            src="/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg"
+            src="/images/hospitality/Hospitality_uniforms.jpeg"
             alt="Uniform Program Management"
             fill
             className="object-cover object-center"
@@ -146,7 +146,7 @@ export default function UniformProgramManagementPage() {
               {
                 title: "Brand Consistency",
                 description: "Ensure consistent application of your brand identity across all locations and departments.",
-                image: "/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg"
+                image: "/images/hospitality/Hospitality_uniforms.jpeg"
               },
               {
                 title: "Time Savings",
@@ -353,7 +353,7 @@ export default function UniformProgramManagementPage() {
                 client: "Luxury Hotel Chain",
                 result: "Streamlined management across 12 properties",
                 description: "Created a centralized uniform program for a luxury hotel group with properties in Riyadh, Jeddah, and Dammam, simplifying the ordering process and ensuring consistent quality.",
-                image: "/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg"
+                image: "/images/hospitality/Hospitality_uniforms.jpeg"
               }
             ].map((study, index) => (
               <div key={index} className="rounded-xl bg-white p-8 shadow-lg">
@@ -388,7 +388,7 @@ export default function UniformProgramManagementPage() {
           
           <div className="mt-12 text-center">
             <Link
-              href="/case-studies"
+              href="/testimonials"
               className="inline-flex items-center rounded-lg border border-primary bg-white px-6 py-3 font-medium text-primary transition-all hover:bg-primary/5"
             >
               View All Case Studies

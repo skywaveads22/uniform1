@@ -128,7 +128,7 @@ export default function QuickQuotePage() {
               </button>
               
               <p className="text-center text-xs text-muted-foreground">
-                By submitting this form, you agree to our <Link href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</Link> and 
+                By submitting this form, you agree to our <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link> and 
                 consent to being contacted regarding your quote request.
               </p>
             </div>
