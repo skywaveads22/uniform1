@@ -2,13 +2,15 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
     title: 'Case Study: Upgrading Security Uniforms For A Large Saudi Facility | UniformSA',
     description: 'Comprehensive analysis of how King Abdullah Financial District implemented a strategic security uniform upgrade resulting in enhanced professional image, staff satisfaction, and operational effectiveness.',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/security/Facility_security_uniforms.jpeg'],
     },
   }
 }
@@ -33,9 +35,9 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
-              alt="Case Study: Upgrading Security Uniforms For A Large Saudi Facility"
+            <ArticleImage
+              src={getValidImagePath('/images/security/Facility_security_uniforms.jpeg')}
+              alt="Modern security uniforms at King Abdullah Financial District featuring upgraded design and materials"
               width={1000}
               height={600}
               className="rounded-lg w-full"

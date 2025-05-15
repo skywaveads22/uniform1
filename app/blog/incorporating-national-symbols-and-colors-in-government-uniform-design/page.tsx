@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Incorporating National Symbols and Colors in Government Uniform Design | May 2025',
     description: 'Discover how Saudi Arabian government agencies integrate national symbols and color schemes into uniform designs to reflect cultural heritage and authority in 2025.',
-    images: ['/images/government/national_symbols.jpg'],
+    images: ['/images/government/Civil_service_uniforms.jpg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function BlogPost() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/government/national_symbols.jpg"
+          src="/images/government/Civil_service_uniforms.jpg"
           alt="National Symbols in Government Uniform Design"
           fill
           className="object-cover rounded-lg"

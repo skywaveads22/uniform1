@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: 'A comprehensive examination of the evolving uniform requirements for female security professionals in Saudi Arabia, balancing cultural considerations with functional needs.',
     keywords: 'women security uniforms Saudi Arabia, female security officers KSA, modest security attire, professional women\'s security wear',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/security/Security_uniform_companies.jpeg'],
     },
   }
 }
@@ -34,8 +36,8 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={getValidImagePath('/images/security/Security_uniform_companies.jpeg')}
               alt="Female security professionals in modern Saudi-appropriate uniforms"
               width={1000}
               height={600}

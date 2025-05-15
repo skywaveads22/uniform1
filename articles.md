@@ -1,7 +1,7 @@
 # Articles List
 
 1. The Role of Modesty in Saudi School Uniform Design - (المسار/الرابط الداخلي: /blog/the-role-of-modesty-in-saudi-school-uniform-design)
-   - صور التصنيفات: public/images/education/School_uniforms.jpg
+   - صور التصنيفات: public/images/education/flight_school_uniforms.jpg
 
 2. The Evolution of School Uniform Styles in Saudi Arabia - (المسار/الرابط الداخلي: /blog/the-evolution-of-school-uniform-styles-in-saudi-arabia)
    - صور التصنيفات: public/images/education/School_uniforms_Saudi_Arabia_KSA.jpg
@@ -64,7 +64,7 @@
     - صور التصنيفات: public/images/government/government_office_uniforms.jpg
 
 22. The Role of Uniforms in Creating a Cohesive Brand Experience Across Hotel Chains in KSA - (المسار/الرابط الداخلي: /blog/the-role-of-uniforms-in-creating-a-cohesive-brand-experience-across-hotel-chains-in-ksa)
-    - صور التصنيفات: public/images/hospitality/Hospitality_uniforms.jpeg
+    - صور التصنيفات: public/images/hospitality/hotel_management_uniforms.jpeg
 
 23. The Role of Uniforms in Passenger Perceptions of Airline Quality - (المسار/الرابط الداخلي: /blog/the-role-of-uniforms-in-passenger-perceptions-of-airline-quality)
     - صور التصنيفات: public/images/aviation/aviation_uniforms.jpg
@@ -109,13 +109,13 @@
     - صور التصنيفات: public/images/hospitality/boutique_hotel_staff_uniforms.jpeg
 
 37. Future Trends: Smart Uniforms in Healthcare - (المسار/الرابط الداخلي: /blog/future-trends-smart-uniforms-in-healthcare)
-    - صور التصنيفات: public/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg
+    - صور التصنيفات: public/images/healthcare/Restaurant_uniforms.jpg
 
 38. Safety Features in Paramedic and Emergency Response Uniforms in KSA - (المسار/الرابط الداخلي: /blog/safety-features-in-paramedic-and-emergency-response-uniforms-in-ksa)
     - صور التصنيفات: public/images/healthcare/Medical_staff_uniforms.jpg
 
 39. Airport Security Uniforms: Balancing Authority, Functionality, and Passenger Assurance - (المسار/الرابط الداخلي: /blog/airport-security-uniforms-balancing-authority-functionality-and-passenger-assurance)
-    - صور التصنيفات: public/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg
+    - صور التصنيفات: public/images/security/Security_cap_hat.jpeg
 
 40. Fabric Choices for Hospitality Wear: Stain Resistance and Easy Maintenance - (المسار/الرابط الداخلي: /blog/fabric-choices-for-hospitality-wear-stain-resistance-and-easy-maintenance)
     - صور التصنيفات: public/images/hospitality/breathable_hospitality_fabrics.jpeg
@@ -244,7 +244,7 @@
     - صور التصنيفات: public/images/security/security_outer_vest_carriers.jpeg
 
 82. Footwear for Security Personnel: Comfort, Support, and Durability - (المسار/الرابط الداخلي: /blog/footwear-for-security-personnel-comfort-support-and-durability)
-    - صور التصنيفات: public/images/security/Security_uniform_accessories_(belts_epaulettes).jpeg
+    - صور التصنيفات: public/images/security/duty_belt_keepers.jpeg
 
 83. Footwear Options for Security Guards in Saudi Arabia - (المسار/الرابط الداخلي: /blog/footwear-options-for-security-guards-in-saudi-arabia)
     - صور التصنيفات: public/images/security/Security_guard_attire.jpeg

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Designing Hotel Uniforms That Balance Functionality and Brand Identity | May 2025',
     description: 'Discover innovative approaches to hotel uniform design in Saudi Arabia that perfectly balance staff functionality with distinctive brand expression, featuring smart fabrics and cultural integration.',
-    images: ['/images/hospitality/hotel_uniforms.jpg'],
+    images: ['/images/hospitality/Hotel_uniforms.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function HotelUniformDesign() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/hospitality/hotel_uniforms.jpg"
+          src="/images/hospitality/Hotel_uniforms.jpeg"
           alt="Luxury Hotel Uniforms Balancing Functionality and Brand Identity"
           fill
           className="object-cover rounded-lg"

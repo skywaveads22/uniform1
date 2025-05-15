@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of advanced security uniform systems in Saudi Arabia, comparing specialized ceremonial and tactical designs with focus on psychological impact, functionality, and operational optimization.',
     keywords: 'security uniform differentiation 2025, Saudi tactical security attire, ceremonial security uniforms KSA, psychological impact security apparel, dual-purpose security garments, operational security dress standards',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/security/class_a_security_dress_uniforms.jpeg'],
       title: 'Strategic Differentiation in Security Attire: Ceremonial vs. Tactical Uniforms 2025',
       description: 'Expert analysis of specialized security uniform systems balancing prestigious formal presentation with tactical functionality for Saudi security operations across different environmental contexts.'
     },
@@ -36,8 +38,8 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={getValidImagePath('/images/security/class_a_security_dress_uniforms.jpeg')}
               alt="Saudi security professionals in both ceremonial and tactical uniform configurations during a formal security demonstration event"
               width={1000}
               height={600}

@@ -2,13 +2,15 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const metadata: Metadata = {
   title: 'Choosing the Right Materials for Security Uniforms in the Saudi Climate | UniformSA',
   description: 'Learn how to select appropriate fabrics and materials for security uniforms that provide comfort, durability, and professional appearance in Saudi Arabia\'s unique climate conditions.',
   keywords: 'security uniform materials, Saudi security uniforms, durable fabrics, breathable security uniform, climate-appropriate uniforms, KSA uniform fabrics',
   openGraph: {
-    images: ['/images/author/default-author.jpg'],
+    images: ['/images/security/breathable_security_shirts.jpeg'],
   },
 }
 
@@ -17,8 +19,8 @@ export default function BlogPost() {
     <div className="bg-white">
       {/* Hero Section */}
       <div className="relative h-[400px] w-full overflow-hidden">
-        <Image
-          src="/images/author/default-author.jpg"
+        <ArticleImage
+          src={getValidImagePath('/images/security/breathable_security_shirts.jpeg')}
           alt="Security guard uniforms made with climate-appropriate materials for Saudi Arabia"
           fill
           className="object-cover"

@@ -2,21 +2,26 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: 'Advanced Maintenance Protocols for Aviation Uniforms: 2025 Lifecycle Optimization Framework | UniformSA',
-    description: 'Comprehensive guide to aviation uniform maintenance strategies for Saudi airlines, featuring advanced lifecycle management systems that enhance longevity, appearance, and technical performance.',
-    keywords: 'aviation uniform maintenance 2025, Saudi airline garment care systems, technical textile preservation methods, uniform lifecycle management KSA, professional aviation attire cleaning protocols, sustainability-oriented maintenance practices',
+    title: `Advanced Maintenance Protocols for Aviation Uniforms: 2025 Lifecycle Optimization Framework | UniformSA`,
+    description: `Strategic guide to maximizing aviation uniform performance through comprehensive maintenance systems, featuring specialized textile care protocols customized for Saudi operational environments.`,
+    keywords: 'aviation uniform lifecycle optimization 2025, technical textile preservation Saudi Arabia, flight crew attire maintenance, specialized uniform care methodology, aerospace-grade fabric maintenance, performance property preservation',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/aviation/aviation_uniforms.jpg'],
       title: 'Advanced Maintenance Protocols for Aviation Uniforms: 2025 Lifecycle Optimization Framework',
-      description: 'Expert analysis of best practices for maintaining advanced aviation uniforms in Saudi operational environments, including scientific approaches to preserving appearance, functionality, and technical properties.'
+      description: 'Comprehensive analysis of specialized maintenance systems delivering unprecedented uniform lifespans and performance retention for Saudi aviation operations.'
     },
   }
 }
 
 export default function BlogPost() {
+  // Get valid image path
+  const featuredImagePath = getValidImagePath('/images/aviation/Cabin_crew_uniforms.jpg');
+  
   return (
     <div className="relative bg-white py-12 dark:bg-gray-900">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -36,12 +41,13 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={featuredImagePath}
               alt="Advanced aviation uniform maintenance facility with specialized equipment for preserving technical performance properties in Saudi Arabia"
               width={1000}
               height={600}
               className="rounded-lg w-full"
+              priority
             />
           </div>
 

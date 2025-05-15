@@ -1,41 +1,45 @@
-import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useState } from 'react';
 
 interface SliderImageProps {
-  src: string;
+  src?: string;
   alt: string;
-  fallbackSrc: string;
+  category: string;
   priority?: boolean;
+  loading?: "lazy" | "eager";
 }
 
-export default function SliderImage({ src, alt, fallbackSrc, priority = false }: SliderImageProps) {
-  const [error, setError] = useState(false);
-  const [imageSrc, setImageSrc] = useState<string>(src);
-  
-  // Reset error state if src changes
-  useEffect(() => {
-    setImageSrc(src);
-    setError(false);
-  }, [src]);
-  
-  // Use useEffect for logging instead of JSX
-  useEffect(() => {
-    console.log(`Rendering SliderImage with src: ${imageSrc}`);
-  }, [imageSrc]);
-  
+export default function SliderImage({ src, alt, category, priority = false, loading = "lazy" }: SliderImageProps) {
+  const [imageSrc, setImageSrc] = useState(src);
+
+  const getFallbackImage = (cat: string): string => {
+    const fallbacks: Record<string, string> = {
+      aviation: '/images/aviation/aviation_uniforms.jpg',
+      healthcare: '/images/healthcare/Healthcare_uniforms.jpg',
+      hospitality: '/images/hospitality/Hotel_uniforms.jpeg',
+      education: '/images/education/School_uniforms_Saudi_Arabia_KSA.jpg',
+      security: '/images/security/Security_uniforms.jpeg',
+      industrial: '/images/industrial/industrial_uniform_fittings.jpeg',
+      government: '/images/government/Government_uniforms.jpg'
+    };
+    
+    return fallbacks[cat.toLowerCase()] || '/images/education/School_uniforms_Saudi_Arabia_KSA.jpg';
+  };
+
+  const handleError = () => {
+    const fallbackImage = getFallbackImage(category);
+    setImageSrc(fallbackImage);
+  };
+
   return (
     <Image
-      src={error ? fallbackSrc : imageSrc}
+      src={imageSrc || getFallbackImage(category)}
       alt={alt}
       fill
       className="object-cover"
+      onError={handleError}
       priority={priority}
-      sizes="100vw"
-      onError={() => {
-        console.error(`Failed to load image: ${imageSrc}, using fallback: ${fallbackSrc}`);
-        setError(true);
-        setImageSrc(fallbackSrc);
-      }}
+      loading={loading}
     />
   );
 } 

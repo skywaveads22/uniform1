@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of advanced insignia architectures for Saudi security organizations, featuring sophisticated visual systems that balance authority projection, operational clarity, and cultural authenticity.',
     keywords: 'security rank insignia Saudi Arabia 2025, KSA uniform hierarchical systems, security role visualization, Saudi authority signifiers, tactical identification badges, operational insignia systems',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/security/security_patches_and_badges.jpeg'],
       title: 'Hierarchical Visual Systems: Strategic Rank Differentiation in Saudi Security Uniforms 2025',
       description: 'Expert examination of innovative rank differentiation approaches enhancing operational effectiveness through clear command structures, precise role delineation, and strategic authority signaling in Saudi security contexts.'
     },
@@ -36,8 +38,8 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={getValidImagePath('/images/security/security_patches_and_badges.jpeg')}
               alt="Advanced Saudi security insignia system showcasing hierarchical visual elements and precision-engineered rank indicators"
               width={1000}
               height={600}

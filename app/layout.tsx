@@ -94,6 +94,14 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Favicon links */}
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+        <link rel="icon" type="image/png" sizes="256x256" href="/favicon-256.png" />
+        <link rel="apple-touch-icon" sizes="256x256" href="/favicon-256.png" />
       </head>
       <body className={inter.className}>
         <ThemeProvider

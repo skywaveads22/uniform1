@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { CTA } from '@/components/CTA';
 import { RelatedArticles } from '@/components/RelatedArticles';
 import { ShareButtons } from '@/components/ShareButtons';
+import ArticleImage from '@/components/ArticleImage';
+import { getValidImagePath } from '@/lib/image-helper';
 
 export const metadata: Metadata = {
   title: 'Sustainable and Eco-Friendly School Uniform Options | Uniform Junction',
@@ -11,11 +13,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sustainable and Eco-Friendly School Uniform Options',
     description: 'Comprehensive guide to implementing environmentally responsible school uniform programs in Saudi Arabian educational institutions.',
-    images: ['/images/author/default-author.jpg'],
+    images: ['/images/education/School_uniform_fabrics.jpg'],
   },
 };
 
 export default function BlogPost() {
+  // Get valid image path
+  const mainImagePath = getValidImagePath('/images/education/School_uniform_fabrics.jpg');
+  
   return (
     <main className="flex-auto">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
@@ -38,12 +43,13 @@ export default function BlogPost() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
-                <Image
-                  src="/images/author/default-author.jpg"
+                <ArticleImage
+                  src={mainImagePath}
                   alt="Saudi students wearing eco-friendly school uniforms made from sustainable materials in a modern school environment"
                   width={1408}
                   height={960}
                   className="rounded-2xl"
+                  priority
                 />
                 <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-neutral-500">
                   <span>Progressive Saudi schools are adopting eco-friendly uniform options that combine sustainability with traditional educational values</span>

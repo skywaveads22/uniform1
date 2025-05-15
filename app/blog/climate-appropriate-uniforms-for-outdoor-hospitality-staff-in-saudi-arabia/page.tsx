@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Climate-Appropriate Uniforms for Outdoor Hospitality Staff in Saudi Arabia | May 2025',
     description: 'Discover the latest innovations in climate-adaptive uniforms designed for outdoor hospitality staff working in Saudi Arabia\'s challenging desert environment while maintaining professional appearance.',
-    images: ['/images/hospitality/hospitality_uniforms.jpg'],
+    images: ['/images/hospitality/Hospitality_uniforms.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function HospitalityUniforms() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/hospitality/hospitality_uniforms.jpg"
+          src="/images/hospitality/Hospitality_uniforms.jpeg"
           alt="Climate-Appropriate Hospitality Uniforms in Saudi Arabia"
           fill
           className="object-cover rounded-lg"

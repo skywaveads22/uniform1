@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of next-generation sustainable industrial workwear technologies for Saudi industries, featuring regenerative materials, zero-waste manufacturing, and performance-enhancing eco-innovations.',
     keywords: 'sustainable industrial workwear 2025, circular economy uniforms KSA, zero-waste manufacturing workwear, biodegradable industrial uniforms, Saudi green industrial apparel, eco-performance workwear innovations',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/industrial/Industrial_uniforms.jpeg'],
       title: 'Advanced Sustainable Industrial Workwear: 2025 Circular Economy Innovations',
       description: 'Expert examination of cutting-edge sustainable industrial uniform solutions balancing environmental responsibility with enhanced protection, durability, and operational efficiency in Saudi industrial environments.'
     },
@@ -36,8 +38,8 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={getValidImagePath('/images/industrial/breathable_industrial_fabrics.jpeg')}
               alt="Advanced sustainable industrial workwear featuring recycled materials and modular design for Saudi petrochemical operations"
               width={1000}
               height={600}
@@ -145,6 +147,15 @@ export default function BlogPost() {
 
               <div className="bg-gray-100 p-6 rounded-lg my-8 dark:bg-gray-800">
                 <h4 className="text-lg font-semibold mb-2">Case Study: SABIC's Circular Workwear Initiative</h4>
+                <div className="flex justify-center my-4">
+                  <ArticleImage
+                    src={getValidImagePath('/images/industrial/Workshop_uniforms.jpeg')}
+                    alt="SABIC's sustainable workwear program featuring recycled and bio-based materials"
+                    width={500}
+                    height={300}
+                    className="rounded-lg"
+                  />
+                </div>
                 <p className="text-sm mb-0">
                   In late 2024, Saudi petrochemical leader SABIC implemented a comprehensive circular workwear program featuring garments with 85% recycled or bio-based content. The initiative included a closed-loop collection system, with worn uniforms processed at specialized facilities to extract and purify fiber components for remanufacturing.
                 </p>
@@ -289,12 +300,41 @@ export default function BlogPost() {
                 <h3 className="text-lg font-semibold">About the Author</h3>
                 <p className="text-gray-600">Dr. Ibrahim Al-Rashidi is a sustainable industrial textile specialist with expertise in circular economy systems for demanding operational environments. With a Ph.D. in Advanced Materials Science and extensive consulting experience with major Saudi industrial organizations, he specializes in developing workwear programs that balance environmental responsibility with performance requirements. Dr. Al-Rashidi has published numerous research papers on regenerative textile systems and regularly advises on large-scale sustainability initiatives throughout the GCC region.</p>
               </div>
+
+              <div className="not-prose flex justify-center my-8">
+                <ArticleImage
+                  src={getValidImagePath('/images/industrial/customized_workwear_programs.jpeg')}
+                  alt="Zero-Waste Pattern Engineering in sustainable industrial workwear"
+                  width={800}
+                  height={500}
+                  className="rounded-lg"
+                />
+              </div>
             </div>
           </div>
 
           {/* Sidebar */}
           <div className="lg:col-span-4">
             <div className="sticky top-24 space-y-8">
+              {/* Author */}
+              <div className="rounded-xl bg-white p-6 shadow-sm dark:bg-gray-800">
+                <div className="flex items-center space-x-4">
+                  <ArticleImage
+                    src={getValidImagePath('/images/industrial/Work_coveralls_overalls.jpeg')}
+                    alt="Sustainability Expert"
+                    width={60}
+                    height={60}
+                    className="h-14 w-14 rounded-full object-cover"
+                  />
+                  <div>
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white">Circular Economy Specialist</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      Expert in sustainable textiles and industrial workwear innovations
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* Share Section */}
               <div className="rounded-xl border border-gray-200 p-6">
                 <h3 className="mb-4 text-lg font-semibold">Share Article</h3>

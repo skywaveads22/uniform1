@@ -16,6 +16,17 @@ const validCategories = [
   "security"
 ]
 
+// Default images for each category
+const defaultCategoryImages = {
+  'aviation': '/images/aviation/Aviation_uniforms_Saudi_Arabia_KSA.jpg',
+  'education': '/images/education/School_uniforms_Saudi_Arabia_KSA.jpg',
+  'government': '/images/government/Government_uniforms_Saudi_Arabia_KSA.jpg',
+  'healthcare': '/images/healthcare/Medical_scrubs_supplier_for_hospitals.jpg',
+  'hospitality': '/images/hospitality/Hotel_uniforms.jpeg',
+  'industrial': '/images/industrial/Industrial_uniforms.jpeg',
+  'security': '/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg',
+}
+
 // For dynamic metadata
 export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
   const { category } = params
@@ -46,7 +57,7 @@ interface Article {
   title: string
   internalLink: string
   imagePath: string
-  categories: string[]
+  category: string
 }
 
 export default async function CategoryPage({ params }: { params: { category: string } }) {
@@ -115,14 +126,23 @@ export default async function CategoryPage({ params }: { params: { category: str
             <div className="lg:col-span-3">
               {articles.length > 0 ? (
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
-                  {articles.map((article) => (
-                    <BlogPostCard
-                      key={article.id}
-                      title={article.title}
-                      imagePath={article.imagePath}
-                      internalLink={article.internalLink}
-                    />
-                  ))}
+                  {articles.map((article, index) => {
+                    // فحص صحة عناصر المقالة قبل محاولة عرضها
+                    if (!article || !article.title || !article.internalLink) {
+                      console.error(`مقالة غير صالحة عند الفهرس ${index} في فئة ${category}:`, article);
+                      return null;
+                    }
+                    
+                    return (
+                      <BlogPostCard
+                        key={article.id || index}
+                        title={article.title}
+                        imagePath={article.imagePath || ''}
+                        internalLink={article.internalLink}
+                        category={article.category}
+                      />
+                    );
+                  })}
                 </div>
               ) : (
                 <div className="rounded-xl bg-white p-8 text-center shadow-md">
@@ -155,6 +175,8 @@ async function getArticlesByCategory(category: string): Promise<Article[]> {
     // Lowercase category for case-insensitive comparison
     const searchCategory = category.toLowerCase()
     
+    let currentArticle: Partial<Article> = {}
+    
     // Process the file line by line
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i].trim()
@@ -166,46 +188,137 @@ async function getArticlesByCategory(category: string): Promise<Article[]> {
       const articleMatch = line.match(/^(\d+)\.\s+(.+?)\s+-\s+\(المسار\/الرابط الداخلي:\s+(.+?)\)$/)
       
       if (articleMatch) {
+        // If we have a previous article waiting to be added and it matches the category, add it
+        if (currentArticle.id && currentArticle.title && currentArticle.internalLink && 
+            currentArticle.category === searchCategory) {
+          articles.push(currentArticle as Article)
+        }
+        
+        // Start a new article
         const id = parseInt(articleMatch[1])
         const title = articleMatch[2]
         const internalLink = articleMatch[3]
         
-        // Look ahead for the image path in the next line
-        let imagePath = ''
-        let categories: string[] = []
+        // Determine the category from the title
+        const articleCategory = getCategoryFromTitle(title)
         
-        if (i + 1 < lines.length) {
-          const nextLine = lines[i + 1].trim()
-          if (nextLine.startsWith('- صور التصنيفات:')) {
-            // Extract the first image path (if multiple are provided, separated by commas)
-            const paths = nextLine.replace('- صور التصنيفات:', '').trim().split(',')
-            imagePath = paths[0].trim()
-            
-            // Extract categories from image path
-            const possibleCategories = ['aviation', 'education', 'government', 'healthcare', 'hospitality', 'industrial', 'security']
-            categories = possibleCategories.filter(cat => 
-              imagePath.toLowerCase().includes(`/images/${cat}/`)
-            )
-          }
-        }
-        
-        // If article belongs to this category, add it to the result
-        if (categories.includes(searchCategory)) {
-          articles.push({
+        // Only continue processing if this article belongs to the requested category
+        if (articleCategory === searchCategory) {
+          // Default image for this category
+          const defaultImage = defaultCategoryImages[searchCategory as keyof typeof defaultCategoryImages] || '/images/placeholder-image.jpg'
+          
+          currentArticle = {
             id,
             title,
             internalLink,
-            imagePath,
-            categories
-          })
+            imagePath: defaultImage,
+            category: searchCategory
+          }
+        } else {
+          // Not in the requested category, reset current article
+          currentArticle = {}
         }
+      } 
+      // Check if the line contains image information and we have a current article in process
+      else if (line.startsWith('- صور التصنيفات:') && currentArticle.id) {
+        // Extract the image path
+        const imagePath = line.replace('- صور التصنيفات:', '').trim()
+        
+        // Remove 'public' from the beginning if it exists
+        const finalImagePath = imagePath.replace('public', '').split(',')[0].trim()
+        
+        // Set the image path in the current article
+        currentArticle.imagePath = finalImagePath
       }
     }
     
-    return articles
+    // Add the last article if it exists and matches the category
+    if (currentArticle.id && currentArticle.title && currentArticle.internalLink && 
+        currentArticle.category === searchCategory) {
+      articles.push(currentArticle as Article)
+    }
+    
+    // Make each article have a unique image
+    const usedImages: Set<string> = new Set()
+    
+    // Get a list of all available images for this category
+    let availableImages: string[] = []
+    
+    try {
+      const categoryImagesDir = path.join(process.cwd(), 'public', 'images', searchCategory)
+      if (fs.existsSync(categoryImagesDir)) {
+        availableImages = fs.readdirSync(categoryImagesDir)
+          .filter(file => file.endsWith('.jpg') || file.endsWith('.jpeg') || file.endsWith('.png'))
+          .map(file => `/images/${searchCategory}/${file}`)
+      }
+    } catch (err) {
+      console.error(`Error reading image directory for ${searchCategory}:`, err)
+    }
+    
+    // Process each article to ensure unique images
+    const processedArticles = articles.map((article, index) => {
+      // If no available images, use the default
+      if (availableImages.length === 0) {
+        return article
+      }
+      
+      // Check if the current image path is valid
+      const currentImagePath = article.imagePath
+      const publicPath = path.join(process.cwd(), 'public', currentImagePath.replace(/^\//, ''))
+      
+      // If current image exists and not used before, mark it as used and keep it
+      if (fs.existsSync(publicPath) && !usedImages.has(currentImagePath)) {
+        usedImages.add(currentImagePath)
+        return article
+      }
+      
+      // Current image doesn't exist or already used, pick a new one
+      const unusedImages = availableImages.filter(img => !usedImages.has(img))
+      
+      if (unusedImages.length > 0) {
+        // Randomly select one of the unused images
+        const newImage = unusedImages[Math.floor(Math.random() * unusedImages.length)]
+        usedImages.add(newImage)
+        return { ...article, imagePath: newImage }
+      }
+      
+      // If all images are used, reset the used images and pick a new one
+      usedImages.clear()
+      const newImage = availableImages[Math.floor(Math.random() * availableImages.length)]
+      usedImages.add(newImage)
+      
+      return { ...article, imagePath: newImage }
+    })
+    
+    return processedArticles
     
   } catch (error) {
     console.error(`Error parsing articles for category ${category}:`, error)
     return []
   }
+}
+
+// دالة مساعدة لاستخراج الفئة من العنوان
+function getCategoryFromTitle(title: string): string | null {
+  const categoryKeywords = {
+    'aviation': ['aviation', 'airline', 'airport', 'flight', 'pilot', 'cabin crew'],
+    'education': ['education', 'school', 'college', 'university', 'student', 'teacher'],
+    'government': ['government', 'ministry', 'public sector', 'civil service'],
+    'healthcare': ['healthcare', 'medical', 'hospital', 'clinic', 'nurse', 'doctor', 'health'],
+    'hospitality': ['hospitality', 'hotel', 'restaurant', 'resort', 'chef', 'housekeeping'],
+    'industrial': ['industrial', 'workwear', 'factory', 'manufacturing', 'construction'],
+    'security': ['security', 'guard', 'protection', 'safety officer']
+  }
+  
+  const lowercaseTitle = title.toLowerCase()
+  
+  for (const [category, keywords] of Object.entries(categoryKeywords)) {
+    for (const keyword of keywords) {
+      if (lowercaseTitle.includes(keyword)) {
+        return category
+      }
+    }
+  }
+  
+  return null
 } 

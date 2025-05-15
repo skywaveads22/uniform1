@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: 'A comprehensive guide to selecting optimal security footwear for Saudi Arabia\'s unique environmental conditions, cultural requirements, and professional standards.',
     keywords: 'security boots Saudi Arabia, security guard footwear KSA, tactical shoes Saudi security, desert security footwear, professional security shoes',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/security/Security_uniform_accessories_(belts_epaulettes).jpeg'],
     },
   }
 }
@@ -34,9 +36,9 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
-              alt="Professional tactical footwear for security personnel in Saudi Arabia"
+            <ArticleImage
+              src={getValidImagePath('/images/security/Security_uniform_accessories_(belts_epaulettes).jpeg')}
+              alt="Professional tactical footwear and accessories for security personnel in Saudi Arabia"
               width={1000}
               height={600}
               className="rounded-lg w-full"

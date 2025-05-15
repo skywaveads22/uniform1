@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of advanced footwear engineering for security personnel, featuring biomechanical optimization, climate-responsive materials, and performance-enhancing technologies for extended operational deployment.',
     keywords: 'security footwear engineering 2025, tactical podiatric systems, advanced support technology, operational footwear architecture, security personnel performance optimization, technical footwear integration',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/security/Security_uniforms.jpeg'],
       title: 'Advanced Podiatric Performance Architecture: Technical Footwear Systems for Security Operations 2025',
       description: 'In-depth examination of advanced footwear engineering methodologies for security personnel, featuring biomechanical optimization, climate-responsive materials, and performance-enhancing technologies.'
     },
@@ -36,8 +38,8 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={getValidImagePath('/images/security/Security_uniforms.jpeg')}
               alt="Advanced technical footwear system for security personnel featuring biomechanical optimization and climate-responsive materials"
               width={1000}
               height={600}

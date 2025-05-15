@@ -10,17 +10,17 @@ export const metadata: Metadata = {
 
 const slides = [
   {
-    image: "/images/services/custom-1.jpg",
+    image: "/images/healthcare/hospital_logo_printing_uniforms.jpg",
     title: "Bespoke Uniform Design",
     description: "Tailored uniforms that perfectly reflect your brand identity and values"
   },
   {
-    image: "/images/services/custom-2.jpg",
+    image: "/images/aviation/aviation_uniform_embroidery.jpg",
     title: "Custom Embroidery & Printing",
     description: "Professional branding with high-quality embroidery and printing services"
   },
   {
-    image: "/images/services/custom-3.jpg",
+    image: "/images/hospitality/modern_hospitality_design_uniforms.jpeg",
     title: "Material & Color Selection",
     description: "Extensive fabric and color options to meet your specific requirements"
   }
@@ -55,7 +55,7 @@ export default function UniformsCustomizationPage() {
               </div>
               <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md lg:aspect-square">
                 <Image
-                  src="/images/services/customization-detail.jpg"
+                  src="/images/hospitality/hotel_uniform_accessories.jpeg"
                   alt="Uniform customization service"
                   fill
                   className="object-cover"
@@ -289,35 +289,35 @@ export default function UniformsCustomizationPage() {
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {[
                 {
-                  image: "/images/services/custom-sample-1.jpg",
+                  image: "/images/hospitality/boutique_hotel_staff_uniforms.jpeg",
                   caption: "Corporate blazer with custom embroidery"
                 },
                 {
-                  image: "/images/services/custom-sample-2.jpg",
+                  image: "/images/hospitality/modern_hospitality_design_uniforms.jpeg",
                   caption: "Healthcare scrubs with department color coding"
                 },
                 {
-                  image: "/images/services/custom-sample-3.jpg",
+                  image: "/images/healthcare/hospital_logo_printing_uniforms.jpg",
                   caption: "Hospitality uniforms with branded accents"
                 },
                 {
-                  image: "/images/services/custom-sample-4.jpg",
+                  image: "/images/aviation/aviation_uniform_embroidery.jpg",
                   caption: "Security uniforms with reflective elements"
                 },
                 {
-                  image: "/images/services/custom-sample-5.jpg",
+                  image: "/images/hospitality/hotel_uniform_accessories.jpeg",
                   caption: "Restaurant staff with custom aprons"
                 },
                 {
-                  image: "/images/services/custom-sample-6.jpg",
+                  image: "/images/hospitality/custom_hospitality_vests.jpeg",
                   caption: "Retail team polos with branded elements"
                 },
                 {
-                  image: "/images/services/custom-sample-7.jpg",
+                  image: "/images/healthcare/Embroidery_on_medical_uniforms.jpg",
                   caption: "Executive suits with subtle branding"
                 },
                 {
-                  image: "/images/services/custom-sample-8.jpg",
+                  image: "/images/hospitality/hotel_uniform_accessories_(ties_bowties_pins).jpeg",
                   caption: "Industrial workwear with safety customizations"
                 }
               ].map((sample, index) => (
@@ -344,7 +344,7 @@ export default function UniformsCustomizationPage() {
             <div className="grid gap-8 md:grid-cols-2">
               <div className="relative aspect-video overflow-hidden rounded-lg shadow-md">
                 <Image
-                  src="/images/services/custom-case-study.jpg"
+                  src="/images/hospitality/modern_hospitality_design_uniforms.jpeg"
                   alt="Uniform customization case study"
                   fill
                   className="object-cover"

@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of advanced photonic material integration in industrial workwear, featuring high-performance reflective systems, visibility optimization technologies, and safety enhancement methodologies for hazardous environments.',
     keywords: 'industrial safety photonics 2025, advanced reflective systems, visibility enhancement technology, industrial workwear safety architecture, photonic material integration, technical safety optimization',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/industrial/High_visibility_clothing_Hi_vis_uniforms.jpeg'],
       title: 'Advanced Photonic Integration Architecture: Technical Reflective Systems for Industrial Safety Enhancement 2025',
       description: 'In-depth examination of advanced photonic material integration methodologies for industrial workwear, featuring high-performance reflective systems and visibility optimization technologies.'
     },
@@ -36,8 +38,8 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={getValidImagePath('/images/industrial/High_visibility_clothing_Hi_vis_uniforms.jpeg')}
               alt="Advanced photonic integration system for industrial workwear featuring high-performance reflective materials and visibility optimization technologies"
               width={1000}
               height={600}
@@ -129,6 +131,15 @@ export default function BlogPost() {
 
               <div className="bg-gray-100 p-6 rounded-lg my-8 dark:bg-gray-800">
                 <h4 className="text-lg font-semibold mb-2">Technical Integration: The PHOTON System</h4>
+                <div className="flex justify-center my-4">
+                  <ArticleImage
+                    src={getValidImagePath('/images/industrial/industrial_safety_vests.jpeg')}
+                    alt="PHOTON system advanced reflective materials implementation"
+                    width={500}
+                    height={300}
+                    className="rounded-lg"
+                  />
+                </div>
                 <p className="text-sm mb-0">
                   The PHOTON (Photonic High-performance Optimization and Technical Operational Network) system represents a breakthrough in industrial safety engineering. This integrated technology platform combines advanced reflective materials, environmental monitoring, and performance optimization algorithms to create workwear that actively enhances visibility in challenging conditions.
                 </p>
@@ -265,12 +276,41 @@ export default function BlogPost() {
                 <h3 className="text-lg font-semibold">About the Author</h3>
                 <p className="text-gray-600">Dr. Sarah Al-Hashemi is a leading expert in photonic engineering and safety optimization for industrial environments. With over 15 years of experience in technical material development and implementation, she has led numerous research initiatives focused on enhancing worker safety through advanced photonic systems and visibility optimization. Dr. Al-Hashemi's work has been instrumental in developing specialized solutions for industrial operations across the Middle East, with particular emphasis on addressing the unique challenges of Saudi Arabia's diverse industrial environments.</p>
               </div>
+
+              <div className="not-prose flex justify-center my-8">
+                <ArticleImage
+                  src={getValidImagePath('/images/industrial/Safety_vests.jpeg')}
+                  alt="Strategic Pattern Placement for optimized visibility in industrial settings"
+                  width={800}
+                  height={500}
+                  className="rounded-lg"
+                />
+              </div>
             </div>
           </div>
 
           {/* Sidebar */}
           <div className="lg:col-span-4">
             <div className="sticky top-24 space-y-8">
+              {/* Author */}
+              <div className="rounded-xl bg-white p-6 shadow-sm dark:bg-gray-800">
+                <div className="flex items-center space-x-4">
+                  <ArticleImage
+                    src={getValidImagePath('/images/industrial/Safety_vests.jpeg')}
+                    alt="Photonic Integration Expert"
+                    width={60}
+                    height={60}
+                    className="h-14 w-14 rounded-full object-cover"
+                  />
+                  <div>
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white">Visibility Systems Specialist</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      Expert in advanced reflective technologies for industrial safety applications
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* Share Section */}
               <div className="rounded-xl border border-gray-200 p-6">
                 <h3 className="mb-4 text-lg font-semibold">Share Article</h3>

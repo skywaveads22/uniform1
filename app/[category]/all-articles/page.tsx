@@ -5,7 +5,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, Filter, ArrowDownAZ, Calendar as CalendarIcon } from 'lucide-react'
 import { notFound } from 'next/navigation'
-import { getImagePath, getFallbackImage } from '@/lib/image-helper'
 
 interface Post {
   id: string
@@ -179,14 +178,10 @@ export default function AllCategoryArticlesPage({ params }: PageProps) {
               <Link href={`/blog/${post.slug}`}>
                 <div className="relative h-48 w-full overflow-hidden">
                   <Image
-                    src={getImagePath(post.image)}
+                    src={post.image}
                     alt={post.title}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = getFallbackImage(params.category);
-                    }}
                   />
                 </div>
                 <div className="p-6">

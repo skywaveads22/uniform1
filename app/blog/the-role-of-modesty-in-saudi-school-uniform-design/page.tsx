@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { CTA } from '@/components/CTA';
 import { RelatedArticles } from '@/components/RelatedArticles';
 import { ShareButtons } from '@/components/ShareButtons';
+import ArticleImage from '@/components/ArticleImage';
+import { getValidImagePath } from '@/lib/image-helper';
 
 export const metadata: Metadata = {
   title: 'The Role of Modesty in Saudi School Uniform Design | Uniform Junction',
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Role of Modesty in Saudi School Uniform Design',
     description: 'How Islamic principles of modesty influence and shape Saudi school uniform design, creating attire that honors religious values while supporting modern educational needs.',
-    images: ['/images/education/School_uniforms.jpg'],
+    images: ['/images/education/School_uniforms_Saudi_Arabia_KSA.jpg'],
   },
 };
 
@@ -38,12 +40,13 @@ export default function BlogPost() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
-                <Image
-                  src="/images/education/School_uniforms.jpg"
+                <ArticleImage
+                  src={getValidImagePath('/images/education/School_uniforms_Saudi_Arabia_KSA.jpg')}
                   alt="Saudi students wearing modest school uniforms that balance religious values with contemporary educational functionality"
                   width={1408}
                   height={960}
                   className="rounded-2xl"
+                  priority
                 />
                 <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-neutral-500">
                   <span>Saudi school uniforms exemplify the successful integration of Islamic modesty principles with contemporary educational design considerations</span>
@@ -83,6 +86,17 @@ export default function BlogPost() {
                   <li><strong>Spiritual Significance:</strong> Modesty as expression of faith and divine consciousness</li>
                   <li><strong>Social Dimension:</strong> Community standards and collective religious identity</li>
                 </ul>
+
+                <div className="not-prose my-8 overflow-hidden rounded-xl">
+                  <ArticleImage
+                    src={getValidImagePath('/images/education/Girls_school_uniforms.jpg')}
+                    alt="Young Saudi students wearing modest school uniforms that follow Islamic principles while being comfortable for educational activities"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
+                  <p className="mt-2 text-sm text-neutral-500">School uniforms for young female students demonstrate how modesty principles are applied with age-appropriate considerations in Saudi education</p>
+                </div>
 
                 <div className="not-prose my-8 overflow-hidden rounded-xl bg-neutral-50 p-8">
                   <h3 className="text-xl font-semibold text-neutral-950">Key Islamic Modesty Principles</h3>
@@ -125,7 +139,13 @@ export default function BlogPost() {
                 </ul>
 
                 <div className="not-prose my-8 overflow-hidden rounded-xl">
-                  
+                  <ArticleImage
+                    src={getValidImagePath('/images/education/School_thobe_uniform.jpg')}
+                    alt="Traditional Saudi school uniform designs showing cultural variations while maintaining modest principles"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
                   <p className="mt-2 text-sm text-neutral-500">Saudi cultural expressions of modesty provide important context for educational attire design, blending regional traditions with national identity</p>
                 </div>
 
@@ -146,6 +166,17 @@ export default function BlogPost() {
                   <li><strong>Secondary Level (Ages 16-18):</strong> Adult modesty standards preparing for broader society</li>
                   <li><strong>Developmental Sensitivity:</strong> Appropriate progression of modesty expectations</li>
                 </ul>
+
+                <div className="not-prose my-8 overflow-hidden rounded-xl">
+                  <ArticleImage
+                    src={getValidImagePath('/images/education/primary_school_uniforms.jpg')}
+                    alt="Age-appropriate modesty in Saudi school uniforms across different educational levels"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
+                  <p className="mt-2 text-sm text-neutral-500">Age-appropriate modesty standards evolve throughout educational stages, maintaining appropriate coverage while accommodating developmental needs</p>
+                </div>
 
                 <h3 className="mt-8 text-xl font-semibold text-neutral-950">
                   Gender-Specific Considerations
@@ -186,7 +217,13 @@ export default function BlogPost() {
                 </ul>
 
                 <div className="not-prose my-8 overflow-hidden rounded-xl">
-                  
+                  <ArticleImage
+                    src={getValidImagePath('/images/education/school_winter_uniforms.jpg')}
+                    alt="Modern Saudi school uniforms demonstrating practical modest designs for active learning environments"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
                   <p className="mt-2 text-sm text-neutral-500">Modern Saudi school uniforms successfully balance modest coverage with the practical functionality needed for active learning environments</p>
                 </div>
 
@@ -207,6 +244,17 @@ export default function BlogPost() {
                   <li><strong>Heat Management:</strong> Thermal considerations for modest attire in Saudi climate</li>
                   <li><strong>Aesthetic Refinement:</strong> Contemporary design elements within modest parameters</li>
                 </ul>
+
+                <div className="not-prose my-8 overflow-hidden rounded-xl">
+                  <ArticleImage
+                    src={getValidImagePath('/images/education/uniforms_sports_kits.jpg')}
+                    alt="Innovative modest designs for active educational environments"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
+                  <p className="mt-2 text-sm text-neutral-500">Modern design innovations enable modest uniforms that accommodate active movement while maintaining appropriate coverage</p>
+                </div>
 
                 <div className="bg-neutral-100 p-6 rounded-xl my-8">
                   <h4 className="text-lg font-semibold text-neutral-950 mb-2">Innovation Focus: Active Modest Design</h4>
@@ -248,6 +296,17 @@ export default function BlogPost() {
                   <li><strong>Educational Philosophy Expression:</strong> School values reflected in modest attire approach</li>
                 </ul>
 
+                <div className="not-prose my-8 overflow-hidden rounded-xl">
+                  <ArticleImage
+                    src={getValidImagePath('/images/education/School_logo_embroidery.jpg')}
+                    alt="School identity elements integrated into modest uniform designs"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
+                  <p className="mt-2 text-sm text-neutral-500">School emblems and identity elements are carefully incorporated into modest uniforms while respecting Islamic principles</p>
+                </div>
+
                 <h3 className="mt-8 text-xl font-semibold text-neutral-950">
                   Balancing Diversity and Standards
                 </h3>
@@ -263,7 +322,13 @@ export default function BlogPost() {
                 </ul>
 
                 <div className="not-prose my-8 overflow-hidden rounded-xl">
-                  
+                  <ArticleImage
+                    src={getValidImagePath('/images/education/Private_school_uniforms.jpg')}
+                    alt="Diverse approaches to modest uniform design in Saudi schools"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
                   <p className="mt-2 text-sm text-neutral-500">Saudi schools demonstrate diverse approaches to modest uniform design while maintaining essential Islamic principles</p>
                 </div>
 
@@ -284,6 +349,17 @@ export default function BlogPost() {
                   <li><strong>Clear Communication:</strong> Transparent guidelines on modest uniform expectations</li>
                   <li><strong>Regular Assessment:</strong> Ongoing evaluation of modest uniform effectiveness</li>
                 </ul>
+
+                <div className="not-prose my-8 overflow-hidden rounded-xl">
+                  <ArticleImage
+                    src={getValidImagePath('/images/education/school_uniform_program_management.jpg')}
+                    alt="Educational administrators developing comprehensive modest uniform policies"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
+                  <p className="mt-2 text-sm text-neutral-500">Developing effective modest uniform policies requires careful planning and stakeholder engagement</p>
+                </div>
 
                 <div className="bg-neutral-100 p-6 rounded-xl my-8">
                   <h4 className="text-lg font-semibold text-neutral-950 mb-2">Best Practice: Ministry of Education Modesty Guidelines</h4>
@@ -309,6 +385,17 @@ export default function BlogPost() {
                   <li><strong>Practical Support:</strong> Resources addressing common modest uniform challenges</li>
                 </ul>
 
+                <div className="not-prose my-8 overflow-hidden rounded-xl">
+                  <ArticleImage
+                    src={getValidImagePath('/images/education/school_uniform_purchase.jpg')}
+                    alt="Families receiving guidance on proper modest uniform selection and implementation"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
+                  <p className="mt-2 text-sm text-neutral-500">Educational institutions provide guidance to families on selecting and properly implementing modest school uniforms</p>
+                </div>
+
                 <h3 className="mt-8 text-xl font-semibold text-neutral-950">
                   Procurement and Maintenance Considerations
                 </h3>
@@ -322,6 +409,17 @@ export default function BlogPost() {
                   <li><strong>Care Instructions:</strong> Maintaining modest uniform integrity through proper handling</li>
                   <li><strong>Replacement Protocols:</strong> Guidelines for addressing modest uniform wear issues</li>
                 </ul>
+
+                <div className="not-prose my-8 overflow-hidden rounded-xl">
+                  <ArticleImage
+                    src={getValidImagePath('/images/education/durable_school_clothing.jpg')}
+                    alt="Quality and durability considerations for modest school uniforms"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
+                  <p className="mt-2 text-sm text-neutral-500">High-quality materials and construction ensure modest uniforms maintain their integrity and appearance through regular use</p>
+                </div>
 
                 <h2 className="mt-16 text-2xl font-bold tracking-tight text-neutral-950">
                   Vision 2030 Perspectives and Future Directions
@@ -342,7 +440,13 @@ export default function BlogPost() {
                 </ul>
 
                 <div className="not-prose my-8 overflow-hidden rounded-xl">
-                  
+                  <ArticleImage
+                    src={getValidImagePath('/images/education/School_uniform_companies_in_Saudi_Arabia.jpg')}
+                    alt="Vision 2030 educational initiatives inspiring innovative approaches to modest uniform design"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
                   <p className="mt-2 text-sm text-neutral-500">Vision 2030 educational initiatives are inspiring innovative approaches to modest uniform design that maintain cultural authenticity while embracing global excellence</p>
                 </div>
 
@@ -360,6 +464,17 @@ export default function BlogPost() {
                   <li><strong>Cross-Cultural Exchange:</strong> Global modest design influences in Saudi education</li>
                 </ul>
 
+                <div className="not-prose my-8 overflow-hidden rounded-xl">
+                  <ArticleImage
+                    src={getValidImagePath('/images/education/School_uniform_fabrics.jpg')}
+                    alt="Innovative fabrics and materials being used in modern modest school uniform design"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
+                  <p className="mt-2 text-sm text-neutral-500">Advanced textile technologies are enabling new possibilities in modest school uniform design that enhance comfort and functionality</p>
+                </div>
+
                 <h3 className="mt-8 text-xl font-semibold text-neutral-950">
                   Balancing Tradition and Progress
                 </h3>
@@ -373,6 +488,17 @@ export default function BlogPost() {
                   <li><strong>Global Engagement:</strong> Presenting Saudi Islamic values in international contexts</li>
                   <li><strong>Youth Relevance:</strong> Modest designs resonating with contemporary students</li>
                 </ul>
+
+                <div className="not-prose my-8 overflow-hidden rounded-xl">
+                  <ArticleImage
+                    src={getValidImagePath('/images/education/Boys_school_uniforms.jpg')}
+                    alt="Modern Saudi school uniforms balancing traditional modest values with contemporary design"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
+                  <p className="mt-2 text-sm text-neutral-500">Saudi school uniform design successfully balances traditional modest values with contemporary educational needs</p>
+                </div>
 
                 <h2 className="mt-16 text-2xl font-bold tracking-tight text-neutral-950">
                   Conclusion

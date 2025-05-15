@@ -132,7 +132,7 @@ export default function AboutPage() {
             </div>
             <div className="relative rounded-xl overflow-hidden shadow-xl">
               <Image 
-                src="/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg"
+                src="/images/healthcare/Medical_scrubs_supplier_for_hospitals.jpg"
                 alt="Healthcare Uniforms"
                 width={600}
                 height={400}
@@ -221,7 +221,7 @@ export default function AboutPage() {
                 title: "Culture",
                 description: "Deep understanding and respect for Saudi Arabian cultural values.",
                 icon: "🌟",
-                image: "/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg"
+                image: "/images/government/Civil_service_uniforms.jpg"
               }
             ].map((value) => (
               <div key={value.title} className="group overflow-hidden rounded-lg bg-white shadow-lg transition-all hover:shadow-xl">

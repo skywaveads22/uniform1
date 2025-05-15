@@ -9,7 +9,7 @@ export default function CustomDesignPage() {
       <section className="relative">
         <div className="absolute inset-0">
           <Image
-            src="/images/industrial/Industrial_uniforms.jpeg"
+            src="/images/services/custom_design_branding.jpg"
             alt="Custom Design & Branding"
             fill
             className="object-cover object-center"
@@ -142,7 +142,7 @@ export default function CustomDesignPage() {
             <div className="grid gap-6 grid-cols-2">
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src="/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg"
+                  src="/images/hospitality/Hotel_uniforms.jpeg"
                   alt="Design Process"
                   width={400}
                   height={500}
@@ -152,24 +152,6 @@ export default function CustomDesignPage() {
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <Image
                   src="/images/aviation/Aviation_uniforms_Saudi_Arabia_KSA.jpg"
-                  alt="Design Process"
-                  width={400}
-                  height={500}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg"
-                  alt="Design Process"
-                  width={400}
-                  height={500}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg"
                   alt="Design Process"
                   width={400}
                   height={500}
@@ -194,17 +176,17 @@ export default function CustomDesignPage() {
                 title: "Major Airline Rebrand"
               },
               {
-                image: "/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg",
+                image: "/images/hospitality/Hotel_uniforms.jpeg",
                 category: "Hospitality",
                 title: "Luxury Hotel Collection"
               },
               {
-                image: "/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg",
+                image: "/images/healthcare/Medical_scrubs_supplier_for_hospitals.jpg",
                 category: "Healthcare",
                 title: "Medical Center Staff Attire"
               },
               {
-                image: "/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg",
+                image: "/images/security/Security_uniforms.jpeg",
                 category: "Security",
                 title: "Corporate Security Team"
               },
@@ -276,7 +258,7 @@ export default function CustomDesignPage() {
               {
                 title: "Cultural Sensitivity",
                 description: "Our designs respect Saudi Arabian cultural values and traditions, ensuring appropriateness while maintaining modern professional aesthetics.",
-                image: "/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg"
+                image: "/images/government/saudi_government_uniform_regulations.jpeg"
               },
               {
                 title: "Functionality",
@@ -286,12 +268,12 @@ export default function CustomDesignPage() {
               {
                 title: "Climate Adaptation",
                 description: "Our designs account for Saudi Arabia's climate conditions, utilizing breathable, moisture-wicking fabrics and appropriate layering options.",
-                image: "/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg"
+                image: "/images/security/Security_uniforms.jpeg"
               },
               {
                 title: "Durability & Maintenance",
                 description: "We select materials and construction methods that ensure longevity, ease of care, and sustained appearance even with regular wear and cleaning.",
-                image: "/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg"
+                image: "/images/hospitality/Hotel_uniforms.jpeg"
               },
               {
                 title: "Industry Compliance",
@@ -324,7 +306,7 @@ export default function CustomDesignPage() {
           <div className="grid gap-12 md:grid-cols-2 items-center">
             <div className="rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg"
+                src="/images/hospitality/Hotel_uniforms.jpeg"
                 alt="Benefits of Custom Design"
                 width={600}
                 height={400}

@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of specialized workwear engineering for Saudi Arabia\'s expanding female industrial workforce, featuring ergonomic design principles, cultural adaptations, and performance-enhancing innovations.',
     keywords: 'female industrial workwear Saudi Arabia 2025, women\'s protective apparel KSA, gender-inclusive safety standards, thermal regulation workwear women, Vision 2030 industrial inclusion, culturally appropriate safety attire',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/industrial/Industrial_uniforms.jpeg'],
       title: 'Gender-Optimized Industrial Workwear: Advanced Solutions for Female Professionals in Saudi Industrial Environments',
       description: 'Strategic framework for implementing gender-inclusive protective apparel systems across Saudi industrial sectors, balancing performance parameters with cultural considerations and workplace safety requirements.'
     },
@@ -36,8 +38,8 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={getValidImagePath('/images/industrial/Industrial_uniforms.jpeg')}
               alt="Female engineer in specialized industrial workwear designed for Saudi production environments"
               width={1000}
               height={600}
@@ -145,6 +147,15 @@ export default function BlogPost() {
 
               <div className="bg-gray-100 p-6 rounded-lg my-8 dark:bg-gray-800">
                 <h4 className="text-lg font-semibold mb-2">Case Study: Jubail Industrial City Diversity Integration Program</h4>
+                <div className="flex justify-center my-4">
+                  <ArticleImage
+                    src={getValidImagePath('/images/industrial/Factory_uniforms.jpeg')}
+                    alt="Female professionals in properly designed industrial workwear at Jubail Industrial City"
+                    width={500}
+                    height={300}
+                    className="rounded-lg"
+                  />
+                </div>
                 <p className="text-sm mb-0">
                   In 2024, a major petrochemical manufacturer in Jubail implemented a comprehensive female-optimized workwear program as part of its workforce diversification initiative. The program featured anatomically-calibrated PPE systems, modesty-integrated cooling technology, and specialized ergonomic design elements.
                 </p>
@@ -295,12 +306,41 @@ export default function BlogPost() {
                 <h3 className="text-lg font-semibold">About the Author</h3>
                 <p className="text-gray-600">Dr. Norah Al-Fadhli is a workplace inclusion specialist with expertise in industrial ergonomics and protective apparel systems. With a Ph.D. in Occupational Safety Engineering and extensive consulting experience with Saudi industrial organizations implementing female workforce integration programs, she specializes in developing gender-inclusive safety frameworks for complex operational environments. Dr. Al-Fadhli serves on multiple standards committees addressing diversity considerations in industrial safety and has published extensively on the integration of cultural and technical requirements in protective systems design.</p>
               </div>
+
+              <div className="not-prose flex justify-center my-8">
+                <ArticleImage
+                  src={getValidImagePath('/images/industrial/Industrial_workwear_Saudi_Arabia_KSA.jpeg')}
+                  alt="Modesty-Compatible Safety Systems designed for female Saudi industrial professionals"
+                  width={800}
+                  height={500}
+                  className="rounded-lg"
+                />
+              </div>
             </div>
           </div>
 
           {/* Sidebar */}
           <div className="lg:col-span-4">
             <div className="sticky top-24 space-y-8">
+              {/* Author */}
+              <div className="rounded-xl bg-white p-6 shadow-sm dark:bg-gray-800">
+                <div className="flex items-center space-x-4">
+                  <ArticleImage
+                    src={getValidImagePath('/images/industrial/Site_engineer_uniforms.jpeg')}
+                    alt="Industrial Design Specialist"
+                    width={60}
+                    height={60}
+                    className="h-14 w-14 rounded-full object-cover"
+                  />
+                  <div>
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white">Industrial Inclusion Expert</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      Specialized in gender-optimized workwear design for diverse industrial environments
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               {/* Share Section */}
               <div className="rounded-xl border border-gray-200 p-6">
                 <h3 className="mb-4 text-lg font-semibold">Share Article</h3>

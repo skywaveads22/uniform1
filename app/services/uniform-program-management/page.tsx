@@ -9,7 +9,7 @@ export default function UniformProgramManagementPage() {
       <section className="relative">
         <div className="absolute inset-0">
           <Image
-            src="/images/hospitality/Hospitality_uniforms.jpeg"
+            src="/images/services/uniform_program_management.jpg"
             alt="Uniform Program Management"
             fill
             className="object-cover object-center"
@@ -69,7 +69,7 @@ export default function UniformProgramManagementPage() {
             </div>
             <div className="rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="/images/aviation/Aviation_uniforms_Saudi_Arabia_KSA.jpg"
+                src="/images/education/school_uniform_program_management.jpg"
                 alt="Uniform Program Management"
                 width={600}
                 height={400}
@@ -161,7 +161,7 @@ export default function UniformProgramManagementPage() {
               {
                 title: "Staff Satisfaction",
                 description: "Improve employee morale with comfortable, professional uniforms that they're proud to wear.",
-                image: "/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg"
+                image: "/images/healthcare/Medical_scrubs_supplier_for_hospitals.jpg"
               },
               {
                 title: "Scalability",

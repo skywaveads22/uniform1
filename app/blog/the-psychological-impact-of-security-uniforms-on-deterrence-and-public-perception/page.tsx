@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of advanced security uniform psychology research for Saudi organizations, featuring evidence-based design approaches that strategically balance authority projection with public trust development.',
     keywords: 'security uniform psychology 2025, cognitive impact security attire, psychological authority engineering, Saudi security perception design, behavioral compliance uniform systems, strategic deterrence through appearance',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/security/authoritative_security_appearance.jpeg'],
       title: 'Psychological Influence Engineering: Security Uniform Perception Impact 2025',
       description: 'Expert examination of cutting-edge research on how strategic security uniform design influences cognitive processing, behavioral compliance, and public trust formation in Saudi operational contexts.'
     },
@@ -36,8 +38,8 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={getValidImagePath('/images/security/authoritative_security_appearance.jpeg')}
               alt="Security personnel in professionally engineered uniforms demonstrating the psychological impact of strategic design elements"
               width={1000}
               height={600}

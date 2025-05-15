@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Heat Management Technologies for Security Operations | May 2025',
     description: 'Explore cutting-edge heat management technologies revolutionizing security operations in Saudi Arabia, featuring active cooling systems, physiological monitoring, and AI-driven climate adaptation.',
-    images: ['/images/security/heat_management.jpg'],
+    images: ['/images/security/Security_uniforms.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function HeatManagementTechnologies() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/security/heat_management.jpg"
+          src="/images/security/Security_uniforms.jpeg"
           alt="Advanced Heat Management Technologies for Security Operations"
           fill
           className="object-cover rounded-lg"

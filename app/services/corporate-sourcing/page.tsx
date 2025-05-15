@@ -11,17 +11,17 @@ export const metadata: Metadata = {
 
 const slides = [
   {
-    image: "/images/corporate/Corporate_office_uniforms_Saudi_Arabia.jpeg",
+    image: "/images/hospitality/front_office_attire_hotel.jpeg",
     title: "Premium Corporate Attire",
     description: "High-quality corporate uniforms sourced from leading global manufacturers"
   },
   {
-    image: "/images/corporate/Corporate_wear_Saudi_company.jpeg",
+    image: "/images/hospitality/Hotel_staff_apparel.jpeg",
     title: "Streamlined Procurement",
     description: "Efficient sourcing solutions that save your organization time and resources"
   },
   {
-    image: "/images/corporate/Saudi_bank_uniforms.jpeg",
+    image: "/images/hospitality/Hotel_reception_uniforms_Front_desk_uniforms.jpeg",
     title: "Tailored Solutions",
     description: "Corporate uniform programs customized to your specific industry requirements"
   }
@@ -52,7 +52,7 @@ export default function CorporateSourcingPage() {
               </div>
               <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md lg:aspect-square">
                 <Image
-                  src="/images/corporate/Office_employees_uniforms.jpeg"
+                  src="/images/hospitality/Hotel_staff_apparel.jpeg"
                   alt="Corporate uniform sourcing"
                   fill
                   className="object-cover"
@@ -149,32 +149,32 @@ export default function CorporateSourcingPage() {
               {[
                 {
                   title: "Executive Attire",
-                  image: "/images/corporate/Executive_uniforms_Saudi_corporation.jpeg",
+                  image: "/images/hospitality/concierge_suits.jpeg",
                   description: "Premium suits, blazers, and formal wear for leadership and management teams."
                 },
                 {
                   title: "Office Staff",
-                  image: "/images/corporate/Professional_office_attire_Saudi_Arabia.jpeg",
+                  image: "/images/hospitality/Hotel_reception_uniforms_Front_desk_uniforms.jpeg",
                   description: "Professional daily wear for administrative and office-based employees."
                 },
                 {
                   title: "Customer Service",
-                  image: "/images/corporate/Customer_service_uniforms_Saudi.jpeg",
+                  image: "/images/hospitality/Hotel_staff_apparel.jpeg",
                   description: "Distinctive uniforms for front-line staff that emphasize your brand identity."
                 },
                 {
                   title: "Banking & Finance",
-                  image: "/images/corporate/Bank_staff_uniforms_Saudi_banks.jpeg",
+                  image: "/images/hospitality/Hotel_reception_uniforms_Front_desk_uniforms.jpeg",
                   description: "Professional attire designed specifically for financial institutions."
                 },
                 {
                   title: "Events & Promotions",
-                  image: "/images/corporate/Corporate_event_uniforms_Saudi.jpeg",
+                  image: "/images/hospitality/Banquet_staff_uniforms_Event_staff_uniforms.jpeg",
                   description: "Special uniforms for corporate events, exhibitions, and promotional activities."
                 },
                 {
                   title: "Support Services",
-                  image: "/images/corporate/Support_staff_uniforms_Saudi_office.jpeg",
+                  image: "/images/hospitality/hotel_maintenance_staff_uniforms.jpeg",
                   description: "Practical uniforms for IT, maintenance, and support personnel."
                 }
               ].map((category, index) => (
@@ -244,7 +244,7 @@ export default function CorporateSourcingPage() {
             <div className="grid md:grid-cols-2">
               <div className="relative min-h-[300px]">
                 <Image
-                  src="/images/corporate/Major_Saudi_bank_uniform_program.jpeg"
+                  src="/images/hospitality/Hotel_reception_uniforms_Front_desk_uniforms.jpeg"
                   alt="Corporate sourcing case study"
                   fill
                   className="object-cover"

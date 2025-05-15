@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Material Science Architecture: Advanced Substrate Engineering for Hospitality Performance Enhancement | May 2025',
     description: 'Explore cutting-edge material science innovations transforming Saudi Arabian hospitality uniforms and textiles, featuring smart fabrics, climate-adaptive technologies, and performance-enhancing substrates.',
-    images: ['/images/hospitality/hospitality_materials.jpg'],
+    images: ['/images/hospitality/breathable_hospitality_fabrics.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function MaterialScienceHospitality() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/hospitality/hospitality_materials.jpg"
+          src="/images/hospitality/breathable_hospitality_fabrics.jpeg"
           alt="Advanced Materials in Saudi Arabian Hospitality Environments"
           fill
           className="object-cover rounded-lg"

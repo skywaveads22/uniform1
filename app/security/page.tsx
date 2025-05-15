@@ -36,7 +36,7 @@ export default function SecurityPage() {
             </div>
             <div className="relative h-[300px] lg:h-[400px]">
               <Image
-                src="/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg"
+                src="/images/security/Security_header.jpeg"
                 alt="Professional Security Guards in Saudi Arabia"
                 fill
                 className="rounded-lg object-cover"

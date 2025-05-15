@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { CTA } from '@/components/CTA';
 import { RelatedArticles } from '@/components/RelatedArticles';
 import { ShareButtons } from '@/components/ShareButtons';
+import ArticleImage from '@/components/ArticleImage';
+import { getValidImagePath } from '@/lib/image-helper';
 
 export const metadata: Metadata = {
   title: 'Technological Advancements in Fabrics for Government Duty Wear | Uniform Junction',
@@ -11,11 +13,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Technological Advancements in Fabrics for Government Duty Wear',
     description: 'How innovative textile technologies are transforming Saudi Arabian government and public sector uniforms with enhanced functionality, comfort, and protection for diverse operational environments.',
-    images: ['/images/author/default-author.jpg'],
+    images: ['/images/government/Government_uniforms_Saudi_Arabia_KSA.jpg'],
   },
 };
 
 export default function BlogPost() {
+  // Get a valid path for the main image
+  const mainImagePath = getValidImagePath('/images/government/Government_uniforms_Saudi_Arabia_KSA.jpg');
+  
   return (
     <main className="flex-auto">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
@@ -38,8 +43,8 @@ export default function BlogPost() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
-                <Image
-                  src="/images/author/default-author.jpg"
+                <ArticleImage
+                  src={mainImagePath}
                   alt="Saudi government personnel wearing uniforms made with advanced technical fabrics for enhanced performance and protection"
                   width={1408}
                   height={960}
@@ -143,7 +148,13 @@ export default function BlogPost() {
                 </ul>
 
                 <div className="not-prose my-8 overflow-hidden rounded-xl">
-                  
+                  <ArticleImage
+                    src={getValidImagePath('/images/government/government_field_staff_wear.jpg')}
+                    alt="Climate-adaptive fabrics for Saudi government personnel working in extreme conditions"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
                   <p className="mt-2 text-sm text-neutral-500">Climate-adaptive fabrics utilize advanced technologies to maintain comfort in Saudi Arabia's extreme temperatures</p>
                 </div>
 

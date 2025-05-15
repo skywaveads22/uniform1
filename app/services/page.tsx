@@ -6,19 +6,6 @@ import { ChevronRight, RulerIcon, Package, Users, Palette, Settings } from "luci
 
 const serviceCategories = [
   {
-    title: "Industry Uniforms",
-    description: "Specialized uniform solutions for various industries",
-    items: [
-      { name: "Aviation", href: "/services" },
-      { name: "Healthcare", href: "/healthcare" },
-      { name: "Hospitality", href: "/hospitality" },
-      { name: "Security", href: "/security" },
-      { name: "Industrial", href: "/industrial" },
-      { name: "Education", href: "/education" },
-      { name: "Government", href: "/government" },
-    ]
-  },
-  {
     title: "Core Services",
     description: "Complete uniform management solutions for your organization",
     items: [

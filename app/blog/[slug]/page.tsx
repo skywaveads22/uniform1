@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, Share2 } from 'lucide-react'
 import fs from 'fs'
 import path from 'path'
-import { getImagePath } from '@/lib/image-helper'
+import { getImagePath, getValidImagePath } from '@/lib/image-helper'
+import SafeImage from '@/components/SafeImage'
 
 // Generate metadata for the page
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
@@ -16,20 +16,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   let image = '/images/default-article-image.jpg';
   
   // Get category from slug to help determine image path
-  const getCategory = (slug: string): string => {
-    if (slug.includes('security') || slug.includes('guard')) return 'security';
-    if (slug.includes('school') || slug.includes('education') || slug.includes('kindergarten')) return 'education';
-    if (slug.includes('hospital') || slug.includes('healthcare') || slug.includes('medical') || slug.includes('nurse') || slug.includes('scrub')) return 'healthcare';
-    if (slug.includes('government') || slug.includes('public-sector') || slug.includes('official') || slug.includes('civil-service')) return 'government';
-    if (slug.includes('hotel') || slug.includes('hospitality') || slug.includes('restaurant') || slug.includes('chef') || slug.includes('catering')) return 'hospitality';
-    if (slug.includes('aviation') || slug.includes('airline') || slug.includes('pilot') || slug.includes('cabin-crew') || slug.includes('flight')) return 'aviation';
-    if (slug.includes('industrial') || slug.includes('factory') || slug.includes('construction') || slug.includes('workwear')) return 'industrial';
-    return 'blog';
-  };
+  const category = getCategory(slug);
   
   // Determine an appropriate image based on category
-  const category = getCategory(slug);
-  const defaultCategoryImage = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms_Saudi_Arabia_KSA.jpg`;
+  const defaultCategoryImage = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms.jpg`;
+  
+  // Use validated path to ensure the image exists
+  image = getValidImagePath(defaultCategoryImage);
   
   // Specific metadata for known articles
   switch(slug) {
@@ -156,22 +149,22 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     case 'incorporating-national-symbols-and-colors-in-government-uniform-design':
       title = 'Incorporating National Symbols and Colors in Government Uniform Design';
       description = 'Learn about the significance of national symbols and colors in Saudi Arabian government uniforms and how they are incorporated into design.';
-      image = '/images/government/national_symbols.jpg';
+      image = '/images/government/Civil_service_uniforms.jpg';
       break;
     case 'designing-culturally-appropriate-school-uniforms-in-saudi-arabia':
       title = 'Designing Culturally Appropriate School Uniforms in Saudi Arabia';
       description = 'Discover how to design school uniforms that respect and reflect Saudi Arabian cultural norms while maintaining functionality and professional standards.';
-      image = '/images/education/cultural_uniforms.jpg';
+      image = '/images/education/Boys_school_uniforms.jpg';
       break;
     case 'uniform-standards-across-different-saudi-government-ministries-a-comparative-look':
       title = 'Uniform Standards Across Different Saudi Government Ministries: A Comparative Look';
       description = 'Explore the uniform standards and practices across various Saudi government ministries and how they compare.';
-      image = '/images/government/uniform_standards.jpg';
+      image = '/images/government/Civil_service_uniforms.jpg';
       break;
     case 'climate-appropriate-uniforms-for-outdoor-hospitality-staff-in-saudi-arabia':
       title = 'Climate-Appropriate Uniforms for Outdoor Hospitality Staff in Saudi Arabia';
       description = 'Discover the best uniforms for outdoor hospitality staff in Saudi Arabia, including lightweight and breathable options.';
-      image = '/images/hospitality/hospitality_uniforms.jpg';
+      image = '/images/hospitality/Hospitality_uniforms.jpeg';
       break;
     case 'choosing-the-right-scrubs-for-saudi-hospitals-comfort-hygiene-and-professionalism':
       title = 'Choosing the Right Scrubs for Saudi Hospitals: Comfort, Hygiene, and Professionalism';
@@ -181,17 +174,17 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     case 'advanced-materials-in-security-equipment':
       title = 'Advanced Materials in Security Equipment';
       description = 'Discover the latest advancements in security equipment materials, including high-performance fabrics and durable components.';
-      image = '/images/security/security_equipment.jpg';
+      image = '/images/security/Security_uniforms.jpeg';
       break;
     case 'ergonomic-optimization-architecture-advanced-systems-for-workplace-injury-prevention-2025':
       title = 'Ergonomic Optimization Architecture: Advanced Systems for Workplace Injury Prevention 2025';
       description = 'Explore the latest ergonomic design principles and technologies for preventing workplace injuries in the 21st century.';
-      image = '/images/ergonomics/ergonomic_design.jpg';
+      image = '/images/hospitality/modern_hospitality_design_uniforms.jpeg';
       break;
     case 'material-science-architecture-advanced-substrate-engineering-for-hospitality-performance-enhancement-2025':
       title = 'Material Science Architecture: Advanced Substrate Engineering for Hospitality Performance Enhancement 2025';
       description = 'Discover how advanced substrate engineering is transforming the hospitality industry through improved material performance.';
-      image = '/images/hospitality/hospitality_materials.jpg';
+      image = '/images/hospitality/breathable_hospitality_fabrics.jpeg';
       break;
     case 'temperature-regulating-fabrics-for-security-uniforms-in-saudi-arabia':
       title = 'Temperature-Regulating Fabrics for Security Uniforms in Saudi Arabia';
@@ -206,27 +199,27 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     case 'bulk-ordering-and-inventory-management-for-security-firms-in-ksa':
       title = 'Bulk Ordering and Inventory Management for Security Firms in KSA';
       description = 'Discover the best practices for bulk ordering and inventory management in the security industry in Saudi Arabia.';
-      image = '/images/security/security_inventory.jpg';
+      image = '/images/security/Security_uniforms.jpeg';
       break;
     case 'heat-management-technologies-for-security-operations':
       title = 'Heat Management Technologies for Security Operations';
       description = 'Discover the latest heat management technologies for security operations in Saudi Arabia.';
-      image = '/images/security/heat_management.jpg';
+      image = '/images/security/Security_uniforms.jpeg';
       break;
     case 'color-choices-for-security-uniforms-practicality-and-perception':
       title = 'Color Choices for Security Uniforms: Practicality and Perception';
       description = 'Discover the best color choices for security uniforms that balance practicality with professional appearance.';
-      image = '/images/security/color_choices.jpg';
+      image = '/images/security/Security_uniforms.jpeg';
       break;
     case 'the-impact-of-uniform-comfort-on-healthcare-worker-performance':
       title = 'The Impact of Uniform Comfort on Healthcare Worker Performance';
       description = 'Discover how uniform comfort can impact the performance and well-being of healthcare professionals in Saudi Arabia.';
-      image = '/images/healthcare/healthcare_uniforms.jpg';
+      image = '/images/healthcare/Healthcare_uniforms.jpg';
       break;
     case 'biodigital-integration-architecture-advanced-attire-systems-for-healthcare-performance-optimization-2025':
       title = 'Biodigital Integration Architecture: Advanced Attire Systems for Healthcare Performance Optimization 2025';
       description = 'Explore the latest advancements in biodigital integration for healthcare performance optimization.';
-      image = '/images/healthcare/healthcare_technology.jpg';
+      image = '/images/healthcare/healthcare_header_new.jpg';
       break;
     case 'designing-authoritative-and-professional-security-guard-uniforms-for-ksa':
       title = 'Designing Authoritative and Professional Security Guard Uniforms for KSA';
@@ -236,7 +229,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     case 'operational-attire-engineering-advanced-comfort-systems-for-hospitality-maintenance-personnel-2025':
       title = 'Operational Attire Engineering: Advanced Comfort Systems for Hospitality Maintenance Personnel 2025';
       description = 'Discover the latest operational attire engineering solutions for hospitality maintenance personnel in Saudi Arabia.';
-      image = '/images/hospitality/hospitality_attire.jpg';
+      image = '/images/hospitality/Hotel_staff_apparel.jpeg';
       break;
     default:
       // For any other articles, use the default category image
@@ -343,10 +336,24 @@ export async function generateStaticParams() {
   return blogSlugs;
 }
 
+// Shared function to get category from slug
+function getCategory(slug: string): string {
+  if (slug.includes('security') || slug.includes('guard')) return 'security';
+  if (slug.includes('school') || slug.includes('education') || slug.includes('kindergarten')) return 'education';
+  if (slug.includes('hospital') || slug.includes('healthcare') || slug.includes('medical') || slug.includes('nurse') || slug.includes('scrub')) return 'healthcare';
+  if (slug.includes('government') || slug.includes('public-sector') || slug.includes('official') || slug.includes('civil-service')) return 'government';
+  if (slug.includes('hotel') || slug.includes('hospitality') || slug.includes('restaurant') || slug.includes('chef') || slug.includes('catering')) return 'hospitality';
+  if (slug.includes('aviation') || slug.includes('airline') || slug.includes('pilot') || slug.includes('cabin-crew') || slug.includes('flight')) return 'aviation';
+  if (slug.includes('industrial') || slug.includes('factory') || slug.includes('construction') || slug.includes('workwear')) return 'industrial';
+  return 'blog';
+}
+
 // This is a dynamic route for blog posts
 export default function BlogPost({ params }: { params: { slug: string } }): JSX.Element {
   // Get the slug from params
   const { slug } = params;
+  
+  const category = getCategory(slug);
   
   // Function to render article content based on slug
   const renderArticleContent = (): JSX.Element => {
@@ -430,20 +437,10 @@ export default function BlogPost({ params }: { params: { slug: string } }): JSX.
   // Function to get article image path based on slug
   const getArticleImagePath = (slug: string): string => {
     // Get category from slug to help determine image path
-    const getCategory = (slug: string): string => {
-      if (slug.includes('security') || slug.includes('guard')) return 'security';
-      if (slug.includes('school') || slug.includes('education') || slug.includes('kindergarten')) return 'education';
-      if (slug.includes('hospital') || slug.includes('healthcare') || slug.includes('medical') || slug.includes('nurse') || slug.includes('scrub')) return 'healthcare';
-      if (slug.includes('government') || slug.includes('public-sector') || slug.includes('official') || slug.includes('civil-service')) return 'government';
-      if (slug.includes('hotel') || slug.includes('hospitality') || slug.includes('restaurant') || slug.includes('chef') || slug.includes('catering')) return 'hospitality';
-      if (slug.includes('aviation') || slug.includes('airline') || slug.includes('pilot') || slug.includes('cabin-crew') || slug.includes('flight')) return 'aviation';
-      if (slug.includes('industrial') || slug.includes('factory') || slug.includes('construction') || slug.includes('workwear')) return 'industrial';
-      return 'blog';
-    };
+    const category = getCategory(slug);
     
     // Default image based on category
-    const category = getCategory(slug);
-    const defaultCategoryImage = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms_Saudi_Arabia_KSA.jpg`;
+    const defaultCategoryImage = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms.jpg`;
     
     // Specific images for common articles
     switch(slug) {
@@ -457,8 +454,8 @@ export default function BlogPost({ params }: { params: { slug: string } }): JSX.
         return '/images/education/primary_school_uniforms.jpg';
       default:
         // Check file extension for the default category image
-        const jpgPath = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms_Saudi_Arabia_KSA.jpg`;
-        const jpegPath = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms_Saudi_Arabia_KSA.jpeg`;
+        const jpgPath = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms.jpg`;
+        const jpegPath = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms.jpeg`;
         
         // Default to one of these paths or the default image
         if (category === 'security' || category === 'hospitality') {
@@ -473,7 +470,8 @@ export default function BlogPost({ params }: { params: { slug: string } }): JSX.
     }
   };
 
-  const articleImagePath = getImagePath(getArticleImagePath(slug));
+  // Get a valid image path that exists
+  const articleImagePath = getValidImagePath(getArticleImagePath(slug));
 
   return (
     <div className="relative bg-white py-12 dark:bg-gray-900">
@@ -492,14 +490,15 @@ export default function BlogPost({ params }: { params: { slug: string } }): JSX.
             <span className="text-gray-700 dark:text-white">{getArticleTitle(slug)}</span>
           </nav>
 
-          {/* Featured Image */}
+          {/* Featured Image with Client-Side Error Handling */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
-            <Image
+            <SafeImage 
               src={articleImagePath}
               alt={getArticleTitle(slug)}
               fill
-              className="object-cover"
               priority
+              className="object-cover"
+              fallbackSrc={`/images/${category}/${category}_uniforms.jpg`}
             />
           </div>
 
@@ -519,7 +518,7 @@ export default function BlogPost({ params }: { params: { slug: string } }): JSX.
               </div>
               <div className="flex items-center gap-1.5">
                 <Tag className="h-4 w-4" />
-                <span>Uniform, Design</span>
+                <span>{category}</span>
               </div>
             </div>
           </div>

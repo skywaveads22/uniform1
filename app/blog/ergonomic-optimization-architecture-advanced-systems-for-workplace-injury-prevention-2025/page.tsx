@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ergonomic Optimization Architecture: Advanced Systems for Workplace Injury Prevention | May 2025',
     description: 'Discover cutting-edge ergonomic optimization systems designed to prevent workplace injuries in Saudi industrial environments, featuring AI-driven adaptation and smart textiles.',
-    images: ['/images/industrial/Industrial_safety_Saudi_Arabia_KSA.jpg'],
+    images: ['/images/industrial/industrial_uniform_fittings.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function ErgonomicSystems() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/industrial/Industrial_safety_Saudi_Arabia_KSA.jpg"
+          src="/images/industrial/industrial_uniform_fittings.jpeg"
           alt="Advanced Ergonomic Systems in Saudi Industrial Workplaces"
           fill
           className="object-cover rounded-lg"

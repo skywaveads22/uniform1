@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Uniform Standards Across Different Saudi Government Ministries: A Comparative Look | May 2025',
     description: 'Explore the distinctive uniform standards and practices across various Saudi government ministries, including design elements, functionality requirements, and symbolic significance.',
-    images: ['/images/government/uniform_standards.jpg'],
+    images: ['/images/government/Civil_service_uniforms.jpg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function GovernmentUniformStandards() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/government/uniform_standards.jpg"
+          src="/images/government/Civil_service_uniforms.jpg"
           alt="Saudi Government Ministry Uniforms"
           fill
           className="object-cover rounded-lg"

@@ -10,17 +10,17 @@ export const metadata: Metadata = {
 
 const slides = [
   {
-    image: "/images/services/management-1.jpg",
+    image: "/images/hospitality/hospitality_uniform_consulting.jpeg",
     title: "Program Development",
     description: "Custom uniform management programs tailored to your organizational needs"
   },
   {
-    image: "/images/services/management-2.jpg",
+    image: "/images/healthcare/healthcare_uniform_management.jpg",
     title: "Lifecycle Management",
     description: "Comprehensive solutions from sourcing to disposal for uniform longevity"
   },
   {
-    image: "/images/services/management-3.jpg",
+    image: "/images/industrial/industrial_uniform_fittings.jpeg",
     title: "Outsourced Administration",
     description: "Professional management services that reduce internal administrative burden"
   }
@@ -55,7 +55,7 @@ export default function UniformManagementPage() {
               </div>
               <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md lg:aspect-square">
                 <Image
-                  src="/images/services/management-main.jpg"
+                  src="/images/hospitality/hospitality_uniform_consulting.jpeg"
                   alt="Uniform management service"
                   fill
                   className="object-cover"
@@ -253,28 +253,28 @@ export default function UniformManagementPage() {
                     title: "Assessment & Strategy",
                     description: "We begin by thoroughly understanding your organization's uniform requirements, current challenges, and future goals. Our team conducts a comprehensive audit of your existing program or helps develop requirements for a new one.",
                     outcomes: ["Detailed program requirements", "Current state analysis", "Strategic recommendations", "Budget planning"],
-                    image: "/images/services/management-assessment.jpg",
+                    image: "/images/hospitality/hospitality_uniform_consulting.jpeg",
                     imagePosition: "right"
                   },
                   {
                     title: "Program Development",
                     description: "Based on the assessment, we create a tailored uniform management program that includes detailed policies, procedures, and implementation plans aligned with your organizational culture and operational needs.",
                     outcomes: ["Uniform policy documentation", "Role-based uniform specifications", "Procurement guidelines", "Implementation timeline"],
-                    image: "/images/services/management-development.jpg",
+                    image: "/images/healthcare/healthcare_uniform_management.jpg",
                     imagePosition: "left"
                   },
                   {
                     title: "Implementation",
                     description: "We handle the entire rollout process, from setting up inventory systems and sourcing suppliers to employee communications and initial distribution. Our structured approach ensures a smooth transition with minimal disruption.",
                     outcomes: ["Supplier selection and onboarding", "Inventory system setup", "Employee measurement and fitting", "Initial uniform distribution"],
-                    image: "/images/services/management-implementation.jpg",
+                    image: "/images/healthcare/healthcare_uniform_management.jpg",
                     imagePosition: "right"
                   },
                   {
                     title: "Ongoing Management",
                     description: "Once implemented, we provide continuous management of all aspects of your uniform program, handling day-to-day operations, addressing employee needs, and optimizing the program based on real-world performance.",
                     outcomes: ["Regular inventory management", "Employee support services", "Quality control monitoring", "Program optimization"],
-                    image: "/images/services/management-ongoing.jpg",
+                    image: "/images/hospitality/hotel_uniform_stock_management.jpeg",
                     imagePosition: "left"
                   }
                 ].map((phase, index) => (
@@ -319,7 +319,7 @@ export default function UniformManagementPage() {
             <div className="grid gap-8 md:grid-cols-2">
               <div className="relative aspect-video overflow-hidden rounded-lg shadow-md">
                 <Image
-                  src="/images/services/management-case-study.jpg"
+                  src="/images/hospitality/hospitality_uniform_consulting.jpeg"
                   alt="Uniform management case study"
                   fill
                   className="object-cover"

@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { CTA } from '@/components/CTA';
 import { RelatedArticles } from '@/components/RelatedArticles';
 import { ShareButtons } from '@/components/ShareButtons';
+import ArticleImage from '@/components/ArticleImage';
+import { getValidImagePath } from '@/lib/image-helper';
 
 export const metadata: Metadata = {
   title: 'Teacher and Staff Attire: Setting Professional Standards in KSA Educational Institutions | Uniform Junction',
@@ -11,11 +13,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Teacher and Staff Attire: Setting Professional Standards in KSA Educational Institutions',
     description: 'How Saudi Arabian educational institutions are establishing professional attire standards that balance cultural authenticity, institutional identity, and educational authority.',
-    images: ['/images/author/default-author.jpg'],
+    images: ['/images/education/School_staff_uniforms.jpg'],
   },
 };
 
 export default function BlogPost() {
+  // Get valid image path
+  const mainImagePath = getValidImagePath('/images/education/School_staff_uniforms.jpg');
+  
   return (
     <main className="flex-auto">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
@@ -38,12 +43,13 @@ export default function BlogPost() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
-                <Image
-                  src="/images/author/default-author.jpg"
+                <ArticleImage
+                  src={mainImagePath}
                   alt="Saudi Arabian teachers and educational staff wearing professional attire in a modern school environment"
                   width={1408}
                   height={960}
                   className="rounded-2xl"
+                  priority
                 />
                 <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-neutral-500">
                   <span>Professional attire for educators in Saudi Arabia balances traditional values with contemporary educational environments</span>

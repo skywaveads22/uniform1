@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { CTA } from '@/components/CTA';
 import { RelatedArticles } from '@/components/RelatedArticles';
 import { ShareButtons } from '@/components/ShareButtons';
+import ArticleImage from '@/components/ArticleImage';
+import { getValidImagePath } from '@/lib/image-helper';
 
 export const metadata: Metadata = {
   title: 'The Role of Uniforms in Building Esprit de Corps among Government Teams | Uniform Junction',
@@ -11,11 +13,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Role of Uniforms in Building Esprit de Corps among Government Teams',
     description: 'Discover how thoughtfully designed uniforms strengthen institutional identity, enhance teamwork, and promote excellence across Saudi government organizations.',
-    images: ['/images/author/default-author.jpg'],
+    images: ['/images/government/Government_employee_uniforms.jpg'],
   },
 };
 
 export default function BlogPost() {
+  // Get a valid path for the main image
+  const mainImagePath = getValidImagePath('/images/government/Government_employee_uniforms.jpg');
+  
   return (
     <main className="flex-auto">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
@@ -38,8 +43,8 @@ export default function BlogPost() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
-                <Image
-                  src="/images/author/default-author.jpg"
+                <ArticleImage
+                  src={mainImagePath}
                   alt="Saudi government team members in professional uniforms demonstrating unity and collective identity during a team gathering"
                   width={1408}
                   height={960}
@@ -179,7 +184,13 @@ export default function BlogPost() {
                 </ul>
 
                 <div className="not-prose my-8 overflow-hidden rounded-xl">
-                  
+                  <ArticleImage
+                    src={getValidImagePath('/images/government/Civil_service_uniforms.jpg')}
+                    alt="Distinctive uniform elements creating immediate team identification while maintaining overall government identity"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
                   <p className="mt-2 text-sm text-neutral-500">Distinctive uniform elements create immediate team identification while maintaining overall government identity</p>
                 </div>
 

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Designing Culturally Appropriate School Uniforms in Saudi Arabia | May 2025',
     description: 'Discover the latest innovations in culturally appropriate school uniform design for Saudi Arabian educational institutions, balancing tradition with modern functionality.',
-    images: ['/images/education/cultural_uniforms.jpg'],
+    images: ['/images/education/Boys_school_uniforms.jpg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function SchoolUniformDesign() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/education/cultural_uniforms.jpg"
+          src="/images/education/Boys_school_uniforms.jpg"
           alt="Culturally Appropriate School Uniforms in Saudi Arabia"
           fill
           className="object-cover rounded-lg"

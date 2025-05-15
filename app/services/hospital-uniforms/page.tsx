@@ -11,17 +11,17 @@ export const metadata: Metadata = {
 
 const slides = [
   {
-    image: "/images/healthcare/Saudi_hospital_staff_uniforms.jpeg",
+    image: "/images/healthcare/Medical_staff_uniforms.jpg",
     title: "Healthcare Uniform Excellence",
     description: "Specialized medical uniforms engineered for Saudi healthcare environments"
   },
   {
-    image: "/images/healthcare/Medical_uniforms_Saudi_hospitals.jpeg",
+    image: "/images/healthcare/Medical_staff_uniforms.jpg",
     title: "Clinical Functionality",
     description: "Practical healthcare attire that supports medical professionals in their daily work"
   },
   {
-    image: "/images/healthcare/Nurse_uniforms_Saudi_Arabia.jpeg",
+    image: "/images/healthcare/Nurse_uniforms.jpg",
     title: "Infection Control",
     description: "Antimicrobial fabrics and design features that enhance safety and hygiene"
   }
@@ -52,7 +52,7 @@ export default function HospitalUniformsPage() {
               </div>
               <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md lg:aspect-square">
                 <Image
-                  src="/images/healthcare/Saudi_hospital_staff_wearing_uniforms.jpeg"
+                  src="/images/healthcare/Medical_staff_uniforms.jpg"
                   alt="Medical uniforms for Saudi healthcare professionals"
                   fill
                   className="object-cover"
@@ -107,32 +107,32 @@ export default function HospitalUniformsPage() {
               {[
                 {
                   title: "Physician Attire",
-                  image: "/images/healthcare/Doctor_uniforms_Saudi_hospitals.jpeg",
+                  image: "/images/healthcare/Doctor_uniforms_attire.jpg",
                   description: "Professional lab coats and scrubs for physicians and specialists."
                 },
                 {
                   title: "Nursing Uniforms",
-                  image: "/images/healthcare/Saudi_nurse_uniforms.jpeg",
+                  image: "/images/healthcare/Nurse_uniforms.jpg",
                   description: "Comfortable and practical uniforms for nursing staff at all levels."
                 },
                 {
                   title: "Surgical Scrubs",
-                  image: "/images/healthcare/Surgical_scrubs_Saudi_medical_centers.jpeg",
+                  image: "/images/healthcare/Medical_scrubs.jpg",
                   description: "Specialized attire for operating room staff with maximum functionality."
                 },
                 {
                   title: "Laboratory Coats",
-                  image: "/images/healthcare/Lab_coats_Saudi_hospitals.jpeg",
+                  image: "/images/healthcare/Lab_coats_medical.jpg",
                   description: "Protective lab coats for medical technicians and researchers."
                 },
                 {
                   title: "Administration & Support",
-                  image: "/images/healthcare/Hospital_administration_uniforms_Saudi.jpeg",
+                  image: "/images/healthcare/Medical_receptionist_uniforms.jpg",
                   description: "Professional attire for front desk, administrative, and support personnel."
                 },
                 {
                   title: "Emergency Services",
-                  image: "/images/healthcare/Emergency_staff_uniforms_Saudi_hospitals.jpeg",
+                  image: "/images/healthcare/Medical_staff_uniforms.jpg",
                   description: "High-visibility uniforms for emergency department and paramedic staff."
                 }
               ].map((category, index) => (
@@ -160,7 +160,7 @@ export default function HospitalUniformsPage() {
             <div className="grid gap-6 md:grid-cols-2">
               <div className="relative aspect-square w-full overflow-hidden rounded-lg">
                 <Image
-                  src="/images/healthcare/Medical_uniform_quality_control.jpeg"
+                  src="/images/healthcare/Medical_uniform_fabrics.jpg"
                   alt="Healthcare uniform compliance and standards"
                   fill
                   className="object-cover"
@@ -240,7 +240,7 @@ export default function HospitalUniformsPage() {
             <div className="grid md:grid-cols-2">
               <div className="relative min-h-[300px]">
                 <Image
-                  src="/images/healthcare/Major_Saudi_hospital_uniform_program.jpeg"
+                  src="/images/healthcare/Medical_staff_uniforms.jpg"
                   alt="Healthcare uniform case study"
                   fill
                   className="object-cover"
@@ -274,7 +274,7 @@ export default function HospitalUniformsPage() {
               <div>
                 <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                   <Image
-                    src="/images/healthcare/Customized_hospital_uniforms_Saudi.jpeg"
+                    src="/images/healthcare/Hospital_uniforms.jpg"
                     alt="Customized healthcare uniforms"
                     fill
                     className="object-cover"

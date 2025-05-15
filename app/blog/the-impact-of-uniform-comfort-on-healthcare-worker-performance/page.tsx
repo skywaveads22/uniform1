@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Impact of Uniform Comfort on Healthcare Worker Performance | May 2025',
     description: 'Explore how advanced uniform comfort technologies enhance healthcare worker performance in Saudi Arabian medical facilities, with data-driven insights on productivity, patient outcomes, and staff wellbeing.',
-    images: ['/images/healthcare/uniform_comfort.jpg'],
+    images: ['/images/healthcare/Nurse_uniforms.jpg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function HealthcareUniformComfort() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/healthcare/uniform_comfort.jpg"
+          src="/images/healthcare/Nurse_uniforms.jpg"
           alt="Healthcare Worker Performance Enhanced by Comfortable Uniforms"
           fill
           className="object-cover rounded-lg"

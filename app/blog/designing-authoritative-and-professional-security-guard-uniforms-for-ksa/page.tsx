@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Designing Authoritative and Professional Security Guard Uniforms for KSA | May 2025',
     description: 'Discover expert strategies for designing security guard uniforms in Saudi Arabia that balance authority, professionalism, and cultural appropriateness while incorporating advanced functionality for 2025.',
-    images: ['/images/security/professional_uniforms.jpg'],
+    images: ['/images/security/Security_uniforms.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function SecurityGuardUniforms() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/security/professional_uniforms.jpg"
+          src="/images/security/Security_uniforms.jpeg"
           alt="Authoritative and Professional Security Guard Uniforms in Saudi Arabia"
           fill
           className="object-cover rounded-lg"

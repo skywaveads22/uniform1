@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: `Comprehensive analysis of next-generation airport security attire for Saudi aviation environments, featuring authority signification frameworks, operational enhancement systems, and passenger confidence methodologies aligned with Vision 2030 aviation security standards.`,
     keywords: `authority projection architecture Saudi Arabia 2025, aviation security systems KSA, passenger confidence methodology, operational enhancement frameworks, security personnel attire, Saudi airport security, passenger assurance architecture`,
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/aviation/airport_security_wear.jpg'],
       title: `Authority Projection Architecture: Advanced Uniform Systems for Aviation Security Personnel 2025`,
       description: `Strategic implementation framework for deploying sophisticated security attire systems across Saudi aviation facilities, delivering unprecedented operational capability through advanced psychological design engineering.`,
     },
@@ -17,6 +19,10 @@ export const generateMetadata = (): Metadata => {
 }
 
 export default function BlogPost() {
+  // Get valid image paths
+  const featuredImagePath = getValidImagePath('/images/aviation/airport_security_wear.jpg');
+  const authorImagePath = getValidImagePath('/images/author/default-author.jpg');
+  
   return (
     <div className="relative bg-white py-12 dark:bg-gray-900">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -36,11 +42,12 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={featuredImagePath}
               alt="Authority Projection Architecture: Advanced Uniform Systems for Aviation Security Personnel 2025"
               fill
               className="object-cover"
+              priority
             />
           </div>
 
@@ -283,8 +290,8 @@ export default function BlogPost() {
               <div className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-800">
                 <h3 className="text-2xl font-semibold mb-4">About the Author</h3>
                 <div className="flex items-start gap-4">
-                  <Image
-                    src="/images/author/default-author.jpg"
+                  <ArticleImage
+                    src={authorImagePath}
                     alt="Dr. Ibrahim Al-Qahtani"
                     width={80}
                     height={80}

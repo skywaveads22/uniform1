@@ -19,9 +19,9 @@ import SliderImage from './components/SliderImage';
 const PRELOADED_IMAGES = [
   "/images/aviation/aviation_uniforms.jpg",
   "/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg", 
-  "/images/hospitality/Hospitality_uniforms.jpeg",
+  "/images/hospitality/Hotel_uniforms.jpeg",
   "/images/education/School_uniforms.jpg",
-  "/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg"
+  "/images/security/Security_uniforms.jpeg"
 ];
 
 // Slider data with images from different categories
@@ -35,7 +35,7 @@ const sliderData = [
     category: "aviation"
   },
   {
-    image: "/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg",
+    image: "/images/healthcare/Healthcare_uniforms.jpg",
     title: "Healthcare Excellence",
     subtitle: "Medical-Grade Uniforms",
     description: "Professional attire designed for comfort, hygiene, and functionality in healthcare settings",
@@ -43,7 +43,7 @@ const sliderData = [
     category: "healthcare"
   },
   {
-    image: "/images/hospitality/Hospitality_uniforms.jpeg",
+    image: "/images/hospitality/Hotel_uniforms.jpeg",
     title: "Hospitality Distinction",
     subtitle: "Elegant Service Attire",
     description: "Refined uniforms that enhance guest experiences in Saudi Arabia's hospitality industry",
@@ -59,7 +59,7 @@ const sliderData = [
     category: "education"
   },
   {
-    image: "/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg",
+    image: "/images/security/Security_uniforms.jpeg",
     title: "Security & Authority",
     subtitle: "Professional Security Attire",
     description: "Commanding uniforms engineered for durability, functionality, and professional presence",
@@ -154,7 +154,7 @@ export default function Home() {
                 <SliderImage
                   src={slide.image}
                   alt={slide.title}
-                  fallbackSrc={getFallbackImage(slide.category)}
+                  category={slide.category}
                   priority={index === currentSlide}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
@@ -289,31 +289,31 @@ export default function Home() {
               },
               {
                 title: "Healthcare",
-                image: "/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg",
+                image: "/images/healthcare/Healthcare_uniforms.jpg",
                 description: "Comfortable and hygienic attire designed specifically for medical environments.",
                 features: ["Medical Scrubs", "Lab Coats", "Nurse Uniforms"]
               },
               {
                 title: "Hospitality",
-                image: "/images/hospitality/Hospitality_uniforms.jpeg",
+                image: "/images/hospitality/Hotel_uniforms.jpeg",
                 description: "Elegant and practical uniforms that enhance your hospitality brand experience.",
                 features: ["Hotel Staff Attire", "Restaurant Uniforms", "Event Staff Clothing"]
               },
               {
                 title: "Education",
-                image: "/images/education/School_uniforms.jpg",
+                image: "/images/education/Boys_school_uniforms.jpg",
                 description: "Quality school uniforms that promote unity and pride across educational institutions.",
                 features: ["School Uniforms", "Sports Kits", "Faculty Attire"]
               },
               {
                 title: "Government",
-                image: "/images/government/Government_uniforms.jpg",
+                image: "/images/government/Government_employee_uniforms.jpg",
                 description: "Official uniforms designed to represent government institutions with dignity.",
                 features: ["Official Attire", "Ceremonial Uniforms", "Department-Specific Designs"]
               },
               {
                 title: "Security",
-                image: "/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg",
+                image: "/images/security/Security_uniforms.jpeg",
                 description: "Durable and authoritative security personnel attire designed for functionality.",
                 features: ["Guard Uniforms", "Tactical Gear", "Identification Systems"]
               }
@@ -324,15 +324,32 @@ export default function Home() {
               >
                 <div className="relative h-64 overflow-hidden">
                   <Image
-                    src={getImagePath(category.image)}
-                    alt={category.title}
+                    src={category.image}
+                    alt={`${category.title} Uniforms`}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     onError={(e) => {
                       // Set fallback image on error
                       const target = e.target as HTMLImageElement;
                       target.onerror = null; // Prevent infinite error loop
-                      target.src = `/images/placeholder-image.jpg`;
+                      
+                      // Use a category-specific fallback if possible
+                      const categoryLower = category.title.toLowerCase();
+                      if (categoryLower === 'aviation') {
+                        target.src = `/images/aviation/aviation_uniforms.jpg`;
+                      } else if (categoryLower === 'healthcare') {
+                        target.src = `/images/healthcare/Healthcare_uniforms.jpg`;
+                      } else if (categoryLower === 'hospitality') {
+                        target.src = `/images/hospitality/Hotel_uniforms.jpeg`;
+                      } else if (categoryLower === 'education') {
+                        target.src = `/images/education/School_wear_apparel.jpg`;
+                      } else if (categoryLower === 'government') {
+                        target.src = `/images/government/Government_uniforms.jpg`;
+                      } else if (categoryLower === 'security') {
+                        target.src = `/images/security/Security_uniforms.jpeg`;
+                      } else {
+                        target.src = `/images/placeholder-image.jpg`;
+                      }
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
@@ -379,7 +396,7 @@ export default function Home() {
             <div className="relative order-2 md:order-1">
               <div className="relative z-10 overflow-hidden rounded-2xl shadow-xl">
                 <Image
-                  src={getImagePath("/images/industrial/Industrial_uniforms.jpeg")}
+                  src="/images/industrial/Industrial_uniforms.jpeg"
                   alt="Industrial Uniforms"
                   width={600}
                   height={700}
@@ -388,14 +405,14 @@ export default function Home() {
                     // Set fallback image on error
                     const target = e.target as HTMLImageElement;
                     target.onerror = null; // Prevent infinite error loop
-                    target.src = `/placeholder-image.jpg`;
+                    target.src = `/images/placeholder-image.jpg`;
                   }}
                 />
               </div>
               <div className="absolute -top-6 -left-6 z-0 h-full w-full rounded-2xl border-2 border-primary"></div>
               <div className="absolute right-0 bottom-0 z-20 overflow-hidden rounded-lg shadow-xl">
                 <Image
-                  src={getImagePath("/images/healthcare/Medical_staff_uniforms.jpg")}
+                  src="/images/healthcare/Medical_staff_uniforms.jpg"
                   alt="Medical Staff Uniforms"
                   width={300}
                   height={200}
@@ -404,7 +421,7 @@ export default function Home() {
                     // Set fallback image on error
                     const target = e.target as HTMLImageElement;
                     target.onerror = null; // Prevent infinite error loop
-                    target.src = `/placeholder-image.jpg`;
+                    target.src = `/images/placeholder-image.jpg`;
                   }}
                 />
               </div>
@@ -598,7 +615,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-primary py-20">
         <div className="absolute inset-0 z-0 overflow-hidden opacity-10">
           <Image 
-            src={getImagePath("/images/uniform_pattern_bg.jpg")}
+            src="/images/uniform_pattern_bg.jpg"
             alt="Uniform Pattern Background"
             fill
             className="object-cover"

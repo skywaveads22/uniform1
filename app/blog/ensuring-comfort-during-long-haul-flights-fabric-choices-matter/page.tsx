@@ -2,14 +2,16 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: 'Aerospace-Grade Thermoregulation: Next-Gen Flight Fabrics in 2025 | UniformSA',
-    description: 'Explore quantum-textile innovations revolutionizing crew endurance on 20+ hour flights, featuring Saudi Arabia\'s leadership in smart fabric integration and biometric-responsive aviation uniforms.',
+    title: `Aerospace-Grade Thermoregulation: Next-Gen Flight Fabrics in 2025 | UniformSA`,
+    description: `Strategic analysis of breakthrough textile technologies delivering unprecedented crew performance during extreme-duration flights, highlighting the implementation of quantum-responsive fabrics in Saudi aviation.`,
     keywords: 'quantum-textile aviation 2025, biometric-responsive flight uniforms, ultra-long-haul crew endurance, Saudi smart uniform integration, aerospace-grade thermoregulation, cabin pressure-adaptive fabrics',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/aviation/durable_aviation_fabrics.jpg'],
       title: 'Aerospace-Grade Thermoregulation: Next-Gen Flight Fabrics in 2025',
       description: 'Strategic analysis of breakthrough textile technologies delivering unprecedented crew performance during extreme-duration flights, showcasing Saudi Arabia\'s pioneering implementation of quantum-responsive fabrics.'
     },
@@ -17,6 +19,9 @@ export const generateMetadata = (): Metadata => {
 }
 
 export default function BlogPost() {
+  // Get valid image paths
+  const featuredImagePath = getValidImagePath('/images/aviation/durable_aviation_fabrics.jpg');
+  
   return (
     <div className="relative bg-white py-12 dark:bg-gray-900">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -36,12 +41,13 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={featuredImagePath}
               alt="Flight attendant wearing quantum-responsive thermoregulation uniform fabric during extreme-duration transcontinental flight operations"
               width={1000}
               height={600}
               className="rounded-lg w-full"
+              priority
             />
           </div>
 

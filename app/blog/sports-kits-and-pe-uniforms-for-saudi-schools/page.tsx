@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { CTA } from '@/components/CTA';
 import { RelatedArticles } from '@/components/RelatedArticles';
 import { ShareButtons } from '@/components/ShareButtons';
+import ArticleImage from '@/components/ArticleImage';
+import { getValidImagePath } from '@/lib/image-helper';
 
 export const metadata: Metadata = {
   title: 'Sports Kits and PE Uniforms for Saudi Schools | Uniform Junction',
@@ -11,11 +13,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sports Kits and PE Uniforms for Saudi Schools',
     description: 'Essential considerations for implementing physical education uniforms that balance cultural requirements, performance needs, and Saudi educational standards.',
-    images: ['/images/author/default-author.jpg'],
+    images: ['/images/education/uniforms_sports_kits.jpg'],
   },
 };
 
 export default function BlogPost() {
+  // Get valid image path
+  const mainImagePath = getValidImagePath('/images/education/uniforms_sports_kits.jpg');
+  
   return (
     <main className="flex-auto">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
@@ -38,12 +43,13 @@ export default function BlogPost() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
-                <Image
-                  src="/images/author/default-author.jpg"
+                <ArticleImage
+                  src={mainImagePath}
                   alt="Saudi students wearing culturally appropriate physical education uniforms during a school sports activity"
                   width={1408}
                   height={960}
                   className="rounded-2xl"
+                  priority
                 />
                 <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-neutral-500">
                   <span>Modern PE uniforms for Saudi schools balance traditional values with contemporary performance requirements</span>

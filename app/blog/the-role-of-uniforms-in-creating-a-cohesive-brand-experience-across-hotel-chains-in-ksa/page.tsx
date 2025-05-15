@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const metadata: Metadata = {
   title: 'The Role of Uniforms in Creating a Cohesive Brand Experience Across Hotel Chains in KSA | UniformSA',
@@ -17,8 +19,8 @@ export default function BlogPost() {
     <div className="bg-white">
       {/* Hero Section */}
       <div className="relative h-[400px] w-full overflow-hidden">
-        <Image
-          src="/images/hospitality/Hospitality_uniforms.jpeg"
+        <ArticleImage
+          src={getValidImagePath('/images/hospitality/Hotel_uniforms.jpeg')}
           alt="Hotel staff wearing coordinated uniforms across multiple luxury Saudi hotel properties"
           fill
           className="object-cover"
@@ -80,7 +82,13 @@ export default function BlogPost() {
               </ul>
 
               <div className="not-prose my-8 overflow-hidden rounded-xl">
-                
+                <ArticleImage
+                  src={getValidImagePath('/images/hospitality/Hotel_staff_apparel.jpeg')}
+                  alt="Staff at three different properties of a luxury Saudi hotel chain demonstrating consistent uniform presentation"
+                  width={1200}
+                  height={800}
+                  className="rounded-2xl"
+                />
                 <p className="mt-2 text-sm text-gray-600">Staff at three different properties of a luxury Saudi hotel chain demonstrating consistent uniform presentation</p>
               </div>
 
@@ -144,7 +152,13 @@ export default function BlogPost() {
               </ul>
 
               <div className="not-prose my-8 overflow-hidden rounded-xl">
-                
+                <ArticleImage
+                  src={getValidImagePath('/images/hospitality/Restaurant_uniforms.jpeg')}
+                  alt="Coordinated uniform system visually distinguishing staff roles while maintaining brand consistency"
+                  width={1200}
+                  height={800}
+                  className="rounded-2xl"
+                />
                 <p className="mt-2 text-sm text-gray-600">Coordinated uniform system visually distinguishing staff roles while maintaining brand consistency</p>
               </div>
 
@@ -211,7 +225,13 @@ export default function BlogPost() {
               </ul>
 
               <div className="not-prose my-8 overflow-hidden rounded-xl">
-                
+                <ArticleImage
+                  src={getValidImagePath('/images/hospitality/hospitality_uniform_consulting.jpeg')}
+                  alt="Thoughtful incorporation of traditional Saudi design elements within a consistent brand framework"
+                  width={1200}
+                  height={800}
+                  className="rounded-2xl"
+                />
                 <p className="mt-2 text-sm text-gray-600">Thoughtful incorporation of traditional Saudi design elements within a consistent brand framework</p>
               </div>
 
@@ -253,7 +273,13 @@ export default function BlogPost() {
             {/* Author Section */}
             <div className="mt-12 rounded-xl bg-gray-50 p-6">
               <div className="flex items-center gap-4">
-                
+                <ArticleImage
+                  src={getValidImagePath('/images/hospitality/Hotel_uniforms.jpeg')}
+                  alt="Hospitality Uniform Specialist"
+                  width={60}
+                  height={60}
+                  className="h-14 w-14 rounded-full object-cover"
+                />
                 <div>
                   <h3 className="text-lg font-semibold">Written by Hospitality Uniform Specialist</h3>
                   <p className="text-gray-600">

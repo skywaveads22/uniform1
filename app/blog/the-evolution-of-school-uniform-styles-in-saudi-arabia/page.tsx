@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { CTA } from '@/components/CTA';
 import { RelatedArticles } from '@/components/RelatedArticles';
 import { ShareButtons } from '@/components/ShareButtons';
+import ArticleImage from '@/components/ArticleImage';
+import { getValidImagePath } from '@/lib/image-helper';
 
 export const metadata: Metadata = {
   title: 'The Evolution of School Uniform Styles in Saudi Arabia | Uniform Junction',
@@ -16,6 +18,9 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPost() {
+  // استخدام وظيفة التحقق من وجود الصورة للحصول على مسار صالح
+  const mainImagePath = getValidImagePath('/images/education/School_uniforms_Saudi_Arabia_KSA.jpg');
+  
   return (
     <main className="flex-auto">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
@@ -38,12 +43,13 @@ export default function BlogPost() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
-                <Image
-                  src="/images/education/School_uniforms_Saudi_Arabia_KSA.jpg"
+                <ArticleImage
+                  src={mainImagePath}
                   alt="Historical and contemporary school uniforms in Saudi Arabia showing the evolution of educational attire"
                   width={1408}
                   height={960}
                   className="rounded-2xl"
+                  priority
                 />
                 <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-neutral-500">
                   <span>The transformation of school uniforms in Saudi Arabia reflects educational advancements while preserving cultural traditions and identity</span>

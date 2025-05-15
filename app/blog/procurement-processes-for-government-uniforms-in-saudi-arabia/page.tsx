@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Procurement Processes for Government Uniforms in Saudi Arabia | May 2025',
     description: 'Explore the streamlined procurement processes for government uniforms in Saudi Arabia, featuring digital transformation initiatives, sustainability requirements, and compliance frameworks as of May 2025.',
-    images: ['/images/government/procurement_process.jpg'],
+    images: ['/images/government/Civil_service_uniforms.jpg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function ProcurementProcesses() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/government/procurement_process.jpg"
+          src="/images/government/Civil_service_uniforms.jpg"
           alt="Government Uniform Procurement Process in Saudi Arabia"
           fill
           className="object-cover rounded-lg"

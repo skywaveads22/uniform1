@@ -20,7 +20,7 @@ const slides = [
     description: "Ensure smooth adoption of your uniform policies across all departments"
   },
   {
-    image: "/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg",
+    image: "/images/security/Security_uniforms.jpeg",
     title: "Compliance Monitoring",
     description: "Maintain consistent uniform standards with effective compliance systems"
   }
@@ -53,7 +53,7 @@ export default function UniformPoliciesPage() {
               </div>
               <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md lg:aspect-square">
                 <Image
-                  src="/images/aviation/Aviation_uniforms_Saudi_Arabia_KSA.jpg"
+                  src="/images/services/uniform_policies.jpg"
                   alt="Uniform policy development"
                   fill
                   className="object-cover"

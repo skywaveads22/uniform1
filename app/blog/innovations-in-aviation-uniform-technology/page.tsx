@@ -2,21 +2,26 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
     title: 'Breakthrough Innovations in Aviation Uniform Technology: 2025 Technical Advancements | UniformSA',
-    description: 'Comprehensive analysis of cutting-edge technologies transforming Saudi aviation uniforms, featuring integrated smart systems, advanced materials, and enhanced crew performance capabilities for next-generation operations.',
-    keywords: 'aviation uniform innovation 2025, smart textile aviation technology, Saudi airline integrated wearables, technical performance crew attire, sustainable aviation uniform materials, biometric crew garment systems',
+    description: 'Comprehensive analysis of revolutionary technologies transforming aviation uniforms, featuring responsive textiles, integrated electronics, and performance-enhancing systems optimized for Saudi airline operations.',
+    keywords: 'aviation uniform technology 2025, smart flight crew attire, Saudi airline uniform innovation, integrated wearable aerospace systems, thermoregulating aviation textiles, crew performance enhancement technology',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/aviation/Aviation_uniform_manufacturer.jpg'],
       title: 'Breakthrough Innovations in Aviation Uniform Technology: 2025 Technical Advancements',
-      description: 'Expert examination of revolutionary technologies enhancing Saudi aviation crew effectiveness through integrated functionality, adaptive performance, and data-enabled operational capabilities.'
+      description: 'Strategic overview of revolutionary uniform technologies delivering unprecedented crew performance enhancement for Saudi aviation operations across extreme environmental conditions.'
     },
   }
 }
 
 export default function BlogPost() {
+  // Get valid image path
+  const featuredImagePath = getValidImagePath('/images/aviation/Aviation_uniform_manufacturer.jpg');
+  
   return (
     <div className="relative bg-white py-12 dark:bg-gray-900">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -36,12 +41,13 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={featuredImagePath}
               alt="Advanced aviation crew uniform featuring integrated smart textile technology and biometric monitoring systems for enhanced operational performance"
               width={1000}
               height={600}
               className="rounded-lg w-full"
+              priority
             />
           </div>
 

@@ -25,7 +25,7 @@ export default function RentalPage() {
             </div>
             <div className="relative h-[300px] lg:h-[400px]">
               <Image
-                src="/images/industrial/rental-service.jpg"
+                src="/images/industrial/industrial_uniform_fittings.jpeg"
                 alt="Uniform Rental Service"
                 fill
                 className="rounded-lg object-cover"

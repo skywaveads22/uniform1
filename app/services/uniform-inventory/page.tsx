@@ -10,17 +10,17 @@ export const metadata: Metadata = {
 
 const slides = [
   {
-    image: "/images/services/inventory-1.jpg",
+    image: "/images/hospitality/hotel_management_uniforms.jpeg",
     title: "Digital Inventory Systems",
     description: "Cutting-edge software solutions to track and manage your uniform inventory"
   },
   {
-    image: "/images/services/inventory-2.jpg",
+    image: "/images/hospitality/hotel_uniform_stock_management.jpeg",
     title: "Stock Optimization",
     description: "Reduce costs and waste by maintaining optimal uniform inventory levels"
   },
   {
-    image: "/images/services/inventory-3.jpg",
+    image: "/images/hospitality/hotel_uniform_stock_management1.jpeg",
     title: "Distribution Management",
     description: "Efficient allocation and delivery systems for multi-location organizations"
   }
@@ -55,7 +55,7 @@ export default function UniformInventoryPage() {
               </div>
               <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md lg:aspect-square">
                 <Image
-                  src="/images/services/inventory-main.jpg"
+                  src="/images/hospitality/hotel_uniform_stock_management.jpeg"
                   alt="Uniform inventory management"
                   fill
                   className="object-cover"
@@ -116,7 +116,7 @@ export default function UniformInventoryPage() {
               <div className="rounded-lg border bg-card overflow-hidden shadow-sm">
                 <div className="relative h-60">
                   <Image
-                    src="/images/services/inventory-software.jpg"
+                    src="/images/hospitality/hotel_uniform_stock_management1.jpeg"
                     alt="Inventory management software"
                     fill
                     className="object-cover"
@@ -144,7 +144,7 @@ export default function UniformInventoryPage() {
               <div className="rounded-lg border bg-card overflow-hidden shadow-sm">
                 <div className="relative h-60">
                   <Image
-                    src="/images/services/inventory-physical.jpg"
+                    src="/images/hospitality/hotel_management_uniforms.jpeg"
                     alt="Physical inventory management"
                     fill
                     className="object-cover"
@@ -378,7 +378,7 @@ export default function UniformInventoryPage() {
             <div className="grid gap-8 md:grid-cols-2">
               <div className="relative aspect-video overflow-hidden rounded-lg shadow-md">
                 <Image
-                  src="/images/services/inventory-case-study.jpg"
+                  src="/images/hospitality/hotel_management_uniforms.jpeg"
                   alt="Inventory management case study"
                   fill
                   className="object-cover"

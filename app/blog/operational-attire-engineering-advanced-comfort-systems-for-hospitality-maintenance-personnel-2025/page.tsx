@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Operational Attire Engineering: Advanced Comfort Systems for Hospitality Maintenance Personnel | May 2025',
     description: 'Discover revolutionary attire engineering for hospitality maintenance staff in Saudi Arabia, featuring adaptive comfort technologies, task-optimized designs, and performance-enhancing systems for 2025.',
-    images: ['/images/hospitality/maintenance_attire.jpg'],
+    images: ['/images/hospitality/hotel_maintenance_staff_uniforms.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function MaintenanceAttireEngineering() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/hospitality/maintenance_attire.jpg"
+          src="/images/hospitality/hotel_maintenance_staff_uniforms.jpeg"
           alt="Advanced Engineered Attire for Hospitality Maintenance Personnel"
           fill
           className="object-cover rounded-lg"

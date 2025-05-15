@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Advanced Materials in Security Equipment: Cutting-Edge Innovations for 2025 | May 2025',
     description: 'Explore the latest breakthroughs in advanced materials transforming security equipment in 2025, from ultra-lightweight body armor to smart textiles that enhance protection for security personnel.',
-    images: ['/images/security/security_equipment.jpg'],
+    images: ['/images/security/Security_uniforms.jpeg'],
   },
 }
 
@@ -29,7 +29,7 @@ export default function SecurityMaterials() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/security/security_equipment.jpg"
+          src="/images/security/Security_uniforms.jpeg"
           alt="Advanced Security Equipment Materials"
           fill
           className="object-cover rounded-lg"

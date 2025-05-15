@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of next-generation communication systems for specialized security applications, featuring adaptive equipment integration, operational optimization, and deployment strategies for Saudi security environments.',
     keywords: 'security communication integration 2025, tactical equipment integration Saudi Arabia, radio system incorporation, biometric communication tools, security wearable technology KSA, covert communication systems Saudi',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/security/radio_holder_uniforms.jpeg'],
       title: 'Tactical Communication Integration: Advanced Technology Systems for Saudi Security Personnel 2025',
       description: 'Strategic framework for implementing sophisticated communications technology within security attire, balancing operational requirements, equipment optimization, and human factors engineering.',
     },
@@ -36,8 +38,8 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={getValidImagePath('/images/security/radio_holder_uniforms.jpeg')}
               alt="Advanced tactical communication systems integrated with specialized security uniforms"
               width={1000}
               height={600}

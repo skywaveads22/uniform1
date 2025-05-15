@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Discover how quantum color psychology and neuro-response algorithms are revolutionizing Saudi aviation perception systems, merging neuroscience with AI-driven chromatic engineering for unprecedented passenger influence.',
     keywords: 'neuro-chromatic design 2025, quantum color psychology aviation, AI-driven uniform perception, Saudi cognitive color engineering, passenger neural influence, biometric color response',
     openGraph: {
-      images: ['/images/aviation/neuro_chromatic_design.jpg'],
+      images: ['/images/aviation/airline_uniform_design_services.jpg'],
       title: 'Neuro-Chromatic Design: Cognitive Engineering in Aerospace Uniforms 2025',
       description: 'Comprehensive analysis of revolutionary neural-response color systems transforming Saudi aviation uniform design through advanced cognitive science, AI color algorithms, and precision passenger perception engineering.'
     },
@@ -17,6 +19,9 @@ export const generateMetadata = (): Metadata => {
 }
 
 export default function BlogPost() {
+  // Get valid image path
+  const featuredImagePath = getValidImagePath('/images/aviation/airline_uniform_design_services.jpg');
+  
   return (
     <div className="relative bg-white py-12 dark:bg-gray-900">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -36,12 +41,13 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/aviation/neuro_chromatic_design.jpg"
+            <ArticleImage
+              src={featuredImagePath}
               alt="Saudi aviation professionals in neuro-chromatically engineered uniforms designed with AI-optimized color systems for maximum cognitive and neural passenger influence"
               width={1000}
               height={600}
               className="rounded-lg w-full"
+              priority
             />
           </div>
 

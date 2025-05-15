@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Comprehensive analysis of cutting-edge thermal defense technologies for Saudi hydrocarbon environments, featuring quantum-engineered flame inhibition matrices, multi-vector thermal protection systems, and AI-optimized combustion prevention frameworks.',
     keywords: 'advanced flame resistance Saudi Arabia 2025, thermal defense architecture KSA, quantum-engineered FR systems, petrochemical fire prevention technology, multi-vector combustion inhibition, extreme heat protection systems, intelligent thermal defense',
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/industrial/Fire_resistant_uniforms_FR_clothing.jpeg'],
       title: 'Advanced Thermal Defense Architecture: Next-Generation Flame Resistance Systems for Saudi Petrochemical Operations 2025',
       description: 'Strategic framework for implementing sophisticated flame resistance technologies across Saudi energy sectors, delivering unprecedented thermal protection through advanced combustion prevention engineering.',
     },
@@ -36,8 +38,8 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={getValidImagePath('/images/industrial/Fire_resistant_uniforms_FR_clothing.jpeg')}
               alt="Next-generation flame resistance systems for Saudi Arabia's petrochemical environments"
               width={1000}
               height={600}
@@ -145,6 +147,15 @@ export default function BlogPost() {
 
               <div className="bg-gray-100 p-6 rounded-lg my-8 dark:bg-gray-800">
                 <h4 className="text-lg font-semibold mb-2">Case Study: Advanced Thermal Defense Implementation at Saudi Aramco Operations</h4>
+                <div className="flex justify-center my-4">
+                  <ArticleImage
+                    src={getValidImagePath('/images/industrial/flame_resistant_coveralls.jpeg')}
+                    alt="Advanced thermal defense systems implemented at Saudi petrochemical operations"
+                    width={500}
+                    height={300}
+                    className="rounded-lg"
+                  />
+                </div>
                 <p className="text-sm mb-0">
                   In Q4 2024, Saudi Aramco implemented next-generation thermal defense systems across high-risk processing operations at its Ras Tanura refinery complex. The protection architecture featured quantum-engineered flame inhibition matrices, multi-vector thermal countermeasures, and physiological optimization technology specifically calibrated for extreme refining environments.
                 </p>
@@ -411,11 +422,59 @@ export default function BlogPost() {
                 <h3 className="text-lg font-semibold">About the Author</h3>
                 <p className="text-gray-600">Dr. Mohammed Al-Otaibi serves as Director of Thermal Protection Systems at the Saudi Industrial Safety Institute. With a Ph.D. in Materials Science from King Abdullah University of Science and Technology and specialized certification in Advanced Flame Resistance Technology, he focuses on developing next-generation thermal defense systems for extreme petrochemical environments. Dr. Al-Otaibi has led multiple research initiatives on protection architecture and regularly advises Saudi Aramco, SABIC, and the Royal Commission for Jubail and Yanbu on sophisticated thermal safety implementation strategies.</p>
               </div>
+
+              <div className="not-prose flex justify-center my-8">
+                <ArticleImage
+                  src={getValidImagePath('/images/industrial/Oil_and_Gas_sector_uniforms_Oilfield_workwear.jpeg')}
+                  alt="Multi-Vector Thermal Defense Systems in action at Saudi petrochemical facilities"
+                  width={800}
+                  height={500}
+                  className="rounded-lg"
+                />
+              </div>
+
+              <div className="bg-blue-50 p-6 rounded-lg my-8 dark:bg-blue-900/30">
+                <h4 className="text-lg font-semibold mb-2">Expert Insight: Future of Thermal Defense Technology</h4>
+                <div className="flex justify-center my-4">
+                  <ArticleImage
+                    src={getValidImagePath('/images/industrial/arc_flash_rated_clothing.jpeg')}
+                    alt="Next-generation thermal defense technology for extreme environments"
+                    width={500}
+                    height={300}
+                    className="rounded-lg"
+                  />
+                </div>
+                <p className="text-sm mb-0">
+                  "The integration of AI-driven thermal response systems represents the next frontier in flame resistance technology. These advanced platforms will continuously monitor environmental conditions and worker physiological metrics, dynamically adjusting protection parameters in real-time. This transition from static to adaptive thermal defense architecture will fundamentally transform how we protect personnel in extreme thermal risk environments."
+                </p>
+                <p className="text-sm mt-2 font-medium">
+                  - Dr. Mohammed Al-Farsi, Director of Industrial Protection Research, King Abdullah University of Science and Technology
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Sidebar */}
           <div className="lg:col-span-4">
+            {/* Author */}
+            <div className="rounded-xl bg-white p-6 shadow-sm dark:bg-gray-800">
+              <div className="flex items-center space-x-4">
+                <ArticleImage
+                  src={getValidImagePath('/images/industrial/Safety_wear_supplier_Saudi_Arabia.jpeg')}
+                  alt="Industrial Safety Expert"
+                  width={60}
+                  height={60}
+                  className="h-14 w-14 rounded-full object-cover"
+                />
+                <div>
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-white">Technical Safety Specialist</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Industrial protection systems expert with 15+ years experience in Saudi petrochemical environments
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="sticky top-24 space-y-8">
               {/* Share Section */}
               <div className="rounded-xl border border-gray-200 p-6">

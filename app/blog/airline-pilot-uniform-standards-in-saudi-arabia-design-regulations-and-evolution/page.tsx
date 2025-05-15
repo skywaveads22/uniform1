@@ -8,7 +8,7 @@ export const generateMetadata = (): Metadata => {
     title: 'Airline Pilot Uniform Standards In Saudi Arabia Design Regulations And Evolution | UniformSA',
     description: 'Learn more about uniforms and professional attire in Saudi Arabia.',
     openGraph: {
-      images: ['/images/aviation/Saudi_pilot_uniform_standards.jpg'],
+      images: ['/images/aviation/Pilot_uniforms.jpg'],
     },
   }
 }
@@ -34,7 +34,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/aviation/Saudi_pilot_uniform_standards.jpg"
+              src="/images/aviation/Pilot_uniforms.jpg"
               alt="Airline Pilot Uniform Standards In Saudi Arabia Design Regulations And Evolution"
               width={1000}
               height={600}

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Biodigital Integration Architecture: Advanced Attire Systems for Healthcare Performance Optimization | May 2025',
     description: 'Discover cutting-edge biodigital integration systems revolutionizing healthcare uniforms in Saudi Arabia, featuring biometric monitoring, AI adaptation, and neural feedback for unprecedented clinical performance.',
-    images: ['/images/healthcare/biodigital_integration.jpg'],
+    images: ['/images/healthcare/Healthcare_uniforms.jpg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function BiodigitalIntegration() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/healthcare/biodigital_integration.jpg"
+          src="/images/healthcare/Healthcare_uniforms.jpg"
           alt="Advanced Biodigital Integration for Healthcare Uniforms"
           fill
           className="object-cover rounded-lg"

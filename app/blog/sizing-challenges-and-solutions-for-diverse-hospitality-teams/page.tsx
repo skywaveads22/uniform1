@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -9,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     description: `Comprehensive analysis of cutting-edge anthropometric accommodation architectures for Saudi hospitality environments, featuring AI-driven morphological mapping, dimensional variance optimization, and cultural-specific customization frameworks for excellence in diverse team presentation.`,
     keywords: `advanced anthropometric accommodation Saudi Arabia 2025, multicultural sizing architecture KSA, dimensional optimization frameworks, AI-driven morphological mapping, hospitality team presentation systems, cross-cultural sizing technology, international workforce solutions`,
     openGraph: {
-      images: ['/images/author/default-author.jpg'],
+      images: ['/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg'],
       title: `Advanced Anthropometric Adaptation Frameworks: Next-Generation Sizing Systems for Saudi Arabia's Multicultural Hospitality Sector 2025`,
       description: `Strategic framework for implementing sophisticated anthropometric accommodation technologies across Saudi hospitality organizations, delivering unprecedented fit precision through advanced dimensional optimization frameworks.`,
     },
@@ -17,6 +19,9 @@ export const generateMetadata = (): Metadata => {
 }
 
 export default function BlogPost() {
+  // Get a valid path for the main image
+  const mainImagePath = getValidImagePath('/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg')
+  
   return (
     <div className="relative bg-white py-12 dark:bg-gray-900">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -36,8 +41,8 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="mb-10">
-            <Image
-              src="/images/author/default-author.jpg"
+            <ArticleImage
+              src={mainImagePath}
               alt="Next-generation anthropometric accommodation systems for Saudi Arabia's diverse hospitality sector"
               width={1000}
               height={600}

@@ -10,17 +10,17 @@ export const metadata: Metadata = {
 
 const slides = [
   {
-    image: "/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg",
+    image: "/images/healthcare/Medical_staff_uniforms.jpg",
     title: "Professional Measurement Services",
     description: "Ensure perfect-fitting uniforms for your entire team with our expert measurement services"
   },
   {
-    image: "/images/aviation/Airline_uniforms_Saudi_Arabia_KSA.jpg",
+    image: "/images/aviation/Aviation_uniforms_Saudi_Arabia_KSA.jpg",
     title: "On-Site Team Measurements",
     description: "Our trained specialists visit your location for convenient group measurements"
   },
   {
-    image: "/images/hospitality/Luxury_hotel_staff_uniforms_Saudi_Arabia_KSA.jpeg",
+    image: "/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg",
     title: "Advanced Measurement Technology",
     description: "Using the latest tools and techniques for highly accurate uniform sizing"
   }
@@ -53,7 +53,7 @@ export default function MeasurementServicePage() {
               </div>
               <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md lg:aspect-square">
                 <Image
-                  src="/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg"
+                  src="/images/hospitality/Hotel_uniforms.jpeg"
                   alt="Professional uniform measurement"
                   fill
                   className="object-cover"

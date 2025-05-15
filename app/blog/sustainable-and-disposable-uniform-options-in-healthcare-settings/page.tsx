@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { CTA } from '@/components/CTA';
 import { RelatedArticles } from '@/components/RelatedArticles';
 import { ShareButtons } from '@/components/ShareButtons';
+import ArticleImage from '@/components/ArticleImage';
+import { getValidImagePath } from '@/lib/image-helper';
 
 export const metadata: Metadata = {
   title: 'Sustainable and Disposable Uniform Options in Healthcare Settings | Uniform Junction',
@@ -11,11 +13,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sustainable and Disposable Uniform Options in Healthcare Settings',
     description: 'Comprehensive analysis of balancing sustainability with safety in Saudi Arabian healthcare uniform programs.',
-    images: ['/images/author/default-author.jpg'],
+    images: ['/images/healthcare/disposable_medical_gowns.jpg'],
   },
 };
 
 export default function BlogPost() {
+  // Get a valid path for the main image
+  const mainImagePath = getValidImagePath('/images/healthcare/disposable_medical_gowns.jpg');
+  
   return (
     <main className="flex-auto">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
@@ -38,8 +43,8 @@ export default function BlogPost() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
-                <Image
-                  src="/images/author/default-author.jpg"
+                <ArticleImage
+                  src={mainImagePath}
                   alt="Healthcare professionals wearing sustainable uniforms alongside necessary disposable protective elements in a Saudi hospital setting"
                   width={1408}
                   height={960}
@@ -141,7 +146,13 @@ export default function BlogPost() {
                 </ul>
 
                 <div className="not-prose my-8 overflow-hidden rounded-xl">
-                  
+                  <ArticleImage
+                    src={getValidImagePath('/images/healthcare/Medical_uniform_fabrics.jpg')}
+                    alt="Advanced sustainable textiles maintaining clinical performance while reducing environmental impact"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
                   <p className="mt-2 text-sm text-neutral-500">Advanced sustainable textiles maintain clinical performance while reducing environmental impact</p>
                 </div>
 

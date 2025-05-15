@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Color Choices for Security Uniforms: Practicality and Perception | May 2025',
     description: 'Explore strategic color selection for security uniforms in Saudi Arabia, balancing psychological impact, practical considerations, and cultural context with latest color science innovations.',
-    images: ['/images/security/uniform_colors.jpg'],
+    images: ['/images/security/Security_uniforms.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function SecurityUniformColors() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/security/uniform_colors.jpg"
+          src="/images/security/Security_uniforms.jpeg"
           alt="Strategic Color Selection for Security Uniforms in Saudi Arabia"
           fill
           className="object-cover rounded-lg"

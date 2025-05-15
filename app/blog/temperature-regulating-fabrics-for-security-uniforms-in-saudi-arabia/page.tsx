@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Temperature-Regulating Fabrics for Security Uniforms in Saudi Arabia | May 2025',
     description: 'Discover advanced temperature-regulating fabrics revolutionizing security uniforms in Saudi Arabia, featuring microclimate control systems, smart cooling technologies, and desert-optimized materials for 2025.',
-    images: ['/images/security/temperature_regulation.jpg'],
+    images: ['/images/security/Security_uniforms.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function TemperatureRegulatingFabrics() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/security/temperature_regulation.jpg"
+          src="/images/security/Security_uniforms.jpeg"
           alt="Temperature-Regulating Fabrics for Security Uniforms"
           fill
           className="object-cover rounded-lg"

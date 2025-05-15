@@ -2,13 +2,15 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const metadata: Metadata = {
   title: 'The Importance of Proper Fit for Safety and Comfort in Industrial Uniforms | UniformSA',
   description: 'Learn how well-fitted industrial uniforms enhance worker safety, productivity, and wellbeing in Saudi industrial environments, with expert guidance on implementing proper sizing programs.',
   keywords: 'industrial uniform fit, safety workwear, proper sizing, comfortable workwear, KSA industrial uniforms, worker safety uniforms, ergonomic workwear, industrial safety standards',
   openGraph: {
-    images: ['/images/author/default-author.jpg'],
+    images: ['/images/industrial/industrial_uniform_fittings.jpeg'],
   },
 }
 
@@ -17,8 +19,8 @@ export default function BlogPost() {
     <div className="bg-white">
       {/* Hero Section */}
       <div className="relative h-[400px] w-full overflow-hidden">
-        <Image
-          src="/images/author/default-author.jpg"
+        <ArticleImage
+          src={getValidImagePath('/images/industrial/industrial_uniform_fittings.jpeg')}
           alt="Industrial worker wearing properly fitted safety uniform in Saudi industrial facility"
           fill
           className="object-cover"
@@ -80,7 +82,13 @@ export default function BlogPost() {
               </ul>
 
               <div className="not-prose my-8 overflow-hidden rounded-xl">
-                
+                <ArticleImage
+                  src={getValidImagePath('/images/industrial/Safety_workwear_PPE_apparel.jpeg')}
+                  alt="Visual representation of common safety hazards resulting from improperly fitted industrial workwear"
+                  width={1200}
+                  height={800}
+                  className="rounded-2xl"
+                />
                 <p className="mt-2 text-sm text-gray-600">Visual representation of common safety hazards resulting from improperly fitted industrial workwear</p>
               </div>
 
@@ -144,7 +152,13 @@ export default function BlogPost() {
               </ul>
 
               <div className="not-prose my-8 overflow-hidden rounded-xl">
-                
+                <ArticleImage
+                  src={getValidImagePath('/images/industrial/Industrial_workwear_Saudi_Arabia_KSA.jpeg')}
+                  alt="Essential measurement points for accurate industrial uniform sizing in Saudi industrial applications"
+                  width={1200}
+                  height={800}
+                  className="rounded-2xl"
+                />
                 <p className="mt-2 text-sm text-gray-600">Essential measurement points for accurate industrial uniform sizing in Saudi industrial applications</p>
               </div>
 
@@ -261,11 +275,17 @@ export default function BlogPost() {
             {/* Author Section */}
             <div className="mt-12 rounded-xl bg-gray-50 p-6">
               <div className="flex items-center gap-4">
-                
+                <ArticleImage
+                  src={getValidImagePath('/images/industrial/industrial_uniform_fittings.jpeg')}
+                  alt="Industrial Safety Expert"
+                  width={60}
+                  height={60}
+                  className="h-14 w-14 rounded-full object-cover"
+                />
                 <div>
-                  <h3 className="text-lg font-semibold">Written by Industrial Workwear Specialist</h3>
+                  <h3 className="text-lg font-semibold">Written by Industrial Safety Expert</h3>
                   <p className="text-gray-600">
-                    Our industrial division specialists have extensive experience implementing comprehensive workwear programs for major manufacturing, petrochemical, and construction operations throughout Saudi Arabia.
+                    Our industrial division specialists have extensive experience designing properly fitted workwear for diverse industrial environments across Saudi Arabia.
                   </p>
                 </div>
               </div>

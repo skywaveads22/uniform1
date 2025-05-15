@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { CTA } from '@/components/CTA';
 import { RelatedArticles } from '@/components/RelatedArticles';
 import { ShareButtons } from '@/components/ShareButtons';
+import ArticleImage from '@/components/ArticleImage';
+import { getValidImagePath } from '@/lib/image-helper';
 
 export const metadata: Metadata = {
   title: 'Uniform Considerations for Government Representatives Attending International Events | Uniform Junction',
@@ -11,11 +13,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Uniform Considerations for Government Representatives Attending International Events',
     description: 'Learn how Saudi Arabia balances cultural identity, diplomatic protocol, and national branding through strategic uniform choices for government representatives at global events.',
-    images: ['/images/author/default-author.jpg'],
+    images: ['/images/government/Official_government_suits.jpg'],
   },
 };
 
 export default function BlogPost() {
+  // Get a valid path for the main image
+  const mainImagePath = getValidImagePath('/images/government/Official_government_suits.jpg');
+  
   return (
     <main className="flex-auto">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-24 sm:mt-32 lg:mt-40">
@@ -38,8 +43,8 @@ export default function BlogPost() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
               <figure>
-                <Image
-                  src="/images/author/default-author.jpg"
+                <ArticleImage
+                  src={mainImagePath}
                   alt="Saudi government delegation in formal attire representing the Kingdom at an international summit"
                   width={1408}
                   height={960}
@@ -179,7 +184,13 @@ export default function BlogPost() {
                 </p>
 
                 <div className="not-prose my-8 overflow-hidden rounded-xl">
-                  
+                  <ArticleImage
+                    src={getValidImagePath('/images/government/Formal_attire_for_government_events.jpg')}
+                    alt="Saudi representatives maintaining consistent visual identity while adapting to specific international contexts"
+                    width={1200}
+                    height={800}
+                    className="rounded-2xl"
+                  />
                   <p className="mt-2 text-sm text-neutral-500">Saudi representatives maintain consistent visual identity across various international forums while adapting to specific contexts</p>
                 </div>
 

@@ -21,17 +21,13 @@ const staticPages = [
   '/careers',
   '/terms',
   '/privacy',
+  '/privacy-ar',
+  '/faq',
+  '/search',
 ];
 
 // Services categories
 const serviceCategories = [
-  'aviation',
-  'healthcare',
-  'hospitality',
-  'education',
-  'government',
-  'security',
-  'industrial',
   'custom-design',
   'bulk-ordering',
   'measurement',
@@ -39,8 +35,8 @@ const serviceCategories = [
   'uniform-policies',
 ];
 
-// Blog categories
-const blogCategories = [
+// Industry categories (used for both main pages and blog categories)
+const industryCategories = [
   'aviation',
   'healthcare',
   'hospitality',
@@ -62,11 +58,12 @@ const generateAllUrls = () => {
   // Add service category pages
   serviceCategories.forEach(category => {
     urls.push(`${baseUrl}/services/${category}`);
-    urls.push(`${baseUrl}/${category}`);
   });
   
-  // Add blog category pages
-  blogCategories.forEach(category => {
+  // Add industry category pages
+  industryCategories.forEach(category => {
+    urls.push(`${baseUrl}/${category}`);
+    urls.push(`${baseUrl}/${category}/all-articles`);
     urls.push(`${baseUrl}/blog/category/${category}`);
   });
   

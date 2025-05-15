@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Bulk Ordering and Inventory Management for Security Firms in KSA | May 2025',
     description: 'Discover advanced strategies for efficient bulk uniform ordering and inventory management for Saudi security firms, featuring AI-powered forecasting, blockchain verification, and digital twin modeling.',
-    images: ['/images/security/inventory_management.jpg'],
+    images: ['/images/security/Security_uniforms.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function BulkOrderingSecurityFirms() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/security/inventory_management.jpg"
+          src="/images/security/Security_uniforms.jpeg"
           alt="Advanced Inventory Management for Security Uniforms in Saudi Arabia"
           fill
           className="object-cover rounded-lg"

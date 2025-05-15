@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import ArticleImage from '@/components/ArticleImage'
+import { getValidImagePath } from '@/lib/image-helper'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -17,6 +19,9 @@ export const generateMetadata = (): Metadata => {
 }
 
 export default function BlogPost() {
+  // Get a valid path for the main image
+  const mainImagePath = getValidImagePath('/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg');
+  
   return (
     <div className="relative bg-white py-12 dark:bg-gray-900">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -36,11 +41,13 @@ export default function BlogPost() {
 
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
-            <Image
-              src="/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg"
+            <ArticleImage
+              src={mainImagePath}
               alt="Clinical Performance Engineering: Advanced Attire Systems for Saudi Healthcare Excellence 2025"
-              fill
+              width={1200}
+              height={675}
               className="object-cover"
+              priority
             />
           </div>
 
