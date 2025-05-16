@@ -212,6 +212,8 @@ fs.mkdirSync(path.join(nextStaticDir, 'chunks', 'pages'), { recursive: true });
 fs.mkdirSync(path.join(nextStaticDir, 'css'), { recursive: true });
 fs.mkdirSync(path.join(nextStaticDir, 'media'), { recursive: true });
 fs.mkdirSync(path.join(nextStaticDir, 'images'), { recursive: true });
+// Create the buildId-specific directories needed for manifest files
+fs.mkdirSync(path.join(nextStaticDir, buildId), { recursive: true });
 fs.mkdirSync(path.join(outputDir, '_next', 'data', buildId), { recursive: true });
 fs.mkdirSync(path.join(outputDir, '_next', 'server'), { recursive: true });
 
