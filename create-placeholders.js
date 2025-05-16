@@ -14,10 +14,14 @@ const createPlaceholder = async (width, height, text, outputPath) => {
         background: { r: 200, g: 200, b: 200, alpha: 1 }
       }
     })
-    .jpeg()
-    .toFile(outputPath);
+    .webp({
+      quality: 90,
+      lossless: false,
+      force: true
+    })
+    .toFile(outputPath.replace(/\.[^.]+$/, '.webp'));
     
-    console.log(`Created placeholder: ${outputPath}`);
+    console.log(`Created placeholder: ${outputPath.replace(/\.[^.]+$/, '.webp')}`);
   } catch (error) {
     console.error(`Error creating ${outputPath}:`, error);
   }
@@ -25,9 +29,10 @@ const createPlaceholder = async (width, height, text, outputPath) => {
 
 async function main() {
   const placeholders = [
-    { path: 'public/images/author/placeholder.jpg', width: 400, height: 400 },
-    { path: 'public/images/authors/ahmed-khalil.jpg', width: 400, height: 400 },
-    { path: 'public/images/aviation/aviation_placeholder.jpg', width: 800, height: 600 }
+    { path: 'public/images/author/placeholder.webp', width: 400, height: 400 },
+    { path: 'public/images/authors/ahmed-khalil.webp', width: 400, height: 400 },
+    { path: 'public/images/aviation/aviation_placeholder.webp', width: 800, height: 600 },
+    { path: 'public/images/placeholder-images/generic-placeholder.webp', width: 800, height: 600 }
   ];
 
   for (const placeholder of placeholders) {
