@@ -13,37 +13,37 @@ export default function BlogPost() {
           <nav className="mb-8">
             <ol className="flex items-center space-x-1 space-x-reverse text-sm text-gray-500 dark:text-gray-400">
               <li>
-                <Link href="/" className="hover:text-blue-600">الرئيسية</Link>
+                <Link href="/" className="hover:text-blue-600">Home</Link>
               </li>
               <li className="px-2">/</li>
               <li>
-                <Link href="/blog" className="hover:text-blue-600">المدونة</Link>
+                <Link href="/blog" className="hover:text-blue-600">Blog</Link>
               </li>
               <li className="px-2">/</li>
-              <li className="font-medium text-gray-900 dark:text-white">اختيار الزي المناسب للقطاع الصناعي بالسعودية: السلامة أولاً</li>
+              <li className="font-medium text-gray-900 dark:text-white">Choosing the Right Workwear for Saudi Arabia's Industrial Sector: Safety First</li>
             </ol>
           </nav>
 
           {/* Blog header */}
           <header className="mb-8">
             <h1 className="mb-4 text-3xl font-bold leading-tight text-gray-900 dark:text-white md:text-4xl">
-              اختيار الزي المناسب للقطاع الصناعي بالسعودية: السلامة أولاً
+              Choosing the Right Workwear for Saudi Arabia's Industrial Sector: Safety First
             </h1>
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <Image
                   src="/images/author/default-author.jpg"
-                  alt="صورة الكاتب"
+                  alt="Author image"
                   className="h-10 w-10 rounded-full"
                   width={40}
                   height={40}
                 />
                 <div className="mr-3">
-                  <p className="text-sm font-medium text-gray-900 dark:text-white">فريق يونيفورم</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">21 يناير 2024</p>
+                  <p className="text-sm font-medium text-gray-900 dark:text-white">Uniform Team</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">January 21, 2024</p>
                 </div>
               </div>
-              <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-200">أزياء الخدمات المساندة</span>
+              <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-200">Support Services Uniforms</span>
             </div>
           </header>
 
@@ -51,7 +51,7 @@ export default function BlogPost() {
           <div className="mb-8 overflow-hidden rounded-xl">
             <Image
               src="/images/industrial/Safety_workwear_PPE_apparel.jpeg"
-              alt="صورة ملابس العمل في القطاع الصناعي بالسعودية"
+              alt="Industrial workwear in Saudi Arabia"
               className="h-auto w-full object-cover"
               width={900}
               height={500}
@@ -61,108 +61,108 @@ export default function BlogPost() {
           {/* Blog content */}
           <div className="prose prose-lg mx-auto dark:prose-invert">
             <p>
-              يواجه القطاع الصناعي في المملكة العربية السعودية تحديات فريدة عندما يتعلق الأمر بملابس العمل، بداية من درجات الحرارة المرتفعة وحتى متطلبات السلامة الصارمة في مختلف الصناعات. لذلك، يعد اختيار الزي المناسب قراراً استراتيجياً يؤثر مباشرة على إنتاجية العاملين وسلامتهم.
+              The industrial sector in Saudi Arabia faces unique challenges when it comes to workwear, from high temperatures to strict safety requirements across various industries. Therefore, choosing the right uniform is a strategic decision that directly impacts worker productivity and safety.
             </p>
 
-            <h2>أهمية ملابس العمل المناسبة في القطاع الصناعي</h2>
+            <h2>The Importance of Appropriate Workwear in the Industrial Sector</h2>
             <p>
-              تتجاوز أهمية ملابس العمل المناسبة مجرد المظهر الاحترافي، فهي خط الدفاع الأول ضد المخاطر المهنية. في المملكة، تشدد الهيئة السعودية للمواصفات والمقاييس والجودة على ضرورة الالتزام بمعايير محددة لملابس العمل الصناعية، خاصة في قطاعات مثل النفط والغاز، البتروكيماويات، والإنشاءات.
+              The importance of appropriate workwear goes beyond a professional appearance; it is the first line of defense against occupational hazards. In Saudi Arabia, the Saudi Standards, Metrology and Quality Organization emphasizes the necessity of adhering to specific standards for industrial workwear, especially in sectors such as oil and gas, petrochemicals, and construction.
             </p>
 
-            <h2>معايير اختيار الزي الصناعي المناسب</h2>
+            <h2>Criteria for Selecting Appropriate Industrial Uniforms</h2>
             <ol>
               <li>
-                <strong>مقاومة الحرارة:</strong> نظراً للمناخ الحار في المملكة، يجب أن تكون الأقمشة قابلة للتنفس وتساعد على تبديد الحرارة، مع الحفاظ على معايير السلامة.
+                <strong>Heat Resistance:</strong> Given the hot climate in Saudi Arabia, fabrics should be breathable and help dissipate heat while maintaining safety standards.
               </li>
               <li>
-                <strong>مقاومة اللهب:</strong> خاصية ضرورية للعاملين في قطاعات النفط والغاز، حيث يجب أن تطابق الملابس معايير NFPA 2112 أو ما يعادلها.
+                <strong>Flame Resistance:</strong> Essential feature for workers in the oil and gas sectors, where clothing must meet NFPA 2112 standards or equivalent.
               </li>
               <li>
-                <strong>المتانة:</strong> قدرة الملابس على تحمل الاستخدام المتكرر والغسيل المنتظم دون فقدان خصائصها الوقائية.
+                <strong>Durability:</strong> The ability of clothes to withstand repeated use and regular washing without losing their protective properties.
               </li>
               <li>
-                <strong>الراحة:</strong> تصميم يسمح بحرية الحركة دون المساومة على عوامل الحماية.
+                <strong>Comfort:</strong> Design that allows freedom of movement without compromising on protective factors.
               </li>
               <li>
-                <strong>الوضوح:</strong> استخدام الألوان عالية الوضوح والعاكسات للعاملين في مواقع البناء أو المناطق المعرضة لحركة المركبات.
+                <strong>Visibility:</strong> Use of high-visibility colors and reflectors for workers at construction sites or areas exposed to vehicle movement.
               </li>
             </ol>
 
-            <h2>أنواع الأقمشة الموصى بها للقطاع الصناعي السعودي</h2>
+            <h2>Recommended Fabric Types for the Saudi Industrial Sector</h2>
             <ul>
               <li>
-                <strong>القطن المعالج:</strong> يوفر راحة في الطقس الحار مع إمكانية معالجته لمقاومة اللهب.
+                <strong>Treated Cotton:</strong> Provides comfort in hot weather with the possibility of treatment for flame resistance.
               </li>
               <li>
-                <strong>مزيج القطن والبوليستر:</strong> يوازن بين المتانة والراحة، مناسب للاستخدام اليومي.
+                <strong>Cotton-Polyester Blend:</strong> Balances durability and comfort, suitable for daily use.
               </li>
               <li>
-                <strong>أقمشة التيترون:</strong> خفيفة وتجف بسرعة، مثالية للبيئات الرطبة.
+                <strong>Tetron Fabrics:</strong> Lightweight and quick-drying, ideal for humid environments.
               </li>
               <li>
-                <strong>الأقمشة الاصطناعية المتخصصة:</strong> مثل Nomex و Kevlar، توفر حماية استثنائية ضد المخاطر المحددة.
+                <strong>Specialized Synthetic Fabrics:</strong> Such as Nomex and Kevlar, provide exceptional protection against specific hazards.
               </li>
             </ul>
 
-            <h2>ملابس العمل حسب القطاع الصناعي</h2>
-            <h3>قطاع النفط والغاز</h3>
+            <h2>Workwear by Industrial Sector</h2>
+            <h3>Oil and Gas Sector</h3>
             <p>
-              يتطلب هذا القطاع ملابس مقاومة للهب بشكل أساسي، إضافة إلى القدرة على تحمل الظروف القاسية. يُنصح باختيار ملابس تحمل شهادات دولية معترف بها مثل NFPA و ISO 11612.
+              This sector primarily requires flame-resistant clothing, in addition to the ability to withstand harsh conditions. It is recommended to choose clothes with internationally recognized certifications such as NFPA and ISO 11612.
             </p>
             
-            <h3>قطاع البناء والإنشاءات</h3>
+            <h3>Construction Sector</h3>
             <p>
-              الخوذ الصلبة، السترات عالية الوضوح، والأحذية المقاومة للانزلاق والثقب هي عناصر أساسية. يجب أن تكون الملابس متينة ومريحة في آن واحد.
+              Hard hats, high-visibility vests, and slip and puncture-resistant footwear are essential elements. Clothing should be durable and comfortable at the same time.
             </p>
 
-            <h3>قطاع الصناعات التحويلية</h3>
+            <h3>Manufacturing Sector</h3>
             <p>
-              تختلف المتطلبات حسب طبيعة المصنع، لكن بشكل عام، يُفضل ملابس تغطي الجسم بالكامل مع توفير حماية ضد المخاطر المحددة مثل الرذاذ الكيميائي أو الحرارة.
+              Requirements vary depending on the nature of the factory, but in general, full-body covering clothing is preferred with protection against specific hazards such as chemical spray or heat.
             </p>
 
-            <h2>الامتثال للمعايير السعودية والدولية</h2>
+            <h2>Compliance with Saudi and International Standards</h2>
             <p>
-              يجب أن تمتثل ملابس العمل الصناعية في المملكة لمعايير الهيئة السعودية للمواصفات والمقاييس والجودة، بالإضافة إلى المعايير الدولية المقبولة مثل:
+              Industrial workwear in Saudi Arabia must comply with the standards of the Saudi Standards, Metrology and Quality Organization, in addition to accepted international standards such as:
             </p>
             <ul>
-              <li>ANSI/ISEA 107 للملابس عالية الوضوح</li>
-              <li>EN ISO 11612 للملابس المقاومة للحرارة واللهب</li>
-              <li>ASTM F1506 للحماية من الأقواس الكهربائية</li>
+              <li>ANSI/ISEA 107 for high-visibility clothing</li>
+              <li>EN ISO 11612 for heat and flame resistant clothing</li>
+              <li>ASTM F1506 for protection from electric arcs</li>
             </ul>
 
-            <h2>الخلاصة</h2>
+            <h2>Conclusion</h2>
             <p>
-              اختيار ملابس العمل المناسبة للقطاع الصناعي في المملكة ليس مجرد مسألة امتثال للوائح، بل هو استثمار في سلامة وإنتاجية القوى العاملة. مع مراعاة الظروف المناخية الخاصة بالمملكة والمتطلبات الفريدة لكل قطاع، يمكن للشركات توفير بيئة عمل أكثر أماناً وراحة لموظفيها.
+              Choosing appropriate workwear for the industrial sector in Saudi Arabia is not just a matter of regulatory compliance, but an investment in the safety and productivity of the workforce. By taking into account the specific climatic conditions of the Kingdom and the unique requirements of each sector, companies can provide a safer and more comfortable working environment for their employees.
             </p>
             
             <p>
-              تذكر دائماً: الحماية والسلامة لا تقبل المساومة، وملابس العمل الجيدة هي خط الدفاع الأول ضد مخاطر بيئة العمل.
+              Always remember: Protection and safety are non-negotiable, and good workwear is the first line of defense against workplace hazards.
             </p>
           </div>
 
           {/* CTA section */}
           <div className="mt-12 rounded-xl bg-blue-50 p-6 dark:bg-blue-900">
-            <h3 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">هل تبحث عن حلول مخصصة لملابس العمل الصناعية؟</h3>
-            <p className="mb-4 text-gray-700 dark:text-gray-300">نحن في يونيفورم نقدم حلولاً متكاملة تراعي متطلبات السلامة والراحة في القطاع الصناعي السعودي. تواصل معنا اليوم للحصول على استشارة مجانية.</p>
+            <h3 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Looking for Customized Industrial Workwear Solutions?</h3>
+            <p className="mb-4 text-gray-700 dark:text-gray-300">At Uniform, we provide integrated solutions that consider safety and comfort requirements in the Saudi industrial sector. Contact us today for a free consultation.</p>
             <Link href="/contact" className="inline-block rounded-lg bg-blue-600 px-5 py-3 text-center text-sm font-medium text-white hover:bg-blue-700">
-              تواصل معنا
+              Contact Us
             </Link>
           </div>
 
           {/* Related posts */}
           <div className="mt-12">
-            <h3 className="mb-6 text-xl font-bold text-gray-900 dark:text-white">مقالات ذات صلة</h3>
+            <h3 className="mb-6 text-xl font-bold text-gray-900 dark:text-white">Related Articles</h3>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <Link href="/blog/workwear/utility-services-uniform-standards" className="group block overflow-hidden rounded-lg border border-gray-200 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800">
                 <div className="p-4">
-                  <h4 className="mb-2 text-lg font-semibold text-gray-900 group-hover:text-blue-600 dark:text-white">معايير الزي الموحد لشركات الخدمات والمرافق</h4>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">دليل شامل للمعايير والمواصفات العالمية للزي الموحد في شركات الخدمات...</p>
+                  <h4 className="mb-2 text-lg font-semibold text-gray-900 group-hover:text-blue-600 dark:text-white">Uniform Standards for Utility and Service Companies</h4>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">A comprehensive guide to global standards and specifications for uniforms in service companies...</p>
                 </div>
               </Link>
               <Link href="/blog/workwear/workwear-maintenance-guide" className="group block overflow-hidden rounded-lg border border-gray-200 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800">
                 <div className="p-4">
-                  <h4 className="mb-2 text-lg font-semibold text-gray-900 group-hover:text-blue-600 dark:text-white">أساسيات العناية بملابس العمل: دليل شامل للحفاظ على جودتها</h4>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">نصائح عملية للعناية بملابس العمل وإطالة عمرها الافتراضي...</p>
+                  <h4 className="mb-2 text-lg font-semibold text-gray-900 group-hover:text-blue-600 dark:text-white">Workwear Care Essentials: A Comprehensive Guide to Maintaining Quality</h4>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Practical tips for caring for workwear and extending its lifespan...</p>
                 </div>
               </Link>
             </div>

@@ -1,11 +1,11 @@
 import fs from 'fs'
 import path from 'path'
 import { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Shield, Clock, Star, Eye, BookOpen, FileBadge } from 'lucide-react'
 import { notFound } from 'next/navigation'
-import { getImagePath } from '@/lib/image-helper'
+import getValidImagePath, { getCategoryFallbackImage } from '@/lib/image-helper'
+import SafeImage from '@/components/ui/SafeImage'
 
 interface Post {
   id: string
@@ -27,48 +27,49 @@ const CATEGORIES = [
   'security'
 ]
 
+// Use WebP images directly
 const CATEGORY_METADATA = {
   'aviation': {
     title: 'Aviation Uniforms and Articles | Professional Aviation Attire in Saudi Arabia',
     description: 'Explore professional aviation uniforms and expert articles about aviation attire designed for Saudi Arabian airlines and airports. High-quality, authoritative aviation uniforms for all sectors.',
     keywords: 'aviation uniforms, airline staff attire, Saudi Arabia aviation uniforms, professional aviation clothing, airport staff uniforms, cabin crew uniforms',
-    image: '/images/aviation/Aviation_uniforms_Saudi_Arabia_KSA.jpg',
+    image: '/webp/aviation_uniforms.webp',
   },
   'education': {
     title: 'Education Uniforms and Articles | Professional Education Attire in Saudi Arabia',
     description: 'Explore professional education uniforms and expert articles about education attire designed for Saudi Arabian schools and universities. High-quality, authoritative education uniforms for all sectors.',
     keywords: 'education uniforms, school staff attire, Saudi Arabia education uniforms, professional education clothing, university staff uniforms, teacher uniforms',
-    image: '/images/education/School_uniforms_Saudi_Arabia_KSA.jpg',
+    image: '/webp/placeholder-image.webp',
   },
   'government': {
     title: 'Government Uniforms and Articles | Professional Government Attire in Saudi Arabia',
     description: 'Explore professional government uniforms and expert articles about government attire designed for Saudi Arabian public sector. High-quality, authoritative government uniforms for all departments.',
     keywords: 'government uniforms, public sector attire, Saudi Arabia government uniforms, professional government clothing, ministerial staff uniforms, official uniforms',
-    image: '/images/government/Government_uniforms_Saudi_Arabia_KSA.jpg',
+    image: '/webp/placeholder-image.webp',
   },
   'healthcare': {
     title: 'Healthcare Uniforms and Articles | Professional Healthcare Attire in Saudi Arabia',
     description: 'Explore professional healthcare uniforms and expert articles about healthcare attire designed for Saudi Arabian medical facilities. High-quality, authoritative healthcare uniforms for all sectors.',
     keywords: 'healthcare uniforms, medical staff attire, Saudi Arabia healthcare uniforms, professional healthcare clothing, hospital staff uniforms, nurse uniforms',
-    image: '/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg',
+    image: '/webp/Medical_uniforms_Saudi_Arabia_KSA.webp',
   },
   'hospitality': {
     title: 'Hospitality Uniforms and Articles | Professional Hospitality Attire in Saudi Arabia',
     description: 'Explore professional hospitality uniforms and expert articles about hospitality attire designed for Saudi Arabian hotels and restaurants. High-quality, authoritative hospitality uniforms for all sectors.',
     keywords: 'hospitality uniforms, hotel staff attire, Saudi Arabia hospitality uniforms, professional hospitality clothing, restaurant staff uniforms, concierge uniforms',
-    image: '/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg',
+    image: '/webp/Hospitality_uniforms.webp',
   },
   'industrial': {
     title: 'Industrial Uniforms and Articles | Professional Industrial Attire in Saudi Arabia',
     description: 'Explore professional industrial uniforms and expert articles about industrial attire designed for Saudi Arabian manufacturing and construction. High-quality, authoritative industrial uniforms for all sectors.',
     keywords: 'industrial uniforms, manufacturing staff attire, Saudi Arabia industrial uniforms, professional industrial clothing, construction staff uniforms, factory uniforms',
-    image: '/images/industrial/Industrial_workwear_Saudi_Arabia_KSA.jpeg',
+    image: '/webp/placeholder-image.webp',
   },
   'security': {
     title: 'Security Uniforms and Articles | Professional Security Attire in Saudi Arabia',
     description: 'Explore professional security uniforms and expert articles about security attire designed for Saudi Arabian climate and regulations. High-quality, authoritative security uniforms for all sectors.',
     keywords: 'security uniforms, security guard attire, Saudi Arabia security uniforms, professional security clothing, security tactical gear, high-visibility security uniforms',
-    image: '/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg',
+    image: '/webp/placeholder-image.webp',
   }
 }
 
@@ -120,7 +121,6 @@ export default function CategoryPage({ params }: PageProps) {
   const posts = getPostsByCategory(params.category)
   const categoryName = params.category.charAt(0).toUpperCase() + params.category.slice(1)
   const categoryImage = CATEGORY_METADATA[params.category as keyof typeof CATEGORY_METADATA].image
-  const formattedCategoryImage = getImagePath(categoryImage)
 
   return (
     <main className="min-h-screen bg-white">
@@ -143,12 +143,13 @@ export default function CategoryPage({ params }: PageProps) {
               </Link>
             </div>
             <div className="relative h-[300px] lg:h-[400px]">
-              <Image
-                src={formattedCategoryImage}
+              <SafeImage
+                src={categoryImage}
                 alt={`Professional ${categoryName} in Saudi Arabia`}
                 fill
                 className="rounded-lg object-cover"
                 priority
+                category={params.category}
               />
             </div>
           </div>
@@ -166,38 +167,26 @@ export default function CategoryPage({ params }: PageProps) {
             </p>
           </div>
           
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {posts.slice(0, 6).map((post) => (
-              <div key={post.id} className="group overflow-hidden rounded-xl border bg-white shadow-md transition-all hover:shadow-xl">
-                <Link href={`/blog/${post.slug}`}>
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-12">
+            {posts.map((post) => (
+              <article key={post.id} className="post-card overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md">
+                <Link href={`/${post.category}/${post.slug}`}>
                   <div className="relative h-48 w-full overflow-hidden">
-                <Image
-                  src={getImagePath(post.image)}
-                  alt={post.title}
-                  fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    <SafeImage
+                      src={post.image || getCategoryFallbackImage(post.category)}
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 ease-in-out hover:scale-105"
+                      category={post.category}
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="mb-2 text-xl font-semibold text-gray-900 transition-colors group-hover:text-primary">
-                      {post.title}
-                    </h3>
-                    <p className="mb-4 text-gray-600 line-clamp-2">{post.excerpt}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="inline-block rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-800">
-                        {categoryName}
-                      </span>
-                      <span className="text-sm text-gray-500">
-                        {new Date(post.createdAt).toLocaleDateString('en-US', {
-                          day: 'numeric',
-                          month: 'short',
-                          year: 'numeric',
-                        })}
-                      </span>
-                    </div>
+                  <div className="p-4">
+                    <h2 className="mb-2 text-xl font-semibold text-gray-800 line-clamp-2">{post.title}</h2>
+                    <p className="text-sm text-gray-600 line-clamp-3">{post.excerpt}</p>
                   </div>
                 </Link>
-              </div>
+              </article>
             ))}
           </div>
           
@@ -221,14 +210,15 @@ export default function CategoryPage({ params }: PageProps) {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {getUniformCategories(params.category).map((category, index) => (
               <div key={index} className="group overflow-hidden rounded-xl border bg-white shadow-lg transition-all hover:shadow-xl">
-                <div className="relative h-48">
-                  <Image
-                    src={getImagePath(category.image)}
-                    alt={category.title + ` - ${categoryName} Uniforms Saudi Arabia`}
-                    fill
-                    className="object-cover transition-transform group-hover:scale-105"
-                />
-              </div>
+                                  <div className="relative h-48">
+                    <SafeImage
+                      src={category.image}
+                      alt={`${categoryName} header image`}
+                      fill
+                      className="object-cover transition-transform group-hover:scale-105"
+                      category={params.category}
+                    />
+                  </div>
               <div className="p-6">
                   <h3 className="mb-2 text-xl font-semibold text-gray-900">{category.title}</h3>
                   <p className="text-gray-600">{category.description}</p>
@@ -312,11 +302,12 @@ export default function CategoryPage({ params }: PageProps) {
                 <div key={post.id} className="group overflow-hidden rounded-xl border bg-white shadow-md transition-all hover:shadow-xl">
                   <Link href={`/blog/${post.slug}`} className="flex h-full flex-col md:flex-row">
                     <div className="relative h-48 w-full md:h-auto md:w-1/3">
-                      <Image
-                        src={getImagePath(post.image)}
+                      <SafeImage
+                        src={post.image}
                         alt={post.title}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        category={post.category}
                       />
                     </div>
                     <div className="flex flex-1 flex-col justify-between p-6">
@@ -379,32 +370,32 @@ function getUniformCategories(category: string) {
     case 'aviation':
       return [
         {
-          image: `/images/aviation/Pilot_uniforms.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Pilot Uniforms",
           description: `Professional aviation pilot uniforms for airlines and private operations in Saudi Arabia.`
         },
         {
-          image: `/images/aviation/Cabin_crew_uniforms.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Cabin Crew Uniforms",
           description: `Stylish and practical cabin crew uniforms designed for comfort and Saudi Arabian airline standards.`
         },
         {
-          image: `/images/aviation/Ground_staff_uniforms_aviation.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Ground Staff Uniforms",
           description: `Specialized aviation ground staff uniforms designed for specific roles in Saudi Arabian airports.`
         },
         {
-          image: `/images/aviation/airport_security_wear.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: `Airport Security Uniforms`,
           description: `Professional airport security uniforms with enhanced functionality for Saudi Arabian aviation security.`
         },
         {
-          image: `/images/aviation/Aircraft_maintenance_technician_uniforms.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Maintenance Crew Uniforms",
           description: `Durable maintenance crew uniforms designed for technical aviation staff in Saudi Arabian conditions.`
         },
         {
-          image: `/images/aviation/Official_aviation_attire.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Aviation Management Uniforms",
           description: `High-end aviation management uniforms featuring superior materials for Saudi Arabian aviation executives.`
         }
@@ -412,32 +403,32 @@ function getUniformCategories(category: string) {
     case 'education':
       return [
         {
-          image: `/images/education/School_staff_uniforms.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Teacher Uniforms",
           description: `Professional education teacher uniforms for Saudi Arabian schools and educational institutions.`
         },
         {
-          image: `/images/education/School_uniforms.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "School Uniforms",
           description: `High-quality school uniforms designed for comfort in Saudi Arabian educational settings.`
         },
         {
-          image: `/images/education/uniforms_sports_kits.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Physical Education Uniforms",
           description: `Specialized physical education uniforms designed for activity and Saudi Arabian climate.`
         },
         {
-          image: `/images/education/School_shirts.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: `School Shirts`,
           description: `Professional school shirts for educational facilities in Saudi Arabia.`
         },
         {
-          image: `/images/education/Private_school_uniforms.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Private School Uniforms",
           description: `Distinguished private school uniforms designed for Saudi Arabian educational environments.`
         },
         {
-          image: `/images/education/International_school_uniforms_KSA.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "International School Uniforms",
           description: `Premium international school uniforms featuring high-quality materials for Saudi Arabian education.`
         }
@@ -445,32 +436,32 @@ function getUniformCategories(category: string) {
     case 'government':
       return [
         {
-          image: `/images/government/Municipality_uniforms.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Municipal Staff Uniforms",
           description: `Professional government municipal uniforms for Saudi Arabian public service employees.`
         },
         {
-          image: `/images/government/Government_employee_uniforms.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Government Employee Uniforms",
           description: `Formal administrative uniforms designed for Saudi Arabian government office settings.`
         },
         {
-          image: `/images/government/Official_government_suits.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Official Government Suits",
           description: `Distinguished protocol officer uniforms for ceremonial and official Saudi government functions.`
         },
         {
-          image: `/images/government/Public_sector_workwear.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: `Public Sector Workwear`,
           description: `Professional public service uniforms for Saudi Arabian government representatives.`
         },
         {
-          image: `/images/government/Government_agency_uniforms.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Government Agency Uniforms",
           description: `Durable field officer uniforms designed for government work in Saudi Arabian outdoor conditions.`
         },
         {
-          image: `/images/government/Civil_service_uniforms.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Civil Service Uniforms",
           description: `Premium executive government attire featuring superior tailoring for Saudi Arabian officials.`
         }
@@ -478,32 +469,32 @@ function getUniformCategories(category: string) {
     case 'healthcare':
       return [
         {
-          image: `/images/healthcare/Doctor_uniforms_attire.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Doctor Uniforms",
           description: `Professional healthcare doctor uniforms for Saudi Arabian medical facilities.`
         },
         {
-          image: `/images/healthcare/Nurse_uniforms.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Nurse Uniforms",
           description: `Comfortable nurse uniforms designed for the demands of Saudi Arabian healthcare settings.`
         },
         {
-          image: `/images/healthcare/Scrubs_uniforms.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Scrubs Uniforms",
           description: `High-quality scrubs designed for comfort and practicality in Saudi Arabian medical environments.`
         },
         {
-          image: `/images/healthcare/Lab_coats_medical.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: `Lab Coats`,
           description: `Professional lab coats for healthcare professionals in Saudi Arabian research and clinical settings.`
         },
         {
-          image: `/images/healthcare/Medical_receptionist_uniforms.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Medical Receptionist Uniforms",
           description: `Stylish medical receptionist uniforms designed for Saudi Arabian healthcare administration.`
         },
         {
-          image: `/images/healthcare/Pharmacy_technician_wear.jpg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Pharmacy Staff Uniforms",
           description: `Distinguished pharmacy staff uniforms for Saudi Arabian pharmaceutical professionals.`
         }
@@ -511,32 +502,32 @@ function getUniformCategories(category: string) {
     case 'hospitality':
       return [
         {
-          image: `/images/hospitality/Hotel_uniforms.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Hotel Staff Uniforms",
           description: `Professional hospitality uniforms for hotel staff in Saudi Arabian luxury accommodations.`
         },
         {
-          image: `/images/hospitality/Restaurant_uniforms.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Restaurant Uniforms",
           description: `Elegant restaurant uniforms designed for Saudi Arabian dining establishments.`
         },
         {
-          image: `/images/hospitality/Chef_uniforms_Chef_wear.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Chef Uniforms",
           description: `High-quality chef uniforms designed for culinary professionals in Saudi Arabian kitchens.`
         },
         {
-          image: `/images/hospitality/Housekeeping_uniforms.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: `Housekeeping Uniforms`,
           description: `Practical housekeeping uniforms for hospitality staff in Saudi Arabian hotels and resorts.`
         },
         {
-          image: `/images/hospitality/concierge_suits.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Concierge Suits",
           description: `Distinguished concierge uniforms designed for front-of-house staff in Saudi Arabian luxury venues.`
         },
         {
-          image: `/images/hospitality/Banquet_staff_uniforms_Event_staff_uniforms.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Event Staff Uniforms",
           description: `Professional event staff uniforms for Saudi Arabian hospitality and entertainment venues.`
         }
@@ -544,32 +535,32 @@ function getUniformCategories(category: string) {
     case 'industrial':
       return [
         {
-          image: `/images/industrial/Factory_worker_uniforms.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Factory Worker Uniforms",
           description: `Durable industrial manufacturing uniforms for factory workers in Saudi Arabian facilities.`
         },
         {
-          image: `/images/industrial/Construction_worker_uniforms_attire.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Construction Worker Uniforms",
           description: `Rugged construction worker uniforms designed for Saudi Arabian building sites and safety requirements.`
         },
         {
-          image: `/images/industrial/Technician_uniforms_maintenance.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Maintenance Staff Uniforms",
           description: `Practical maintenance staff uniforms designed for industrial settings in Saudi Arabia.`
         },
         {
-          image: `/images/industrial/High_visibility_clothing_Hi_vis_uniforms.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: `High Visibility Uniforms`,
           description: `Professional safety supervisor uniforms with enhanced visibility features for Saudi Arabian industrial sites.`
         },
         {
-          image: `/images/industrial/Oil_and_Gas_sector_uniforms_Oilfield_workwear.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Oil & Gas Worker Uniforms",
           description: `Specialized oil and gas worker uniforms designed for Saudi Arabian energy sector requirements.`
         },
         {
-          image: `/images/industrial/Site_engineer_uniforms.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Engineering Staff Uniforms",
           description: `Premium engineering staff uniforms for industrial technical professionals in Saudi Arabia.`
         }
@@ -578,32 +569,32 @@ function getUniformCategories(category: string) {
     default:
       return [
         {
-          image: `/images/security/class_a_security_dress_uniforms.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Formal Uniforms",
           description: `Professional formal security uniforms for official occasions and executive operations in Saudi Arabia.`
         },
         {
-          image: `/images/security/class_b_security_duty_uniforms.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Daily Wear Uniforms",
           description: `Durable daily wear security uniforms designed for the Saudi climate and regular use.`
         },
         {
-          image: `/images/security/High_visibility_security_uniforms.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Special Purpose Uniforms",
           description: `Specialized security uniforms designed for specific roles and environments in Saudi Arabian settings.`
         },
         {
-          image: `/images/security/event_security_staff_vests.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: `Security Accessories`,
           description: `Professional accessories to complement security uniforms and enhance functionality.`
         },
         {
-          image: `/images/security/construction_site_security_attire.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Outdoor Uniforms",
           description: `Weather-resistant security uniforms designed for outdoor operations in Saudi Arabian conditions.`
         },
         {
-          image: `/images/security/hospital_security_staff_uniforms.jpeg`,
+          image: `/webp/placeholder-image.webp`,
           title: "Premium Collection",
           description: `High-end security uniforms featuring superior materials and craftsmanship for prestigious organizations.`
         }

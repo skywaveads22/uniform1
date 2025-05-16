@@ -130,7 +130,7 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       {/* Main Heading - Hidden visually but present for SEO and accessibility */}
-      <h1 className="sr-only">يونيفورم بلوج - حلول الملابس الموحدة المتميزة في المملكة العربية السعودية</h1>
+      <h1 className="sr-only">Uniform Blog - Premium Uniform Solutions in Saudi Arabia</h1>
       
       {/* Hero Slider Section */}
       <section 
@@ -227,7 +227,7 @@ export default function Home() {
         </div>
 
         {/* Navigation Dots */}
-        {/* تمت إزالة نقاط التنقل بناءًا على الطلب */}
+        {/* Navigation removed upon request */}
         
         {/* Statistics Bar */}
         <div className="absolute bottom-0 left-0 right-0 z-20 bg-white/10 backdrop-blur-md">

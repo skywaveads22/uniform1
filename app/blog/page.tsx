@@ -79,13 +79,13 @@ export default async function BlogPage() {
             <div className="lg:col-span-3">
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {articles.map((article, index) => {
-                  // فحص صحة عناصر المقالة قبل محاولة عرضها
+                  // Check the validity of article elements before rendering
                   if (!article || !article.title || !article.internalLink) {
-                    console.error(`مقالة غير صالحة عند الفهرس ${index}:`, article);
+                    console.error(`Invalid article at index ${index}:`, article);
                     return null;
                   }
                   
-                  // عرض المقالة باستخدام مكون BlogPostCard
+                  // Display the article using the BlogPostCard component
                   return (
                     <BlogPostCard
                       key={article.id || index}
@@ -127,7 +127,7 @@ async function getArticlesFromMarkdown(): Promise<Article[]> {
       if (!line || line === '# Articles List') continue
       
       // Check if line contains article information (starts with a number)
-      const articleMatch = line.match(/^(\d+)\.\s+(.+?)\s+-\s+\(المسار\/الرابط الداخلي:\s+(.+?)\)$/)
+      const articleMatch = line.match(/^(\d+)\.\s+(.+?)\s+-\s+\((?:المسار\/الرابط الداخلي|Internal Link):\s+(.+?)\)$/)
       
       if (articleMatch) {
         // If we have a previous article waiting to be added, add it
@@ -155,9 +155,9 @@ async function getArticlesFromMarkdown(): Promise<Article[]> {
         }
       } 
       // Check if the line contains image information
-      else if (line.startsWith('- صور التصنيفات:') && currentArticle.id) {
+      else if ((line.startsWith('- صور التصنيفات:') || line.startsWith('- Category Images:')) && currentArticle.id) {
         // Extract the image path
-        const imagePath = line.replace('- صور التصنيفات:', '').trim()
+        const imagePath = line.replace(/^-\s+(?:صور التصنيفات|Category Images):\s+/, '').trim()
         
         // Remove 'public' from the beginning if it exists
         const finalImagePath = imagePath.replace('public', '').split(',')[0].trim()
@@ -239,7 +239,7 @@ async function getArticlesFromMarkdown(): Promise<Article[]> {
   }
 }
 
-// دالة مساعدة لاستخراج الفئة من العنوان
+// Helper function to extract category from title
 function getCategoryFromTitle(title: string): string | null {
   const categoryKeywords = {
     'aviation': ['aviation', 'airline', 'airport', 'flight', 'pilot', 'cabin crew'],

@@ -7,19 +7,24 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "node convert-images.js && node scripts/generate-sitemap-urls.js && next build && next-sitemap",
-    "build:production": "node convert-images.js && node scripts/generate-sitemap-urls.js && next build --no-lint && next-sitemap",
+    "build": "node clean-images.js && node fix-images.js && node convert-images.js && node scripts/generate-sitemap-urls.js && next build && next-sitemap",
+    "build:production": "node clean-images.js && node fix-images.js && node convert-images.js && node scripts/generate-sitemap-urls.js && next build --no-lint && next-sitemap",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "seed": "ts-node scripts/seedPosts.ts",
-    "netlify-build": "node convert-images.js && node scripts/netlify-build.js",
+    "netlify-build": "node scripts/netlify-build.js",
     "netlify-dev": "netlify dev",
-    "static-build": "node convert-images.js && next build --no-lint --skip-type-check",
-    "postbuild": "next-sitemap",
+    "static-build": "node clean-images.js && node fix-images.js && node convert-images.js && next build --no-lint && node scripts/copy-netlify-files.js",
+    "postbuild": "node scripts/copy-netlify-files.js",
     "sitemap": "next-sitemap",
     "generate-sitemap-urls": "node scripts/generate-sitemap-urls.js",
-    "convert-images": "node convert-images.js"
+    "convert-images": "node convert-images.js",
+    "fix-images": "node fix-images.js",
+    "clean-images": "node clean-images.js",
+    "prepare-netlify": "npm install --save-dev null-loader webpack-assets-manifest && npm run netlify-build",
+    "netlify:export": "node scripts/netlify-export.js",
+    "netlify:static": "node scripts/manual-static-build.js"
   },
   "dependencies": {
     "@faker-js/faker": "^9.7.0",
@@ -34,7 +39,6 @@
     "critters": "^0.0.23",
     "date-fns": "^4.1.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "file-loader": "^6.2.0",
     "framer-motion": "^10.16.4",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.503.0",
@@ -55,17 +59,25 @@
     "url": "^0.11.3"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20.11.19",
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.9.2",
     "eslint": "^9.26.0",
     "eslint-config-next": "^15.3.2",
     "favicons": "^7.2.0",
+    "file-loader": "^6.2.0",
     "glob": "^11.0.2",
+    "ignore-loader": "^0.1.2",
+    "null-loader": "^4.0.1",
+    "style-loader": "^3.3.4",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "webpack-assets-manifest": "^5.1.0"
   }
 }

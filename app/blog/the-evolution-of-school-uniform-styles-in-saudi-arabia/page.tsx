@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPost() {
-  // استخدام وظيفة التحقق من وجود الصورة للحصول على مسار صالح
+  // Use the image verification function to get a valid path
   const mainImagePath = getValidImagePath('/images/education/School_uniforms_Saudi_Arabia_KSA.jpg');
   
   return (

@@ -1,5 +1,5 @@
 [build]
-  command = "npm run netlify-build"
+  command = "npm run netlify:static"
   publish = "out"
   base = "/"
 
@@ -19,12 +19,13 @@
   NEXT_PUBLIC_DEFAULT_LOCALE = "ar"
   NEXT_PUBLIC_DOMAIN = "willowy-mochi-145885.netlify.app"
   ROLLUP_EXTERNAL = "url"
+  NEXT_PUBLIC_USE_WEBP_ONLY = "true"
 
 # Explicitly set production branch to 'main'
 [context.production]
   base = "/"
   publish = "out"
-  command = "npm run netlify-build"
+  command = "npm run netlify:static"
 
 [context.production.environment]
   NODE_ENV = "production"
@@ -36,6 +37,7 @@
   NEXT_PUBLIC_NETLIFY_CONTEXT = "production"
   NEXT_PUBLIC_DEFAULT_LOCALE = "ar"
   NEXT_PUBLIC_DOMAIN = "willowy-mochi-145885.netlify.app"
+  NEXT_PUBLIC_USE_WEBP_ONLY = "true"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

@@ -16,34 +16,34 @@ export default function TestImagesPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // مجموعة من مسارات الصور المراد اختبارها
+    // Collection of image paths to test
     const imagesToTest: ImageTest[] = [
-      // صور التعليم
+      // Education images
       { path: '/images/education/School_uniforms.jpg', category: 'education', name: 'School Uniforms' },
       { path: '/images/education/School_uniforms_Saudi_Arabia_KSA.jpg', category: 'education', name: 'KSA School Uniforms' },
       
-      // صور الرعاية الصحية
+      // Healthcare images
       { path: '/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg', category: 'healthcare', name: 'Medical Uniforms' },
       { path: '/images/healthcare/Medical_staff_uniforms.jpg', category: 'healthcare', name: 'Medical Staff' },
       
-      // صور الضيافة
+      // Hospitality images
       { path: '/images/hospitality/Hospitality_uniforms.jpeg', category: 'hospitality', name: 'Hospitality Uniforms' },
       { path: '/images/hospitality/Hotel_reception_uniforms_Front_desk_uniforms.jpeg', category: 'hospitality', name: 'Reception Uniforms' },
       
-      // صور الحكومة
+      // Government images
       { path: '/images/government/Government_uniforms.jpg', category: 'government', name: 'Government Uniforms' },
       { path: '/images/government/Civil_service_uniforms.jpg', category: 'government', name: 'Civil Service' },
       
-      // صور الأمن
+      // Security images
       { path: '/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg', category: 'security', name: 'Security Guards' },
       
-      // صور الصناعة
+      // Industrial images
       { path: '/images/industrial/Industrial_uniforms.jpeg', category: 'industrial', name: 'Industrial Uniforms' },
       
-      // صور الطيران
+      // Aviation images
       { path: '/images/aviation/aviation_uniforms.jpg', category: 'aviation', name: 'Aviation Uniforms' },
       
-      // صورة افتراضية
+      // Placeholder image
       { path: '/images/placeholder-image.jpg', category: 'placeholder', name: 'Placeholder' },
     ];
 
@@ -53,15 +53,15 @@ export default function TestImagesPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="mb-8 text-3xl font-bold">اختبار تحميل الصور</h1>
+      <h1 className="mb-8 text-3xl font-bold">Image Loading Test</h1>
       
       {loading ? (
-        <p>جاري تحميل الصور...</p>
+        <p>Loading images...</p>
       ) : error ? (
         <p className="text-red-500">{error}</p>
       ) : (
         <div>
-          <p className="mb-4">يعرض هذا الاختبار {images.length} صورة للتأكد من عرضها بشكل صحيح.</p>
+          <p className="mb-4">This test displays {images.length} images to ensure they are shown correctly.</p>
           
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {images.map((image, index) => (
@@ -85,7 +85,7 @@ export default function TestImagesPage() {
           
           <div className="mt-8">
             <Link href="/blog" className="rounded-lg bg-primary px-4 py-2 text-white">
-              العودة إلى المدونة
+              Return to Blog
             </Link>
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function TestImagesPage() {
   );
 }
 
-// مكون لعرض الصورة مع استخدام صورة بديلة في حال الفشل
+// Component to display image with fallback in case of failure
 function ImageWithFallback({ src, alt, ...props }: any) {
   const [error, setError] = useState(false);
   const fallbackSrc = '/images/placeholder-image.jpg';
@@ -103,14 +103,14 @@ function ImageWithFallback({ src, alt, ...props }: any) {
     <>
       {error ? (
         <div className="flex h-full w-full items-center justify-center bg-gray-200">
-          <span className="text-sm text-gray-500">صورة غير متوفرة</span>
+          <span className="text-sm text-gray-500">Image not available</span>
         </div>
       ) : (
         <Image
           src={src}
-          alt={alt || 'صورة'}
+          alt={alt || 'Image'}
           onError={() => {
-            console.error(`فشل تحميل الصورة: ${src}`);
+            console.error(`Failed to load image: ${src}`);
             setError(true);
           }}
           {...props}

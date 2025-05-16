@@ -1,0 +1,46 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  images: {
+    disableStaticImages: false,
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
+    formats: ["image/webp"]
+  },
+  basePath: process.env.NETLIFY ? '' : '/uniform1',
+  assetPrefix: process.env.NETLIFY ? '' : '/uniform1/',
+  trailingSlash: true,
+  reactStrictMode: true,
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? {
+      exclude: ['error', 'warn'],
+    } : false,
+  },
+  webpack: (config, { isServer }) => {
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|webp)$/i,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            publicPath: '/_next',
+            name: 'static/media/[name].[hash].[ext]',
+          },
+        },
+      ],
+    });
+
+    // Handle the url module
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        url: require.resolve('url/'),
+      };
+    }
+
+    return config;
+  },
+}
+
+module.exports = nextConfig; 
