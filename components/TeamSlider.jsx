@@ -32,7 +32,7 @@ const TeamSlider = ({ members = [] }) => {
   const maxIndex = Math.max(0, members.length - 3);
 
   // Default placeholder image
-  const placeholderImage = getImagePath('/images/author/placeholder.png');
+  const placeholderImage = getImagePath('/images/author/placeholder.jpg');
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => Math.max(0, prev - 1));

@@ -29,7 +29,7 @@ const TeamSlider = ({ members }) => {
           >
             <div className="mb-4 overflow-hidden rounded-full w-40 h-40 mx-auto relative">
               <Image
-                src={member.image || "/images/author/placeholder.png"}
+                src={member.image || "/images/author/placeholder.jpg"}
                 alt={member.name}
                 fill
                 className="object-cover"

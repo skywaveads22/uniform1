@@ -7,10 +7,10 @@ interface AuthorProps {
   date?: string
 }
 
-export default function Author({ name = 'Uniform SA Team', image = '/images/author/placeholder.png', date }: AuthorProps) {
+export default function Author({ name = 'Uniform SA Team', image = '/images/author/placeholder.jpg', date }: AuthorProps) {
   // Format image paths
   const imagePath = getImagePath(image)
-  const placeholderPath = getImagePath('/images/author/placeholder.png')
+  const placeholderPath = getImagePath('/images/author/placeholder.jpg')
   
   // Format date if provided
   const formattedDate = date ? new Date(date).toLocaleDateString('en-US', {
