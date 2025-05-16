@@ -1,8 +1,0 @@
-# *
-User-agent: *
-
-# Host
-Host: https://fakhrkhaleej.com
-
-# Sitemaps
-Sitemap: https://fakhrkhaleej.com/sitemap.xml
