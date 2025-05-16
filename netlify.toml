@@ -8,8 +8,8 @@
   NPM_VERSION = "9.6.7"
   NEXT_TELEMETRY_DISABLED = "1"
   NODE_ENV = "production"
-  NPM_FLAGS = "--production=false"
-  SKIP_INSTALL_DEPS = "true"
+  NPM_FLAGS = "--production=false --legacy-peer-deps"
+  SKIP_INSTALL_DEPS = "false"
   NETLIFY_USE_YARN = "false"
   NEXT_PUBLIC_SITE_URL = "https://willowy-mochi-145885.netlify.app"
   NEXT_PUBLIC_BASE_PATH = ""
@@ -27,7 +27,7 @@
 
 [context.production.environment]
   NODE_ENV = "production"
-  NPM_FLAGS = "--production=false"
+  NPM_FLAGS = "--production=false --legacy-peer-deps"
   NEXT_PUBLIC_SITE_URL = "https://willowy-mochi-145885.netlify.app"
   NEXT_PUBLIC_BASE_PATH = ""
   NETLIFY = "true"
@@ -75,4 +75,8 @@
 
 [build.processing.css]
   bundle = true
-  minify = true 
+  minify = true
+
+# Add module resolution settings
+[build.environment.ROLLUP_OPTIONS]
+  external = ["url"] 

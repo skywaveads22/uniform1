@@ -23,7 +23,7 @@ const nextConfig = {
       exclude: ['error', 'warn'],
     } : false,
   },
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|webp)$/i,
       use: [
@@ -36,6 +36,15 @@ const nextConfig = {
         },
       ],
     });
+
+    // Handle the url module
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        url: require.resolve('url/'),
+      };
+    }
+
     return config;
   },
 }
