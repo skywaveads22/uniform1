@@ -39,12 +39,9 @@
   NEXT_PUBLIC_DOMAIN = "willowy-mochi-145885.netlify.app"
   NEXT_PUBLIC_USE_WEBP_ONLY = "true"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
 # Headers for static files
 [[headers]]
-  for = "/_next/static/*"
+  for = "/webp/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
