@@ -39,6 +39,15 @@
   NEXT_PUBLIC_DOMAIN = "willowy-mochi-145885.netlify.app"
   NEXT_PUBLIC_USE_WEBP_ONLY = "true"
 
+# Explicitly disable the Next.js plugin
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  [plugins.inputs]
+    framework = "other"
+    skipBuild = true
+    # Set to false to disable the plugin
+    enabled = false
+
 # Headers for static files
 [[headers]]
   for = "/webp/*"

@@ -199,243 +199,279 @@ console.log('Creating Next.js specific artifacts...');
 // Use a fixed BUILD_ID that we'll reference in other files
 const buildId = "build-id-" + Math.floor(Date.now() / 1000).toString();
 
-// Create .next directory (this is the original output dir for Next.js before export)
-fs.mkdirSync(path.join(outputDir, '.next'), { recursive: true });
-fs.mkdirSync(path.join(outputDir, '.next', 'server'), { recursive: true });
-fs.mkdirSync(path.join(outputDir, '.next', 'static'), { recursive: true });
-fs.mkdirSync(path.join(outputDir, '.next', 'cache'), { recursive: true });
-
-// Create _next directory structure (this is what gets exported)
-const nextStaticDir = path.join(outputDir, '_next', 'static');
-fs.mkdirSync(nextStaticDir, { recursive: true });
-fs.mkdirSync(path.join(nextStaticDir, 'chunks', 'pages'), { recursive: true });
-fs.mkdirSync(path.join(nextStaticDir, 'css'), { recursive: true });
-fs.mkdirSync(path.join(nextStaticDir, 'media'), { recursive: true });
-fs.mkdirSync(path.join(nextStaticDir, 'images'), { recursive: true });
-// Create the buildId-specific directories needed for manifest files
-fs.mkdirSync(path.join(nextStaticDir, buildId), { recursive: true });
-fs.mkdirSync(path.join(outputDir, '_next', 'data', buildId), { recursive: true });
-fs.mkdirSync(path.join(outputDir, '_next', 'server'), { recursive: true });
-
-// Create essential Next.js files
+// Create simple Next.js app.json file to avoid plugin errors
 fs.writeFileSync(
-  path.join(outputDir, '.next', 'build-manifest.json'),
+  path.join(outputDir, 'app-build-manifest.json'),
   JSON.stringify({
-    "polyfillFiles": [
-      "static/chunks/polyfills.js"
-    ],
-    "devFiles": [],
-    "ampDevFiles": [],
-    "lowPriorityFiles": [
-      "static/development/_buildManifest.js",
-      "static/development/_ssgManifest.js"
-    ],
-    "rootMainFiles": [],
-    "pages": {
-      "/": [
-        "static/chunks/webpack.js",
-        "static/chunks/main.js",
-        "static/chunks/pages/index.js"
-      ],
-      "/_app": [
-        "static/chunks/webpack.js",
-        "static/chunks/main.js",
-        "static/chunks/pages/_app.js"
-      ],
-      "/_error": [
-        "static/chunks/webpack.js",
-        "static/chunks/main.js",
-        "static/chunks/pages/_error.js"
-      ]
-    },
-    "ampFirstPages": []
-  }, null, 2)
-);
-
-// Create trace files (required by latest Next.js)
-fs.writeFileSync(
-  path.join(outputDir, '.next', 'trace'),
-  JSON.stringify([
-    {
-      "traceId": "build-manifest-tracer",
-      "name": "build-manifest-tracer",
-      "timestamp": Date.now(),
-      "duration": 1234,
-      "tags": {"buildId": buildId}
-    }
-  ], null, 2)
-);
-
-// Create pages-manifest.json
-fs.writeFileSync(
-  path.join(outputDir, '.next', 'server', 'pages-manifest.json'),
-  JSON.stringify({
-    "/_app": "pages/_app.js",
-    "/_document": "pages/_document.js",
-    "/_error": "pages/_error.js",
-    "/404": "pages/404.html",
-    "/500": "pages/500.html", 
-    "/": "pages/index.html"
-  }, null, 2)
-);
-
-// Create minimal required Next.js files
-fs.writeFileSync(
-  path.join(nextStaticDir, 'chunks', 'main.js'),
-  '// Placeholder for Next.js main chunk'
-);
-
-fs.writeFileSync(
-  path.join(nextStaticDir, 'chunks', 'polyfills.js'),
-  '// Placeholder for Next.js polyfills'
-);
-
-fs.writeFileSync(
-  path.join(nextStaticDir, 'chunks', 'webpack.js'),
-  '// Placeholder for webpack chunk'
-);
-
-// Create page chunks
-fs.mkdirSync(path.join(nextStaticDir, 'chunks', 'pages', '_app'), { recursive: true });
-fs.mkdirSync(path.join(nextStaticDir, 'chunks', 'pages', '_error'), { recursive: true });
-fs.mkdirSync(path.join(nextStaticDir, 'chunks', 'pages', 'index'), { recursive: true });
-
-fs.writeFileSync(
-  path.join(nextStaticDir, 'chunks', 'pages', '_app.js'),
-  '// Placeholder for _app page'
-);
-
-fs.writeFileSync(
-  path.join(nextStaticDir, 'chunks', 'pages', '_error.js'),
-  '// Placeholder for _error page'
-);
-
-fs.writeFileSync(
-  path.join(nextStaticDir, 'chunks', 'pages', 'index.js'),
-  '// Placeholder for index page'
-);
-
-// Create required manifest files
-fs.writeFileSync(
-  path.join(nextStaticDir, `${buildId}`, '_buildManifest.js'),
-  'self.__BUILD_MANIFEST=function(e,s,t){return{__rewrites:{beforeFiles:[],afterFiles:[],fallback:[]},"/":[e,s,"static/chunks/pages/index.js"],"/404":[e,s,"static/chunks/pages/404.js"],"/500":[e,s,"static/chunks/pages/500.js"],"/_error":[e,"static/chunks/pages/_error.js"]}};self.__BUILD_MANIFEST_CB&&self.__BUILD_MANIFEST_CB()'
-);
-
-fs.writeFileSync(
-  path.join(nextStaticDir, `${buildId}`, '_ssgManifest.js'),
-  'self.__SSG_MANIFEST=new Set([]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()'
-);
-
-// Create BUILD_ID file in both the output and .next directories
-fs.writeFileSync(
-  path.join(outputDir, 'BUILD_ID'),
-  buildId
-);
-
-fs.writeFileSync(
-  path.join(outputDir, '.next', 'BUILD_ID'),
-  buildId
-);
-
-// Create prerender-manifest.json
-fs.writeFileSync(
-  path.join(outputDir, '.next', 'prerender-manifest.json'),
-  JSON.stringify({
-    "version": 3,
-    "routes": {
-      "/": {
-        "initialRevalidateSeconds": false,
-        "srcRoute": null,
-        "dataRoute": `/_next/data/${buildId}/index.json`
-      }
-    },
-    "dynamicRoutes": {},
-    "notFoundRoutes": [],
-    "preview": {
-      "previewModeId": "preview-mode-id",
-      "previewModeSigningKey": "preview-mode-signing-key",
-      "previewModeEncryptionKey": "preview-mode-encryption-key"
+    pages: {
+      "/": {}
     }
   }, null, 2)
 );
 
-// Copy the prerender-manifest to the out directory too
+// Create a package.json file in the output directory for Netlify
 fs.writeFileSync(
-  path.join(outputDir, 'prerender-manifest.json'),
+  path.join(outputDir, 'package.json'),
   JSON.stringify({
-    "version": 3,
-    "routes": {
-      "/": {
-        "initialRevalidateSeconds": false,
-        "srcRoute": null,
-        "dataRoute": `/_next/data/${buildId}/index.json`
-      }
-    },
-    "dynamicRoutes": {},
-    "notFoundRoutes": [],
-    "preview": {
-      "previewModeId": "preview-mode-id",
-      "previewModeSigningKey": "preview-mode-signing-key",
-      "previewModeEncryptionKey": "preview-mode-encryption-key"
+    "name": "uniform-blogs-static",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
     }
   }, null, 2)
 );
 
-// Create required 404 and 500 pages
+// Create a /404 directory with an index.html page
+const notFoundDir = path.join(outputDir, '404');
+fs.mkdirSync(notFoundDir, { recursive: true });
 fs.writeFileSync(
-  path.join(outputDir, '404.html'),
+  path.join(notFoundDir, 'index.html'),
   createHtmlTemplate('Page Not Found', '<h2>404 - Page Not Found</h2><p>The page you are looking for does not exist.</p>')
 );
 
-fs.writeFileSync(
-  path.join(outputDir, '500.html'),
-  createHtmlTemplate('Server Error', '<h2>500 - Server Error</h2><p>An internal server error occurred.</p>')
-);
+// Skip Next.js specific files if SKIP_NEXTJS_ARTIFACTS env var is set
+// This will be useful for troubleshooting if needed
+if (process.env.SKIP_NEXTJS_ARTIFACTS !== 'true') {
+  // Create .next directory (this is the original output dir for Next.js before export)
+  fs.mkdirSync(path.join(outputDir, '.next'), { recursive: true });
+  fs.mkdirSync(path.join(outputDir, '.next', 'server'), { recursive: true });
+  fs.mkdirSync(path.join(outputDir, '.next', 'static'), { recursive: true });
+  fs.mkdirSync(path.join(outputDir, '.next', 'cache'), { recursive: true });
 
-// Create next.config.json
-fs.writeFileSync(
-  path.join(outputDir, 'next.config.json'),
-  JSON.stringify({
-    "target": "server",
-    "compress": true,
-    "generateEtags": true,
-    "poweredByHeader": true,
-    "images": { "domains": [] },
-    "env": {},
-    "distDir": ".next",
-    "trailingSlash": true
-  }, null, 2)
-);
+  // Create _next directory structure (this is what gets exported)
+  const nextStaticDir = path.join(outputDir, '_next', 'static');
+  fs.mkdirSync(nextStaticDir, { recursive: true });
+  fs.mkdirSync(path.join(nextStaticDir, 'chunks', 'pages'), { recursive: true });
+  fs.mkdirSync(path.join(nextStaticDir, 'css'), { recursive: true });
+  fs.mkdirSync(path.join(nextStaticDir, 'media'), { recursive: true });
+  fs.mkdirSync(path.join(nextStaticDir, 'images'), { recursive: true });
+  // Create the buildId-specific directories needed for manifest files
+  fs.mkdirSync(path.join(nextStaticDir, buildId), { recursive: true });
+  fs.mkdirSync(path.join(outputDir, '_next', 'data', buildId), { recursive: true });
+  fs.mkdirSync(path.join(outputDir, '_next', 'server'), { recursive: true });
 
-// Create a mock server-directory-manifest.json
-fs.writeFileSync(
-  path.join(outputDir, '.next', 'server-directory-manifest.json'),
-  JSON.stringify({
-    "version": 1,
-    "requiredFiles": {}
-  })
-);
+  // Create essential Next.js files
+  fs.writeFileSync(
+    path.join(outputDir, '.next', 'build-manifest.json'),
+    JSON.stringify({
+      "polyfillFiles": [
+        "static/chunks/polyfills.js"
+      ],
+      "devFiles": [],
+      "ampDevFiles": [],
+      "lowPriorityFiles": [
+        "static/development/_buildManifest.js",
+        "static/development/_ssgManifest.js"
+      ],
+      "rootMainFiles": [],
+      "pages": {
+        "/": [
+          "static/chunks/webpack.js",
+          "static/chunks/main.js",
+          "static/chunks/pages/index.js"
+        ],
+        "/_app": [
+          "static/chunks/webpack.js",
+          "static/chunks/main.js",
+          "static/chunks/pages/_app.js"
+        ],
+        "/_error": [
+          "static/chunks/webpack.js",
+          "static/chunks/main.js",
+          "static/chunks/pages/_error.js"
+        ]
+      },
+      "ampFirstPages": []
+    }, null, 2)
+  );
 
-// Create a mock required-server-files.json
-fs.writeFileSync(
-  path.join(outputDir, '.next', 'required-server-files.json'),
-  JSON.stringify({
-    "version": 1,
-    "config": {
+  // Create trace files (required by latest Next.js)
+  fs.writeFileSync(
+    path.join(outputDir, '.next', 'trace'),
+    JSON.stringify([
+      {
+        "traceId": "build-manifest-tracer",
+        "name": "build-manifest-tracer",
+        "timestamp": Date.now(),
+        "duration": 1234,
+        "tags": {"buildId": buildId}
+      }
+    ], null, 2)
+  );
+
+  // Create pages-manifest.json
+  fs.writeFileSync(
+    path.join(outputDir, '.next', 'server', 'pages-manifest.json'),
+    JSON.stringify({
+      "/_app": "pages/_app.js",
+      "/_document": "pages/_document.js",
+      "/_error": "pages/_error.js",
+      "/404": "pages/404.html",
+      "/500": "pages/500.html", 
+      "/": "pages/index.html"
+    }, null, 2)
+  );
+
+  // Create minimal required Next.js files
+  fs.writeFileSync(
+    path.join(nextStaticDir, 'chunks', 'main.js'),
+    '// Placeholder for Next.js main chunk'
+  );
+
+  fs.writeFileSync(
+    path.join(nextStaticDir, 'chunks', 'polyfills.js'),
+    '// Placeholder for Next.js polyfills'
+  );
+
+  fs.writeFileSync(
+    path.join(nextStaticDir, 'chunks', 'webpack.js'),
+    '// Placeholder for webpack chunk'
+  );
+
+  // Create page chunks
+  fs.mkdirSync(path.join(nextStaticDir, 'chunks', 'pages', '_app'), { recursive: true });
+  fs.mkdirSync(path.join(nextStaticDir, 'chunks', 'pages', '_error'), { recursive: true });
+  fs.mkdirSync(path.join(nextStaticDir, 'chunks', 'pages', 'index'), { recursive: true });
+
+  fs.writeFileSync(
+    path.join(nextStaticDir, 'chunks', 'pages', '_app.js'),
+    '// Placeholder for _app page'
+  );
+
+  fs.writeFileSync(
+    path.join(nextStaticDir, 'chunks', 'pages', '_error.js'),
+    '// Placeholder for _error page'
+  );
+
+  fs.writeFileSync(
+    path.join(nextStaticDir, 'chunks', 'pages', 'index.js'),
+    '// Placeholder for index page'
+  );
+
+  // Create required manifest files
+  fs.writeFileSync(
+    path.join(nextStaticDir, `${buildId}`, '_buildManifest.js'),
+    'self.__BUILD_MANIFEST=function(e,s,t){return{__rewrites:{beforeFiles:[],afterFiles:[],fallback:[]},"/":[e,s,"static/chunks/pages/index.js"],"/404":[e,s,"static/chunks/pages/404.js"],"/500":[e,s,"static/chunks/pages/500.js"],"/_error":[e,"static/chunks/pages/_error.js"]}};self.__BUILD_MANIFEST_CB&&self.__BUILD_MANIFEST_CB()'
+  );
+
+  fs.writeFileSync(
+    path.join(nextStaticDir, `${buildId}`, '_ssgManifest.js'),
+    'self.__SSG_MANIFEST=new Set([]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()'
+  );
+
+  // Create BUILD_ID file in both the output and .next directories
+  fs.writeFileSync(
+    path.join(outputDir, 'BUILD_ID'),
+    buildId
+  );
+
+  fs.writeFileSync(
+    path.join(outputDir, '.next', 'BUILD_ID'),
+    buildId
+  );
+
+  // Create prerender-manifest.json
+  fs.writeFileSync(
+    path.join(outputDir, '.next', 'prerender-manifest.json'),
+    JSON.stringify({
+      "version": 3,
+      "routes": {
+        "/": {
+          "initialRevalidateSeconds": false,
+          "srcRoute": null,
+          "dataRoute": `/_next/data/${buildId}/index.json`
+        }
+      },
+      "dynamicRoutes": {},
+      "notFoundRoutes": [],
+      "preview": {
+        "previewModeId": "preview-mode-id",
+        "previewModeSigningKey": "preview-mode-signing-key",
+        "previewModeEncryptionKey": "preview-mode-encryption-key"
+      }
+    }, null, 2)
+  );
+
+  // Copy the prerender-manifest to the out directory too
+  fs.writeFileSync(
+    path.join(outputDir, 'prerender-manifest.json'),
+    JSON.stringify({
+      "version": 3,
+      "routes": {
+        "/": {
+          "initialRevalidateSeconds": false,
+          "srcRoute": null,
+          "dataRoute": `/_next/data/${buildId}/index.json`
+        }
+      },
+      "dynamicRoutes": {},
+      "notFoundRoutes": [],
+      "preview": {
+        "previewModeId": "preview-mode-id",
+        "previewModeSigningKey": "preview-mode-signing-key",
+        "previewModeEncryptionKey": "preview-mode-encryption-key"
+      }
+    }, null, 2)
+  );
+
+  // Create required 404 and 500 pages
+  fs.writeFileSync(
+    path.join(outputDir, '404.html'),
+    createHtmlTemplate('Page Not Found', '<h2>404 - Page Not Found</h2><p>The page you are looking for does not exist.</p>')
+  );
+
+  fs.writeFileSync(
+    path.join(outputDir, '500.html'),
+    createHtmlTemplate('Server Error', '<h2>500 - Server Error</h2><p>An internal server error occurred.</p>')
+  );
+
+  // Create next.config.json
+  fs.writeFileSync(
+    path.join(outputDir, 'next.config.json'),
+    JSON.stringify({
+      "target": "server",
+      "compress": true,
+      "generateEtags": true,
+      "poweredByHeader": true,
+      "images": { "domains": [] },
+      "env": {},
       "distDir": ".next",
-      "publicRuntimeConfig": {},
-      "serverRuntimeConfig": {}
-    },
-    "files": ["next.config.js", "server/pages-manifest.json"]
-  })
-);
+      "trailingSlash": true
+    }, null, 2)
+  );
 
-// Create an empty next-data file to satisfy data requirement
-fs.writeFileSync(
-  path.join(outputDir, '_next', 'data', buildId, 'index.json'),
-  JSON.stringify({ pageProps: {} })
-);
+  // Create a mock server-directory-manifest.json
+  fs.writeFileSync(
+    path.join(outputDir, '.next', 'server-directory-manifest.json'),
+    JSON.stringify({
+      "version": 1,
+      "requiredFiles": {}
+    })
+  );
 
-console.log('Next.js artifacts created successfully');
+  // Create a mock required-server-files.json
+  fs.writeFileSync(
+    path.join(outputDir, '.next', 'required-server-files.json'),
+    JSON.stringify({
+      "version": 1,
+      "config": {
+        "distDir": ".next",
+        "publicRuntimeConfig": {},
+        "serverRuntimeConfig": {}
+      },
+      "files": ["next.config.js", "server/pages-manifest.json"]
+    })
+  );
+
+  // Create an empty next-data file to satisfy data requirement
+  fs.writeFileSync(
+    path.join(outputDir, '_next', 'data', buildId, 'index.json'),
+    JSON.stringify({ pageProps: {} })
+  );
+
+  console.log('Next.js artifacts created successfully');
+}
 
 console.log('Manual static site build completed successfully!'); 
