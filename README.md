@@ -1,6 +1,37 @@
 # Uniform Blogs
 
-Sitio web corporativo para UniformSA, una empresa especializada en uniformes para diversos sectores en Arabia Saudita. El sitio está desarrollado con Next.js y optimizado para un despliegue rápido y eficiente.
+A Next.js website showcasing uniform solutions for various industries including aviation, healthcare, hospitality, education, security, and more.
+
+## Features
+
+- Modern Next.js 14 application
+- Static site generation for optimal performance
+- Industry-specific blog posts and resources
+- Responsive design for all devices
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## Deployment
+
+This project is configured for GitHub Pages deployment using GitHub Actions.
+Push to the master branch to trigger automated deployment.
+
+## Project Structure
+
+- `/app` - Next.js application routes and pages
+- `/components` - Reusable React components
+- `/public` - Static assets including images
 
 ## Características
 
@@ -40,19 +71,6 @@ Para desplegar este proyecto en Netlify:
 - `/lib` - Utilidades y funciones auxiliares
 - `/public` - Archivos estáticos (imágenes, etc.)
 - `/content` - Contenido del blog y textos
-
-## Desarrollo Local
-
-```bash
-# Instalar dependencias
-npm install
-
-# Iniciar servidor de desarrollo
-npm run dev
-
-# Construir para producción
-npm run build
-```
 
 ## Licencia
 
