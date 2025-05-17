@@ -114,22 +114,26 @@ if (fs.existsSync('next.config.js')) {
   console.log('Next.js configuration adjusted for static export');
 }
 
-// Run the Next.js build command with error handling
-console.log('Running Next.js build...');
+// Set environment variables for Netlify deployment
+process.env.NETLIFY = 'true';
+process.env.NEXT_PUBLIC_BASE_PATH = '';
+
+console.log('Running Netlify build with custom configuration...');
+
 try {
-  // Try build with ignoring type errors and using export for static site generation
-  execSync('npx next build', { stdio: 'inherit' });
-  console.log('Build completed successfully');
+  // Run the standard build command with additional flags
+  execSync('next build', { 
+    stdio: 'inherit',
+    env: { 
+      ...process.env,
+      NEXT_PRIVATE_TARGET: 'server', // Ensure server target for Netlify
+    }
+  });
+  
+  console.log('Build completed successfully!');
 } catch (error) {
-  console.error('Build failed with standard configuration. Trying with additional flags...');
-  try {
-    // If normal build fails, try with all flags to ignore errors
-    execSync('npx next build --no-lint', { stdio: 'inherit' });
-    console.log('Build completed successfully with linting disabled');
-  } catch (buildError) {
-    console.error('All build attempts failed:', buildError);
-    process.exit(1);
-  }
+  console.error('Build failed:', error);
+  process.exit(1);
 } finally {
   // Restore the original ESLint config if we backed it up
   if (fs.existsSync('.eslintrc.json.bak')) {

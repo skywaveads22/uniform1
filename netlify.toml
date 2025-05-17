@@ -1,11 +1,11 @@
 [build]
-  command = "npm run netlify-build"
+  command = "npm run build:production"
   publish = "out"
   base = "/"
 
 [build.environment]
-  NODE_VERSION = "18.17.0"
-  NPM_VERSION = "9.6.7"
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
   NEXT_TELEMETRY_DISABLED = "1"
   NODE_ENV = "production"
   NPM_FLAGS = "--production=false"

@@ -5,6 +5,9 @@
 
 const fs = require('fs');
 const path = require('path');
+const { globSync } = require('glob');
+
+console.log('Generating sitemap URLs...');
 
 // Base URL of the site
 const baseUrl = 'https://fakhrkhaleej.com';
@@ -46,48 +49,56 @@ const industryCategories = [
   'industrial',
 ];
 
-// Generate all URLs
-const generateAllUrls = () => {
-  const urls = [];
-  
-  // Add static pages
-  staticPages.forEach(page => {
-    urls.push(`${baseUrl}${page}`);
-  });
-  
-  // Add service category pages
-  serviceCategories.forEach(category => {
-    urls.push(`${baseUrl}/services/${category}`);
-  });
-  
-  // Add industry category pages
-  industryCategories.forEach(category => {
-    urls.push(`${baseUrl}/${category}`);
-    urls.push(`${baseUrl}/${category}/all-articles`);
-    urls.push(`${baseUrl}/blog/category/${category}`);
-  });
-  
-  // Add portfolio detail pages (based on the data in portfolio page)
-  for (let i = 1; i <= 6; i++) {
-    urls.push(`${baseUrl}/portfolio/${i}`);
+// Function to get all blog post paths
+function getBlogPaths() {
+  try {
+    const blogDirs = globSync('app/blog/*/page.tsx');
+    return blogDirs.map(dir => {
+      // Convert file path to URL path
+      const match = dir.match(/app\/blog\/(.+?)\/page\.tsx$/);
+      if (match && match[1]) {
+        return `/blog/${match[1]}`;
+      }
+      return null;
+    }).filter(Boolean);
+  } catch (error) {
+    console.error('Error finding blog paths:', error);
+    return [];
   }
-  
-  return urls;
-};
+}
 
-// Generate sitemap URLs JSON file
-const generateSitemapUrlsJson = () => {
-  const urls = generateAllUrls();
-  const outputPath = path.join(__dirname, '../public/sitemap-urls.json');
+// Function to write sitemap URLs to a file
+function writeSitemapUrls(urls) {
+  const outputDir = path.join(process.cwd(), 'public');
+  const outputFile = path.join(outputDir, 'sitemap-urls.json');
   
-  const sitemapData = {
-    urls,
-    generated: new Date().toISOString(),
-  };
+  try {
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+    
+    fs.writeFileSync(outputFile, JSON.stringify(urls, null, 2));
+    console.log(`Sitemap URLs written to ${outputFile}`);
+  } catch (error) {
+    console.error('Error writing sitemap URLs:', error);
+  }
+}
+
+// Main function
+function generateSitemap() {
+  const blogPaths = getBlogPaths();
   
-  fs.writeFileSync(outputPath, JSON.stringify(sitemapData, null, 2));
-  console.log(`Generated ${urls.length} URLs in sitemap-urls.json`);
-};
+  const staticPaths = [
+    '/',
+    '/about',
+    '/contact',
+    '/services',
+    '/blog'
+  ];
+  
+  const allPaths = [...staticPaths, ...blogPaths];
+  writeSitemapUrls(allPaths);
+}
 
 // Execute
-generateSitemapUrlsJson(); 
+generateSitemap(); 

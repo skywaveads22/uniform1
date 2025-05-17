@@ -7,18 +7,17 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate-sitemap-urls.js && next build && next-sitemap",
-    "build:production": "node scripts/generate-sitemap-urls.js && next build --no-lint && next-sitemap",
+    "build": "next build",
+    "build:production": "next build --no-lint",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "seed": "ts-node scripts/seedPosts.ts",
-    "netlify-build": "node scripts/netlify-build.js",
+    "netlify-build": "NETLIFY=true next build",
     "netlify-dev": "netlify dev",
     "static-build": "next build --no-lint --skip-type-check",
     "postbuild": "next-sitemap",
-    "sitemap": "next-sitemap",
-    "generate-sitemap-urls": "node scripts/generate-sitemap-urls.js"
+    "sitemap": "next-sitemap"
   },
   "dependencies": {
     "@faker-js/faker": "^9.7.0",
