@@ -22,7 +22,7 @@ export default function SafeImage({
   className = "",
   priority = false,
   fill = false,
-  fallbackSrc = "/images/blog/Blog_uniforms.jpg"
+  fallbackSrc = "/images/placeholder-image.jpg"
 }: SafeImageProps) {
   const [imgSrc, setImgSrc] = useState<string>(src);
   const [isLoading, setIsLoading] = useState(true);

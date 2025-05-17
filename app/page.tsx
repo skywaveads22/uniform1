@@ -39,7 +39,7 @@ const sliderData = [
     title: "Healthcare Excellence",
     subtitle: "Medical-Grade Uniforms",
     description: "Professional attire designed for comfort, hygiene, and functionality in healthcare settings",
-    link: "/services",
+    link: "/services/healthcare",
     category: "healthcare"
   },
   {
@@ -47,7 +47,7 @@ const sliderData = [
     title: "Hospitality Distinction",
     subtitle: "Elegant Service Attire",
     description: "Refined uniforms that enhance guest experiences in Saudi Arabia's hospitality industry",
-    link: "/services",
+    link: "/services/hospitality",
     category: "hospitality"
   },
   {
@@ -55,7 +55,7 @@ const sliderData = [
     title: "Educational Identity",
     subtitle: "Distinguished School Uniforms",
     description: "Quality attire that builds institutional pride and unity across educational institutions",
-    link: "/services",
+    link: "/services/education",
     category: "education"
   },
   {
@@ -63,7 +63,7 @@ const sliderData = [
     title: "Security & Authority",
     subtitle: "Professional Security Attire",
     description: "Commanding uniforms engineered for durability, functionality, and professional presence",
-    link: "/services",
+    link: "/services/security",
     category: "security"
   }
 ];
@@ -329,9 +329,27 @@ export default function Home() {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                     onError={(e) => {
-                      // Just hide the image on error
+                      // Set fallback image on error
                       const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
+                      target.onerror = null; // Prevent infinite error loop
+                      
+                      // Use a category-specific fallback if possible
+                      const categoryLower = category.title.toLowerCase();
+                      if (categoryLower === 'aviation') {
+                        target.src = `/images/aviation/aviation_uniforms.jpg`;
+                      } else if (categoryLower === 'healthcare') {
+                        target.src = `/images/healthcare/Healthcare_uniforms.jpg`;
+                      } else if (categoryLower === 'hospitality') {
+                        target.src = `/images/hospitality/Hotel_uniforms.jpeg`;
+                      } else if (categoryLower === 'education') {
+                        target.src = `/images/education/School_wear_apparel.jpg`;
+                      } else if (categoryLower === 'government') {
+                        target.src = `/images/government/Government_uniforms.jpg`;
+                      } else if (categoryLower === 'security') {
+                        target.src = `/images/security/Security_uniforms.jpeg`;
+                      } else {
+                        target.src = `/images/placeholder-image.jpg`;
+                      }
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
@@ -384,9 +402,10 @@ export default function Home() {
                   height={700}
                   className="h-full w-full object-cover"
                   onError={(e) => {
-                    // Just hide the image on error
+                    // Set fallback image on error
                     const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
+                    target.onerror = null; // Prevent infinite error loop
+                    target.src = `/images/placeholder-image.jpg`;
                   }}
                 />
               </div>
@@ -399,9 +418,10 @@ export default function Home() {
                   height={200}
                   className="h-full w-full object-cover"
                   onError={(e) => {
-                    // Just hide the image on error
+                    // Set fallback image on error
                     const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
+                    target.onerror = null; // Prevent infinite error loop
+                    target.src = `/images/placeholder-image.jpg`;
                   }}
                 />
               </div>
@@ -456,7 +476,74 @@ export default function Home() {
         </div>
       </section>
 
-      
+      {/* Testimonials Section - New */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="mb-16 text-center">
+            <span className="mb-2 inline-block rounded-full bg-primary/10 px-4 py-1 text-sm font-semibold uppercase tracking-wider text-primary">Client Testimonials</span>
+            <h2 className="mb-4 text-4xl font-bold text-gray-900">
+              Trusted by Leading Organizations
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+              Hear from our clients about their experience partnering with Saudi Arabia's premier uniform provider
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                quote: "Their attention to detail and understanding of our airline's brand requirements exceeded our expectations. The uniforms have received countless compliments from both staff and passengers.",
+                author: "Ahmed Al-Saud",
+                position: "Head of Operations",
+                company: "Saudi Airlines"
+              },
+              {
+                quote: "The medical uniforms provided by UniformSA perfectly balance professionalism, comfort, and compliance with healthcare regulations. Our staff couldn't be happier with the quality.",
+                author: "Dr. Fatima Al-Harbi",
+                position: "Director of Nursing",
+                company: "King Fahd Medical City"
+              },
+              {
+                quote: "We've partnered with UniformSA for our security personnel across multiple locations. Their durability in harsh conditions and professional appearance have made them an invaluable partner.",
+                author: "Khalid Al-Otaibi",
+                position: "Security Director",
+                company: "Royal Commission for Jubail and Yanbu"
+              }
+            ].map((testimonial, index) => (
+              <div key={index} className="relative rounded-2xl bg-white p-8 shadow-lg">
+                <div className="mb-6">
+                  {/* Quote icon */}
+                  <svg className="h-10 w-10 text-primary/20" fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.722 6.422C2.155 12.254.892 19.825.984 22.237c.066 1.741 1.565 5.53 6.083 5.53 3.27 0 5.77-2.42 5.77-5.68 0-3.044-2.374-5.62-5.529-5.62-.689 0-1.377.18-1.875.369 0 0 .282-1.476 3.137-4.569 1.968-2.133 3.347-3.222 3.54-3.395l.047-.04c-.707-.75-.992-1.631-1.785-2.7-.671-.904-2.137-1.172-2.737-1.172-.253 0-1.196.226-1.196.226l-.05.03c0-.001 2.346.784 4.333 1.208zM25.306 6.422c-8.566 5.832-9.83 13.403-9.737 15.815.066 1.741 1.565 5.53 6.083 5.53 3.27 0 5.77-2.42 5.77-5.68 0-3.044-2.374-5.62-5.529-5.62-.689 0-1.377.18-1.875.369 0 0 .282-1.476 3.137-4.569 1.968-2.133 3.347-3.222 3.54-3.395l.047-.04c-.707-.75-.992-1.631-1.785-2.7-.671-.904-2.137-1.172-2.737-1.172-.253 0-1.196.226-1.196.226l-.05.03c0-.001 2.346.784 4.332 1.208z"></path>
+                  </svg>
+                </div>
+                <blockquote className="mb-6 text-lg leading-relaxed text-gray-700">{testimonial.quote}</blockquote>
+                <div className="flex items-center">
+                  <div className="mr-4 h-12 w-12 overflow-hidden rounded-full bg-primary text-white flex items-center justify-center">
+                    <span className="font-semibold text-lg">
+                      {testimonial.author.split(' ').map(name => name[0]).join('')}
+                    </span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                    <p className="text-sm text-gray-600">{testimonial.position}, {testimonial.company}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              href="/testimonials"
+              className="inline-flex items-center rounded-lg border border-primary bg-white px-6 py-3 font-semibold text-primary transition-colors hover:bg-primary/5"
+            >
+              View Customer Success Stories
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Service Locations with Interactive Map */}
       <section className="py-24 bg-gray-50">

@@ -15,7 +15,14 @@ const services = [
 
 // Blog categories for dropdown
 const blogCategories = [
-  { name: "All Articles", href: "/blog" }
+  { name: "All Articles", href: "/blog" },
+  { name: "Aviation", href: "/blog/category/aviation" },
+  { name: "Education", href: "/blog/category/education" },
+  { name: "Government", href: "/blog/category/government" },
+  { name: "Healthcare", href: "/blog/category/healthcare" },
+  { name: "Hospitality", href: "/blog/category/hospitality" },
+  { name: "Industrial", href: "/blog/category/industrial" },
+  { name: "Security", href: "/blog/category/security" },
 ]
 
 export function Navbar() {

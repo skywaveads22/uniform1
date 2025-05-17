@@ -4,8 +4,8 @@
 export function getImagePath(src: string): string {
   // التحقق من صحة المدخلات
   if (!src || src === '/') {
-    console.log('Empty image path, using default image');
-    return getDefaultImage();
+    console.log('Empty image path, using placeholder');
+    return '/images/placeholder-image.jpg';
   }
   
   // إذا كان المسار URL خارجي، نعيده كما هو
@@ -49,12 +49,12 @@ export function getImagePath(src: string): string {
         const fullPath = `./public${normalizedSrc}`;
         
         if (!fs.existsSync(fullPath)) {
-          console.log(`Image not found at path: ${fullPath}, using default image for category: ${category}`);
-          return getDefaultImage(category);
+          console.log(`Image not found at path: ${fullPath}, using fallback for category: ${category}`);
+          return getFallbackImage(category);
         }
       } catch (error) {
         console.error('Error checking image path:', error);
-        return getDefaultImage(category);
+        return getFallbackImage(category);
       }
     }
   }
@@ -68,8 +68,8 @@ export function getImagePath(src: string): string {
  */
 export function getValidImagePath(originalPath: string): string {
   if (!originalPath) {
-    console.log('Empty image path provided to getValidImagePath, using default image');
-    return getDefaultImage();
+    console.log('Empty image path provided to getValidImagePath, using placeholder');
+    return '/images/placeholder-image.jpg';
   }
   
   // إزالة 'public/' من البداية إذا وجدت
@@ -102,18 +102,18 @@ export function getValidImagePath(originalPath: string): string {
         
         if (category) {
           // حاول العثور على صورة بديلة في نفس فئة الصورة الأصلية
-          const fallbackPath = getDefaultImage(category);
-          console.log(`Using category default: ${fallbackPath}`);
+          const fallbackPath = getFallbackImage(category);
+          console.log(`Using category fallback: ${fallbackPath}`);
           return fallbackPath;
         }
         
         // استخدم الصورة الافتراضية العامة
-        console.log('Using general default image');
-        return getDefaultImage();
+        console.log('Using general placeholder image');
+        return '/images/placeholder-image.jpg';
       }
     } catch (error) {
       console.error('Error checking image existence:', error);
-      return getDefaultImage();
+      return '/images/placeholder-image.jpg';
     }
   }
   
@@ -121,34 +121,11 @@ export function getValidImagePath(originalPath: string): string {
 }
 
 /**
- * Function to get default images for each category
- */
-export function getDefaultImage(category?: string): string {
-  if (!category) {
-    return '/images/blog/Blog_uniforms.jpg';
-  }
-  
-  // Map of default images for each category
-  const defaultImages: Record<string, string> = {
-    'aviation': '/images/blog/Blog_uniforms.jpg',
-    'healthcare': '/images/blog/Blog_uniforms.jpg',
-    'hospitality': '/images/blog/Blog_uniforms.jpg',
-    'education': '/images/blog/Blog_uniforms.jpg',
-    'security': '/images/blog/Blog_uniforms.jpg',
-    'industrial': '/images/blog/Blog_uniforms.jpg',
-    'government': '/images/blog/Blog_uniforms.jpg',
-    'blog': '/images/blog/Blog_uniforms.jpg'
-  };
-  
-  return defaultImages[category.toLowerCase()] || '/images/blog/Blog_uniforms.jpg';
-}
-
-/**
  * الحصول على صورة بديلة إذا لم تكن الصورة الأصلية متوفرة
  */
 export function getFallbackImage(category: string): string {
   if (!category) {
-    return getDefaultImage();
+    return '/images/education/School_uniforms.jpg';
   }
   
   // تحويل اسم الفئة إلى حروف صغيرة وإزالة أي مسافات
@@ -156,25 +133,39 @@ export function getFallbackImage(category: string): string {
   
   const fallbacks: Record<string, string[]> = {
     aviation: [
-      '/images/blog/Blog_uniforms.jpg'
+      '/images/aviation/aviation_uniforms.jpg',
+      '/images/aviation/Aviation_uniform_manufacturer.jpg'
     ],
     healthcare: [
-      '/images/blog/Blog_uniforms.jpg'
+      '/images/healthcare/Healthcare_uniforms.jpg',
+      '/images/healthcare/Medical_staff_uniforms.jpg',
+      '/images/healthcare/Doctor_uniforms_attire.jpg',
+      '/images/healthcare/Nurse_uniforms.jpg'
     ],
     hospitality: [
-      '/images/blog/Blog_uniforms.jpg'
+      '/images/hospitality/Hotel_uniforms.jpeg',
+      '/images/hospitality/Hotel_uniforms.jpeg',
+      '/images/hospitality/Hotel_uniforms.jpeg'
     ],
     education: [
-      '/images/blog/Blog_uniforms.jpg'
+      '/images/education/School_uniforms.jpg',
+      '/images/education/School_uniforms_Saudi_Arabia_KSA.jpg',
+      '/images/education/School_staff_uniforms.jpg'
     ],
     security: [
-      '/images/blog/Blog_uniforms.jpg'
+      '/images/security/Security_uniforms.jpeg',
+      '/images/security/Security_guard_uniforms.jpeg',
+      '/images/security/Security_company_uniforms.jpeg'
     ],
     industrial: [
-      '/images/blog/Blog_uniforms.jpg'
+      '/images/industrial/Industrial_uniforms.jpeg',
+      '/images/industrial/industrial_uniform_fittings.jpeg',
+      '/images/industrial/Safety_workwear_PPE_apparel.jpeg'
     ],
     government: [
-      '/images/blog/Blog_uniforms.jpg'
+      '/images/government/Government_uniforms.jpg',
+      '/images/government/Civil_service_uniforms.jpg',
+      '/images/government/Government_employee_uniforms.jpg'
     ]
   };
   
@@ -201,8 +192,8 @@ export function getFallbackImage(category: string): string {
     return fallbacks[normalizedCategory][0];
   }
   
-  console.log(`No fallbacks found for category: ${normalizedCategory}, using general default image`);
-  return getDefaultImage();
+  console.log(`No fallbacks found for category: ${normalizedCategory}, using general placeholder`);
+  return '/images/placeholder-image.jpg';
 }
 
 /**

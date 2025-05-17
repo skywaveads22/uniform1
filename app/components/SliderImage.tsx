@@ -14,19 +14,28 @@ interface SliderImageProps {
 export default function SliderImage({ src, alt, category, priority = false, loading = "lazy" }: SliderImageProps) {
   const [imageSrc, setImageSrc] = useState(src);
 
-  const getDefaultImage = (cat: string): string => {
-    // Use a single default image for all categories to avoid placeholders
-    return '/images/blog/Blog_uniforms.jpg';
+  const getFallbackImage = (cat: string): string => {
+    const fallbacks: Record<string, string> = {
+      aviation: '/images/aviation/aviation_uniforms.jpg',
+      healthcare: '/images/healthcare/Healthcare_uniforms.jpg',
+      hospitality: '/images/hospitality/Hotel_uniforms.jpeg',
+      education: '/images/education/School_uniforms_Saudi_Arabia_KSA.jpg',
+      security: '/images/security/Security_uniforms.jpeg',
+      industrial: '/images/industrial/industrial_uniform_fittings.jpeg',
+      government: '/images/government/Government_uniforms.jpg'
+    };
+    
+    return fallbacks[cat.toLowerCase()] || '/images/education/School_uniforms_Saudi_Arabia_KSA.jpg';
   };
 
   const handleError = () => {
-    const defaultImage = getDefaultImage(category);
-    setImageSrc(defaultImage);
+    const fallbackImage = getFallbackImage(category);
+    setImageSrc(fallbackImage);
   };
 
   return (
     <Image
-      src={imageSrc || getDefaultImage(category)}
+      src={imageSrc || getFallbackImage(category)}
       alt={alt}
       fill
       className="object-cover"

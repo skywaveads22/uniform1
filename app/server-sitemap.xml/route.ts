@@ -2,8 +2,14 @@ import { getServerSideSitemap } from 'next-sitemap'
 import type { ISitemapField } from 'next-sitemap'
 
 // Define dynamic routes types to include in the sitemap
-const serviceCategories: string[] = [
-  // Services to be removed have been excluded
+const serviceCategories = [
+  'aviation',
+  'healthcare',
+  'hospitality',
+  'education',
+  'government',
+  'security',
+  'industrial'
 ]
 
 const blogCategories = [
