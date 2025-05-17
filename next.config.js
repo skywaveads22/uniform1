@@ -1,139 +1,224 @@
 /** @type {import('next').NextConfig} */
-const path = require('path');
-
 const nextConfig = {
+  staticPageGenerationTimeout: 300,
   output: 'export',
-  images: {
-    unoptimized: true,
-    loader: 'custom',
-    loaderFile: './image-loader.js',
-    formats: ["image/webp"],
-    // Disable image optimization completely
-    remotePatterns: [],
-    deviceSizes: [],
-    imageSizes: []
-  },
   basePath: process.env.NETLIFY ? '' : '/uniform1',
   assetPrefix: process.env.NETLIFY ? '' : '/uniform1/',
-  trailingSlash: true,
+  images: {
+    unoptimized: true,
+    remotePatterns: [],
+  },
   reactStrictMode: true,
   swcMinify: true,
+  webpack: (config, { isServer }) => {
+    // Exclude specific files from being processed by webpack
+    config.module.rules.push({
+      test: /\.(txt|xml|md)$/,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/[hash][ext]',
+      },
+    });
+    return config;
+  },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? {
       exclude: ['error', 'warn'],
     } : false,
   },
-  webpack: (config) => {
-    // Prevent webpack from processing any files in the public directory
-    config.plugins.push(
-      new (require('webpack').IgnorePlugin)({
-        resourceRegExp: /^\.\/public\//,
-        contextRegExp: /\/$/,
-      })
-    );
-    
-    // Explicitly exclude specific file types and patterns in public directory
-    const publicDirPath = path.resolve(__dirname, 'public');
-    
-    // Create a more specific rule for handling public directory files
-    config.module.rules.push({
-      test: (filepath) => {
-        // Only apply to files in the public directory
-        if (!filepath.startsWith(publicDirPath)) {
-          return false;
-        }
-        
-        // Skip processing for configuration files, sitemaps, and text files
-        return filepath.includes('_redirects') || 
-               filepath.endsWith('.xml') || 
-               filepath.endsWith('.txt') || 
-               filepath.endsWith('.json');
+  // Disable static 500 error page generation to avoid the rename error
+  experimental: {
+    disableStaticErrorPages: true,
+  },
+  async redirects() {
+    return [
+      {
+        source: '/testimonials',
+        destination: '/',
+        permanent: true,
       },
-      use: {
-        loader: 'null-loader',
+      {
+        source: '/services/education',
+        destination: '/services',
+        permanent: true,
       },
-    });
-    
-    // Handle image files separately
-    config.module.rules.push({
-      test: /\.(jpe?g|png|gif|webp|svg)$/i,
-      include: publicDirPath,
-      type: 'asset/resource',
-      generator: {
-        filename: '[path][name][ext]',
-        publicPath: '/',
+      {
+        source: '/services/hospitality',
+        destination: '/services',
+        permanent: true,
       },
-    });
-    
-    // Explicitly configure CSS loading
-    const cssRule = config.module.rules.find(
-      (rule) => rule.test && rule.test.toString().includes('css')
-    );
-    
-    if (cssRule) {
-      // Make sure the rule applies to CSS modules
-      cssRule.test = /\.css$/;
-      
-      // Make sure postcss-loader is configured
-      if (cssRule.use && cssRule.use.length) {
-        const postcssLoader = cssRule.use.find(
-          (loader) => loader.loader && loader.loader.includes('postcss-loader')
-        );
-        
-        if (!postcssLoader) {
-          cssRule.use.push({
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: ['tailwindcss', 'autoprefixer'],
-              },
-            },
-          });
-        }
+      {
+        source: '/services/security',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/services/aviation',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/services/government',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/services/healthcare',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/services/industrial',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/blog/uniform-management-systems-for-saudi-hospitals-and-clinics',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/protective-integration-architecture-advanced-safety-systems-for-saudi-emergency-medical-personnel-2025',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/chef-whites-and-kitchen-staff-uniforms-for-saudi-arabias-culinary-industry',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/high-visibility-uniforms-for-public-works-employees-in-saudi-cities',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/chromatic-experience-architecture-advanced-color-systems-for-saudi-hospitality-environments-2025',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/lab-coats-material-choices-and-safety-standards-for-saudi-laboratories',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/cultural-identity-integration-architecture-advanced-heritage-systems-for-saudi-hospitality-attire-2025',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/maternity-scrubs-and-uniform-options-for-healthcare-professionals',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/multimodal-utility-integration-systems-advanced-garment-frameworks-for-hospitality-service-optimization-2025',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/laundry-and-maintenance-contracts-for-large-government-departments',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/headwear-etiquette-and-options-within-saudi-government-uniform-policy',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/balancing-tradition-and-modernity-in-official-ksa-attire',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/perception-enhancement-architecture-advanced-design-systems-for-hospitality-brand-projection-2025',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/antimicrobial-fabrics-in-healthcare-uniforms-benefits-and-limitations',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/color-psychology-in-designing-trustworthy-government-uniforms',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/custom-tailoring-vs-standard-sizing-for-government-personnel',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/how-professional-uniforms-influence-patient-trust-and-confidence-in-saudi-healthcare',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/maintaining-professionalism-the-importance-of-well-maintained-government-uniforms',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/uniform-requirements-for-specific-roles-in-government',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/ordering-and-sizing-healthcare-uniforms-for-diverse-staff-bodies',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/case-study-updating-uniforms-for-a-major-saudi-ministry',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/custom-embroidery-for-hospital-logos-and-department-names',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/identity-integration-systems-advanced-customization-frameworks-for-organizational-attire-2025',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/footwear-regulations-for-government-uniforms-in-ksa',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/patient-gowns-in-ksa-balancing-comfort-dignity-and-hygiene',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/aviation-uniform-care-maintenance-guide',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/ranking-insignia-and-badges-on-saudi-government-uniforms',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/uniform-management-solutions-for-hospitals-leasing-vs-buying-in-ksa',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/fluid-resistant-and-barrier-technologies-in-medical-textiles',
+        destination: '/blog',
+        permanent: true,
       }
-    } else {
-      // Add CSS rule if none exists
-      config.module.rules.push({
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: ['tailwindcss', 'autoprefixer'],
-              },
-            },
-          },
-        ],
-      });
-    }
-    
-    // Handle all other files in public
-    config.module.rules.push({
-      test: /\.(.*)$/,
-      include: publicDirPath,
-      exclude: /\.(jpe?g|png|gif|webp|svg|xml|txt|json)$/i,
-      type: 'asset/resource',
-      generator: {
-        filename: '[path][name][ext]',
-        publicPath: '/',
-      },
-    });
-    
-    return config
+    ];
   },
-  // Skip type checking in build
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  // Skip ESLint in build
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  // Skip linting files added to gitignore
-  poweredByHeader: false,
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig; 
