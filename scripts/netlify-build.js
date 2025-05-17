@@ -133,7 +133,7 @@ try {
   console.log('Build completed successfully!');
 } catch (error) {
   console.error('Build failed:', error);
-  process.exit(1);
+    process.exit(1);
 } finally {
   // Restore the original ESLint config if we backed it up
   if (fs.existsSync('.eslintrc.json.bak')) {
