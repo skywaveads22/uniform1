@@ -32,6 +32,7 @@
     "critters": "^0.0.23",
     "date-fns": "^4.1.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-next": "^0.0.0",
     "framer-motion": "^10.16.4",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.503.0",
