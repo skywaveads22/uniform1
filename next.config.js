@@ -26,6 +26,10 @@ const nextConfig = {
       exclude: ['error', 'warn'],
     } : false,
   },
+  // Disable static 500 error page generation to avoid the rename error
+  experimental: {
+    disableStaticErrorPages: true,
+  },
   async redirects() {
     return [
       {

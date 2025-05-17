@@ -1,7 +1,8 @@
 "use client"
 
-import React, { FC, useState } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface BlogPostCardProps {
   title: string
@@ -40,13 +41,11 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
     <Link href={internalLink} className="group">
       <div className="overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-lg">
         <div className="relative h-48 w-full overflow-hidden bg-gray-100">
-          <div 
-            className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" 
-            style={{ 
-              backgroundImage: `url(${currentImagePath})`,
-              backgroundPosition: 'center',
-              backgroundSize: 'cover'
-            }}
+          <Image 
+            src={currentImagePath}
+            alt={title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
             onError={handleImageError}
           />
         </div>
