@@ -11,27 +11,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Education Uniform Solutions | Fakhr Khaleej",
     description: "Complete education uniform solutions for Saudi schools, colleges, and universities. Combining durability, cultural sensitivity, and professional design for educational institutions.",
-    images: ["/images/education/education-hero.jpg"],
+    images: ["/images/education/School_uniforms.jpg"],
   },
 };
 
-const slides = [
-  {
-    image: "/images/education/school-uniforms-saudi.jpg",
-    title: "Educational Excellence Through Identity",
-    description: "Premium uniform solutions for Saudi Arabian educational institutions"
-  },
-  {
-    image: "/images/education/university-staff-uniforms.jpg",
-    title: "Staff & Faculty Attire",
-    description: "Professional uniform programs for educational staff across the Kingdom"
-  },
-  {
-    image: "/images/education/school-PE-uniforms.jpg",
-    title: "Activity-Specific Designs",
-    description: "Specialized uniforms for physical education, laboratories, and events"
-  }
-];
+const slides = [  {    image: "/images/education/School_uniforms_Saudi_Arabia_KSA.jpg",    title: "Educational Excellence Through Identity",    description: "Premium uniform solutions for Saudi Arabian educational institutions"  },  {    image: "/images/education/School_staff_uniforms.jpg",    title: "Staff & Faculty Attire",    description: "Professional uniform programs for educational staff across the Kingdom"  },  {    image: "/images/education/uniforms_sports_kits.jpg",    title: "Activity-Specific Designs",    description: "Specialized uniforms for physical education, laboratories, and events"  }];
 
 export default function EducationServicePage() {
   return (
@@ -57,12 +41,7 @@ export default function EducationServicePage() {
                 </p>
               </div>
               <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md lg:aspect-square">
-                <Image
-                  src="/images/education/school-uniforms-saudi.jpg"
-                  alt="School uniforms for Saudi educational institutions"
-                  fill
-                  className="object-cover"
-                />
+                                <Image                  src="/images/education/School_uniforms_Saudi_Arabia_KSA.jpg"                  alt="School uniforms for Saudi educational institutions"                  fill                  className="object-cover"                />
               </div>
             </div>
           </div>
@@ -112,33 +91,27 @@ export default function EducationServicePage() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 {
-                  title: "Elementary School",
-                  image: "/images/education/elementary-school-uniforms.jpg",
+                                    title: "Elementary School",                  image: "/images/education/primary_school_uniforms.jpg",
                   description: "Practical, comfortable uniforms designed for younger students with easy-care fabrics."
                 },
                 {
-                  title: "Middle & High School",
-                  image: "/images/education/high-school-uniforms.jpg",
+                                    title: "Middle & High School",                  image: "/images/education/school_blazers.jpg",
                   description: "Age-appropriate designs that encourage professionalism and school pride."
                 },
                 {
-                  title: "University & College",
-                  image: "/images/education/college-uniforms.jpg",
+                                    title: "University & College",                  image: "/images/education/International_school_uniforms_KSA.jpg",
                   description: "Distinguished attire options for higher education environments and special events."
                 },
                 {
-                  title: "Physical Education",
-                  image: "/images/education/school-PE-uniforms.jpg",
+                                    title: "Physical Education",                  image: "/images/education/uniforms_sports_kits.jpg",
                   description: "Performance fabrics for sports and physical activities with school branding."
                 },
                 {
-                  title: "Staff & Faculty",
-                  image: "/images/education/university-staff-uniforms.jpg",
+                                    title: "Staff & Faculty",                  image: "/images/education/School_staff_uniforms.jpg",
                   description: "Professional attire for teachers, administrators, and support staff."
                 },
                 {
-                  title: "Special Events",
-                  image: "/images/education/graduation-attire.jpg",
+                                    title: "Special Events",                  image: "/images/education/graduation_gowns_school.jpg",
                   description: "Ceremonial and event-specific attire for graduations and formal occasions."
                 }
               ].map((category, index) => (
@@ -165,12 +138,7 @@ export default function EducationServicePage() {
             <h2 className="mb-8 text-center text-3xl font-bold">Educational Standards & Compliance</h2>
             <div className="grid gap-6 md:grid-cols-2">
               <div className="relative aspect-square w-full overflow-hidden rounded-lg">
-                <Image
-                  src="/images/education/education-standards.jpg"
-                  alt="Education uniform compliance and standards"
-                  fill
-                  className="object-cover"
-                />
+                                <Image                  src="/images/education/School_uniform_fabrics.jpg"                  alt="Education uniform compliance and standards"                  fill                  className="object-cover"                />
               </div>
               <div className="flex flex-col justify-center">
                 <h3 className="mb-4 text-xl font-bold">Meeting Saudi Educational Guidelines</h3>
@@ -245,12 +213,7 @@ export default function EducationServicePage() {
           <div className="mb-16 rounded-lg overflow-hidden border shadow-md">
             <div className="grid md:grid-cols-2">
               <div className="relative min-h-[300px]">
-                <Image
-                  src="/images/education/school-case-study.jpg"
-                  alt="Education uniform case study"
-                  fill
-                  className="object-cover"
-                />
+                                <Image                  src="/images/education/School_uniform_manufacturer.jpg"                  alt="Education uniform case study"                  fill                  className="object-cover"                />
               </div>
               <div className="bg-background p-6 md:p-8">
                 <div className="mb-2 inline-block rounded bg-primary/10 px-2 py-1 text-sm font-medium text-primary">

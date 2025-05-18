@@ -11,27 +11,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hospitality Uniform Solutions | Fakhr Khaleej",
     description: "Elevate your hospitality brand with premium uniform solutions for Saudi Arabian hotels, restaurants, and resorts. Combining cultural elegance with practicality for all hospitality staff roles.",
-    images: ["/images/hospitality/hospitality-hero.jpg"],
+    images: ["/images/hospitality/Hospitality_uniforms.jpeg"],
   },
 };
 
-const slides = [
-  {
-    image: "/images/hospitality/hotel-staff-uniforms.jpg",
-    title: "Hospitality Excellence Through Presentation",
-    description: "Premium uniform solutions for Saudi Arabian hospitality establishments"
-  },
-  {
-    image: "/images/hospitality/restaurant-staff-uniforms.jpg",
-    title: "F&B Staff Attire",
-    description: "Specialized uniforms for food and beverage service professionals"
-  },
-  {
-    image: "/images/hospitality/resort-staff-uniforms.jpg",
-    title: "Resort & Leisure Designs",
-    description: "Distinctive attire for luxury resorts and entertainment venues"
-  }
-];
+const slides = [  {    image: "/images/hospitality/Hotel_uniforms.jpeg",    title: "Hospitality Excellence Through Presentation",    description: "Premium uniform solutions for Saudi Arabian hospitality establishments"  },  {    image: "/images/hospitality/Restaurant_and_cafe_uniforms.jpeg",    title: "F&B Staff Attire",    description: "Specialized uniforms for food and beverage service professionals"  },  {    image: "/images/hospitality/Hospitality_uniforms_Saudi_Arabia_KSA.jpeg",    title: "Resort & Leisure Designs",    description: "Distinctive attire for luxury resorts and entertainment venues"  }];
 
 export default function HospitalityServicePage() {
   return (
@@ -57,12 +41,7 @@ export default function HospitalityServicePage() {
                 </p>
               </div>
               <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md lg:aspect-square">
-                <Image
-                  src="/images/hospitality/hotel-staff-uniforms.jpg"
-                  alt="Premium hotel uniforms for Saudi hospitality staff"
-                  fill
-                  className="object-cover"
-                />
+                                <Image                  src="/images/hospitality/Hotel_uniforms.jpeg"                  alt="Premium hotel uniforms for Saudi hospitality staff"                  fill                  className="object-cover"                />
               </div>
             </div>
           </div>
@@ -112,33 +91,27 @@ export default function HospitalityServicePage() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 {
-                  title: "Front Desk & Reception",
-                  image: "/images/hospitality/front-desk-uniforms.jpg",
+                                    title: "Front Desk & Reception",                  image: "/images/hospitality/Hotel_reception_uniforms_Front_desk_uniforms.jpeg",
                   description: "Distinguished attire for your establishment's first visual ambassadors."
                 },
                 {
-                  title: "Food & Beverage Service",
-                  image: "/images/hospitality/restaurant-staff-uniforms.jpg",
+                                    title: "Food & Beverage Service",                  image: "/images/hospitality/Restaurant_and_cafe_uniforms.jpeg",
                   description: "Practical, elegant uniforms for restaurant, café, and banquet service staff."
                 },
                 {
-                  title: "Housekeeping & Facilities",
-                  image: "/images/hospitality/housekeeping-uniforms.jpg",
+                                    title: "Housekeeping & Facilities",                  image: "/images/hospitality/Housekeeping_uniforms.jpeg",
                   description: "Comfortable, durable attire that facilitates mobility and cleanliness."
                 },
                 {
-                  title: "Concierge & Guest Services",
-                  image: "/images/hospitality/concierge-uniforms.jpg",
+                                    title: "Concierge & Guest Services",                  image: "/images/hospitality/concierge_suits.jpeg",
                   description: "Refined, approachable uniforms that convey professionalism and assistance."
                 },
                 {
-                  title: "Spa & Recreation",
-                  image: "/images/hospitality/spa-staff-uniforms.jpg",
+                                    title: "Spa & Recreation",                  image: "/images/hospitality/spa_therapist_uniforms.jpeg",
                   description: "Relaxed yet professional attire for wellness and leisure facility staff."
                 },
                 {
-                  title: "Management & Administration",
-                  image: "/images/hospitality/hotel-management-uniforms.jpg",
+                                    title: "Management & Administration",                  image: "/images/hospitality/hotel_management_uniforms.jpeg",
                   description: "Executive appearance that distinguishes leadership while maintaining brand cohesion."
                 }
               ].map((category, index) => (
@@ -165,12 +138,7 @@ export default function HospitalityServicePage() {
             <h2 className="mb-8 text-center text-3xl font-bold">Saudi Cultural Integration</h2>
             <div className="grid gap-6 md:grid-cols-2">
               <div className="relative aspect-square w-full overflow-hidden rounded-lg">
-                <Image
-                  src="/images/hospitality/cultural-hospitality-uniforms.jpg"
-                  alt="Saudi cultural elements integrated into hospitality uniforms"
-                  fill
-                  className="object-cover"
-                />
+                                <Image                  src="/images/hospitality/modern_hospitality_design_uniforms.jpeg"                  alt="Saudi cultural elements integrated into hospitality uniforms"                  fill                  className="object-cover"                />
               </div>
               <div className="flex flex-col justify-center">
                 <h3 className="mb-4 text-xl font-bold">Honoring Saudi Heritage in Hospitality Attire</h3>
@@ -245,8 +213,7 @@ export default function HospitalityServicePage() {
           <div className="mb-16 rounded-lg overflow-hidden border shadow-md">
             <div className="grid md:grid-cols-2">
               <div className="relative min-h-[300px]">
-                <Image
-                  src="/images/hospitality/hotel-case-study.jpg"
+                                <Image                  src="/images/hospitality/Luxury_hotel_staff_uniforms_Saudi_Arabia_KSA.jpeg"
                   alt="Hospitality uniform case study"
                   fill
                   className="object-cover"

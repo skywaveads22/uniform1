@@ -11,27 +11,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Aviation Uniform Solutions | Fakhr Khaleej",
     description: "Professional aviation uniform solutions for Saudi Arabian airlines and airport staff. Combining prestige, functionality, and comfort for flight crews, ground staff, and airport personnel.",
-    images: ["/images/aviation/aviation-hero.jpg"],
+    images: ["/images/aviation/Aviation_uniforms_Saudi_Arabia_KSA.jpg"],
   },
 };
 
-const slides = [
-  {
-    image: "/images/aviation/cabin-crew-uniforms.jpg",
-    title: "Aviation Excellence Through Presentation",
-    description: "Distinguished uniform solutions for Saudi Arabian airlines and aviation services"
-  },
-  {
-    image: "/images/aviation/pilot-uniforms.jpg",
-    title: "Flight Deck Prestige",
-    description: "Authoritative and professional attire for cockpit personnel"
-  },
-  {
-    image: "/images/aviation/ground-crew-uniforms.jpg",
-    title: "Ground Operations Functionality",
-    description: "Practical uniforms engineered for airport operations and ground handling"
-  }
-];
+const slides = [  {    image: "/images/aviation/Cabin_crew_uniforms.jpg",    title: "Aviation Excellence Through Presentation",    description: "Distinguished uniform solutions for Saudi Arabian airlines and aviation services"  },  {    image: "/images/aviation/Pilot_uniforms.jpg",    title: "Flight Deck Prestige",    description: "Authoritative and professional attire for cockpit personnel"  },  {    image: "/images/aviation/Ground_staff_uniforms_aviation.jpg",    title: "Ground Operations Functionality",    description: "Practical uniforms engineered for airport operations and ground handling"  }];
 
 export default function AviationServicePage() {
   return (
@@ -57,12 +41,7 @@ export default function AviationServicePage() {
                 </p>
               </div>
               <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-md lg:aspect-square">
-                <Image
-                  src="/images/aviation/cabin-crew-uniforms.jpg"
-                  alt="Professional airline uniforms for Saudi Arabian aviation personnel"
-                  fill
-                  className="object-cover"
-                />
+                                <Image                  src="/images/aviation/Cabin_crew_uniforms.jpg"                  alt="Professional airline uniforms for Saudi Arabian aviation personnel"                  fill                  className="object-cover"                />
               </div>
             </div>
           </div>
@@ -112,33 +91,27 @@ export default function AviationServicePage() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 {
-                  title: "Cabin Crew",
-                  image: "/images/aviation/cabin-crew-uniforms.jpg",
+                                    title: "Cabin Crew",                  image: "/images/aviation/Cabin_crew_uniforms.jpg",
                   description: "Elegant, functional uniforms for flight attendants that represent your airline with distinction."
                 },
                 {
-                  title: "Pilots & Flight Crew",
-                  image: "/images/aviation/pilot-uniforms.jpg",
+                                    title: "Pilots & Flight Crew",                  image: "/images/aviation/Pilot_uniforms.jpg",
                   description: "Authoritative, professional attire that conveys expertise and commands respect."
                 },
                 {
-                  title: "Ground Operations",
-                  image: "/images/aviation/ground-crew-uniforms.jpg",
+                                    title: "Ground Operations",                  image: "/images/aviation/Ground_staff_uniforms_aviation.jpg",
                   description: "Practical uniforms for ramp agents, baggage handlers, and tarmac personnel."
                 },
                 {
-                  title: "Customer Service",
-                  image: "/images/aviation/airline-customer-service-uniforms.jpg",
+                                    title: "Customer Service",                  image: "/images/aviation/Aviation_uniform_manufacturer.jpg",
                   description: "Approachable yet professional attire for check-in, gate, and passenger service staff."
                 },
                 {
-                  title: "Technical & Maintenance",
-                  image: "/images/aviation/aircraft-maintenance-uniforms.jpg",
+                                    title: "Technical & Maintenance",                  image: "/images/aviation/Aircraft_maintenance_technician_uniforms.jpg",
                   description: "Functional, safety-compliant uniforms for aircraft maintenance technicians."
                 },
                 {
-                  title: "Aviation Management",
-                  image: "/images/aviation/airline-management-uniforms.jpg",
+                                    title: "Aviation Management",                  image: "/images/aviation/Captain_pilot_uniform.jpg",
                   description: "Distinguished uniforms that identify leadership while maintaining brand cohesion."
                 }
               ].map((category, index) => (
@@ -165,12 +138,7 @@ export default function AviationServicePage() {
             <h2 className="mb-8 text-center text-3xl font-bold">Aviation Regulatory Compliance</h2>
             <div className="grid gap-6 md:grid-cols-2">
               <div className="relative aspect-square w-full overflow-hidden rounded-lg">
-                <Image
-                  src="/images/aviation/aviation-compliance.jpg"
-                  alt="Aviation uniform regulatory compliance"
-                  fill
-                  className="object-cover"
-                />
+                                <Image                  src="/images/aviation/Aviation_uniform_fabrics.jpg"                  alt="Aviation uniform regulatory compliance"                  fill                  className="object-cover"                />
               </div>
               <div className="flex flex-col justify-center">
                 <h3 className="mb-4 text-xl font-bold">Meeting Saudi & International Aviation Standards</h3>
@@ -245,12 +213,7 @@ export default function AviationServicePage() {
           <div className="mb-16 rounded-lg overflow-hidden border shadow-md">
             <div className="grid md:grid-cols-2">
               <div className="relative min-h-[300px]">
-                <Image
-                  src="/images/aviation/aviation-case-study.jpg"
-                  alt="Aviation uniform case study"
-                  fill
-                  className="object-cover"
-                />
+                                <Image                  src="/images/aviation/aviation_blazers.jpg"                  alt="Aviation uniform case study"                  fill                  className="object-cover"                />
               </div>
               <div className="bg-background p-6 md:p-8">
                 <div className="mb-2 inline-block rounded bg-primary/10 px-2 py-1 text-sm font-medium text-primary">
