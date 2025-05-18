@@ -12,6 +12,7 @@ interface ArticleImageProps {
   className?: string;
   priority?: boolean;
   fill?: boolean;
+  loading?: "lazy" | "eager";
 }
 
 /**
@@ -24,7 +25,8 @@ export default function ArticleImage({
   height = 960,
   className = "",
   priority = false,
-  fill = false
+  fill = false,
+  loading = "lazy"
 }: ArticleImageProps) {
   const [imageSrc, setImageSrc] = useState(src);
   const [error, setError] = useState(false);
@@ -73,6 +75,7 @@ export default function ArticleImage({
     src: imageSrc,
     alt,
     priority,
+    loading: priority ? undefined : loading,
     onError: handleImageError,
     className: `${className} ${fill ? 'object-cover' : ''}`
   };

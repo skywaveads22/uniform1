@@ -12,6 +12,7 @@ interface SafeImageProps {
   priority?: boolean;
   fill?: boolean;
   fallbackSrc?: string;
+  loading?: "lazy" | "eager";
 }
 
 export default function SafeImage({
@@ -22,7 +23,8 @@ export default function SafeImage({
   className = "",
   priority = false,
   fill = false,
-  fallbackSrc = "/images/placeholder-image.jpg"
+  fallbackSrc = "/images/placeholder-image.jpg",
+  loading = "lazy"
 }: SafeImageProps) {
   const [imgSrc, setImgSrc] = useState<string>(src);
   const [isLoading, setIsLoading] = useState(true);
@@ -50,6 +52,7 @@ export default function SafeImage({
     alt,
     className: `${className} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`,
     priority,
+    loading: priority ? undefined : loading,
     onError: handleError,
     onLoad: handleLoad,
   };
