@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import { Clock, Calendar, Tag, Share2 } from 'lucide-react'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -26,11 +26,11 @@ export default function BlogPost() {
             <Link href="/" className="hover:text-primary">
               Home
             </Link>
-            <span>&gt;</span>
+            <span>{`>`}</span>
             <Link href="/blog" className="hover:text-primary">
               Blog
             </Link>
-            <span>&gt;</span>
+            <span>{`>`}</span>
             <span className="text-gray-700 dark:text-white">Protective Integration Architecture: Advanced Safety Systems for Saudi Emergency Medical Personnel 2025</span>
           </nav>
 
@@ -72,7 +72,7 @@ export default function BlogPost() {
           <div className="lg:col-span-8">
             <div className="prose dark:prose-invert max-w-none">
               <p className="lead">
-                As Saudi Arabia's emergency medical services evolve toward Vision 2030 excellence benchmarks, organizations are implementing sophisticated protective attire systems that transcend conventional uniform paradigms. Contemporary emergency operations now deploy comprehensive safety frameworks engineered to mitigate environmental hazards, enhance operational efficiency, and systematically improve responder protection through advanced integration architecture.
+                As Saudi Arabia&apos;s emergency medical services evolve toward Vision 2030 excellence benchmarks, organizations are implementing sophisticated protective attire systems that transcend conventional uniform paradigms. Contemporary emergency operations now deploy comprehensive safety frameworks engineered to mitigate environmental hazards, enhance operational efficiency, and systematically improve responder protection through advanced integration architecture.
               </p>
 
               <h2>Hazard Mitigation Engineering Systems</h2>
@@ -154,7 +154,7 @@ export default function BlogPost() {
               <div className="bg-gray-100 p-6 rounded-lg my-8 dark:bg-gray-800">
                 <h4 className="text-lg font-semibold mb-2">Case Study: Protective Integration Architecture Implementation at Saudi Red Crescent Authority</h4>
                 <p className="text-sm mb-0">
-                  In Q3 2024, the Saudi Red Crescent Authority implemented a comprehensive protective attire architecture across its 2,500+ paramedic workforce. The system featured advanced hazard mitigation technology, visibility optimization frameworks, and performance enhancement systems specifically engineered for Saudi Arabia's diverse emergency response environments.
+                  In Q3 2024, the Saudi Red Crescent Authority implemented a comprehensive protective attire architecture across its 2,500+ paramedic workforce. The system featured advanced hazard mitigation technology, visibility optimization frameworks, and performance enhancement systems specifically engineered for Saudi Arabia&apos;s diverse emergency response environments.
                 </p>
                 <p className="text-sm mt-2 mb-0">
                   Implementation data revealed 41% enhancement in responder safety metrics, 36% reduction in environmental injury incidents, and 28% improvement in public recognition indicators. Management identified significant operational benefits with response efficiency increasing 18% while simultaneously reducing uniform replacement costs by 32%, establishing new standards in Saudi emergency medical service operations.
@@ -291,7 +291,7 @@ export default function BlogPost() {
 
               <h2>Conclusion: Protective Attire as Critical Safety Infrastructure</h2>
               <p>
-                For Saudi emergency medical services pursuing excellence aligned with Vision 2030 objectives, sophisticated protective attire systems represent essential operational infrastructure extending far beyond conventional uniform paradigms. By implementing comprehensive approaches integrating advanced hazard mitigation technology, visibility optimization frameworks, and performance enhancement systems, emergency services can achieve meaningful improvements in responder safety, operational capability, and public service delivery while simultaneously advancing Saudi Arabia's position at the forefront of global emergency medical systems.
+                For Saudi emergency medical services pursuing excellence aligned with Vision 2030 objectives, sophisticated protective attire systems represent essential operational infrastructure extending far beyond conventional uniform paradigms. By implementing comprehensive approaches integrating advanced hazard mitigation technology, visibility optimization frameworks, and performance enhancement systems, emergency services can achieve meaningful improvements in responder safety, operational capability, and public service delivery while simultaneously advancing Saudi Arabia&apos;s position at the forefront of global emergency medical systems.
               </p>
 
               <div className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-800">
@@ -307,7 +307,7 @@ export default function BlogPost() {
                   <div>
                     <h4 className="text-xl font-medium">Dr. Khalid Al-Otaibi</h4>
                     <p className="text-gray-600 dark:text-gray-400">
-                      Director of Emergency Service Protection Systems at the Saudi Safety Engineering Institute with 16+ years of experience developing advanced protective frameworks across the Kingdom's emergency medical services. Specializes in hazard mitigation architecture and responder safety optimization with a focus on Vision 2030 healthcare safety initiatives.
+                      Director of Emergency Service Protection Systems at the Saudi Safety Engineering Institute with 16+ years of experience developing advanced protective frameworks across the Kingdom&apos;s emergency medical services. Specializes in hazard mitigation architecture and responder safety optimization with a focus on Vision 2030 healthcare safety initiatives.
                     </p>
                   </div>
                 </div>
