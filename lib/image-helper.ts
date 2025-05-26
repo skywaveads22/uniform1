@@ -4,8 +4,8 @@
 export function getImagePath(src: string): string {
   // التحقق من صحة المدخلات
   if (!src || src === '/') {
-    console.log('Empty image path, using placeholder');
-    return '/images/placeholder-image.jpg';
+    console.log('Empty image path, using education uniform image');
+    return '/images/education/School_uniforms.jpg';
   }
   
   // إذا كان المسار URL خارجي، نعيده كما هو
@@ -68,8 +68,8 @@ export function getImagePath(src: string): string {
  */
 export function getValidImagePath(originalPath: string): string {
   if (!originalPath) {
-    console.log('Empty image path provided to getValidImagePath, using placeholder');
-    return '/images/placeholder-image.jpg';
+    console.log('Empty image path provided to getValidImagePath, using education uniform image');
+    return '/images/education/School_uniforms.jpg';
   }
   
   // إزالة 'public/' من البداية إذا وجدت
@@ -108,12 +108,12 @@ export function getValidImagePath(originalPath: string): string {
         }
         
         // استخدم الصورة الافتراضية العامة
-        console.log('Using general placeholder image');
-        return '/images/placeholder-image.jpg';
+        console.log('Using default article image');
+        return '/images/default-article-image.jpg';
       }
     } catch (error) {
       console.error('Error checking image existence:', error);
-      return '/images/placeholder-image.jpg';
+      return '/images/default-article-image.jpg';
     }
   }
   
@@ -125,7 +125,7 @@ export function getValidImagePath(originalPath: string): string {
  */
 export function getFallbackImage(category: string): string {
   if (!category) {
-    return '/images/education/School_uniforms.jpg';
+    return '/images/default-article-image.jpg';
   }
   
   // تحويل اسم الفئة إلى حروف صغيرة وإزالة أي مسافات
@@ -192,8 +192,8 @@ export function getFallbackImage(category: string): string {
     return fallbacks[normalizedCategory][0];
   }
   
-  console.log(`No fallbacks found for category: ${normalizedCategory}, using general placeholder`);
-  return '/images/placeholder-image.jpg';
+  console.log(`No fallbacks found for category: ${normalizedCategory}, using default article image`);
+  return '/images/default-article-image.jpg';
 }
 
 /**

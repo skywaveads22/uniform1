@@ -18,9 +18,9 @@ import SliderImage from './components/SliderImage';
 // Preload all slider images to improve LCP
 const PRELOADED_IMAGES = [
   "/images/aviation/aviation_uniforms.jpg",
-  "/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg", 
+  "/images/healthcare/Healthcare_uniforms.jpg",
   "/images/hospitality/Hotel_uniforms.jpeg",
-  "/images/education/School_uniforms.jpg",
+  "/images/education/Education_uniforms.jpg",
   "/images/security/Security_uniforms.jpeg"
 ];
 
@@ -51,7 +51,7 @@ const sliderData = [
     category: "hospitality"
   },
   {
-    image: "/images/education/School_uniforms.jpg",
+    image: "/images/education/Education_uniforms.jpg",
     title: "Educational Identity",
     subtitle: "Distinguished School Uniforms",
     description: "Quality attire that builds institutional pride and unity across educational institutions",

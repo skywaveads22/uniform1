@@ -378,13 +378,13 @@ export default function BlogPost() {
                     <div className="text-sm font-medium group-hover:text-primary">Temperature-Regulating Fabrics for Enhanced Comfort During Shifts</div>
                     <div className="text-xs text-gray-500">Advanced textile technologies for healthcare environments</div>
                   </Link>
-                  <Link href="/blog/antimicrobial-fabrics-in-healthcare-uniforms-benefits-and-limitations" className="group block">
-                    <div className="text-sm font-medium group-hover:text-primary">Antimicrobial Fabrics in Healthcare Uniforms: Benefits and Limitations</div>
-                    <div className="text-xs text-gray-500">Understanding built-in protection technologies</div>
+                  <Link href="/blog/the-psychology-of-color-in-healthcare-environments-and-uniforms" className="group block">
+                    <div className="text-sm font-medium group-hover:text-primary">The Psychology of Color in Healthcare Environments and Uniforms</div>
+                    <div className="text-xs text-gray-500">Understanding color impact in medical settings</div>
                   </Link>
-                  <Link href="/blog/uniform-management-systems-for-saudi-hospitals-and-clinics" className="group block">
-                    <div className="text-sm font-medium group-hover:text-primary">Uniform Management Systems for Saudi Hospitals and Clinics</div>
-                    <div className="text-xs text-gray-500">Operational approaches to healthcare textile management</div>
+                  <Link href="/blog/medical-uniform-design-combining-functionality-and-comfort-for-healthcare-professionals" className="group block">
+                    <div className="text-sm font-medium group-hover:text-primary">Medical Uniform Design: Combining Functionality and Comfort for Healthcare Professionals</div>
+                    <div className="text-xs text-gray-500">Design principles for healthcare attire</div>
                   </Link>
                 </div>
               </div>

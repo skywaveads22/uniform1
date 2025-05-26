@@ -49,7 +49,7 @@ const CATEGORY_METADATA = {
     title: 'All Healthcare Articles & Resources | Healthcare Uniform Knowledge Hub',
     description: 'Complete collection of expert articles about healthcare uniforms, gear integration, regulations, and professional healthcare attire in Saudi Arabia.',
     keywords: 'healthcare articles, healthcare uniform resources, Saudi Arabia healthcare guides, healthcare gear information, healthcare uniform regulations, professional healthcare attire',
-    image: '/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg',
+    image: '/images/healthcare/Healthcare_uniforms.jpg',
   },
   'hospitality': {
     title: 'All Hospitality Articles & Resources | Hospitality Uniform Knowledge Hub',

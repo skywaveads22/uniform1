@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Education Uniform Solutions | Fakhr Khaleej",
     description: "Complete education uniform solutions for Saudi schools, colleges, and universities. Combining durability, cultural sensitivity, and professional design for educational institutions.",
-    images: ["/images/education/School_uniforms.jpg"],
+    images: ["/images/education/Education_uniforms.jpg"],
   },
 };
 

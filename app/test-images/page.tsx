@@ -19,11 +19,11 @@ export default function TestImagesPage() {
     // مجموعة من مسارات الصور المراد اختبارها
     const imagesToTest: ImageTest[] = [
       // صور التعليم
-      { path: '/images/education/School_uniforms.jpg', category: 'education', name: 'School Uniforms' },
+      { path: '/images/education/Education_uniforms.jpg', category: 'education', name: 'School Uniforms' },
       { path: '/images/education/School_uniforms_Saudi_Arabia_KSA.jpg', category: 'education', name: 'KSA School Uniforms' },
       
       // صور الرعاية الصحية
-      { path: '/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg', category: 'healthcare', name: 'Medical Uniforms' },
+      { path: '/images/healthcare/Healthcare_uniforms.jpg', category: 'healthcare', name: 'Medical Uniforms' },
       { path: '/images/healthcare/Medical_staff_uniforms.jpg', category: 'healthcare', name: 'Medical Staff' },
       
       // صور الضيافة

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const category = getCategory(slug);
   
   // Determine an appropriate image based on category
-  const defaultCategoryImage = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms.jpg`;
+  const defaultCategoryImage = category === 'education' ? '/images/default-article-image.jpg' : `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms.jpg`;
   
   // Use validated path to ensure the image exists
   image = getValidImagePath(defaultCategoryImage);
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     case 'head-coverings-and-modesty-considerations-in-saudi-healthcare-uniforms':
       title = 'Head Coverings and Modesty Considerations in Saudi Healthcare Uniforms';
       description = 'An in-depth look at how Saudi healthcare uniforms incorporate modesty requirements while maintaining professionalism and practicality.';
-      image = '/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg';
+      image = '/images/healthcare/Healthcare_uniforms.jpg';
       break;
     case 'choosing-the-right-scrubs-for-saudi-hospitals-comfort-hygiene-and-professionalism':
       title = 'Choosing the Right Scrubs for Saudi Hospitals: Comfort, Hygiene, and Professionalism';
@@ -440,7 +440,7 @@ export default function BlogPost({ params }: { params: { slug: string } }): JSX.
     const category = getCategory(slug);
     
     // Default image based on category
-    const defaultCategoryImage = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms.jpg`;
+    let defaultImage = '/images/default-article-image.jpg';
     
     // Specific images for common articles
     switch(slug) {
@@ -453,20 +453,25 @@ export default function BlogPost({ params }: { params: { slug: string } }): JSX.
       case 'kindergarten-uniforms-prioritizing-comfort-safety-and-playfulness':
         return '/images/education/primary_school_uniforms.jpg';
       default:
-        // Check file extension for the default category image
-        const jpgPath = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms.jpg`;
-        const jpegPath = `/images/${category}/${category.charAt(0).toUpperCase() + category.slice(1)}_uniforms.jpeg`;
-        
-        // Default to one of these paths or the default image
-        if (category === 'security' || category === 'hospitality') {
-          return jpegPath;
-        } else if (category === 'healthcare' || category === 'education' || 
-                  category === 'government' || category === 'aviation' || 
-                  category === 'industrial') {
-          return jpgPath;
+        // Set category-specific default images
+        switch(category) {
+          case 'security':
+            return '/images/security/Security_uniforms.jpeg';
+          case 'healthcare':
+            return '/images/healthcare/healthcare_header_nurse.jpg';
+          case 'education':
+            return '/images/default-article-image.jpg';
+          case 'hospitality':
+            return '/images/hospitality/Hotel_uniforms.jpeg';
+          case 'aviation':
+            return '/images/aviation/Aviation_uniforms.jpg';
+          case 'industrial':
+            return '/images/industrial/Industrial_uniforms.jpeg';
+          case 'government':
+            return '/images/government/Government_uniforms.jpg';
+          default:
+            return defaultImage;
         }
-        
-        return '/images/default-article-image.jpg';
     }
   };
 

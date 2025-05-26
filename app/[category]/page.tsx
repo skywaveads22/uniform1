@@ -50,7 +50,7 @@ const CATEGORY_METADATA = {
     title: 'Healthcare Uniforms and Articles | Professional Healthcare Attire in Saudi Arabia',
     description: 'Explore professional healthcare uniforms and expert articles about healthcare attire designed for Saudi Arabian medical facilities. High-quality, authoritative healthcare uniforms for all sectors.',
     keywords: 'healthcare uniforms, medical staff attire, Saudi Arabia healthcare uniforms, professional healthcare clothing, hospital staff uniforms, nurse uniforms',
-    image: '/images/healthcare/Medical_uniforms_Saudi_Arabia_KSA.jpg',
+    image: '/images/healthcare/Healthcare_uniforms.jpg',
   },
   'hospitality': {
     title: 'Hospitality Uniforms and Articles | Professional Hospitality Attire in Saudi Arabia',
@@ -417,7 +417,7 @@ function getUniformCategories(category: string) {
           description: `Professional education teacher uniforms for Saudi Arabian schools and educational institutions.`
         },
         {
-          image: `/images/education/School_uniforms.jpg`,
+          image: `/images/education/Education_uniforms.jpg`,
           title: "School Uniforms",
           description: `High-quality school uniforms designed for comfort in Saudi Arabian educational settings.`
         },
