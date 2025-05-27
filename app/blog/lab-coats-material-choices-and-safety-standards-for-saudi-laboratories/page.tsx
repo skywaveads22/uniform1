@@ -26,11 +26,11 @@ export default function BlogPost() {
             <Link href="/" className="hover:text-primary">
               Home
             </Link>
-            <span>{`>`}</span>
+            <span>&gt;</span>
             <Link href="/blog" className="hover:text-primary">
               Blog
             </Link>
-            <span>{`>`}</span>
+            <span>&gt;</span>
             <span className="text-gray-700 dark:text-white">Lab Coats and Safety Standards</span>
           </nav>
 

@@ -4,15 +4,6 @@ import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight, ArrowRight, Star, Award, Users, Shield } from 'lucide-react'
-import { PartnerLogo } from './components/PartnerLogo'
-import { motion, AnimatePresence } from 'framer-motion'
-import { getImagePath, logImageError, getFallbackImage } from '@/lib/image-helper'
-import { Button } from "@/components/ui/button";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { MdOutlineEmail } from "react-icons/md";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { FaShareAlt } from "react-icons/fa";
-import { Metadata } from "next";
 import SliderImage from './components/SliderImage';
 
 // Preload all slider images to improve LCP
@@ -87,7 +78,7 @@ export default function Home() {
         const img = new window.Image();
         img.src = src;
         img.onload = () => {
-          console.log(`Image loaded successfully: ${src}`);
+          // Image loaded successfully
         };
         img.onerror = () => {
           console.error(`Failed to load image: ${src}`);

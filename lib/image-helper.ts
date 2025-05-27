@@ -4,7 +4,6 @@
 export function getImagePath(src: string): string {
   // التحقق من صحة المدخلات
   if (!src || src === '/') {
-    console.log('Empty image path, using education uniform image');
     return '/images/education/School_uniforms.jpg';
   }
   
@@ -17,13 +16,11 @@ export function getImagePath(src: string): string {
   let normalizedSrc = src;
   if (normalizedSrc.startsWith('public/')) {
     normalizedSrc = normalizedSrc.substring(7);
-    console.log(`Removed 'public/' prefix from path: ${src} -> ${normalizedSrc}`);
   }
 
   // التأكد من أن المسار يبدأ بشرطة مائلة
   if (!normalizedSrc.startsWith('/')) {
     normalizedSrc = `/${normalizedSrc}`;
-    console.log(`Added leading slash to path: ${normalizedSrc}`);
   }
   
   // استخراج الفئة من المسار
@@ -37,7 +34,6 @@ export function getImagePath(src: string): string {
       // استبدال الامتداد من JPG إلى JPEG لفئة الأمن إذا كان الاسم مطابقاً للنمط المحدد
       if (normalizedSrc.includes('_Saudi_Arabia_KSA')) {
         const jpegPath = normalizedSrc.replace('.jpg', '.jpeg');
-        console.log(`Converted jpg to jpeg for security category: ${normalizedSrc} -> ${jpegPath}`);
         normalizedSrc = jpegPath;
       }
     }
@@ -49,11 +45,9 @@ export function getImagePath(src: string): string {
         const fullPath = `./public${normalizedSrc}`;
         
         if (!fs.existsSync(fullPath)) {
-          console.log(`Image not found at path: ${fullPath}, using fallback for category: ${category}`);
           return getFallbackImage(category);
         }
       } catch (error) {
-        console.error('Error checking image path:', error);
         return getFallbackImage(category);
       }
     }
@@ -68,7 +62,6 @@ export function getImagePath(src: string): string {
  */
 export function getValidImagePath(originalPath: string): string {
   if (!originalPath) {
-    console.log('Empty image path provided to getValidImagePath, using education uniform image');
     return '/images/education/School_uniforms.jpg';
   }
   
@@ -76,13 +69,11 @@ export function getValidImagePath(originalPath: string): string {
   let imagePath = originalPath;
   if (imagePath.startsWith('public/')) {
     imagePath = imagePath.substring(7);
-    console.log(`Removed 'public/' prefix: ${originalPath} -> ${imagePath}`);
   }
   
   // التأكد من أن المسار يبدأ بـ /
   if (!imagePath.startsWith('/')) {
     imagePath = '/' + imagePath;
-    console.log(`Added leading slash: ${imagePath}`);
   }
   
   // استخراج الفئة من المسار
@@ -98,21 +89,16 @@ export function getValidImagePath(originalPath: string): string {
       
       if (!fs.existsSync(fullPath)) {
         // الصورة غير موجودة، استخدم صورة بديلة
-        console.log(`Image not found at: ${fullPath}`);
-        
         if (category) {
           // حاول العثور على صورة بديلة في نفس فئة الصورة الأصلية
           const fallbackPath = getFallbackImage(category);
-          console.log(`Using category fallback: ${fallbackPath}`);
           return fallbackPath;
         }
         
         // استخدم الصورة الافتراضية العامة
-        console.log('Using default article image');
         return '/images/default-article-image.jpg';
       }
     } catch (error) {
-      console.error('Error checking image existence:', error);
       return '/images/default-article-image.jpg';
     }
   }
@@ -178,29 +164,26 @@ export function getFallbackImage(category: string): string {
         for (const path of fallbacks[normalizedCategory]) {
           const fullPath = `./public${path}`;
           if (fs.existsSync(fullPath)) {
-            console.log(`Found fallback image for ${normalizedCategory}: ${path}`);
             return path;
           }
         }
       } catch (error) {
-        console.error('Error checking fallback images:', error);
+        // Error checking fallback images
       }
     }
     
     // If we can't check, return the first option
-    console.log(`Using first fallback for ${normalizedCategory}: ${fallbacks[normalizedCategory][0]}`);
     return fallbacks[normalizedCategory][0];
   }
   
-  console.log(`No fallbacks found for category: ${normalizedCategory}, using default article image`);
   return '/images/default-article-image.jpg';
 }
 
 /**
  * تسجيل الأخطاء المتعلقة بتحميل الصور للتشخيص
  */
-export function logImageError(imagePath: string, error?: any): void {
-  console.error(`Failed to load image: ${imagePath}`, error || '');
+export function logImageError(imagePath: string, _error?: any): void {
+  // Log image loading errors for debugging
 }
 
 /**
@@ -209,7 +192,6 @@ export function logImageError(imagePath: string, error?: any): void {
  */
 export async function checkImageExists(path: string): Promise<boolean> {
   if (!path) {
-    console.log('Empty path provided to checkImageExists');
     return false;
   }
   
@@ -218,12 +200,10 @@ export async function checkImageExists(path: string): Promise<boolean> {
       const fs = require('fs');
       const fullPath = `./public${path.startsWith('/') ? path : '/' + path}`;
       const exists = fs.existsSync(fullPath);
-      console.log(`Checking if image exists: ${fullPath} - Result: ${exists}`);
       return exists;
     }
     return true; // على جانب العميل، نفترض أن الصورة موجودة
-  } catch (error) {
-    console.error(`Error checking if image exists: ${path}`, error);
+  } catch (_error) {
     return false;
   }
 }
