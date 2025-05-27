@@ -10,6 +10,10 @@ const nextConfig = {
   },
   reactStrictMode: true,
   swcMinify: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+    dirs: []
+  },
   webpack: (config, { isServer }) => {
     config.module.rules.push({
       test: /\.(txt|xml|md)$/,

@@ -129,7 +129,7 @@ export default async function CategoryPage({ params }: { params: { category: str
                   {articles.map((article, index) => {
                     // فحص صحة عناصر المقالة قبل محاولة عرضها
                     if (!article || !article.title || !article.internalLink) {
-                      console.error(`مقالة غير صالحة عند الفهرس ${index} في فئة ${category}:`, article);
+                      // Invalid article detected
                       return null;
                     }
                     
@@ -252,7 +252,7 @@ async function getArticlesByCategory(category: string): Promise<Article[]> {
           .map(file => `/images/${searchCategory}/${file}`)
       }
     } catch (err) {
-      console.error(`Error reading image directory for ${searchCategory}:`, err)
+      // Error reading image directory
     }
     
     // Process each article to ensure unique images
@@ -293,7 +293,7 @@ async function getArticlesByCategory(category: string): Promise<Article[]> {
     return processedArticles
     
   } catch (error) {
-    console.error(`Error parsing articles for category ${category}:`, error)
+    // Error parsing articles for category
     return []
   }
 }

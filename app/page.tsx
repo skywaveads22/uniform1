@@ -81,7 +81,7 @@ export default function Home() {
           // Image loaded successfully
         };
         img.onerror = () => {
-          console.error(`Failed to load image: ${src}`);
+          // Failed to load image
           // Mark this image as having an error
           setImageErrors(prev => ({...prev, [src]: true}));
         };

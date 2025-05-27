@@ -5,13 +5,13 @@ import { Clock, Calendar, Tag } from 'lucide-react'
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: `Chef Whites and Kitchen Staff Uniforms for Saudi Arabia&apos;s Culinary Industry | UniformSA`,
+    title: `Chef Whites and Kitchen Staff Uniforms for Saudi Arabia's Culinary Industry | UniformSA`,
     description: `Comprehensive guide to professional kitchen uniforms in Saudi Arabia, covering design, functionality, and hygiene standards for culinary staff.`,
     keywords: `chef whites Saudi Arabia, kitchen staff uniforms KSA, culinary industry uniforms, professional kitchen wear, Saudi restaurant uniforms`,
     openGraph: {
       images: ['/images/blog/chef-whites-and-kitchen-staff-uniforms-for-saudi-arabias-culinary-industry/image.jpg'],
-      title: `Chef Whites and Kitchen Staff Uniforms for Saudi Arabia&apos;s Culinary Industry`,
-      description: `Expert insights into professional kitchen uniform standards and requirements for Saudi Arabia&apos;s growing culinary sector.`,
+      title: `Chef Whites and Kitchen Staff Uniforms for Saudi Arabia's Culinary Industry`,
+      description: `Expert insights into professional kitchen uniform standards and requirements for Saudi Arabia's growing culinary sector.`,
     },
   }
 }
@@ -47,7 +47,7 @@ export default function BlogPost() {
           {/* Title and Meta */}
           <div className="mb-10">
             <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Chef Whites and Kitchen Staff Uniforms for Saudi Arabia&apos;s Culinary Industry
+              Chef Whites and Kitchen Staff Uniforms for Saudi Arabia's Culinary Industry
             </h1>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
               <div className="flex items-center gap-1.5">
@@ -88,7 +88,7 @@ export default function BlogPost() {
             <section>
               <h2>Cultural Considerations</h2>
               <p>
-                Our uniforms are thoughtfully designed to respect local customs and cultural norms while promoting a professional image in Saudi Arabia&apos;s culinary establishments. This balance ensures staff comfort and compliance with local expectations.
+                Our uniforms are thoughtfully designed to respect local customs and cultural norms while promoting a professional image in Saudi Arabia's culinary establishments. This balance ensures staff comfort and compliance with local expectations.
               </p>
             </section>
           </div>

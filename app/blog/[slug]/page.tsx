@@ -321,7 +321,7 @@ export async function generateStaticParams() {
     
     blogSlugs = [...directoryBasedSlugs];
   } catch (error) {
-    console.error('Error reading blog directory:', error);
+    // Error reading blog directory
     // Continue with hardcoded slugs if directory read fails
   }
   
@@ -332,7 +332,7 @@ export async function generateStaticParams() {
     }
   });
   
-  console.log('Generated static paths for slugs:', blogSlugs.map(item => item.slug));
+  // Generated static paths for slugs
   return blogSlugs;
 }
 

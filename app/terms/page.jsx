@@ -43,10 +43,10 @@ export default function TermsPage() {
             <div className="space-y-6 rounded-lg border border-gray-100 bg-white p-8 shadow-md">
               <h2 className="text-3xl font-bold text-primary">Introduction</h2>
               <p className="text-lg text-gray-700">
-                These terms and conditions outline the rules and regulations for the use of Uniform Saudi Arabia&apos;s website, located at www.uniformsa.com.
+                These terms and conditions outline the rules and regulations for the use of Uniform Saudi Arabia's website, located at www.uniformsa.com.
               </p>
               <p className="text-lg text-gray-700">
-                By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use Uniform Saudi Arabia&apos;s website if you do not agree to all of the terms and conditions stated on this page.
+                By accessing this website, we assume you accept these terms and conditions in full. Do not continue to use Uniform Saudi Arabia's website if you do not agree to all of the terms and conditions stated on this page.
               </p>
             </div>
 
@@ -56,9 +56,9 @@ export default function TermsPage() {
                 The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and any or all Agreements:
               </p>
               <ul className="space-y-3 text-lg text-gray-700 list-disc list-inside pl-5">
-                <li>&quot;Client&quot;, &quot;You&quot; and &quot;Your&quot; refers to you, the person accessing this website and accepting the Company&apos;s terms and conditions.</li>
-                <li>&quot;The Company&quot;, &quot;Ourselves&quot;, &quot;We&quot;, &quot;Our&quot; and &quot;Us&quot;, refers to our Company, Uniform Saudi Arabia.</li>
-                <li>&quot;Party&quot;, &quot;Parties&quot;, or &quot;Us&quot;, refers to both the Client and ourselves.</li>
+                <li>"Client", "You" and "Your" refers to you, the person accessing this website and accepting the Company's terms and conditions.</li>
+                <li>"The Company", "Ourselves", "We", "Our" and "Us", refers to our Company, Uniform Saudi Arabia.</li>
+                <li>"Party", "Parties", or "Us", refers to both the Client and ourselves.</li>
                 <li>All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner, whether by formal meetings of a fixed duration, or any other means.</li>
               </ul>
             </div>
@@ -66,10 +66,10 @@ export default function TermsPage() {
             <div className="space-y-6 rounded-lg border border-gray-100 bg-white p-8 shadow-md">
               <h2 className="text-3xl font-bold text-primary">Cookies</h2>
               <p className="text-lg text-gray-700">
-                We employ the use of cookies. By accessing Uniform Saudi Arabia&apos;s website, you agreed to use cookies in agreement with Uniform Saudi Arabia&apos;s Privacy Policy.
+                We employ the use of cookies. By accessing Uniform Saudi Arabia's website, you agreed to use cookies in agreement with Uniform Saudi Arabia's Privacy Policy.
               </p>
               <p className="text-lg text-gray-700">
-                Most interactive websites use cookies to let us retrieve the user&apos;s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
+                Most interactive websites use cookies to let us retrieve the user's details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
               </p>
             </div>
 
@@ -108,7 +108,7 @@ export default function TermsPage() {
                 All orders placed through our website are subject to acceptance and availability. We reserve the right to refuse any order you place with us. If you place an order through the site, this represents an offer by you to purchase our products, which is subject to these terms and conditions.
               </p>
               <p className="text-lg text-gray-700 mt-4">
-                No contract will be formed between you and us until we send you an email confirmation that the products you&apos;ve ordered are available and reserved for you. Payments can be made using any of the available methods mentioned on the website.
+                No contract will be formed between you and us until we send you an email confirmation that the products you've ordered are available and reserved for you. Payments can be made using any of the available methods mentioned on the website.
               </p>
             </div>
 

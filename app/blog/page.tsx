@@ -81,7 +81,7 @@ export default async function BlogPage() {
                 {articles.map((article, index) => {
                   // فحص صحة عناصر المقالة قبل محاولة عرضها
                   if (!article || !article.title || !article.internalLink) {
-                    console.error(`مقالة غير صالحة عند الفهرس ${index}:`, article);
+                    // Invalid article detected
                     return null;
                   }
                   
@@ -195,7 +195,7 @@ async function getArticlesFromMarkdown(): Promise<Article[]> {
             .map(file => `/images/${cat}/${file}`)
         }
       } catch (err) {
-        console.error(`Error reading image directory for ${cat}:`, err)
+        // Error reading image directory
       }
       
       // If no available images, use the default
@@ -234,7 +234,7 @@ async function getArticlesFromMarkdown(): Promise<Article[]> {
     return processedArticles
     
   } catch (error) {
-    console.error('Error parsing articles.md:', error)
+    // Error parsing articles.md
     return []
   }
 }

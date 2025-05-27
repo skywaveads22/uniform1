@@ -97,7 +97,7 @@ export default function TestImagesPage() {
 // مكون لعرض الصورة مع استخدام صورة بديلة في حال الفشل
 function ImageWithFallback({ src, alt, ...props }: any) {
   const [error, setError] = useState(false);
-  const fallbackSrc = '/images/placeholder-image.jpg';
+  const _fallbackSrc = '/images/placeholder-image.jpg';
 
   return (
     <>
@@ -110,7 +110,7 @@ function ImageWithFallback({ src, alt, ...props }: any) {
           src={src}
           alt={alt || 'صورة'}
           onError={() => {
-            console.error(`فشل تحميل الصورة: ${src}`);
+            // فشل تحميل الصورة
             setError(true);
           }}
           {...props}

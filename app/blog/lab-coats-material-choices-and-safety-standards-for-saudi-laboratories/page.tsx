@@ -11,7 +11,7 @@ export const generateMetadata = (): Metadata => {
     openGraph: {
       images: ['/images/blog/lab-coats-material-choices-and-safety-standards-for-saudi-laboratories/image.jpg'],
       title: `Lab Coats: Material Choices and Safety Standards for Saudi Laboratories`,
-      description: `Expert analysis of laboratory coat materials and safety standards for Saudi Arabia&apos;s research and scientific facilities.`,
+      description: `Expert analysis of laboratory coat materials and safety standards for Saudi Arabia's research and scientific facilities.`,
     },
   }
 }
@@ -88,7 +88,7 @@ export default function BlogPost() {
             <section>
               <h2>Usage Guidelines</h2>
               <p>
-                Proper use and maintenance of lab coats are essential for maintaining their protective properties and ensuring long-term effectiveness. We provide detailed guidelines for care, cleaning, and storage to maximize the garment&apos;s protective capabilities and longevity in laboratory settings.
+                Proper use and maintenance of lab coats are essential for maintaining their protective properties and ensuring long-term effectiveness. We provide detailed guidelines for care, cleaning, and storage to maximize the garment's protective capabilities and longevity in laboratory settings.
               </p>
             </section>
           </div>

@@ -23,7 +23,7 @@ export default function ContactPage() {
     
     // Simulate form submission with a delay
     setTimeout(() => {
-      console.log('Form submitted:', formData)
+      // Form submitted
       setFormStatus('success')
       
       // Reset form after 3 seconds
