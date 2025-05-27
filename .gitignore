@@ -9,7 +9,7 @@
 
 # next.js
 /.next/
-/out/
+# /out/  - Temporarily allowing out directory to be committed
 
 # production
 /build
