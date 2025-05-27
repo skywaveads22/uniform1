@@ -17,7 +17,7 @@ const TeamMember = ({ member, placeholderImage }) => (
         className="object-cover w-full h-full"
         onError={(e) => {
           e.target.src = placeholderImage;
-          console.warn(`Failed to load image for ${member.name}`);
+          // Failed to load image
         }}
       />
     </div>
