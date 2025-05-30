@@ -45,6 +45,7 @@ const BlogPostCard: FC<BlogPostCardProps> = ({
             src={currentImagePath}
             alt={title}
             fill
+            priority
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             onError={handleImageError}
           />
