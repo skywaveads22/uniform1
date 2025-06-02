@@ -32,11 +32,11 @@ export default function ComparingSchoolUniformPolicies() {
             <Link href="/" className="hover:text-primary">
               Home
             </Link>
-            <span>></span>
+            <span>{'>'}</span>
             <Link href="/blog" className="hover:text-primary">
               Blog
             </Link>
-            <span>></span>
+            <span>{'>'}</span>
             <span className="text-gray-700 dark:text-white">Comparing School Uniform Policies: Public vs. Private in KSA</span>
           </nav>
 
