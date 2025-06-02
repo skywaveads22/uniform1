@@ -1,8 +1,12 @@
+// "use client"; // Removed as this page will be a Server Component
+
 import fs from 'fs'
 import path from 'path'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import BlogPostCard from '@/components/BlogPostCard'
+// Removed useEffect and useState as this will become a Server Component primarily
+// import { useEffect, useState } from 'react'
 
 export const metadata: Metadata = {
   title: 'Blog | Uniform SA',
@@ -39,25 +43,24 @@ const defaultCategoryImages = {
   'security': '/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg',
 }
 
-"use client"
 
-import { useEffect, useState } from 'react'
+export default async function BlogPage() { // Made async to await getArticlesFromMarkdown
+  // const [articles, setArticles] = useState<Article[]>([]) // Removed useState
 
-export default function BlogPage() {
-  const [articles, setArticles] = useState<Article[]>([])
+  // useEffect(() => { // Removed useEffect
+  //   async function loadArticles() {
+  //     try {
+  //       const loadedArticles = await getArticlesFromMarkdown()
+  //       setArticles(loadedArticles)
+  //     } catch (error) {
+  //       console.error('Error loading articles:', error)
+  //       setArticles([])
+  //     }
+  //   }
+  //   loadArticles()
+  // }, [])
 
-  useEffect(() => {
-    async function loadArticles() {
-      try {
-        const loadedArticles = await getArticlesFromMarkdown()
-        setArticles(loadedArticles)
-      } catch (error) {
-        console.error('Error loading articles:', error)
-        setArticles([])
-      }
-    }
-    loadArticles()
-  }, [])
+  const articles = await getArticlesFromMarkdown(); // Fetch articles directly
 
   return (
     <div className="bg-primary">
@@ -124,71 +127,82 @@ export default function BlogPage() {
 
 async function getArticlesFromMarkdown(): Promise<Article[]> {
   try {
-    // Read the articles.md file
-    const filePath = path.join(process.cwd(), 'articles.md')
-    const fileContent = fs.readFileSync(filePath, 'utf8')
-    
-    // Parse the content to extract article information
+    const articlesDir = path.join(process.cwd(), 'app', 'blog')
+    const articleSlugs = fs.readdirSync(articlesDir, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory() && dirent.name !== 'category' && dirent.name !== '[slug]')
+      .map(dirent => dirent.name)
+
     const articles: Article[] = []
-    
-    // Split the content by lines
-    const lines = fileContent.split('\n')
-    
-    let currentArticle: Partial<Article> = {}
-    
-    // Process the file line by line
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim()
-      
-      // Skip empty lines and the header
-      if (!line || line === '# Articles List') continue
-      
-      // Check if line contains article information (starts with a number)
-      const articleMatch = line.match(/^(\d+)\.\s+(.+?)\s+-\s+\(المسار\/الرابط الداخلي:\s+(.+?)\)$/)
-      
-      if (articleMatch) {
-        // If we have a previous article waiting to be added, add it
-        if (currentArticle.id && currentArticle.title && currentArticle.internalLink) {
-          articles.push(currentArticle as Article)
+    let articleIdCounter = 1
+
+    for (const slug of articleSlugs) {
+      const articlePagePath = path.join(articlesDir, slug, 'page.tsx')
+      if (fs.existsSync(articlePagePath)) {
+        try {
+          const fileContent = fs.readFileSync(articlePagePath, 'utf8')
+          
+          // Extract title from metadata
+          let title = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) // Fallback title
+          const metadataMatch = fileContent.match(/export\s+const\s+metadata\s*:\s*Metadata\s*=\s*({[\s\S]*?};?)/m);
+
+          if (metadataMatch && metadataMatch[1]) {
+            const metadataString = metadataMatch[1].replace(/;\s*$/, ''); // Remove trailing semicolon if present
+            try {
+                // A bit hacky: wrap in parentheses and use eval-like approach
+                // This is risky and should be replaced with a proper parser if possible
+                const evaluatedMetadata = new Function(`return ${metadataString}`)();
+                if (evaluatedMetadata.title) {
+                    if (typeof evaluatedMetadata.title === 'string') {
+                        title = evaluatedMetadata.title;
+                    } else if (typeof evaluatedMetadata.title === 'object' && evaluatedMetadata.title.default) {
+                        title = evaluatedMetadata.title.default;
+                    }
+                }
+            } catch (e) {
+                console.warn(`Could not parse metadata for ${slug}:`, e);
+            }
+          }
+
+          const internalLink = `/blog/${slug}`
+          const category = getCategoryFromTitle(title) || 'general'
+          let imagePath = defaultCategoryImages[category as keyof typeof defaultCategoryImages] || '/images/placeholder-image.jpg'
+          
+          // Attempt to extract imagePath from metadata
+          if (metadataMatch && metadataMatch[1]) {
+            const metadataString = metadataMatch[1].replace(/;\s*$/, '');
+            try {
+                const evaluatedMetadata = new Function(`return ${metadataString}`)();
+                if (evaluatedMetadata.openGraph && evaluatedMetadata.openGraph.images && evaluatedMetadata.openGraph.images[0]) {
+                    if (typeof evaluatedMetadata.openGraph.images[0] === 'string') {
+                        imagePath = evaluatedMetadata.openGraph.images[0];
+                    } else if (typeof evaluatedMetadata.openGraph.images[0] === 'object' && evaluatedMetadata.openGraph.images[0].url) {
+                        imagePath = evaluatedMetadata.openGraph.images[0].url;
+                    }
+                } else if (evaluatedMetadata.twitter && evaluatedMetadata.twitter.images && evaluatedMetadata.twitter.images[0]) {
+                     if (typeof evaluatedMetadata.twitter.images[0] === 'string') {
+                        imagePath = evaluatedMetadata.twitter.images[0];
+                    } else if (typeof evaluatedMetadata.twitter.images[0] === 'object' && evaluatedMetadata.twitter.images[0].url) {
+                        imagePath = evaluatedMetadata.twitter.images[0].url;
+                    }
+                }
+            } catch (e) {
+                // console.warn(`Could not parse metadata for image in ${slug}:`, e);
+            }
+          }
+
+          articles.push({
+            id: articleIdCounter++,
+            title,
+            internalLink,
+            imagePath, // Placeholder, will need to implement image extraction
+            category,
+          })
+        } catch (readError) {
+          console.error(`Error reading article file ${articlePagePath}:`, readError)
         }
-        
-        // Start a new article
-        const id = parseInt(articleMatch[1])
-        const title = articleMatch[2]
-        const internalLink = articleMatch[3]
-        
-        // Determine the category from the title
-        const category = getCategoryFromTitle(title) || 'general'
-        
-        // Start with a default image based on category
-        const defaultImage = defaultCategoryImages[category as keyof typeof defaultCategoryImages] || '/images/placeholder-image.jpg'
-        
-        currentArticle = {
-          id,
-          title,
-          internalLink,
-          imagePath: defaultImage,
-          category
-        }
-      } 
-      // Check if the line contains image information
-      else if (line.startsWith('- صور التصنيفات:') && currentArticle.id) {
-        // Extract the image path
-        const imagePath = line.replace('- صور التصنيفات:', '').trim()
-        
-        // Remove 'public' from the beginning if it exists
-        const finalImagePath = imagePath.replace('public', '').split(',')[0].trim()
-        
-        // Set the image path in the current article
-        currentArticle.imagePath = finalImagePath
       }
     }
-    
-    // Add the last article if it exists
-    if (currentArticle.id && currentArticle.title && currentArticle.internalLink) {
-      articles.push(currentArticle as Article)
-    }
-    
+
     // Make each article have a unique image within its category
     const usedImages: Record<string, Set<string>> = {}
     
@@ -251,7 +265,7 @@ async function getArticlesFromMarkdown(): Promise<Article[]> {
     return processedArticles
     
   } catch (error) {
-    // Error parsing articles.md
+    console.error('Error in getArticlesFromMarkdown:', error)
     return []
   }
 }
