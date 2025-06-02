@@ -5,13 +5,13 @@ import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: `Chromatic Experience Architecture: Advanced Color Systems for Saudi Hospitality Environments 2025 | UniformSA`,
-    description: `Strategic analysis of next-generation chromatic systems for Saudi hospitality environments, featuring neuroscience-optimized color frameworks, environmental responsiveness architectures, and strategic experiential enhancement methodologies aligned with Vision 2030 tourism objectives.`,
-    keywords: `chromatic experience architecture Saudi Arabia 2025, hospitality color strategy KSA, neuroscience-optimized attire systems, environmental chromatic responsiveness, brand psychology integration, Saudi tourism enhancement frameworks, strategic experience color mapping`,
+    title: `Color Trends in Modern Hospitality Uniform Design in the Middle East | UniformSA`,
+    description: `Explore the latest color trends shaping modern hospitality uniform design in Saudi Arabia and the Middle East, focusing on cultural relevance, brand identity, and guest experience.`,
+    keywords: `hospitality uniforms, color trends, Middle East, Saudi Arabia, uniform design, hotel uniforms, restaurant uniforms, brand identity, guest experience, modern design`,
     openGraph: {
       images: ['/images/hospitality/modern_hospitality_design_uniforms.jpeg'],
-      title: `Chromatic Experience Architecture: Advanced Color Systems for Saudi Hospitality Environments 2025`,
-      description: `Strategic implementation framework for sophisticated chromatic systems across Saudi hospitality environments, delivering unprecedented experiential enhancement through advanced color psychology engineering.`,
+      title: `Color Trends in Modern Hospitality Uniform Design in the Middle East`,
+      description: `Discover how innovative color strategies are transforming hospitality uniforms in Saudi Arabia and the wider Middle East, enhancing brand appeal and guest perception.`,
     },
   }
 }
@@ -31,14 +31,14 @@ export default function BlogPost() {
               Blog
             </Link>
             <span>&gt;</span>
-            <span className="text-gray-700 dark:text-white">Chromatic Experience Architecture</span>
+            <span className="text-gray-700 dark:text-white">Color Trends in Modern Hospitality Uniform Design</span>
           </nav>
 
           {/* Featured Image */}
           <div className="mb-10">
             <Image
               src="/images/hospitality/modern_hospitality_design_uniforms.jpeg"
-              alt="Next-generation chromatic systems for Saudi Arabia's premium hospitality environments"
+              alt="Modern hospitality uniforms showcasing color trends in the Middle East"
               width={1000}
               height={600}
               className="rounded-lg w-full"
@@ -48,7 +48,7 @@ export default function BlogPost() {
           {/* Title and Meta */}
           <div className="mb-10">
             <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Chromatic Experience Architecture: Advanced Color Systems for Saudi Hospitality Environments 2025
+              Color Trends in Modern Hospitality Uniform Design: Middle Eastern Perspectives
             </h1>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
               <div className="flex items-center gap-1.5">
@@ -61,7 +61,7 @@ export default function BlogPost() {
               </div>
               <div className="flex items-center gap-1.5">
                 <Tag className="h-4 w-4" />
-                <span>Chromatic Experience Systems, Neuroscience-Optimized Design, Hospitality Color Architecture</span>
+                <span>Hospitality Design, Uniform Trends, Color Psychology</span>
               </div>
             </div>
           </div>
@@ -73,274 +73,129 @@ export default function BlogPost() {
           <div className="lg:col-span-8">
             <div className="prose dark:prose-invert max-w-none">
               <p className="lead">
-                The evolving sophistication of Saudi Arabia's hospitality sector has catalyzed a fundamental reimagining of color application in professional attire systems. Leading hospitality environments now implement advanced chromatic architectures—strategically engineered color frameworks designed to enhance guest experience, reinforce brand positioning, and seamlessly integrate within the multidimensional experience ecosystems that differentiate the Kingdom's emerging position in global luxury hospitality.
+                The sophisticated evolution of Saudi Arabia's hospitality sector, driven by Vision 2030, has spurred a significant reimagining of how color is utilized in professional attire. Leading establishments are now adopting advanced color strategies, moving beyond mere aesthetics to engineer chromatic experiences that enhance guest perception, reinforce brand identity, and integrate seamlessly into the luxurious hospitality ecosystem the Kingdom is cultivating.
               </p>
 
-              <h2>Strategic Chromatic Experience Engineering</h2>
+              <h2>The Strategic Role of Color in Hospitality Uniforms</h2>
               <p>
-                Contemporary color application in hospitality attire transcends conventional aesthetic considerations:
-              </p>
-
-              <div className="bg-blue-50 p-6 rounded-lg my-8 dark:bg-blue-900/30">
-                <h4 className="text-lg font-semibold mb-2">Performance Metrics of Next-Generation Chromatic Systems</h4>
-                <ul className="grid grid-cols-2 gap-4 text-sm mb-0">
-                  <li className="flex flex-col">
-                    <span className="text-3xl font-bold text-primary">92%</span>
-                    <span>Enhanced guest experience metrics with neuroscience-optimized color systems</span>
-                  </li>
-                  <li className="flex flex-col">
-                    <span className="text-3xl font-bold text-primary">3.8x</span>
-                    <span>Increased brand recognition through strategic chromatic frameworks</span>
-                  </li>
-                  <li className="flex flex-col">
-                    <span className="text-3xl font-bold text-primary">71%</span>
-                    <span>Improved staff-guest interaction quality with color-optimized engagement systems</span>
-                  </li>
-                  <li className="flex flex-col">
-                    <span className="text-3xl font-bold text-primary">84%</span>
-                    <span>Enhanced operational efficiency through role-identification color architectures</span>
-                  </li>
-                </ul>
-              </div>
-
-              <p>
-                Advanced chromatic experience architecture transcends traditional uniform color selection approaches:
+                In today's competitive Middle Eastern hospitality market, color in staff uniforms plays a multifaceted role:
               </p>
               <ul>
-                <li><strong>Neuroscience-optimized color frameworks:</strong> Color systems engineered based on cognitive response research</li>
-                <li><strong>Multi-dimensional brand expression:</strong> Strategic color deployment reinforcing brand positioning across touchpoints</li>
-                <li><strong>Environmental responsiveness systems:</strong> Dynamic color architectures adapting to spatial and temporal contexts</li>
-                <li><strong>Saudi-specific cultural integration:</strong> Chromatic frameworks reflecting Kingdom heritage and values</li>
-                <li><strong>Operational enhancement architectures:</strong> Color systems strategically deployed to optimize service delivery</li>
+                <li><strong>Brand Differentiation:</strong> Unique color palettes help establishments stand out and create a memorable visual identity.</li>
+                <li><strong>Guest Experience Enhancement:</strong> Thoughtfully chosen colors can influence mood, perception of service quality, and overall comfort.</li>
+                <li><strong>Cultural Resonance:</strong> Colors can subtly convey respect for local traditions and values, crucial in the Saudi context.</li>
+                <li><strong>Operational Efficiency:</strong> Color-coding can aid in role identification and team coordination.</li>
+                <li><strong>Psychological Impact:</strong> Leveraging color psychology to evoke feelings of luxury, warmth, efficiency, or tranquility.</li>
               </ul>
 
-              <h2>Neuroscience-Driven Color Architecture</h2>
+              <h2>Key Color Trends in Middle Eastern Hospitality</h2>
               <p>
-                Strategic application of advanced cognitive response research:
+                Several color trends are emerging, reflecting a blend of global influences and regional sensibilities:
               </p>
 
-              <h3>Psychophysiological Response Optimization</h3>
+              <h3>1. Earthy Neutrals and Desert Tones</h3>
               <p>
-                Advanced frameworks leveraging neurological color processing:
-              </p>
-              <ul>
-                <li><strong>Autonomic nervous system calibration:</strong> Color selections strategically engineered to induce relaxation responses</li>
-                <li><strong>Cognitive attention management:</strong> Strategic use of focus-directing and focus-diffusing chromatic elements</li>
-                <li><strong>Mood-induction color architecture:</strong> Systems designed to catalyze specific emotional responses</li>
-                <li><strong>Neurological contrast optimization:</strong> Strategic deployment of complementary colors enhancing visual processing</li>
-                <li><strong>Memory encoding enhancement:</strong> Color frameworks designed to optimize experience retention</li>
-              </ul>
-
-              <h3>Cultural Perception Engineering</h3>
-              <p>
-                Sophisticated systems bridging universal and Saudi-specific color responses:
+                Inspired by the natural landscapes of Saudi Arabia and the wider region, palettes featuring sand, beige, terracotta, and muted ochres are gaining popularity. These colors evoke a sense of calm, authenticity, and connection to the local environment.
               </p>
               <ul>
-                <li><strong>Cross-cultural chromatic calibration:</strong> Color systems accessible to both domestic and international guests</li>
-                <li><strong>Traditional Saudi color value integration:</strong> Strategic incorporation of historically significant chromatic elements</li>
-                <li><strong>Contemporary reinterpretation frameworks:</strong> Modern applications of heritage color associations</li>
-                <li><strong>Context-appropriate symbolism:</strong> Careful navigation of color-meaning variations across cultures</li>
-                <li><strong>Universal-specific balance architecture:</strong> Systems leveraging both universal and Kingdom-specific responses</li>
+                <li><strong>Application:</strong> Base uniform colors, often layered with richer accent hues.</li>
+                <li><strong>Psychological Effect:</strong> Grounding, welcoming, and sophisticated.</li>
               </ul>
 
+              <h3>2. Jewel Tones and Rich Hues</h3>
+              <p>
+                Deep emerald greens, sapphire blues, ruby reds, and amethyst purples are increasingly used to convey luxury and opulence. These colors draw inspiration from traditional Middle Eastern artistry and precious gemstones.
+              </p>
+              <ul>
+                <li><strong>Application:</strong> Accent pieces, linings, accessories, or full garments for specific roles (e.g., concierge, fine dining staff).</li>
+                <li><strong>Psychological Effect:</strong> Luxurious, regal, and memorable.</li>
+              </ul>
+              
               <div className="bg-gray-100 p-6 rounded-lg my-8 dark:bg-gray-800">
-                <h4 className="text-lg font-semibold mb-2">Case Study: Chromatic System Implementation at Al Faisaliah Luxury Collection</h4>
+                <h4 className="text-lg font-semibold mb-2">Spotlight: The Resurgence of Royal Green</h4>
                 <p className="text-sm mb-0">
-                  In Q3 2024, Al Faisaliah Group implemented a comprehensive chromatic architecture across its premium hospitality destinations. The system featured neuroscience-optimized color frameworks, environmental responsiveness elements, and cultural integration specifically calibrated for Saudi Arabia's ultra-luxury positioning.
-                </p>
-                <p className="text-sm mt-2 mb-0">
-                  Implementation data revealed 96% enhancement in guest satisfaction metrics, 89% improvement in brand differentiation ratings, and 78% increase in staff engagement assessments. Management reported a transformative effect with the chromatic system becoming a signature element in guest experience reviews and establishing a new benchmark in Middle Eastern luxury presentation.
+                  Various shades of green, particularly those with royal and national significance in Saudi Arabia, are being reinterpreted in contemporary uniform designs. This trend connects modern hospitality with deep-rooted cultural heritage, offering a sophisticated nod to tradition.
                 </p>
               </div>
 
-              <h2>Environmental Responsiveness Architecture</h2>
+              <h3>3. Monochromatic Sophistication</h3>
               <p>
-                Strategic systems adapting to hospitality contexts:
-              </p>
-
-              <h3>Spatial Chromatic Calibration</h3>
-              <p>
-                Advanced color frameworks optimized for specific environments:
+                Using varying shades and tints of a single color (e.g., different grays, blues, or beiges) creates a sleek, modern, and unified look. This approach emphasizes texture and tailoring.
               </p>
               <ul>
-                <li><strong>Architectural integration systems:</strong> Color palettes designed for specific interior environments</li>
-                <li><strong>Natural-artificial light adaptation:</strong> Color selections calibrated for varying illumination conditions</li>
-                <li><strong>Spatial volume responsiveness:</strong> Color intensity adjusted for different spatial dimensions</li>
-                <li><strong>Transitional space optimization:</strong> Strategic color shifts guiding movement between environments</li>
-                <li><strong>Vista enhancement calibration:</strong> Color systems designed to frame and enhance iconic views</li>
+                <li><strong>Application:</strong> Entire uniform ensembles, with subtle variations for different staff levels or departments.</li>
+                <li><strong>Psychological Effect:</strong> Elegant, contemporary, and professional.</li>
               </ul>
 
-              <h3>Temporal Chromatic Frameworks</h3>
+              <h3>4. Metallic Accents</h3>
               <p>
-                Sophisticated systems responding to time-based contexts:
+                Gold, silver, bronze, and copper accents are used to add a touch of glamour and luxury. These are often seen in buttons, embroidery, piping, or accessories.
               </p>
               <ul>
-                <li><strong>Daypart color adaptation:</strong> Strategic variations for morning, afternoon, and evening service contexts</li>
-                <li><strong>Seasonal color architecture:</strong> Planned evolutions reflecting annual environmental changes</li>
-                <li><strong>Special occasion calibration:</strong> Dedicated color systems for celebratory and ceremonial contexts</li>
-                <li><strong>Ramadan-specific frameworks:</strong> Specialized palettes honoring sacred time periods</li>
-                <li><strong>Experience-phase optimization:</strong> Strategic color transitions through arrival, engagement, and departure</li>
+                <li><strong>Application:</strong> Details on cuffs, collars, epaulets, or as part of logo embellishments.</li>
+                <li><strong>Psychological Effect:</strong> Prestigious, high-quality, and refined.</li>
               </ul>
-
-              <h2>Operational Enhancement Systems</h2>
+              
+              <h3>5. Culturally Inspired Palettes</h3>
               <p>
-                Strategic color deployment for service excellence:
-              </p>
-
-              <h3>Role Identification Frameworks</h3>
-              <p>
-                Advanced systems for operational clarity:
+                Drawing inspiration from traditional Saudi patterns like Sadu or architectural elements from regions like Al-Ahsa or Najd. This involves not just colors but also how they are combined and patterned.
               </p>
               <ul>
-                <li><strong>Hierarchical signaling architecture:</strong> Subtle color variations indicating management levels</li>
-                <li><strong>Functional domain identification:</strong> Department-specific color systems enhancing operational legibility</li>
-                <li><strong>Expertise-level indication:</strong> Color elements reflecting specialization and accomplishment</li>
-                <li><strong>Guest-service readiness signaling:</strong> Visual frameworks indicating availability status</li>
-                <li><strong>Team cohesion enhancement:</strong> Unified color systems within operational units</li>
+                <li><strong>Application:</strong> Subtle patterns on scarves, ties, or as trim details. Can also influence the overall color scheme.</li>
+                <li><strong>Psychological Effect:</strong> Authentic, culturally rich, and distinctive.</li>
               </ul>
 
-              <h3>Service Flow Optimization</h3>
+              <h2>Integrating Color with Brand Identity</h2>
               <p>
-                Strategic systems enhancing operational choreography:
+                The choice of uniform color is a powerful branding tool:
               </p>
               <ul>
-                <li><strong>Service sequence visualization:</strong> Color frameworks supporting transitional guest experiences</li>
-                <li><strong>Operational territory delineation:</strong> Subtle chromatic elements defining service zones</li>
-                <li><strong>Priority signalization systems:</strong> Color frameworks communicating service urgency</li>
-                <li><strong>Cross-departmental collaboration indicators:</strong> Color elements facilitating inter-team coordination</li>
-                <li><strong>Guest attention management:</strong> Strategic visibility calibration through color deployment</li>
+                <li><strong>Consistency:</strong> Ensuring uniform colors align with the overall brand palette used in marketing, decor, and digital presence.</li>
+                <li><strong>Differentiation:</strong> Selecting a color scheme that distinguishes the brand from competitors.</li>
+                <li><strong>Storytelling:</strong> Using colors to tell a story about the brand's heritage, values, or a unique selling proposition. For example, blues and turquoises for coastal resorts, or deep, warm tones for desert retreats.</li>
               </ul>
 
-              <h2>Brand Harmony Architecture</h2>
+              <h2>Practical Considerations for Color Selection</h2>
               <p>
-                Strategic systems ensuring consistent experience delivery:
-              </p>
-
-              <h3>Brand DNA Chromatic Embodiment</h3>
-              <p>
-                Advanced systems translating brand positioning into color frameworks:
+                Beyond aesthetics, practical factors influence color choices:
               </p>
               <ul>
-                <li><strong>Brand personality chromatic expression:</strong> Color systems reflecting core identity attributes</li>
-                <li><strong>Value proposition color reinforcement:</strong> Strategic palettes emphasizing key differentiators</li>
-                <li><strong>Positioning statement visualization:</strong> Color frameworks communicating market stance</li>
-                <li><strong>Heritage-innovation balance:</strong> Chromatic systems reflecting organizational evolution</li>
-                <li><strong>Brand narrative color architecture:</strong> Strategic deployment supporting organizational storytelling</li>
+                <li><strong>Climate Appropriateness:</strong> Lighter colors are generally preferred in hot climates for their heat-reflective properties, though darker, high-performance fabrics with moisture-wicking are also used.</li>
+                <li><strong>Durability and Maintenance:</strong> Colors must withstand frequent laundering and resist fading. Certain colors may show stains less readily.</li>
+                <li><strong>Role Differentiation:</strong> Using color variations to distinguish between different staff roles (e.g., front desk, housekeeping, F&B) while maintaining an overall cohesive look.</li>
+                <li><strong>Lighting Impact:</strong> How colors appear under different lighting conditions (natural daylight vs. various types of artificial interior lighting) is a key consideration.</li>
               </ul>
 
-              <h3>Multi-Property Brand Synchronization</h3>
+              <h2>The Future of Color in Middle Eastern Hospitality Uniforms</h2>
               <p>
-                Sophisticated systems ensuring cross-location consistency:
+                We anticipate continued innovation in this space:
               </p>
               <ul>
-                <li><strong>Core identity color preservation:</strong> Consistent chromatic elements across all properties</li>
-                <li><strong>Local interpretation frameworks:</strong> Controlled variation systems respecting regional contexts</li>
-                <li><strong>Property-specific accent architecture:</strong> Subsidiary color systems differentiating locations</li>
-                <li><strong>Brand evolution management:</strong> Systematic updating processes maintaining relevance</li>
-                <li><strong>Multi-brand portfolio delineation:</strong> Strategic systems differentiating between related properties</li>
+                <li><strong>Sustainable Dyes:</strong> Growing interest in natural and eco-friendly dyeing processes.</li>
+                <li><strong>Smart Fabrics with Color-Changing Properties:</strong> While still niche, technology that allows subtle color shifts or integrated lighting could emerge.</li>
+                <li><strong>Personalization:</strong> Offering subtle color variations or accessory choices to allow for a degree of individual expression within a standardized framework.</li>
+                <li><strong>Neuroscience-Informed Choices:</strong> Deeper application of color psychology to influence guest mood and behavior positively.</li>
               </ul>
 
-              <h2>Trend Integration Architecture 2025</h2>
+              <h2>Conclusion</h2>
               <p>
-                Advanced frameworks incorporating emerging chromatic approaches:
+                Color in hospitality uniforms within Saudi Arabia and the Middle East is a dynamic and evolving field. It's a careful blend of respecting cultural heritage, embracing modern design principles, and strategically leveraging color to enhance the brand and the overall guest experience. As the region's hospitality sector continues to grow and attract a global audience, the thoughtful and innovative use of color in staff attire will remain a key differentiator for leading establishments.
               </p>
-
-              <h3>Contemporary Luxury Color Systems</h3>
-              <p>
-                Emerging palettes redefining premium hospitality experiences:
-              </p>
-              <ul>
-                <li><strong>Refined neutrals with microtonal variation:</strong> Subtle neutral palettes with barely perceptible shifts</li>
-                <li><strong>Grounded terracotta spectrums:</strong> Earth-inspired ranges evoking Saudi landscape richness</li>
-                <li><strong>Midnight blue gradations:</strong> Sophisticated dark blues reminiscent of Arabian night skies</li>
-                <li><strong>Desert-inspired chromatic collections:</strong> Warm neutral systems reflecting Kingdom landscapes</li>
-                <li><strong>Sand-to-sea transition frameworks:</strong> Gradient systems connecting coastal and inland references</li>
-              </ul>
-
-              <h3>Saudi-Inspired Color Collections</h3>
-              <p>
-                Sophisticated palettes honoring Kingdom heritage:
-              </p>
-              <ul>
-                <li><strong>Contemporary Sadu pattern palettes:</strong> Modern interpretations of traditional textile colors</li>
-                <li><strong>Al-Qatt Al-Asiri inspired frameworks:</strong> Systems referencing historic interior painting traditions</li>
-                <li><strong>Architectural heritage color systems:</strong> Palettes drawn from significant Saudi structures</li>
-                <li><strong>Red Sea coral-inspired collections:</strong> Vibrant underwater-influence color frameworks</li>
-                <li><strong>Vision 2030 chromatic language:</strong> Forward-looking palettes reflecting national ambition</li>
-              </ul>
-
-              <h2>Implementation Excellence Frameworks</h2>
-              <p>
-                Strategic systems ensuring chromatic system effectiveness:
-              </p>
-
-              <h3>Color Reproduction Architecture</h3>
-              <p>
-                Advanced approaches to color consistency and quality:
-              </p>
-              <ul>
-                <li><strong>Spectral precision frameworks:</strong> Advanced color reproduction ensuring exact brand specification</li>
-                <li><strong>Environmental adaptation calibration:</strong> Systems accounting for illumination and background interaction</li>
-                <li><strong>Dye stability engineering:</strong> Long-term color integrity through maintenance cycles</li>
-                <li><strong>Inter-material consistency management:</strong> Ensuring uniform appearance across diverse substrates</li>
-                <li><strong>Supply chain color verification:</strong> Systems ensuring production adherence to specifications</li>
-              </ul>
-
-              <h3>Chromatic Transition Management</h3>
-              <p>
-                Strategic systems facilitating color system evolution:
-              </p>
-              <ul>
-                <li><strong>Controlled evolution frameworks:</strong> Methodologies for introducing updated color systems</li>
-                <li><strong>Stakeholder preparation architecture:</strong> Strategic communication preparing for chromatic changes</li>
-                <li><strong>Legacy-contemporary balance:</strong> Systems maintaining recognition during transitions</li>
-                <li><strong>Inventory management optimization:</strong> Implementation approaches minimizing transitional costs</li>
-                <li><strong>Cross-team synchronization:</strong> Coordination systems ensuring consistent adoption</li>
-              </ul>
-
-              <h2>Future-Forward Color Architectures</h2>
-              <p>
-                Emerging systems anticipating hospitality color evolution:
-              </p>
-
-              <h3>Technology-Enhanced Color Systems</h3>
-              <p>
-                Advanced frameworks incorporating smart functionality:
-              </p>
-              <ul>
-                <li><strong>Programmable color-shift fabrics:</strong> Adaptive materials responding to environmental conditions</li>
-                <li><strong>Guest-responsive chromatic elements:</strong> Interactive color systems enhancing personalization</li>
-                <li><strong>Illumination-integrated palettes:</strong> Color frameworks designed with embedded light elements</li>
-                <li><strong>AR-enhanced color experiences:</strong> Physical-digital color systems for expanded experience</li>
-                <li><strong>Biometric-responsive coloration:</strong> Adaptive systems enhancing guest wellbeing</li>
-              </ul>
-
-              <h3>Sustainability-Forward Chromatic Frameworks</h3>
-              <p>
-                Eco-conscious approaches to color implementation:
-              </p>
-              <ul>
-                <li><strong>Naturally-derived colorant systems:</strong> Plant-based dye technologies reducing chemical impact</li>
-                <li><strong>Water-conservation dyeing processes:</strong> Reduced-impact color application methodologies</li>
-                <li><strong>Energy-efficient color technologies:</strong> Low-environmental-impact production frameworks</li>
-                <li><strong>Biodegradable color carriers:</strong> End-of-life responsible chromatic elements</li>
-                <li><strong>Carbon-neutral color production:</strong> Climate-conscious chromatic implementation</li>
-              </ul>
 
               <div className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-800">
                 <h3 className="text-2xl font-semibold mb-4">About the Author</h3>
                 <div className="flex items-start gap-4">
                   <Image
-                    src="/images/author/default-author.jpg"
-                    alt="Dr. Layla Al-Harbi"
+                    src="/images/author/default-author.jpg" // Assuming a default author image, update if specific one is available
+                    alt="Author Photo - UniformSA Design Expert"
                     width={80}
                     height={80}
                     className="rounded-full"
                   />
                   <div>
-                    <h4 className="text-xl font-medium">Dr. Layla Al-Harbi</h4>
+                    <h4 className="text-xl font-medium">Aisha Al-Hamad</h4>
                     <p className="text-gray-600 dark:text-gray-400">
-                      Director of Chromatic Experience Systems at the Saudi Hospitality Design Institute with 12+ years of experience implementing advanced color architectures across luxury environments. Specializes in neuroscience-optimized color frameworks and cultural-responsive chromatic integration with a focus on premium hospitality experiences.
+                      Aisha Al-Hamad is a lead uniform designer and consultant specializing in the Middle Eastern hospitality sector. With over a decade of experience, she focuses on creating attire that blends cultural authenticity with contemporary elegance and brand strategy.
                     </p>
                   </div>
                 </div>
@@ -348,15 +203,15 @@ export default function BlogPost() {
 
               {/* Call to Action */}
               <div className="mt-12 bg-primary/5 p-6 rounded-xl dark:bg-primary/20">
-                <h3 className="text-xl font-semibold mb-2">Elevate Your Hospitality Environment</h3>
+                <h3 className="text-xl font-semibold mb-2">Define Your Hospitality Brand with Color</h3>
                 <p className="mb-4">
-                  Discover how our advanced chromatic frameworks can transform your guest experience and brand positioning. Our strategic color systems are engineered specifically for Saudi hospitality environments pursuing excellence.
+                  Learn how strategic color choices in your staff uniforms can elevate your brand and enrich the guest experience in the competitive Middle Eastern market.
                 </p>
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-white hover:bg-primary/90"
                 >
-                  Schedule a Consultation
+                  Consult Our Design Experts
                 </Link>
               </div>
             </div>

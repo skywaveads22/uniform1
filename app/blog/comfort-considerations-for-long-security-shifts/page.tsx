@@ -5,12 +5,12 @@ import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: 'Optimizing Security Personnel Comfort for Extended Shifts: 2025 Breakthrough Solutions | UniformSA',
+    title: 'Comfort Considerations for Long Security Shifts | UniformSA',
     description: 'Discover advanced ergonomic uniform designs and comfort-enhancing technologies for security professionals working long shifts in Saudi Arabia\'s demanding climate conditions.',
     keywords: 'security uniform comfort, long shift ergonomics, fatigue-reducing uniforms, Saudi security personnel comfort, performance-enhancing security attire, extended shift wellbeing',
     openGraph: {
       images: ['/images/security/all_weather_security_gear.jpeg'],
-      title: 'Optimizing Security Personnel Comfort for Extended Shifts: 2025 Breakthrough Solutions',
+      title: 'Comfort Considerations for Long Security Shifts',
       description: 'Comprehensive guide to enhancing security staff performance and wellbeing during extended shifts through advanced uniform solutions tailored for Saudi Arabia\'s unique environment.'
     },
   }
@@ -31,7 +31,7 @@ export default function BlogPost() {
               Blog
             </Link>
             <span>&gt;</span>
-            <span className="text-gray-700 dark:text-white">Optimizing Security Personnel Comfort for Extended Shifts</span>
+            <span className="text-gray-700 dark:text-white">Comfort Considerations for Long Security Shifts</span>
           </nav>
 
           {/* Featured Image */}
@@ -48,7 +48,7 @@ export default function BlogPost() {
           {/* Title and Meta */}
           <div className="mb-10">
             <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Optimizing Security Personnel Comfort for Extended Shifts: 2025 Breakthrough Solutions
+              Comfort Considerations for Long Security Shifts
             </h1>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
               <div className="flex items-center gap-1.5">

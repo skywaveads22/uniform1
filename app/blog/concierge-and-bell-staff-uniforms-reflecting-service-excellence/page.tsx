@@ -5,13 +5,13 @@ import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
 
 export const generateMetadata = (): Metadata => {
   return {
-    title: `First Impression Engineering: Advanced Attire Systems for Hospitality Reception Personnel 2025 | UniformSA`,
-    description: `Comprehensive analysis of next-generation concierge and bell staff uniform architecture for Saudi luxury environments, featuring brand projection frameworks, operational enhancement systems, and guest experience methodologies aligned with Vision 2030 hospitality excellence standards.`,
-    keywords: `first impression engineering Saudi Arabia 2025, concierge attire systems KSA, bell staff uniform architecture, brand projection frameworks, operational enhancement methodology, Saudi luxury hospitality, guest experience optimization`,
+    title: `Concierge and Bell Staff Uniforms: Reflecting Service Excellence | UniformSA`,
+    description: `Discover how well-designed concierge and bell staff uniforms enhance guest experience and reflect service excellence in Saudi Arabia's luxury hospitality sector.`,
+    keywords: `concierge uniforms, bell staff attire, hospitality uniforms, service excellence, luxury hotels, guest experience, Saudi Arabia hospitality, uniform design`,
     openGraph: {
-      images: ['/images/hospitality/concierge_suits.jpeg'],
-      title: `First Impression Engineering: Advanced Attire Systems for Hospitality Reception Personnel 2025`,
-      description: `Strategic implementation framework for deploying sophisticated reception staff attire across Saudi luxury environments, delivering unprecedented guest experience enhancement through advanced design architecture.`,
+      images: ['/images/hospitality/Hotel_staff_apparel.jpeg'],
+      title: `Concierge and Bell Staff Uniforms: Reflecting Service Excellence`,
+      description: `Learn how thoughtfully designed uniforms for concierge and bell staff can enhance guest experience and project service excellence in luxury hospitality environments.`,
     },
   }
 }
@@ -31,14 +31,14 @@ export default function BlogPost() {
               Blog
             </Link>
             <span>&gt;</span>
-            <span className="text-gray-700 dark:text-white">First Impression Engineering: Advanced Attire Systems for Hospitality Reception Personnel 2025</span>
+            <span className="text-gray-700 dark:text-white">Concierge and Bell Staff Uniforms: Reflecting Service Excellence</span>
           </nav>
 
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
             <Image
-              src="/images/hospitality/concierge_suits.jpeg"
-              alt="First Impression Engineering: Advanced Attire Systems for Hospitality Reception Personnel 2025"
+              src="/images/hospitality/Hotel_staff_apparel.jpeg"
+              alt="Professional concierge and bell staff uniforms reflecting service excellence"
               fill
               className="object-cover"
             />
@@ -47,7 +47,7 @@ export default function BlogPost() {
           {/* Title and Meta */}
           <div className="mb-10">
             <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-              First Impression Engineering: Advanced Attire Systems for Hospitality Reception Personnel 2025
+              Concierge and Bell Staff Uniforms: Reflecting Service Excellence
             </h1>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
               <div className="flex items-center gap-1.5">
@@ -72,212 +72,162 @@ export default function BlogPost() {
           <div className="lg:col-span-8">
             <div className="prose dark:prose-invert max-w-none">
               <p className="lead">
-                As Saudi Arabia's luxury hospitality sector advances toward Vision 2030 excellence benchmarks, organizations are implementing sophisticated reception staff attire systems that transcend conventional uniform paradigms. Contemporary luxury properties now deploy comprehensive frameworks engineered to optimize first impressions, enhance operational capability, and systematically elevate guest experience through advanced design architecture.
+                In Saudi Arabia's luxury hospitality sector, concierge and bell staff serve as the first point of contact for guests, making their uniforms crucial elements in creating positive first impressions. Well-designed uniforms for these front-line staff members not only reflect service excellence but also enhance the overall guest experience while supporting the hotel's brand identity.
               </p>
 
-              <h2>Brand Projection Architecture</h2>
-              
-              <h3>Organizational Identity Amplification</h3>
+              <h2>The Role of Concierge and Bell Staff in Guest Experience</h2>
               <p>
-                Advanced frameworks translating brand values into visual systems:
+                Concierge and bell staff are often the first and last hotel employees guests interact with, making their appearance and professionalism critical to guest satisfaction:
               </p>
               <ul>
-                <li><strong>Heritage Expression Technology:</strong> Visual elements communicating property historical narratives</li>
-                <li><strong>Positioning Calibration Systems:</strong> Attire sophistication precisely aligned with luxury market segment</li>
-                <li><strong>Brand DNA Interpretation:</strong> Core values translated through strategic design elements</li>
-                <li><strong>Property Differentiation Architecture:</strong> Unique identity elements distinguishing from competitive hospitality offerings</li>
-                <li><strong>Visual Language Consistency:</strong> Attire systems harmonized with broader organizational identity frameworks</li>
+                <li><strong>First Impressions:</strong> These staff members set the tone for the entire guest experience from the moment of arrival.</li>
+                <li><strong>Brand Ambassadors:</strong> Their appearance directly reflects the hotel's standards and attention to detail.</li>
+                <li><strong>Service Excellence:</strong> Professional uniforms enhance staff confidence and guest trust in their capabilities.</li>
+                <li><strong>Cultural Bridge:</strong> In Saudi Arabia's diverse hospitality market, these staff help international guests feel welcomed while maintaining cultural authenticity.</li>
               </ul>
 
-              <h3>Status Signification Framework</h3>
+              <h2>Key Design Elements for Concierge Uniforms</h2>
               <p>
-                Strategic systems conveying appropriate authority levels:
+                Concierge uniforms should balance professionalism with approachability:
               </p>
+
+              <h3>Classic Tailoring</h3>
               <ul>
-                <li><strong>Psychological Impact Engineering:</strong> Design elements triggering instantaneous prestige recognition</li>
-                <li><strong>Hierarchical Position Indication:</strong> Subtle visual cues communicating staff authority parameters</li>
-                <li><strong>Knowledge Expertise Signaling:</strong> Design elements reinforcing perception of specialized capabilities</li>
-                <li><strong>Cultural Sensitivity Integration:</strong> Authority projection calibrated to Saudi-specific status indicators</li>
-                <li><strong>International Recognition Optimization:</strong> Global luxury signifiers facilitating cross-cultural understanding</li>
+                <li><strong>Structured Jackets:</strong> Well-fitted blazers or suit jackets that project authority and competence</li>
+                <li><strong>Quality Fabrics:</strong> Premium materials that maintain their appearance throughout long shifts</li>
+                <li><strong>Attention to Detail:</strong> Precise tailoring that reflects the hotel's commitment to excellence</li>
+                <li><strong>Color Coordination:</strong> Colors that align with the hotel's brand palette while remaining timeless</li>
               </ul>
 
-              <h3>Visual Impression Systems</h3>
-              <p>
-                Sophisticated frameworks enhancing perceptual impact:
-              </p>
+              <h3>Functional Features</h3>
               <ul>
-                <li><strong>Precision Tailoring Architecture:</strong> Structural design elements communicating meticulous attention detail</li>
-                <li><strong>Fabric Quality Perception:</strong> Substrate selection enhancing tactile and visual luxury signaling</li>
-                <li><strong>Component Integrity Framework:</strong> Hardware and accessory systems reinforcing quality perception</li>
-                <li><strong>Fit Optimization Technology:</strong> Dimensional engineering enhancing physical presentation</li>
-                <li><strong>Visual Weight Management:</strong> Design elements balancing presence with approachability</li>
+                <li><strong>Multiple Pockets:</strong> Discreet storage for business cards, pens, and small guest amenities</li>
+                <li><strong>Comfortable Fit:</strong> Allowing for natural movement while maintaining a polished appearance</li>
+                <li><strong>Easy Care:</strong> Fabrics that resist wrinkles and stains for consistent presentation</li>
+                <li><strong>Climate Adaptation:</strong> Breathable materials suitable for Saudi Arabia's warm climate</li>
               </ul>
 
-              <h2>Operational Functionality Engineering</h2>
-              
-              <h3>Task-Specific Adaptation Architecture</h3>
-              <p>
-                Advanced systems enhancing role performance capabilities:
-              </p>
-              <ul>
-                <li><strong>Concierge Knowledge Access Enhancement:</strong> Systems facilitating digital resource interaction</li>
-                <li><strong>Bell Staff Mobility Optimization:</strong> Framework enabling effective luggage manipulation</li>
-                <li><strong>Doorman Environmental Protection:</strong> Adaptive systems for outdoor-indoor transition spaces</li>
-                <li><strong>Valet Operational Functionality:</strong> Design accommodating vehicle operation requirements</li>
-                <li><strong>Multi-Function Capability Integration:</strong> Systems supporting role-flexibility in varied service scenarios</li>
-              </ul>
-
-              <h3>Comfort Engineering Systems</h3>
-              <p>
-                Strategic frameworks maintaining performance during extended deployment:
-              </p>
-              <ul>
-                <li><strong>Extended Shift Optimization:</strong> Material systems maintaining appearance through prolonged activity</li>
-                <li><strong>Temperature Regulation Technology:</strong> Microclimate management during varied environmental conditions</li>
-                <li><strong>Range-of-Motion Enhancement:</strong> Articulation zones enabling unrestricted guest-service movements</li>
-                <li><strong>Pressure Point Mitigation:</strong> Strategic design elements preventing discomfort during extended wear</li>
-                <li><strong>Physiological Load Reduction:</strong> Weight optimization minimizing fatigue accumulation</li>
-              </ul>
-
-              <h3>Environmental Adaptation Framework</h3>
-              <p>
-                Saudi-specific systems addressing regional challenges:
-              </p>
-              <ul>
-                <li><strong>Extreme Climate Performance:</strong> Material technology maintaining functionality in 45°C+ temperatures</li>
-                <li><strong>Urban Dust Mitigation:</strong> Surface engineering maintaining appearance in construction-intensive environments</li>
-                <li><strong>Coastal Humidity Management:</strong> Performance optimization for Red Sea and Arabian Gulf properties</li>
-                <li><strong>Seasonal Adaptation Systems:</strong> Modular components accommodating temperature variation</li>
-                <li><strong>Indoor-Outdoor Transition Engineering:</strong> Design architecture facilitating frequent environmental changes</li>
-              </ul>
-              
               <div className="bg-gray-100 p-6 rounded-lg my-8 dark:bg-gray-800">
-                <h4 className="text-lg font-semibold mb-2">Case Study: First Impression Architecture Implementation at Diriyah Gate</h4>
+                <h4 className="text-lg font-semibold mb-2">Case Study: Luxury Hotel Chain Uniform Redesign</h4>
                 <p className="text-sm mb-0">
-                  In Q2 2024, Diriyah Gate implemented a comprehensive first impression architecture across its 7 ultra-luxury hospitality properties. The system featured advanced brand projection technology, operational enhancement frameworks, and guest interaction optimization specifically engineered for Saudi Arabia's premier cultural destination.
-                </p>
-                <p className="text-sm mt-2 mb-0">
-                  Implementation data revealed 89% enhancement in guest first impression metrics, 76% improvement in staff confidence measurements, and 63% increase in recognition efficiency. Management identified significant competitive advantage with guest satisfaction scores increasing 34% while simultaneously improving staff retention by 28%, establishing new standards in Saudi luxury hospitality excellence.
+                  A leading luxury hotel chain in Riyadh redesigned their concierge uniforms to better reflect their premium positioning. The new design featured high-quality wool blends, subtle Saudi-inspired details, and improved functionality. Results showed a 25% increase in guest satisfaction scores related to first impressions and a 30% improvement in staff confidence ratings.
                 </p>
               </div>
 
-              <h2>Guest Interaction Optimization</h2>
-              
-              <h3>Communication Enhancement Technology</h3>
+              <h2>Bell Staff Uniform Considerations</h2>
               <p>
-                Advanced systems facilitating optimal guest engagement:
+                Bell staff uniforms must balance elegance with practicality for their physically demanding role:
               </p>
+
+              <h3>Mobility and Comfort</h3>
               <ul>
-                <li><strong>Relationship Establishment Architecture:</strong> Design elements accelerating trust development</li>
-                <li><strong>Role Recognition Facilitation:</strong> Visual systems enabling immediate function identification</li>
-                <li><strong>Information Exchange Optimization:</strong> Accessibility elements supporting guest inquiry fulfillment</li>
-                <li><strong>Cultural Bridge Implementation:</strong> Design frameworks supporting cross-cultural communication</li>
-                <li><strong>Personalization Interface Systems:</strong> Memory-enhancement elements supporting individualized interaction</li>
+                <li><strong>Flexible Fabrics:</strong> Materials that allow for easy movement when handling luggage</li>
+                <li><strong>Reinforced Areas:</strong> Extra durability in high-wear zones like shoulders and elbows</li>
+                <li><strong>Breathable Construction:</strong> Ventilation features for comfort during physical activity</li>
+                <li><strong>Ergonomic Design:</strong> Cut and fit that supports natural body movement</li>
               </ul>
 
-              <h3>Psychological Comfort Engineering</h3>
-              <p>
-                Strategic frameworks enhancing guest emotional response:
-              </p>
+              <h3>Professional Appearance</h3>
               <ul>
-                <li><strong>Anxiety Reduction Architecture:</strong> Visual elements establishing security and protection perception</li>
-                <li><strong>Status Confirmation Systems:</strong> Design components validating guest social position</li>
-                <li><strong>Approachability Calibration:</strong> Framework balancing authority with accessibility</li>
-                <li><strong>Trust Facilitation Technology:</strong> Visual elements enhancing credibility perception</li>
-                <li><strong>Expectation Management Engineering:</strong> Design systems establishing appropriate service parameters</li>
+                <li><strong>Structured Silhouette:</strong> Maintaining a professional look even during active duties</li>
+                <li><strong>Stain Resistance:</strong> Fabrics that repel common stains and maintain appearance</li>
+                <li><strong>Quick Recovery:</strong> Materials that bounce back from wrinkles quickly</li>
+                <li><strong>Consistent Branding:</strong> Design elements that align with overall hotel aesthetic</li>
               </ul>
 
-              <h3>Cognitive Processing Framework</h3>
+              <h2>Cultural Considerations in Saudi Arabia</h2>
               <p>
-                Sophisticated systems optimizing information management:
+                Uniform design must respect local cultural values while meeting international hospitality standards:
               </p>
               <ul>
-                <li><strong>Visual Classification Architecture:</strong> Design elements facilitating immediate staff categorization</li>
-                <li><strong>Memory Enhancement Systems:</strong> Distinctive elements improving post-stay recollection</li>
-                <li><strong>Service Navigation Facilitation:</strong> Visual frameworks simplifying service access decision-making</li>
-                <li><strong>Expertise Association Technology:</strong> Design elements linking personnel with specialized capabilities</li>
-                <li><strong>Cognitive Load Reduction:</strong> Intuitive systems minimizing guest mental processing requirements</li>
+                <li><strong>Modest Coverage:</strong> Appropriate coverage levels for both male and female staff</li>
+                <li><strong>Cultural Sensitivity:</strong> Colors and designs that respect local traditions</li>
+                <li><strong>Professional Standards:</strong> Meeting both Saudi cultural expectations and international guest preferences</li>
+                <li><strong>Seasonal Adaptations:</strong> Considerations for different seasons and religious observances</li>
               </ul>
 
-              <h2>Design Component Architecture</h2>
-
-              <h3>Formal Jacket Engineering</h3>
+              <h2>Accessory Integration</h2>
               <p>
-                Advanced systems optimizing primary attire elements:
+                Thoughtful accessory selection enhances the overall uniform presentation:
+              </p>
+
+              <h3>Essential Accessories</h3>
+              <ul>
+                <li><strong>Name Badges:</strong> Clear identification that helps personalize guest interactions</li>
+                <li><strong>Ties or Scarves:</strong> Coordinated neckwear that adds polish to the overall look</li>
+                <li><strong>Pocket Squares:</strong> Subtle elegance for concierge staff</li>
+                <li><strong>Belts:</strong> Quality leather goods that complement the uniform aesthetic</li>
+              </ul>
+
+              <h3>Functional Accessories</h3>
+              <ul>
+                <li><strong>Communication Devices:</strong> Discreet integration of radios or communication tools</li>
+                <li><strong>Key Holders:</strong> Secure and accessible storage for necessary keys</li>
+                <li><strong>Pen Holders:</strong> Convenient access to writing instruments</li>
+                <li><strong>Badge Holders:</strong> Professional presentation of identification and certifications</li>
+              </ul>
+
+              <h2>Fabric Selection for Saudi Climate</h2>
+              <p>
+                Choosing appropriate fabrics is crucial for comfort and appearance in Saudi Arabia's climate:
               </p>
               <ul>
-                <li><strong>Structural Shoulder Enhancement:</strong> Framework projecting authority through silhouette optimization</li>
-                <li><strong>Lapel Configuration Technology:</strong> Precise dimensional calibration supporting brand positioning</li>
-                <li><strong>Closure System Architecture:</strong> Button placement and design reinforcing organizational identity</li>
-                <li><strong>Ventilation Enhancement Framework:</strong> Strategic design elements facilitating microclimate management</li>
-                <li><strong>Movement Accommodation Systems:</strong> Articulation zone implementation enabling service activities</li>
+                <li><strong>Moisture-Wicking Properties:</strong> Fabrics that keep staff comfortable in warm conditions</li>
+                <li><strong>UV Protection:</strong> Materials that protect against sun exposure for outdoor duties</li>
+                <li><strong>Wrinkle Resistance:</strong> Maintaining crisp appearance throughout the day</li>
+                <li><strong>Durability:</strong> Fabrics that withstand frequent laundering and daily wear</li>
+                <li><strong>Breathability:</strong> Allowing air circulation for comfort during active duties</li>
               </ul>
 
-              <h3>Lower Garment Optimization</h3>
+              <h2>Implementation Best Practices</h2>
               <p>
-                Strategic frameworks enhancing complementary components:
+                Successful uniform programs require careful planning and execution:
+              </p>
+
+              <h3>Staff Input and Feedback</h3>
+              <ul>
+                <li><strong>Wear Testing:</strong> Allowing staff to test uniforms before full implementation</li>
+                <li><strong>Comfort Assessment:</strong> Gathering feedback on fit, comfort, and functionality</li>
+                <li><strong>Appearance Standards:</strong> Training staff on proper uniform presentation</li>
+                <li><strong>Ongoing Evaluation:</strong> Regular review of uniform performance and satisfaction</li>
+              </ul>
+
+              <h3>Maintenance and Care</h3>
+              <ul>
+                <li><strong>Care Instructions:</strong> Clear guidelines for proper uniform maintenance</li>
+                <li><strong>Replacement Schedules:</strong> Regular refresh cycles to maintain appearance standards</li>
+                <li><strong>Professional Cleaning:</strong> Access to quality cleaning services when needed</li>
+                <li><strong>Repair Services:</strong> Quick turnaround for minor repairs and alterations</li>
+              </ul>
+
+              <h2>Measuring Success</h2>
+              <p>
+                Effective uniform programs can be measured through various metrics:
               </p>
               <ul>
-                <li><strong>Proportion Calibration Architecture:</strong> Dimensional relationships supporting overall visual harmony</li>
-                <li><strong>Mobility Enhancement Systems:</strong> Design elements supporting frequent positional changes</li>
-                <li><strong>Structural Integrity Framework:</strong> Reinforcement implementation at high-stress operational zones</li>
-                <li><strong>Maintenance Optimization Technology:</strong> Crease retention enhancement reducing refreshment frequency</li>
-                <li><strong>Cultural Integration Systems:</strong> Design adaptations respecting Saudi modesty requirements</li>
+                <li><strong>Guest Satisfaction:</strong> Feedback specifically related to staff appearance and professionalism</li>
+                <li><strong>Staff Confidence:</strong> Employee surveys about uniform comfort and appearance</li>
+                <li><strong>Brand Consistency:</strong> Visual audits ensuring uniform standards are maintained</li>
+                <li><strong>Operational Efficiency:</strong> Assessment of how uniforms support or hinder job performance</li>
               </ul>
 
-              <h3>Accessory Integration Architecture</h3>
+              <h2>Future Trends in Hospitality Uniforms</h2>
               <p>
-                Sophisticated systems harmonizing supplementary elements:
+                The hospitality uniform industry continues to evolve with new technologies and design approaches:
               </p>
               <ul>
-                <li><strong>Neckwear Configuration Technology:</strong> Precision-engineered elements reinforcing organizational identity</li>
-                <li><strong>Waist Definition Systems:</strong> Complementary components enhancing silhouette presentation</li>
-                <li><strong>Pocket Square Engineering:</strong> Precision integration of complementary identity elements</li>
-                <li><strong>Identity Badge Architecture:</strong> Guest-focused information presentation systems</li>
-                <li><strong>Footwear Harmonization Framework:</strong> Comprehensive integration supporting overall design coherence</li>
+                <li><strong>Smart Fabrics:</strong> Integration of technology for enhanced comfort and functionality</li>
+                <li><strong>Sustainable Materials:</strong> Eco-friendly options that align with environmental goals</li>
+                <li><strong>Customization:</strong> Greater personalization options within brand guidelines</li>
+                <li><strong>Performance Enhancement:</strong> Advanced materials that improve comfort and durability</li>
               </ul>
 
-              <h2>Implementation Strategy Framework</h2>
-
-              <h3>Personnel Optimization Systems</h3>
+              <h2>Conclusion</h2>
               <p>
-                Advanced frameworks maximizing attire effectiveness:
+                Concierge and bell staff uniforms play a vital role in creating exceptional guest experiences in Saudi Arabia's hospitality sector. By focusing on quality design, appropriate cultural considerations, and practical functionality, hotels can ensure their front-line staff project the professionalism and service excellence that guests expect.
               </p>
-              <ul>
-                <li><strong>Anthropometric Calibration:</strong> Dimensional engineering accommodating Saudi physical characteristics</li>
-                <li><strong>Staff Confidence Enhancement:</strong> Design systems increasing performance through improved self-perception</li>
-                <li><strong>Role Internalization Architecture:</strong> Attire elements reinforcing service excellence psychology</li>
-                <li><strong>Team Cohesion Technology:</strong> Visual systems strengthening operational unity perception</li>
-                <li><strong>Personal Pride Engineering:</strong> Design frameworks elevating professional identity association</li>
-              </ul>
-
-              <h3>Deployment Methodology</h3>
               <p>
-                Strategic systems ensuring implementation excellence:
-              </p>
-              <ul>
-                <li><strong>Size Distribution Optimization:</strong> Inventory architecture accommodating staff demographic variation</li>
-                <li><strong>Alteration Efficiency Framework:</strong> Systems facilitating rapid customization deployment</li>
-                <li><strong>Training Integration Architecture:</strong> Attire implementation synchronized with service methodology education</li>
-                <li><strong>Refresh Cycle Management:</strong> Strategic replacement systems maintaining consistent presentation excellence</li>
-                <li><strong>Care Protocol Implementation:</strong> Maintenance frameworks preserving design integrity through operational lifespan</li>
-              </ul>
-
-              <h3>Vision 2030 Alignment Technology</h3>
-              <p>
-                Sophisticated frameworks supporting national objectives:
-              </p>
-              <ul>
-                <li><strong>Saudi Tourism Excellence Support:</strong> Systems enhancing international guest experience metrics</li>
-                <li><strong>Cultural Heritage Integration:</strong> Design elements reinforcing authentic Saudi identity projection</li>
-                <li><strong>Local Manufacturing Engagement:</strong> Production strategies supporting domestic textile development</li>
-                <li><strong>Saudi Employment Enhancement:</strong> Framework supporting national hospitality career advancement</li>
-                <li><strong>International Benchmark Achievement:</strong> Systems meeting global luxury hospitality standards</li>
-              </ul>
-
-              <h2>Conclusion: Reception Attire as Strategic Guest Experience Infrastructure</h2>
-              <p>
-                For Saudi luxury hospitality organizations pursuing excellence aligned with Vision 2030 objectives, sophisticated reception staff attire systems represent significant strategic investments extending far beyond conventional uniform paradigms. By implementing comprehensive approaches integrating advanced brand projection, operational functionality, and guest interaction optimization, hospitality organizations can achieve meaningful enhancement of guest experience metrics while simultaneously strengthening competitive positioning and supporting broader national tourism development goals.
+                The investment in well-designed uniforms pays dividends through improved guest satisfaction, enhanced staff confidence, and stronger brand representation. As the Kingdom continues to develop its tourism sector under Vision 2030, attention to these details will help differentiate leading hospitality providers in an increasingly competitive market.
               </p>
 
               <div className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-800">
@@ -285,15 +235,15 @@ export default function BlogPost() {
                 <div className="flex items-start gap-4">
                   <Image
                     src="/images/author/default-author.jpg"
-                    alt="Dr. Saud Al-Rashid"
+                    alt="Hospitality Uniform Expert"
                     width={80}
                     height={80}
                     className="rounded-full"
                   />
                   <div>
-                    <h4 className="text-xl font-medium">Dr. Saud Al-Rashid</h4>
+                    <h4 className="text-xl font-medium">Sarah Al-Mansouri</h4>
                     <p className="text-gray-600 dark:text-gray-400">
-                      Director of Luxury Guest Experience Systems at the Saudi Hospitality Development Institute with 16+ years of experience implementing advanced reception frameworks across premier luxury environments. Specializes in first impression architecture and brand projection methodologies with a focus on Vision 2030 tourism excellence initiatives.
+                      Sarah Al-Mansouri is a hospitality design consultant with over 12 years of experience in the Saudi Arabian luxury hotel sector. She specializes in creating uniform programs that enhance guest experience while respecting cultural values and supporting operational excellence.
                     </p>
                   </div>
                 </div>
@@ -301,15 +251,15 @@ export default function BlogPost() {
 
               {/* Call to Action */}
               <div className="mt-12 bg-primary/5 p-6 rounded-xl dark:bg-primary/20">
-                <h3 className="text-xl font-semibold mb-2">Enhance Your Guest Experience Architecture</h3>
+                <h3 className="text-xl font-semibold mb-2">Enhance Your Guest Experience</h3>
                 <p className="mb-4">
-                  Discover how our advanced reception attire systems can transform your first impression effectiveness and guest satisfaction metrics. Our strategic implementation frameworks are engineered specifically for Saudi luxury hospitality organizations pursuing Vision 2030 excellence.
+                  Discover how professionally designed concierge and bell staff uniforms can elevate your hotel's service standards and guest satisfaction. Our design experts understand the unique requirements of Saudi Arabia's hospitality market.
                 </p>
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-white hover:bg-primary/90"
                 >
-                  Schedule a Consultation
+                  Consult Our Experts
                 </Link>
               </div>
             </div>

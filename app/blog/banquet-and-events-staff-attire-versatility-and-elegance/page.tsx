@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { Clock, Calendar, Tag, Share2 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Banquet and Events Staff Attire: Versatility and Elegance | 2024',
+  title: 'Banquet and Events Staff Attire: Versatility and Elegance | UniformSA 2024',
   description: 'Explore how versatile and elegant uniform solutions for banquet and events staff in Saudi Arabia enhance guest experience, adapt to different event types, and reinforce brand identity while meeting cultural requirements.',
   openGraph: {
-    title: 'Banquet and Events Staff Attire: Versatility and Elegance | 2024',
+    title: 'Banquet and Events Staff Attire: Versatility and Elegance | UniformSA 2024',
     description: 'Explore how versatile and elegant uniform solutions for banquet and events staff in Saudi Arabia enhance guest experience, adapt to different event types, and reinforce brand identity while meeting cultural requirements.',
     images: ['/images/hospitality/banquet_events_staff_attire.jpeg'],
   }
@@ -180,7 +180,7 @@ export default function BanquetEventsStaffAttire() {
         </p>
         <ul>
           <li><strong>Comprehensive Grooming Standards:</strong> Development of detailed appearance guidelines that complement uniform design, including specific protocols for accessories, personal grooming, and uniform maintenance that maintain total presentation excellence.</li>
-          <li><strong>wear Technique Training:</strong> Implementation of staff education covering proper garment wear methods, including specific guidance on posture, movement, and positioning that optimizes the uniform's visual impact during guest interactions.</li>
+          <li><strong>Wear Technique Training:</strong> Implementation of staff education covering proper garment wear methods, including specific guidance on posture, movement, and positioning that optimizes the uniform's visual impact during guest interactions.</li>
           <li><strong>Daily Inspection Systems:</strong> Establishment of pre-shift review protocols that ensure consistent uniform presentation across all team members, with standardized evaluation criteria and remediation processes for any deficiencies.</li>
           <li><strong>Cultural Context Education:</strong> Staff training that explains the significance of various uniform elements in Saudi cultural contexts, deepening understanding of why certain presentation standards are particularly important for guest perception.</li>
           <li><strong>Recognition Programs:</strong> Development of staff incentive systems that reward exceptional uniform presentation, reinforcing the critical role that appearance plays in overall service excellence and guest experience.</li>
