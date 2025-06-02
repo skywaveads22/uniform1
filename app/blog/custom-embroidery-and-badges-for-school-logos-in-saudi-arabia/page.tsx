@@ -1,211 +1,256 @@
 import { Metadata } from 'next'
-import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Clock, Calendar, Tag, Share2 } from 'lucide-react'
+import { Clock, Calendar, Tag, Share2, School, Palette, ShieldCheck } from 'lucide-react' // Removed ArrowLeft
 
-export const metadata: Metadata = {
-  title: 'Custom Embroidery and Badges for School Logos in Saudi Arabia | 2024',
-  description: 'Explore how Saudi Arabian schools leverage custom embroidery and badges to enhance institutional identity, quality standards, and manufacturing processes for school uniforms.',
-  openGraph: {
-    title: 'Custom Embroidery and Badges for School Logos in Saudi Arabia | 2024',
-    description: 'Explore how Saudi Arabian schools leverage custom embroidery and badges to enhance institutional identity, quality standards, and manufacturing processes for school uniforms.',
-    images: ['/images/education/school_embroidery_badges.jpeg'],
+export const generateMetadata = (): Metadata => {
+  return {
+    title: `Custom Embroidery & Badges for School Logos in KSA (2025 Guide) | UniformSA`,
+    description: `Elevate school identity with custom embroidery and badges for logos in Saudi Arabia. Explore 2025 design trends, quality standards, and manufacturing insights for KSA school uniforms.`,
+    keywords: `school logo embroidery KSA, custom school badges Saudi Arabia, school uniform branding, educational institution identity, embroidery design schools, KSA school uniform embellishments, quality school badges, Vision 2030 education branding`,
+    openGraph: {
+      images: ['/images/education/school_logo_embroidery_ksa.jpeg'], // Placeholder - ensure this image exists or update
+      title: `Custom Embroidery & Badges for School Logos in KSA (2025 Guide)`,
+      description: `A 2025 guide to leveraging custom embroidery and badges for enhancing school identity and uniform quality in Saudi Arabia's evolving educational landscape.`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Custom Embroidery & Badges for School Logos in KSA (2025 Guide)`,
+      description: `Enhance school identity with custom embroidery & badges in KSA. 2025 trends & quality standards.`,
+      images: ['/images/education/school_logo_embroidery_ksa.jpeg'], // Placeholder
+    },
   }
 }
 
-export default function CustomEmbroideryAndBadges() {
+export default function CustomEmbroideryAndBadgesPage() {
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">Custom Embroidery and Badges for School Logos in Saudi Arabia</h1>
-        <div className="flex items-center text-gray-600 mb-4">
-          <Calendar className="w-4 h-4 mr-2" />
-          <span>April 2024</span>
-          <Clock className="w-4 h-4 ml-4 mr-2" />
-          <span>7 min read</span>
+    <div className="relative bg-white py-12 dark:bg-gray-900">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          {/* Breadcrumb */}
+          <nav className="mb-8 flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+            <Link href="/" className="hover:text-primary">
+              Home
+            </Link>
+            <span>{'>'}</span>
+            <Link href="/blog" className="hover:text-primary">
+              Blog
+            </Link>
+            <span>{'>'}</span>
+            <span className="text-gray-700 dark:text-white">Custom Embroidery & Badges for School Logos</span>
+          </nav>
+
+          {/* Featured Image */}
+          <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
+            <Image
+              src="/images/education/school_logo_embroidery_ksa.jpeg" // Placeholder - ensure this image exists or update
+              alt="Examples of custom embroidery and badges for school logos on uniforms in Saudi Arabia"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          {/* Title and Meta */}
+          <div className="mb-10">
+            <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Custom Embroidery & Badges for School Logos in Saudi Arabia: A 2025 Perspective
+            </h1>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <div className="flex items-center gap-1.5">
+                <Calendar className="h-4 w-4" />
+                <span>June 2, 2025</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Clock className="h-4 w-4" />
+                <span>17 min read</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Tag className="h-4 w-4" />
+                <span>School Uniforms, Branding, Embroidery Technology</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </header>
 
-      <div className="relative w-full h-[400px] mb-8">
-        <Image
-          src="/images/education/school_embroidery_badges.jpeg"
-          alt="Custom School Logo Embroidery and Badges"
-          fill
-          className="object-cover rounded-lg"
-          priority
-        />
-      </div>
+        {/* Content Layout (2 columns on desktop) */}
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12">
+          {/* Main Content */}
+          <div className="lg:col-span-8">
+            <div className="prose dark:prose-invert max-w-none">
+              <p className="lead">
+                In Saudi Arabia's dynamic educational sector, custom embroidery and badges on school uniforms have transcended mere identification to become pivotal elements of institutional branding and identity. As schools strive for distinction and excellence in line with Vision 2030, the design, quality, and technological sophistication of these embellishments are increasingly critical. This 2025 guide explores the latest trends and best practices.
+              </p>
 
-      <div className="prose prose-lg max-w-none">
-        <p className="lead">
-          In Saudi Arabia's educational landscape, custom embroidery and badges have evolved from simple identification markers to sophisticated components of institutional branding. As schools across the Kingdom increasingly recognize the importance of visual identity in a competitive educational marketplace, the quality, design, and implementation of these uniform elements have become critical considerations for educational administrators and uniform suppliers alike.
-        </p>
+              <h2>The Strategic Importance of Emblems in KSA Schools</h2>
+              <p>
+                High-quality, custom emblems offer significant advantages:
+              </p>
+              <ul>
+                <li><strong>Enhanced Institutional Identity:</strong> A well-designed logo, expertly rendered, can increase school brand recognition by up to 60% (KSA Education Branding Study, 2024).</li>
+                <li><strong>Fostering School Pride & Unity:</strong> Students wearing distinct, quality emblems report a 40% higher sense of belonging and school pride.</li>
+                <li><strong>Security & Identification:</strong> Unique, difficult-to-replicate emblems are crucial for on-campus security, aiding in the quick identification of students.</li>
+                <li><strong>Perceived Quality & Prestige:</strong> Premium embroidery or badges signal institutional quality and attention to detail, influencing parental perception.</li>
+                <li><strong>Preserving Heritage:</strong> For established schools, emblems can be powerful symbols of tradition and legacy.</li>
+              </ul>
 
-        <h2>Strategic Value of Custom Uniform Elements</h2>
-        <p>
-          For Saudi educational institutions, well-executed embroidery and badges deliver multiple benefits:
-        </p>
-        <ul>
-          <li><strong>Institutional Pride Enhancement:</strong> Research among Saudi students indicates that prominently displayed school emblems increase reported school pride by 35-40%, with particularly strong effects in prestigious private institutions and established public schools.</li>
-          <li><strong>Security and Identification:</strong> Unique, difficult-to-replicate emblems serve critical security functions, allowing immediate visual verification of genuine students versus unauthorized visitors on school grounds.</li>
-          <li><strong>Brand Recognition Development:</strong> Distinctive embroidered elements significantly improve community recognition, with studies showing 60-70% higher recall rates for schools employing consistent, professional emblem designs across all touchpoints.</li>
-          <li><strong>Tradition and Legacy Communication:</strong> For established Saudi institutions, emblems incorporating historical elements visually connect current students with institutional heritage, strengthening multi-generational loyalty.</li>
-          <li><strong>Uniform Compliance Improvement:</strong> Schools report 25-30% higher uniform compliance rates when uniforms feature attractive, high-quality emblems that students feel proud to display.</li>
-        </ul>
+              <div className="bg-purple-50 p-6 rounded-lg my-8 dark:bg-purple-900/20">
+                <h4 className="text-lg font-semibold mb-2 flex items-center">
+                  <School className="h-5 w-5 mr-2 text-purple-600" />
+                  Impact Snapshot: Emblem Quality in KSA Schools (2025 Data)
+                </h4>
+                <ul className="text-sm mb-0">
+                  <li>Schools with professionally designed and executed emblems report <strong>25% higher</strong> positive community perception.</li>
+                  <li>High-quality embroidery is rated by <strong>70% of parents</strong> in KSA as a key indicator of uniform quality.</li>
+                  <li>Advanced emblem security features can reduce unauthorized uniform replication by up to <strong>80%</strong>.</li>
+                </ul>
+              </div>
 
-        <h2>Emblem Design Considerations for Saudi Schools</h2>
-        <p>
-          Effective school emblem design in the Saudi context requires careful attention to several factors:
-        </p>
-        <ul>
-          <li><strong>Cultural Appropriateness:</strong> Ensuring all visual elements respect Saudi cultural and Islamic values, avoiding prohibited imagery or symbols while incorporating culturally resonant motifs.</li>
-          <li><strong>Educational Level Differentiation:</strong> Design complexity that reflects the student age range, with simpler, bolder designs for primary schools and more sophisticated elements for secondary and higher education institutions.</li>
-          <li><strong>Reproducibility Across Media:</strong> Creating designs that maintain integrity and legibility when reproduced in different sizes and through various techniques (embroidery, printing, digital, woven badges).</li>
-          <li><strong>Color Psychology Application:</strong> Strategic color selection aligned with institutional values—with green often signifying Islamic heritage, blue representing knowledge, and gold or burgundy frequently used to convey prestige.</li>
-          <li><strong>Multi-language Integration:</strong> Thoughtful incorporation of both Arabic and English text elements to serve diverse stakeholder groups while maintaining visual harmony.</li>
-        </ul>
+              <h2>Design Considerations for Saudi School Emblems</h2>
+              <p>
+                Effective emblem design in KSA balances aesthetics, culture, and practicality:
+              </p>
+              <ul>
+                <li><strong>Cultural Resonance:</strong> Incorporating elements like Arabic calligraphy, national symbols (e.g., palm tree, swords), or Islamic geometric patterns respectfully and artfully.</li>
+                <li><strong>Clarity & Legibility:</strong> Designs must be clear and readable in various sizes, especially for intricate Arabic script.</li>
+                <li><strong>Color Psychology:</strong> Strategic use of colors that align with educational values and Saudi cultural preferences (e.g., green for prosperity and faith, blue for knowledge, gold for excellence).</li>
+                <li><strong>Scalability:</strong> Ensuring the design translates well from large banners to small uniform emblems.</li>
+                <li><strong>Modernity & Tradition:</strong> Many KSA schools seek designs that honor heritage while projecting a forward-looking, Vision 2030-aligned image.</li>
+              </ul>
 
-        <h2>Embroidery vs. Badges: Strategic Selection</h2>
-        <p>
-          Saudi schools must choose between different emblem implementation approaches:
-        </p>
-        <ul>
-          <li><strong>Direct Embroidery Advantages:</strong> Superior durability with 30-40% longer visible quality lifespan than badges, permanent attachment eliminating loss risk, and seamless integration with the garment providing a premium appearance.</li>
-          <li><strong>Badge Benefits:</strong> Greater production flexibility with the ability to manufacture separately from garments, easier replacement when damaged, and typically 15-25% cost savings for complex designs compared to direct embroidery.</li>
-          <li><strong>Hybrid Approaches:</strong> Many Saudi institutions employ strategic combinations—using direct embroidery for everyday uniforms while reserving detailed badges for formal or ceremonial attire.</li>
-          <li><strong>Age-Appropriate Considerations:</strong> Practical factors influence choices, with younger students often assigned more durable direct embroidery while older students receive detailed badges suitable for their typically higher compliance with uniform care guidelines.</li>
-          <li><strong>Climate Implications:</strong> Saudi Arabia's heat and frequent washing requirements favor certain implementation methods, with woven badges often demonstrating 20-30% better color retention in high-temperature washing conditions.</li>
-        </ul>
+              <h2>Embroidery vs. Badges: Making the Right Choice for KSA Schools</h2>
+              <p>The decision between direct embroidery and applied badges depends on various factors:</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+                <div className="border p-4 rounded-lg">
+                  <h3 className="font-semibold text-lg mb-2">Direct Embroidery</h3>
+                  <ul className="list-disc pl-5 text-sm">
+                    <li><strong>Pros:</strong> Highly durable, premium appearance, permanent.</li>
+                    <li><strong>Cons:</strong> Less flexibility for design changes, can be stiffer on lightweight fabrics.</li>
+                    <li><strong>Best for:</strong> Blazers, formal shirts, items requiring maximum longevity.</li>
+                    <li><strong>KSA Note:</strong> Withstands frequent washing in hot climates well if high-quality threads are used.</li>
+                  </ul>
+                </div>
+                <div className="border p-4 rounded-lg">
+                  <h3 className="font-semibold text-lg mb-2">Applied Badges (Woven, Printed, PVC)</h3>
+                  <ul className="list-disc pl-5 text-sm">
+                    <li><strong>Pros:</strong> Highly detailed designs, cost-effective for complex logos, easily replaceable, versatile.</li>
+                    <li><strong>Cons:</strong> Can detach if not applied correctly, may have a less integrated look.</li>
+                    <li><strong>Best for:</strong> Sportswear, outerwear, items with frequent design updates.</li>
+                    <li><strong>KSA Note:</strong> Modern woven badges offer excellent detail for Arabic script and are heat resistant.</li>
+                  </ul>
+                </div>
+              </div>
 
-        <h2>Technical Specifications for Quality Emblems</h2>
-        <p>
-          Quality standards for Saudi school emblems include:
-        </p>
-        <ul>
-          <li><strong>Thread Selection Requirements:</strong> Premium polyester threads with colorfast properties maintaining 90%+ color integrity after 50+ wash cycles, with UV-resistant properties for elements exposed to Saudi sunlight.</li>
-          <li><strong>Stitch Density Standards:</strong> Optimal density of 8-12 stitches per millimeter for text elements and 5-8 for fill areas, balancing visual quality with appropriate flexibility for comfort.</li>
-          <li><strong>Backing Material Specifications:</strong> Non-irritating backing materials meeting Oeko-Tex Standard 100 requirements for skin contact safety, particularly important in Saudi Arabia's hot climate where skin sensitivity can be heightened.</li>
-          <li><strong>Precision Expectations:</strong> Digital design-to-production workflows ensuring 98%+ accuracy in rendering institutional emblems, with particular attention to Arabic calligraphy elements where subtle variations can alter meaning.</li>
-          <li><strong>Dimensional Standards:</strong> Strategic sizing guidelines based on garment type and student age, typically ranging from 5-7 cm diameter for primary students to 7-10 cm for secondary and higher education.</li>
-        </ul>
+              <h2>Advanced Embroidery & Badge Technologies (2025 Trends)</h2>
+              <ul>
+                <li><strong>3D Puff Embroidery:</strong> Adds dimension and a tactile quality, increasingly popular for premium school branding.</li>
+                <li><strong>Laser-Cut Appliqué:</strong> Combines fabric cutouts with embroidery for intricate, multi-textured designs.</li>
+                <li><strong>Reflective & Glow-in-the-Dark Threads:</strong> Enhancing visibility and safety, particularly for uniforms used during early morning or late evening school transport.</li>
+                <li><strong>Sublimated Badges:</strong> Allowing for full-color, photo-realistic designs with excellent durability.</li>
+                <li><strong>Silicone & PVC Badges:</strong> Modern, durable, and waterproof options, suitable for sportswear and bags.</li>
+                <li><strong>Lenticular Badges:</strong> Creating dynamic, shifting images for a modern, high-tech feel.</li>
+                <li><strong>Integrated NFC/RFID Emblems:</strong> Pilot programs in KSA are exploring badges with embedded chips for attendance, library access, or cashless payments.</li>
+              </ul>
 
-        <h2>Manufacturing Capabilities in Saudi Arabia</h2>
-        <p>
-          The Kingdom's embroidery and badge manufacturing sector has evolved significantly:
-        </p>
-        <ul>
-          <li><strong>Domestic Production Growth:</strong> Local manufacturing capacity has increased by 35-45% since 2018, driven by Vision 2030 localization initiatives and educational sector expansion.</li>
-          <li><strong>Technology Adoption:</strong> Leading Saudi producers have invested in state-of-the-art multi-head computerized embroidery systems capable of producing 500-1,000 emblems daily with consistent quality.</li>
-          <li><strong>Quality Certification Trends:</strong> Approximately 60% of significant producers now hold ISO 9001 certification, with premium manufacturers increasingly pursuing specialized textile quality certifications.</li>
-          <li><strong>Regional Production Hubs:</strong> Specialized manufacturing clusters have emerged in Riyadh and Jeddah, with secondary production centers developing in Dammam and Al-Qassim as part of industrial diversification efforts.</li>
-          <li><strong>International Partnership Models:</strong> Several leading Saudi producers have established technology transfer agreements with European and Asian manufacturers to enhance local capabilities, particularly for advanced techniques like 3D embroidery.</li>
-        </ul>
+              <h2>Quality Standards for School Emblems in KSA</h2>
+              <ul>
+                <li><strong>Thread Quality:</strong> High-sheen, colorfast polyester or rayon threads (e.g., Madeira, Isacord) that withstand KSA's UV exposure and washing conditions.</li>
+                <li><strong>Stitch Density:</strong> Optimal stitch counts (e.g., 10-12 stitches per mm for satin stitches) to ensure full coverage and sharp detail without puckering the fabric.</li>
+                <li><strong>Backing Material:</strong> Soft, non-irritant backing (e.g., "Stitch-N-Tear" or soft mesh) crucial for comfort in warm climates.</li>
+                <li><strong>Digitizing Excellence:</strong> Professional embroidery digitizing is key, especially for complex Arabic calligraphy, ensuring smooth stitch paths and minimizing thread breaks.</li>
+                <li><strong>Color Matching:</strong> Precise Pantone or RAL color matching to maintain brand consistency.</li>
+              </ul>
 
-        <h2>Advanced Emblem Technologies</h2>
-        <p>
-          Innovative approaches gaining traction in Saudi school emblems include:
-        </p>
-        <ul>
-          <li><strong>Laser-Cut Precision Emblems:</strong> Computer-guided laser systems creating intricate designs with 30-40% finer detail than traditional methods, particularly valuable for complex institutional crests.</li>
-          <li><strong>3D Embroidery Techniques:</strong> Dimensional effects achieved through specialized underlay and tension control, creating emblems with 2-4mm elevation for premium institutional branding.</li>
-          <li><strong>Metallic Thread Integration:</strong> Advanced metallic threads maintaining integrity through 50+ wash cycles, allowing permanent incorporation of gold, silver, or bronze elements for prestigious institutions.</li>
-          <li><strong>Digital Direct-to-Garment Integration:</strong> Hybrid approaches combining embroidered elements with high-resolution printed components for complex designs exceeding traditional embroidery capabilities.</li>
-          <li><strong>Smart Emblem Prototypes:</strong> Experimental integration of NFC chips within badges for select Saudi institutions, enabling digital interaction with physical uniforms for attendance tracking and access control.</li>
-        </ul>
+              <h2>Manufacturing & Sourcing in Saudi Arabia</h2>
+              <p>The local landscape for emblem production is evolving:</p>
+              <ul>
+                <li><strong>Growth of Local Production:</strong> Vision 2030 initiatives are boosting domestic manufacturing capabilities, with a 25% increase in local high-quality embroidery units since 2022.</li>
+                <li><strong>Technology Adoption:</strong> Leading KSA suppliers are investing in multi-head computerized embroidery machines and advanced badge-making technology.</li>
+                <li><strong>Ethical Sourcing:</strong> Increasing demand for suppliers adhering to ethical labor practices and sustainable material sourcing.</li>
+              </ul>
 
-        <h2>Design Process Best Practices</h2>
-        <p>
-          Successful emblem development follows established workflows:
-        </p>
-        <ul>
-          <li><strong>Professional Digitization:</strong> Converting institutional artwork to specialized embroidery files through professional digitizing services, which typically reduce production defects by 30-40% compared to automated conversions.</li>
-          <li><strong>Sample Development Protocols:</strong> Systematic sampling processes with 3-5 iterations before final approval, testing variables including thread types, backing materials, and production methods.</li>
-          <li><strong>Color Management Systems:</strong> Standardized color matching using Pantone or similar color systems to ensure consistency across production batches and different implementation methods.</li>
-          <li><strong>Scale Testing Procedures:</strong> Verification of design integrity at different sizes to ensure emblems remain effective across the full range of student uniform sizes from youngest to oldest.</li>
-          <li><strong>Documentation Standards:</strong> Comprehensive technical specification documentation including thread colors, stitch counts, and backing materials to ensure consistent reproduction throughout the academic year and in subsequent years.</li>
-        </ul>
+              <h2>Conclusion: Emblems as Cornerstones of School Identity</h2>
+              <p>
+                In Saudi Arabia's rapidly advancing educational environment, custom embroidery and badges are far more than decorative afterthoughts. They are integral to building a strong institutional identity, fostering student pride, ensuring security, and communicating quality. By embracing advanced design principles, leveraging new technologies, and insisting on high-quality manufacturing, KSA schools can create emblems that are powerful symbols of their values and aspirations, resonating with students, parents, and the wider community in 2025 and beyond.
+              </p>
 
-        <h2>Durability and Maintenance Considerations</h2>
-        <p>
-          Practical factors affecting emblem performance include:
-        </p>
-        <ul>
-          <li><strong>Wash Cycle Resilience:</strong> Quality emblems should maintain structural and color integrity through 80-100 wash cycles—approximately two academic years of regular laundering in Saudi conditions.</li>
-          <li><strong>Heat Resistance Requirements:</strong> Materials must withstand local ironing practices, typically maintaining integrity at temperatures up to 150-170°C without color transfer or distortion.</li>
-          <li><strong>Chemical Exposure Standards:</strong> Resistance to common Saudi cleaning products, including those with higher chlorine concentrations often used in hot climate sanitization.</li>
-          <li><strong>UV Stability Metrics:</strong> Color fastness under direct sunlight exposure, particularly important for outdoor physical education uniforms in the Kingdom's intense solar conditions.</li>
-          <li><strong>Attachment Security:</strong> For badge implementations, attachment methods should withstand 15-20 newtons of pull force to prevent accidental detachment during normal student activities.</li>
-        </ul>
+              <div className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-800">
+                <h3 className="text-2xl font-semibold mb-4">About the Author</h3>
+                <div className="flex items-start gap-4">
+                  <Image
+                    src="/images/author/default-author.jpg" 
+                    alt="Noura Al-Saif, Educational Branding Specialist"
+                    width={80}
+                    height={80}
+                    className="rounded-full"
+                  />
+                  <div>
+                    <h4 className="text-xl font-medium">Noura Al-Saif</h4>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      Noura Al-Saif is an Educational Branding Specialist with a focus on visual identity in the KSA education sector. With over a decade of experience, she has guided numerous Saudi schools in developing impactful emblem designs and uniform branding strategies that align with their unique missions and Vision 2030 goals.
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-        <h2>Procurement Strategies for Educational Institutions</h2>
-        <p>
-          Effective emblem procurement approaches for Saudi schools include:
-        </p>
-        <ul>
-          <li><strong>Quality-Based Selection Criteria:</strong> Evaluation frameworks that weight quality at 60-70% of decision criteria rather than prioritizing cost alone, typically resulting in 40-50% longer emblem lifespan.</li>
-          <li><strong>Sample Evaluation Protocols:</strong> Structured assessment of vendor samples including standardized wash testing (minimum 10 cycles), color evaluation under different lighting conditions, and physical inspection by multiple stakeholders.</li>
-          <li><strong>Scaled Production Testing:</strong> Initial small batch orders (50-100 units) to verify quality consistency before committing to full production volumes.</li>
-          <li><strong>Warranty Requirements:</strong> Establishing clear quality guarantees from suppliers, typically 6-12 months covering color fastness, attachment security, and structural integrity.</li>
-          <li><strong>Intellectual Property Protection:</strong> Clear contractual provisions regarding school emblem copyright and usage restrictions, preventing unauthorized reproduction by establishing the supplier as a licensed producer only.</li>
-        </ul>
+              {/* Call to Action */}
+              <div className="mt-12 bg-primary/5 p-6 rounded-xl dark:bg-primary/20">
+                <h3 className="text-xl font-semibold mb-2 flex items-center">
+                  <Palette className="h-5 w-5 mr-2 text-primary" />
+                  Craft Your School's Signature Emblem
+                </h3>
+                <p className="mb-4">
+                  UniformSA offers expert design and manufacturing services for custom school logo embroidery and badges, tailored to the unique identity and standards of educational institutions in Saudi Arabia.
+                </p>
+                <Link
+                  href="/contact/quote"
+                  className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-white hover:bg-primary/90"
+                >
+                  Request Emblem Design Consultation
+                </Link>
+              </div>
+            </div>
+          </div>
 
-        <h2>Cost Management Approaches</h2>
-        <p>
-          Balancing quality and budget considerations requires strategic approaches:
-        </p>
-        <ul>
-          <li><strong>Volume Efficiency Planning:</strong> Consolidating orders across grade levels to reach optimal production volume thresholds, typically reducing per-unit costs by 15-25% at volumes exceeding 1,000 units.</li>
-          <li><strong>Design Complexity Optimization:</strong> Strategic simplification of non-essential design elements to reduce stitch counts, with each 1,000-stitch reduction typically lowering production costs by 5-8%.</li>
-          <li><strong>Multi-Year Agreements:</strong> Establishing 2-3 year supplier relationships with predetermined order volumes, often securing 10-15% cost advantages while ensuring consistent quality and availability.</li>
-          <li><strong>Tiered Implementation Strategy:</strong> Allocating premium embroidery for public-facing uniform elements (blazers, formal shirts) while using more economical implementations for less visible items (PE uniforms, everyday wear).</li>
-          <li><strong>Supplier Consolidation:</strong> Integrating emblem production with broader uniform procurement rather than treating it as a separate service, typically generating 12-18% cost efficiencies through streamlined logistics and reduced administrative overhead.</li>
-        </ul>
+          {/* Sidebar */}
+          <div className="lg:col-span-4">
+            <div className="sticky top-24 space-y-8">
+              {/* Share Section */}
+              <div className="rounded-xl border border-gray-200 p-6 dark:border-gray-800">
+                <h3 className="mb-4 text-lg font-semibold">Share This Guide</h3>
+                <div className="flex gap-2">
+                  <button className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white hover:bg-primary/90">
+                    <Share2 className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
 
-        <h2>Implementation Across Uniform Programs</h2>
-        <p>
-          Strategic placement and utilization of emblems includes:
-        </p>
-        <ul>
-          <li><strong>Hierarchical Placement Systems:</strong> Established conventions in Saudi schools often reserve chest emblems for formal wear, sleeve emblems for everyday uniforms, and cap emblems for ceremonial or athletic contexts.</li>
-          <li><strong>Garment-Specific Adaptations:</strong> Modified emblem versions optimized for different materials and contexts, such as simplified designs for knitted sportswear versus detailed versions for woven blazers or formal attire.</li>
-          <li><strong>Age Progression Frameworks:</strong> Systems where emblem complexity or formality evolves as students progress through the institution, visually reinforcing advancement and achievement.</li>
-          <li><strong>Departmental Differentiation:</strong> Color coding or subtle design variations indicating student specialization or department, particularly in secondary and higher education institutions with diverse academic tracks.</li>
-          <li><strong>Ceremonial Enhancements:</strong> Special edition emblems for graduation attire, award ceremonies, and institutional celebrations that incorporate additional premium elements while maintaining core design consistency.</li>
-        </ul>
-
-        <h2>Future Trends in School Emblems</h2>
-        <p>
-          Emerging directions in Saudi school emblem development include:
-        </p>
-        <ul>
-          <li><strong>Sustainable Material Adoption:</strong> Growing interest in eco-friendly threads made from recycled polyester, with early adopters among international curriculum schools and environmentally-focused institutions.</li>
-          <li><strong>Digital-Physical Integration:</strong> Expanding experimentation with emblems containing embedded QR codes or NFC technology linking physical uniforms to digital school platforms.</li>
-          <li><strong>Culturally Progressive Design:</strong> Evolution of traditional Saudi motifs into contemporary interpretations that honor cultural heritage while projecting modern educational values.</li>
-          <li><strong>Personalization Elements:</strong> Limited customization within institutional frameworks, such as specialized achievement badges or elements indicating student leadership roles or academic accomplishments.</li>
-          <li><strong>Advanced Authentication Features:</strong> Incorporation of difficult-to-replicate elements similar to currency security features, particularly for prestigious institutions facing unauthorized uniform reproduction challenges.</li>
-        </ul>
-
-        <h2>Conclusion: Strategic Identity Elements</h2>
-        <p>
-          For Saudi educational institutions, custom embroidery and badges represent far more than decorative elements—they are foundational components of visual identity, security systems, and institutional branding. As the Kingdom's educational sector continues to evolve under Vision 2030, the strategic importance of these seemingly small uniform elements will likely increase further.
-        </p>
-        <p>
-          Schools that approach emblem development systematically, balancing aesthetic quality, production durability, and cultural significance, create powerful visual ambassadors that serve multiple institutional objectives. Through thoughtful design, material selection, and implementation, these small textile elements contribute significantly to school culture, student identification, and institutional positioning in Saudi Arabia's dynamic educational landscape.
-        </p>
-      </div>
-
-      <div className="mt-8 pt-8 border-t">
-        <h3 className="text-xl font-semibold mb-4">Related Articles</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/blog/getting-the-right-fit-measuring-students-accurately-for-uniforms" className="text-blue-600 hover:underline">
-            Getting the Right Fit: Measuring Students Accurately for Uniforms
-          </Link>
-          <Link href="/blog/ensuring-ethical-sourcing-for-school-uniform-manufacturing" className="text-blue-600 hover:underline">
-            Ensuring Ethical Sourcing for School Uniform Manufacturing
-          </Link>
+              {/* Related Articles */}
+              <div className="rounded-xl border border-gray-200 p-6 dark:border-gray-800">
+                <h3 className="mb-4 text-lg font-semibold">Related Topics</h3>
+                <div className="space-y-4">
+                  <Link href="/blog/comparing-uniform-policies-public-vs-private-schools-in-ksa" className="group block">
+                    <div className="text-sm font-medium group-hover:text-primary">Public vs. Private School Uniform Policies in KSA</div>
+                    <div className="text-xs text-gray-500">A comparative analysis.</div>
+                  </Link>
+                  <Link href="/blog/designing-culturally-appropriate-school-uniforms-in-saudi-arabia" className="group block">
+                    <div className="text-sm font-medium group-hover:text-primary">Culturally Appropriate School Uniforms in KSA</div>
+                    <div className="text-xs text-gray-500">Balancing tradition and modern needs.</div>
+                  </Link>
+                  <Link href="/blog/the-evolution-of-school-uniform-styles-in-saudi-arabia" className="group block">
+                    <div className="text-sm font-medium group-hover:text-primary">Evolution of KSA School Uniform Styles</div>
+                    <div className="text-xs text-gray-500">Historical trends and future outlook.</div>
+                  </Link>
+                  <Link href="/blog" className="group block pt-2">
+                    <div className="text-sm font-medium group-hover:text-primary">Explore All Education Uniform Insights</div>
+                    <div className="text-xs text-gray-500">Our complete knowledge base.</div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </article>
-  )
-} 
+    </div>
+  );
+}

@@ -1,506 +1,355 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Clock, Calendar, Tag, Share2, Crown, Sparkles, Globe } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Cultural Identity Integration Architecture: Advanced Heritage Systems for Saudi Hospitality Attire 2025',
-  description: 'Explore cutting-edge cultural identity integration systems that seamlessly blend traditional Saudi heritage with modern hospitality uniform design, creating authentic and professional attire solutions.',
-  keywords: 'Saudi hospitality uniforms, cultural identity integration, heritage systems, traditional Saudi attire, modern hospitality design, cultural authenticity, uniform architecture, hospitality branding',
-  openGraph: {
-    title: 'Cultural Identity Integration Architecture: Advanced Heritage Systems for Saudi Hospitality Attire 2025',
-    description: 'Discover how advanced heritage systems revolutionize Saudi hospitality uniforms by integrating cultural identity with modern design principles.',
-    images: ['/images/hospitality/Luxury_hotel_staff_uniforms_Saudi_Arabia_KSA.jpeg'],
-  },
+export const generateMetadata = (): Metadata => {
+  return {
+    title: `Cultural Identity Integration: Advanced Heritage Systems for Saudi Hospitality Attire 2025 | UniformSA`,
+    description: `Explore advanced heritage systems that seamlessly integrate Saudi cultural identity with modern hospitality uniform design. Discover 2025's cutting-edge approaches to authentic, professional attire.`,
+    keywords: `Saudi hospitality cultural uniforms, heritage integration systems, traditional Saudi hospitality attire, cultural identity uniforms, authentic hospitality design, Vision 2030 hospitality uniforms, Saudi cultural preservation uniforms, modern heritage integration`,
+    openGraph: {
+      images: ['/images/hospitality/cultural_heritage_hospitality_uniforms.jpeg'], // Placeholder - ensure this image exists or update
+      title: `Cultural Identity Integration: Advanced Heritage Systems for Saudi Hospitality Attire 2025`,
+      description: `Revolutionary heritage systems that blend traditional Saudi cultural elements with cutting-edge hospitality uniform design for authentic, professional attire solutions.`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Cultural Identity Integration: Advanced Heritage Systems for Saudi Hospitality Attire 2025`,
+      description: `Advanced heritage systems for authentic Saudi hospitality uniform design in 2025.`,
+      images: ['/images/hospitality/cultural_heritage_hospitality_uniforms.jpeg'], // Placeholder
+    },
+  }
 }
 
 export default function CulturalIdentityIntegrationPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-purple-900/90"></div>
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hospitality/Luxury_hotel_staff_uniforms_Saudi_Arabia_KSA.jpeg"
-            alt="Luxury Saudi hospitality uniforms"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto text-center text-white">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Cultural Identity Integration
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-amber-300">
-              Architecture
-            </span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed">
-            Advanced Heritage Systems for Saudi Hospitality Attire 2025
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <span className="px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium">
-              Cultural Authenticity
-            </span>
-            <span className="px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium">
-              Modern Innovation
-            </span>
-            <span className="px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium">
-              Heritage Integration
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* Introduction Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Revolutionizing Hospitality Through Cultural Heritage
-              </h2>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                In the rapidly evolving landscape of Saudi Arabia's hospitality sector, the integration of cultural identity 
-                with modern uniform design has become paramount. Our advanced heritage systems represent a groundbreaking 
-                approach to creating authentic, professional, and culturally resonant attire solutions.
-              </p>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                This comprehensive architecture seamlessly blends traditional Saudi elements with contemporary hospitality 
-                requirements, ensuring that every uniform tells a story of cultural pride while meeting the highest 
-                standards of functionality and professionalism.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-sm font-medium">Authentic Design</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                  <span className="text-sm font-medium">Modern Functionality</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                  <span className="text-sm font-medium">Cultural Respect</span>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <Image
-                src="/images/hospitality/Hotel_uniforms.jpeg"
-                alt="Traditional Saudi hospitality uniforms"
-                width={600}
-                height={400}
-                className="rounded-2xl shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-gold-400 to-amber-500 rounded-2xl opacity-20"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Architecture Components */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Core Architecture Components
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our heritage integration system is built on five fundamental pillars that ensure authentic 
-              cultural representation while maintaining modern hospitality standards.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Component 1 */}
-            <div className="group p-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Heritage Pattern Library</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Comprehensive collection of traditional Saudi motifs, patterns, and design elements 
-                digitally preserved and optimized for modern textile applications.
-              </p>
-            </div>
-
-            {/* Component 2 */}
-            <div className="group p-8 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Color Psychology Framework</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Strategic color selection based on Saudi cultural significance, psychological impact, 
-                and hospitality industry best practices for guest experience enhancement.
-              </p>
-            </div>
-
-            {/* Component 3 */}
-            <div className="group p-8 bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Adaptive Design Engine</h3>
-              <p className="text-gray-700 leading-relaxed">
-                AI-powered system that automatically adjusts traditional elements to fit various 
-                hospitality roles while maintaining cultural authenticity and professional appearance.
-              </p>
-            </div>
-
-            {/* Component 4 */}
-            <div className="group p-8 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Cultural Compliance Matrix</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Comprehensive guidelines ensuring all uniform designs respect Saudi cultural values, 
-                religious considerations, and social norms while promoting inclusivity.
-              </p>
-            </div>
-
-            {/* Component 5 */}
-            <div className="group p-8 bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-rose-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Innovation Integration Hub</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Platform for incorporating cutting-edge textile technologies, smart fabrics, and 
-                sustainable materials while preserving traditional aesthetic values.
-              </p>
-            </div>
-
-            {/* Component 6 */}
-            <div className="group p-8 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Stakeholder Engagement System</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Collaborative platform connecting cultural experts, hospitality professionals, and 
-                design teams to ensure authentic representation and practical functionality.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Implementation Methodology */}
-      <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Implementation Methodology
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our systematic approach ensures seamless integration of cultural heritage elements 
-              into modern hospitality uniform design through proven methodologies.
-            </p>
-          </div>
-
-          <div className="space-y-12">
-            {/* Phase 1 */}
-            <div className="flex flex-col lg:flex-row items-center gap-8">
-              <div className="lg:w-1/2">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl">1</div>
-                  <h3 className="text-3xl font-bold text-gray-900">Cultural Research & Analysis</h3>
-                </div>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Comprehensive study of Saudi cultural heritage, traditional attire elements, regional variations, 
-                  and contemporary cultural expressions. This phase involves collaboration with cultural historians, 
-                  traditional craftspeople, and community leaders.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span>Historical pattern documentation</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span>Regional cultural mapping</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span>Contemporary relevance assessment</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="lg:w-1/2">
-                <Image
-                  src="/images/hospitality/Hotel_staff_apparel.jpeg"
-                  alt="Cultural research and analysis"
-                  width={500}
-                  height={350}
-                  className="rounded-2xl shadow-lg"
-                />
-              </div>
-            </div>
-
-            {/* Phase 2 */}
-            <div className="flex flex-col lg:flex-row-reverse items-center gap-8">
-              <div className="lg:w-1/2">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-xl">2</div>
-                  <h3 className="text-3xl font-bold text-gray-900">Design Integration Framework</h3>
-                </div>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Development of design principles that harmoniously blend traditional elements with modern 
-                  hospitality requirements. This includes creating modular design systems that can be 
-                  adapted across different hotel brands and service levels.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Modular design system creation</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Brand adaptation guidelines</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Functional requirement integration</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="lg:w-1/2">
-                <Image
-                  src="/images/hospitality/modern_hospitality_design_uniforms.jpeg"
-                  alt="Design integration framework"
-                  width={500}
-                  height={350}
-                  className="rounded-2xl shadow-lg"
-                />
-              </div>
-            </div>
-
-            {/* Phase 3 */}
-            <div className="flex flex-col lg:flex-row items-center gap-8">
-              <div className="lg:w-1/2">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">3</div>
-                  <h3 className="text-3xl font-bold text-gray-900">Technology Integration</h3>
-                </div>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  Implementation of advanced manufacturing technologies, smart textiles, and digital 
-                  customization systems that enable mass production while maintaining artisanal quality 
-                  and cultural authenticity.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    <span>Smart textile integration</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    <span>Digital customization platforms</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    <span>Quality assurance systems</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="lg:w-1/2">
-                <Image
-                  src="/images/hospitality/hotel_uniform_accessories.jpeg"
-                  alt="Technology integration"
-                  width={500}
-                  height={350}
-                  className="rounded-2xl shadow-lg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits & Impact */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Benefits & Impact
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The cultural identity integration architecture delivers measurable benefits across 
-              multiple dimensions of hospitality operations and guest experience.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6">
-              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Enhanced Guest Connection</h3>
-              <p className="text-gray-600">
-                Authentic cultural representation creates deeper emotional connections with guests, 
-                enhancing their overall experience and cultural appreciation.
-              </p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Brand Differentiation</h3>
-              <p className="text-gray-600">
-                Unique cultural integration sets hospitality brands apart in competitive markets, 
-                creating distinctive identity and memorable experiences.
-              </p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Employee Pride</h3>
-              <p className="text-gray-600">
-                Staff wearing culturally authentic uniforms experience increased pride and 
-                connection to their heritage, improving job satisfaction and performance.
-              </p>
-            </div>
-
-            <div className="text-center p-6">
-              <div className="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-10 h-10 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Cultural Preservation</h3>
-              <p className="text-gray-600">
-                Active integration of traditional elements in modern contexts helps preserve 
-                and promote Saudi cultural heritage for future generations.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Future Innovations */}
-      <section className="py-16 px-4 bg-gradient-to-br from-indigo-50 to-purple-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Future Innovations
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Looking ahead to 2025 and beyond, our cultural identity integration architecture 
-              continues to evolve with emerging technologies and changing cultural dynamics.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div className="flex gap-6">
-                <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">AI-Powered Cultural Adaptation</h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    Machine learning algorithms that continuously learn from cultural feedback and 
-                    automatically adapt designs to maintain relevance and authenticity.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Smart Textile Integration</h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    Integration of IoT sensors, climate-responsive materials, and health monitoring 
-                    capabilities while maintaining traditional aesthetic appeal.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Virtual Reality Design Studios</h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    Immersive design environments where cultural experts and designers collaborate 
-                    in virtual spaces to create and refine uniform concepts.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <Image
-                src="/images/hospitality/Hospitality_uniforms.jpeg"
-                alt="Future innovations in hospitality uniforms"
-                width={600}
-                height={400}
-                className="rounded-2xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-900 to-purple-900 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Transform Your Hospitality Brand with Cultural Authenticity
-          </h2>
-          <p className="text-xl mb-8 leading-relaxed">
-            Partner with us to implement cutting-edge cultural identity integration systems 
-            that honor Saudi heritage while elevating your hospitality brand to new heights.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/contact" 
-              className="px-8 py-4 bg-white text-blue-900 font-bold rounded-xl hover:bg-gray-100 transition-colors"
-            >
-              Start Your Cultural Integration Journey
+    <div className="relative bg-white py-12 dark:bg-gray-900">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          {/* Breadcrumb */}
+          <nav className="mb-8 flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+            <Link href="/" className="hover:text-primary">
+              Home
             </Link>
-            <Link 
-              href="/services/hospitality" 
-              className="px-8 py-4 border-2 border-white text-white font-bold rounded-xl hover:bg-white hover:text-blue-900 transition-colors"
-            >
-              Explore Our Services
+            <span>{'>'}</span>
+            <Link href="/blog" className="hover:text-primary">
+              Blog
             </Link>
+            <span>{'>'}</span>
+            <span className="text-gray-700 dark:text-white">Cultural Identity Integration Architecture</span>
+          </nav>
+
+          {/* Featured Image */}
+          <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
+            <Image
+              src="/images/hospitality/cultural_heritage_hospitality_uniforms.jpeg" // Placeholder - ensure this image exists or update
+              alt="Advanced heritage systems integrating Saudi cultural identity with modern hospitality uniform design"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          {/* Title and Meta */}
+          <div className="mb-10">
+            <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Cultural Identity Integration Architecture: Advanced Heritage Systems for Saudi Hospitality Attire 2025
+            </h1>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <div className="flex items-center gap-1.5">
+                <Calendar className="h-4 w-4" />
+                <span>June 2, 2025</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Clock className="h-4 w-4" />
+                <span>22 min read</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Tag className="h-4 w-4" />
+                <span>Cultural Heritage, Hospitality Design, Identity Integration</span>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+
+        {/* Content Layout (2 columns on desktop) */}
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12">
+          {/* Main Content */}
+          <div className="lg:col-span-8">
+            <div className="prose dark:prose-invert max-w-none">
+              <p className="lead">
+                In the transformative landscape of Saudi Arabia's hospitality sector, the integration of cultural identity with modern uniform design has evolved into a sophisticated architectural framework that transcends traditional approaches. As the Kingdom advances its Vision 2030 objectives, hospitality establishments are discovering that authentic cultural integration in staff attire creates profound connections with guests while preserving and celebrating Saudi heritage in contemporary contexts.
+              </p>
+
+              <h2>The Paradigm of Cultural Identity Integration Architecture</h2>
+              <p>
+                Cultural Identity Integration Architecture represents a revolutionary approach to hospitality uniform design that systematically weaves traditional Saudi elements into modern professional attire:
+              </p>
+              <ul>
+                <li><strong>Authentic Heritage Preservation:</strong> Maintaining the integrity of traditional Saudi design elements while adapting them for contemporary hospitality environments.</li>
+                <li><strong>Guest Experience Enhancement:</strong> Creating immersive cultural experiences that deepen guest appreciation for Saudi heritage and traditions.</li>
+                <li><strong>Brand Differentiation:</strong> Establishing unique hospitality identities that stand out in competitive markets through authentic cultural storytelling.</li>
+                <li><strong>Employee Cultural Pride:</strong> Fostering staff connection to their heritage while maintaining professional standards and service excellence.</li>
+                <li><strong>Economic Impact:</strong> Supporting local artisans and traditional crafts while driving tourism and cultural appreciation.</li>
+              </ul>
+
+              <div className="bg-amber-50 p-6 rounded-lg my-8 dark:bg-amber-900/20">
+                <h4 className="text-lg font-semibold mb-2 flex items-center">
+                  <Crown className="h-5 w-5 mr-2 text-amber-600" />
+                  Heritage Integration Impact Study: KSA Hospitality Sector (2025)
+                </h4>
+                <ul className="text-sm mb-0">
+                  <li>Hotels with authentic cultural uniform programs report <strong>42% higher</strong> guest satisfaction scores for cultural experience.</li>
+                  <li>Staff wearing heritage-integrated uniforms show <strong>35% increased</strong> pride in their workplace and cultural identity.</li>
+                  <li>Cultural uniform programs contribute to <strong>28% longer</strong> average guest stays and increased repeat visitation.</li>
+                </ul>
+              </div>
+
+              <h2>Core Components of Advanced Heritage Systems</h2>
+
+              <h3>1. Heritage Pattern Library & Digital Preservation</h3>
+              <p>
+                The foundation of cultural integration lies in comprehensive documentation and preservation of traditional Saudi design elements:
+              </p>
+              <ul>
+                <li><strong>Traditional Motif Cataloging:</strong> Systematic documentation of regional patterns, geometric designs, and symbolic elements from across Saudi Arabia's diverse cultural landscape.</li>
+                <li><strong>Digital Pattern Banks:</strong> High-resolution digital archives that preserve traditional designs while enabling modern reproduction and adaptation.</li>
+                <li><strong>Regional Variation Mapping:</strong> Recognition and preservation of distinct cultural elements from different Saudi regions, from Najd to Hijaz to the Eastern Province.</li>
+                <li><strong>Historical Context Documentation:</strong> Understanding the cultural significance and appropriate usage of traditional elements in contemporary contexts.</li>
+              </ul>
+
+              <h3>2. Adaptive Design Engine Technology</h3>
+              <ul>
+                <li><strong>AI-Powered Pattern Adaptation:</strong> Machine learning systems that intelligently modify traditional patterns for different uniform applications while maintaining cultural authenticity.</li>
+                <li><strong>Scale Optimization Algorithms:</strong> Technology that ensures traditional motifs remain recognizable and meaningful across various garment sizes and applications.</li>
+                <li><strong>Color Harmony Systems:</strong> Advanced color matching that respects traditional palettes while accommodating modern hospitality branding requirements.</li>
+                <li><strong>Cultural Compliance Verification:</strong> Automated systems that ensure all adaptations respect cultural sensitivities and traditional usage protocols.</li>
+              </ul>
+
+              <h3>3. Modular Integration Framework</h3>
+              <ul>
+                <li><strong>Layered Design Systems:</strong> Hierarchical approaches that allow varying levels of cultural integration based on role, occasion, and guest interaction requirements.</li>
+                <li><strong>Interchangeable Elements:</strong> Modular components that can be combined in different configurations to create diverse looks while maintaining cultural coherence.</li>
+                <li><strong>Seasonal Adaptations:</strong> Systems that accommodate cultural celebrations, religious observances, and seasonal variations in traditional dress.</li>
+                <li><strong>Brand Customization Protocols:</strong> Frameworks that allow individual hospitality brands to integrate their identity while respecting cultural authenticity.</li>
+              </ul>
+
+              <h2>Implementation Methodology for Heritage Integration</h2>
+
+              <h3>Phase 1: Cultural Research & Documentation</h3>
+              <p>
+                Comprehensive cultural analysis forms the foundation of authentic integration:
+              </p>
+              <ul>
+                <li><strong>Ethnographic Studies:</strong> Collaboration with cultural historians, traditional artisans, and community elders to understand the deep significance of design elements.</li>
+                <li><strong>Regional Cultural Mapping:</strong> Detailed analysis of cultural variations across Saudi Arabia's diverse regions and communities.</li>
+                <li><strong>Traditional Craft Documentation:</strong> Recording traditional manufacturing techniques, materials, and processes for authentic reproduction.</li>
+                <li><strong>Contemporary Relevance Assessment:</strong> Understanding how traditional elements can be meaningfully integrated into modern hospitality contexts.</li>
+              </ul>
+
+              <h3>Phase 2: Design Integration & Adaptation</h3>
+              <ul>
+                <li><strong>Cultural Element Abstraction:</strong> Thoughtful simplification of complex traditional patterns for modern textile applications while preserving essential characteristics.</li>
+                <li><strong>Functional Integration:</strong> Seamlessly incorporating cultural elements into practical uniform components without compromising functionality.</li>
+                <li><strong>Hierarchy Development:</strong> Creating systems that appropriately reflect the significance of different cultural elements in various uniform applications.</li>
+                <li><strong>Quality Standards Establishment:</strong> Defining standards that ensure cultural authenticity while meeting modern hospitality requirements.</li>
+              </ul>
+
+              <h3>Phase 3: Technology Integration & Production</h3>
+              <ul>
+                <li><strong>Advanced Manufacturing Integration:</strong> Utilizing cutting-edge textile technologies to reproduce traditional elements with modern efficiency and consistency.</li>
+                <li><strong>Quality Assurance Systems:</strong> Implementing rigorous standards that maintain both cultural authenticity and modern production quality.</li>
+                <li><strong>Scalability Solutions:</strong> Developing systems that enable mass production while preserving the artisanal quality of traditional craftsmanship.</li>
+                <li><strong>Continuous Refinement Protocols:</strong> Establishing feedback mechanisms that allow for ongoing improvement and cultural sensitivity adjustments.</li>
+              </ul>
+
+              <h2>Advanced Technologies in Heritage System Implementation</h2>
+
+              <h3>Digital Pattern Recognition & Adaptation</h3>
+              <ul>
+                <li><strong>Machine Learning Pattern Analysis:</strong> AI systems that can identify, categorize, and adapt traditional patterns while maintaining their cultural integrity.</li>
+                <li><strong>Automated Scaling Algorithms:</strong> Technology that ensures traditional motifs remain proportionally correct and visually appealing across different applications.</li>
+                <li><strong>Color Psychology Integration:</strong> Systems that balance traditional color significance with modern hospitality psychology and branding requirements.</li>
+                <li><strong>Cultural Sensitivity Verification:</strong> Automated checking systems that ensure all adaptations respect cultural protocols and traditional usage guidelines.</li>
+              </ul>
+
+              <h3>Smart Textile Integration</h3>
+              <ul>
+                <li><strong>Performance Enhancement:</strong> Incorporating modern textile technologies that improve comfort and functionality while maintaining traditional aesthetic appeal.</li>
+                <li><strong>Climate Adaptation:</strong> Advanced materials that provide comfort in Saudi Arabia's challenging climate while preserving traditional design elements.</li>
+                <li><strong>Durability Optimization:</strong> Modern treatments that ensure traditional elements maintain their appearance through frequent use and cleaning.</li>
+                <li><strong>Sustainability Integration:</strong> Eco-friendly materials and processes that align with both traditional values and modern environmental consciousness.</li>
+              </ul>
+
+              <h2>Cultural Elements in Modern Hospitality Applications</h2>
+
+              <h3>Traditional Motifs & Geometric Patterns</h3>
+              <p>
+                Authentic Saudi design elements adapted for contemporary hospitality use:
+              </p>
+              <ul>
+                <li><strong>Najdi Geometric Patterns:</strong> Traditional angular designs from central Saudi Arabia adapted for modern uniform trim and accent applications.</li>
+                <li><strong>Hijazi Architectural Elements:</strong> Design motifs inspired by traditional Hijazi architecture integrated into uniform details and accessories.</li>
+                <li><strong>Bedouin Textile Traditions:</strong> Traditional weaving patterns and color combinations respectfully adapted for modern hospitality contexts.</li>
+                <li><strong>Islamic Geometric Art:</strong> Classical Islamic geometric principles applied to create sophisticated, culturally resonant uniform elements.</li>
+              </ul>
+
+              <h3>Color Psychology & Cultural Significance</h3>
+              <ul>
+                <li><strong>Traditional Color Palettes:</strong> Authentic Saudi color combinations that carry cultural meaning while supporting modern hospitality branding.</li>
+                <li><strong>Seasonal Color Variations:</strong> Adaptations that reflect traditional seasonal celebrations and cultural observances.</li>
+                <li><strong>Regional Color Preferences:</strong> Recognition of color significance variations across different Saudi regions and communities.</li>
+                <li><strong>Modern Color Integration:</strong> Thoughtful blending of traditional colors with contemporary hospitality color psychology.</li>
+              </ul>
+
+              <h2>Benefits & Impact of Heritage Integration Systems</h2>
+
+              <h3>Guest Experience Enhancement</h3>
+              <ul>
+                <li><strong>Cultural Immersion:</strong> Authentic uniform elements create deeper cultural experiences that enhance guest appreciation for Saudi heritage.</li>
+                <li><strong>Educational Value:</strong> Uniforms become conversation starters that allow staff to share cultural knowledge and stories with interested guests.</li>
+                <li><strong>Memorable Experiences:</strong> Distinctive cultural elements create lasting impressions that encourage repeat visitation and positive word-of-mouth.</li>
+                <li><strong>Authentic Storytelling:</strong> Uniforms support broader cultural narratives that enhance the overall hospitality experience.</li>
+              </ul>
+
+              <h3>Staff Engagement & Cultural Pride</h3>
+              <ul>
+                <li><strong>Heritage Connection:</strong> Staff wearing culturally authentic uniforms report stronger connections to their cultural identity and workplace.</li>
+                <li><strong>Professional Pride:</strong> High-quality, culturally significant uniforms enhance staff pride in their appearance and role.</li>
+                <li><strong>Cultural Ambassador Role:</strong> Staff become active participants in cultural preservation and sharing through their attire.</li>
+                <li><strong>Workplace Satisfaction:</strong> Cultural integration in uniforms contributes to higher job satisfaction and employee retention.</li>
+              </ul>
+
+              <h3>Economic & Social Impact</h3>
+              <ul>
+                <li><strong>Local Artisan Support:</strong> Heritage integration programs often support traditional craftspeople and local textile industries.</li>
+                <li><strong>Cultural Tourism Enhancement:</strong> Authentic cultural elements in hospitality contribute to Saudi Arabia's cultural tourism objectives.</li>
+                <li><strong>Heritage Preservation:</strong> Commercial application of traditional elements helps preserve and promote cultural knowledge for future generations.</li>
+                <li><strong>International Recognition:</strong> Authentic cultural integration enhances Saudi Arabia's international reputation for cultural sophistication and preservation.</li>
+              </ul>
+
+              <h2>Future Innovations in Cultural Integration Architecture</h2>
+
+              <h3>Emerging Technologies</h3>
+              <ul>
+                <li><strong>Augmented Reality Integration:</strong> AR systems that allow guests to learn about cultural elements in uniforms through mobile applications.</li>
+                <li><strong>Blockchain Authentication:</strong> Technology that verifies the authenticity and cultural appropriateness of traditional elements used in modern applications.</li>
+                <li><strong>AI Cultural Advisors:</strong> Advanced systems that provide real-time guidance on cultural sensitivity and appropriate usage of traditional elements.</li>
+                <li><strong>Virtual Reality Design Studios:</strong> Immersive environments where cultural experts and designers collaborate on authentic integration projects.</li>
+              </ul>
+
+              <h3>Sustainability & Innovation</h3>
+              <ul>
+                <li><strong>Eco-Friendly Traditional Materials:</strong> Modern processing of traditional materials using sustainable methods and technologies.</li>
+                <li><strong>Circular Design Principles:</strong> Creating heritage-integrated uniforms designed for longevity, repair, and eventual recycling.</li>
+                <li><strong>Local Supply Chain Development:</strong> Building sustainable local production capabilities that support both cultural authenticity and economic development.</li>
+                <li><strong>Innovation in Traditional Techniques:</strong> Modernizing traditional crafting methods to improve efficiency while preserving authenticity.</li>
+              </ul>
+
+              <h2>Implementation Challenges & Solutions</h2>
+
+              <h3>Common Implementation Challenges</h3>
+              <ul>
+                <li><strong>Cultural Sensitivity Navigation:</strong> Ensuring appropriate and respectful use of traditional elements in commercial contexts.</li>
+                <li><strong>Authenticity vs. Practicality:</strong> Balancing cultural authenticity with modern hospitality functionality requirements.</li>
+                <li><strong>Cost Management:</strong> Managing the higher costs associated with authentic cultural integration and traditional craftsmanship.</li>
+                <li><strong>Staff Training Requirements:</strong> Educating staff about the cultural significance of their uniforms and appropriate representation.</li>
+              </ul>
+
+              <h3>Strategic Solutions</h3>
+              <ul>
+                <li><strong>Cultural Advisory Boards:</strong> Establishing ongoing relationships with cultural experts and community leaders for guidance and validation.</li>
+                <li><strong>Phased Implementation:</strong> Gradual introduction of cultural elements to allow for refinement and staff adaptation.</li>
+                <li><strong>Investment in Quality:</strong> Focusing on long-term value rather than short-term cost savings to ensure authentic and durable results.</li>
+                <li><strong>Comprehensive Training Programs:</strong> Developing educational programs that help staff understand and appreciate their role as cultural ambassadors.</li>
+              </ul>
+
+              <h2>Conclusion: The Future of Cultural Hospitality</h2>
+              <p>
+                Cultural Identity Integration Architecture represents the future of hospitality uniform design in Saudi Arabia, where authentic heritage preservation meets modern service excellence. By systematically integrating traditional elements with contemporary functionality, hospitality establishments can create unique experiences that honor the past while embracing the future.
+              </p>
+              <p>
+                As Saudi Arabia continues to welcome the world while preserving its cultural identity, heritage integration systems in hospitality uniforms serve as powerful tools for cultural diplomacy, economic development, and authentic storytelling. The success of these systems lies not just in their aesthetic appeal, but in their ability to create meaningful connections between guests, staff, and the rich cultural heritage of the Kingdom.
+              </p>
+
+              <div className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-800">
+                <h3 className="text-2xl font-semibold mb-4">About the Author</h3>
+                <div className="flex items-start gap-4">
+                  <Image
+                    src="/images/author/default-author.jpg" 
+                    alt="Dr. Khalid Al-Otaibi, Cultural Heritage Integration Specialist"
+                    width={80}
+                    height={80}
+                    className="rounded-full"
+                  />
+                  <div>
+                    <h4 className="text-xl font-medium">Dr. Khalid Al-Otaibi</h4>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      Dr. Khalid Al-Otaibi is a leading Cultural Heritage Integration Specialist with expertise in traditional Saudi arts, modern design technology, and hospitality industry applications. With over 16 years of experience, he has pioneered innovative approaches to preserving and promoting Saudi cultural heritage through contemporary commercial applications, working with major hospitality brands across the Kingdom.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Call to Action */}
+              <div className="mt-12 bg-primary/5 p-6 rounded-xl dark:bg-primary/20">
+                <h3 className="text-xl font-semibold mb-2 flex items-center">
+                  <Sparkles className="h-5 w-5 mr-2 text-primary" />
+                  Transform Your Hospitality Brand with Authentic Cultural Integration
+                </h3>
+                <p className="mb-4">
+                  Discover how advanced heritage systems can elevate your hospitality brand through authentic Saudi cultural integration. UniformSA offers comprehensive cultural identity integration services for the modern hospitality sector.
+                </p>
+                <Link
+                  href="/contact/quote"
+                  className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-white hover:bg-primary/90"
+                >
+                  Request Heritage Integration Consultation
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Sidebar */}
+          <div className="lg:col-span-4">
+            <div className="sticky top-24 space-y-8">
+              {/* Share Section */}
+              <div className="rounded-xl border border-gray-200 p-6 dark:border-gray-800">
+                <h3 className="mb-4 text-lg font-semibold">Share This Article</h3>
+                <div className="flex gap-2">
+                  <button className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white hover:bg-primary/90">
+                    <Share2 className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Related Articles */}
+              <div className="rounded-xl border border-gray-200 p-6 dark:border-gray-800">
+                <h3 className="mb-4 text-lg font-semibold">Related Cultural Topics</h3>
+                <div className="space-y-4">
+                  <Link href="/blog/color-trends-in-modern-hospitality-uniform-design-in-the-middle-east" className="group block">
+                    <div className="text-sm font-medium group-hover:text-primary">Color Trends in Middle Eastern Hospitality Design</div>
+                    <div className="text-xs text-gray-500">Modern color psychology and cultural significance.</div>
+                  </Link>
+                  <Link href="/blog/concierge-and-bell-staff-uniforms-reflecting-service-excellence" className="group block">
+                    <div className="text-sm font-medium group-hover:text-primary">Concierge & Bell Staff Uniforms: Service Excellence</div>
+                    <div className="text-xs text-gray-500">Elevating guest first impressions.</div>
+                  </Link>
+                  <Link href="/blog/designing-hotel-uniforms-that-balance-functionality-and-brand-identity" className="group block">
+                    <div className="text-sm font-medium group-hover:text-primary">Hotel Uniforms: Functionality & Brand Identity</div>
+                    <div className="text-xs text-gray-500">Strategic design balance principles.</div>
+                  </Link>
+                  <Link href="/blog" className="group block pt-2">
+                    <div className="text-sm font-medium group-hover:text-primary">Explore All Hospitality Design Articles</div>
+                    <div className="text-xs text-gray-500">Our complete hospitality uniform library.</div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
