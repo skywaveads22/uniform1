@@ -4,9 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import { Metadata } from 'next'
 import Link from 'next/link'
-import BlogPostCard from '@/components/BlogPostCard'
-// Removed useEffect and useState as this will become a Server Component primarily
-// import { useEffect, useState } from 'react'
+import LazyBlogGrid from '@/components/LazyBlogGrid'
 
 export const metadata: Metadata = {
   title: 'Blog | Uniform SA',
@@ -95,28 +93,9 @@ export default async function BlogPage() { // Made async to await getArticlesFro
               </div>
             </div>
             
-            {/* Blog posts grid */}
+            {/* Blog posts grid with lazy loading */}
             <div className="lg:col-span-3">
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {articles.map((article, index) => {
-                  // فحص صحة عناصر المقالة قبل محاولة عرضها
-                  if (!article || !article.title || !article.internalLink) {
-                    // Invalid article detected
-                    return null;
-                  }
-                  
-                  // عرض المقالة باستخدام مكون BlogPostCard
-                  return (
-                    <BlogPostCard
-                      key={article.id || index}
-                      title={article.title}
-                      imagePath={article.imagePath || ''}
-                      internalLink={article.internalLink}
-                      category={article.category}
-                    />
-                  );
-                })}
-              </div>
+              <LazyBlogGrid articles={articles} itemsPerPage={12} />
             </div>
           </div>
         </div>
