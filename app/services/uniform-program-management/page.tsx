@@ -69,8 +69,8 @@ export default function UniformProgramManagementPage() {
             </div>
             <div className="rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="/images/education/school_uniform_program_management.jpg"
-                alt="Uniform Program Management"
+                src="/images/services/services_design_consultation.jpg"
+                alt="Uniform Program Management Consultation"
                 width={600}
                 height={400}
                 className="w-full h-auto"

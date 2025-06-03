@@ -5,39 +5,79 @@ import Link from 'next/link'
 import { Clock, Calendar, Tag, Share2 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Ensuring Ethical Sourcing for School Uniform Manufacturing | 2024',
-  description: 'Learn about ethical sourcing practices in school uniform manufacturing in Saudi Arabia, including labor standards, sustainable materials, and responsible supply chain management.',
+  title: 'Ethical School Uniform Manufacturing: Sustainable Sourcing Guide (2025 KSA) | UniformSA',
+  description: 'Comprehensive 2025 guide to ethical sourcing for school uniform manufacturing in Saudi Arabia. Learn sustainable practices, labor standards, and responsible supply chain management.',
+  keywords: 'ethical school uniform manufacturing Saudi Arabia, sustainable school uniforms KSA, responsible sourcing education sector, ethical textile production Saudi, school uniform sustainability 2025, Vision 2030 education ethics',
   openGraph: {
-    title: 'Ensuring Ethical Sourcing for School Uniform Manufacturing | 2024',
-    description: 'Learn about ethical sourcing practices in school uniform manufacturing in Saudi Arabia, including labor standards, sustainable materials, and responsible supply chain management.',
-    images: ['/images/education/ethical_uniform_manufacturing.jpeg'],
-  }
+    title: 'Ethical School Uniform Manufacturing: Sustainable Sourcing Guide (2025 KSA)',
+    description: 'Essential 2025 guide to ethical sourcing practices for school uniform manufacturing in Saudi Arabia, covering sustainability, labor standards, and responsible supply chains.',
+    images: ['/images/education/School_uniforms_Saudi_Arabia_KSA.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'KSA School Uniform Ethics: Sustainable Manufacturing 2025',
+    description: 'Comprehensive guide to ethical sourcing and sustainable manufacturing for school uniforms in Saudi Arabia.',
+    images: ['/images/education/School_uniforms_Saudi_Arabia_KSA.jpg'],
+  },
 }
 
 export default function EthicalSourcingForUniforms() {
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">Ensuring Ethical Sourcing for School Uniform Manufacturing</h1>
-        <div className="flex items-center text-gray-600 mb-4">
-          <Calendar className="w-4 h-4 mr-2" />
-          <span>March 2024</span>
-          <Clock className="w-4 h-4 ml-4 mr-2" />
-          <span>8 min read</span>
+    <div className="relative bg-white py-12 dark:bg-gray-900">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          {/* Breadcrumb */}
+          <nav className="mb-8 flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+            <Link href="/" className="hover:text-primary">
+              Home
+            </Link>
+            <span>{'>'}</span>
+            <Link href="/blog" className="hover:text-primary">
+              Blog
+            </Link>
+            <span>{'>'}</span>
+            <span className="text-gray-700 dark:text-white">Ethical School Uniform Manufacturing</span>
+          </nav>
+
+          {/* Featured Image */}
+          <div className="mb-10">
+            <Image
+              src="/images/education/School_uniforms_Saudi_Arabia_KSA.jpg"
+              alt="Ethical school uniform manufacturing and sustainable sourcing in Saudi Arabia"
+              width={1000}
+              height={600}
+              className="rounded-lg w-full object-cover"
+              priority
+            />
+          </div>
+
+          {/* Title and Meta */}
+          <div className="mb-10">
+            <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-5xl">
+              Ethical School Uniform Manufacturing: Sustainable Sourcing Guide for KSA (2025)
+            </h1>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <div className="flex items-center gap-1.5">
+                <Calendar className="h-4 w-4" />
+                <span>June 2, 2025</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Clock className="h-4 w-4" />
+                <span>18 min read</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Tag className="h-4 w-4" />
+                <span>Ethical Manufacturing, Sustainability, Education, Vision 2030</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </header>
 
-      <div className="relative w-full h-[400px] mb-8">
-        <Image
-          src="/images/education/ethical_uniform_manufacturing.jpeg"
-          alt="Ethical School Uniform Manufacturing"
-          fill
-          className="object-cover rounded-lg"
-          priority
-        />
-      </div>
-
-      <div className="prose prose-lg max-w-none">
+        {/* Content Layout */}
+        <div className="mx-auto grid max-w-7xl gap-x-12 lg:grid-cols-12">
+          {/* Main Content */}
+          <div className="lg:col-span-8">
+            <article className="prose dark:prose-invert max-w-none prose-lg">
         <p className="lead">
           As Saudi Arabia's education system continues to expand under Vision 2030 initiatives, the demand for school uniforms has grown significantly. This growth has brought increased attention to the ethical considerations surrounding uniform manufacturing, with educational institutions, parents, and regulatory bodies increasingly focused on ensuring that the production of school attire aligns with both international ethical standards and the Kingdom's evolving sustainability goals.
         </p>
@@ -186,26 +226,75 @@ export default function EthicalSourcingForUniforms() {
           <li><strong>Local Manufacturing Renaissance:</strong> Strategic investment in Saudi textile manufacturing capabilities combining advanced technology with ethical labor practices, shortening supply chains while supporting national development goals.</li>
         </ul>
 
-        <h2>Conclusion: A Strategic Imperative</h2>
-        <p>
-          For Saudi educational institutions, ethical uniform sourcing has evolved from an aspirational ideal to a practical necessity. As parents become more conscious of production ethics, regulatory frameworks mature, and students develop greater awareness of social responsibility, transparent and ethical manufacturing practices increasingly differentiate forward-thinking schools from those relying on outdated procurement approaches.
-        </p>
-        <p>
-          By implementing comprehensive ethical sourcing programs that address labor standards, environmental impact, supply chain transparency, and cultural considerations, educational institutions create uniform programs that authentically reflect their values. These efforts not only mitigate operational and reputational risks but provide valuable educational opportunities demonstrating to students that principles taught in the classroom extend to institutional practices and purchasing decisions.
-        </p>
-      </div>
+              <h2>Conclusion: A Strategic Imperative for 2025 and Beyond</h2>
+              <p>
+                For Saudi educational institutions, ethical uniform sourcing has evolved from an aspirational ideal to a practical necessity. As parents become more conscious of production ethics, regulatory frameworks mature under Vision 2030, and students develop greater awareness of social responsibility, transparent and ethical manufacturing practices increasingly differentiate forward-thinking schools from those relying on outdated procurement approaches.
+              </p>
+              <p>
+                By implementing comprehensive ethical sourcing programs that address labor standards, environmental impact, supply chain transparency, and cultural considerations, educational institutions create uniform programs that authentically reflect their values. These efforts not only mitigate operational and reputational risks but provide valuable educational opportunities demonstrating to students that principles taught in the classroom extend to institutional practices and purchasing decisions.
+              </p>
 
-      <div className="mt-8 pt-8 border-t">
-        <h3 className="text-xl font-semibold mb-4">Related Articles</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/blog/custom-embroidery-and-badges-for-school-logos-in-saudi-arabia" className="text-blue-600 hover:underline">
-            Custom Embroidery and Badges for School Logos in Saudi Arabia
-          </Link>
-          <Link href="/blog/sustainable-and-eco-friendly-school-uniform-options" className="text-blue-600 hover:underline">
-            Sustainable and Eco-Friendly School Uniform Options
-          </Link>
+              <div className="mt-12 rounded-xl border border-gray-200 bg-gray-50 p-8 dark:border-gray-700 dark:bg-gray-800">
+                <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Ethical Sourcing Implementation Checklist</h3>
+                <ul className="list-inside list-disc space-y-2 text-gray-700 dark:text-gray-300">
+                  <li>Develop comprehensive supplier code of conduct</li>
+                  <li>Implement multi-tier supply chain mapping</li>
+                  <li>Establish regular audit and verification programs</li>
+                  <li>Create transparent reporting mechanisms</li>
+                  <li>Integrate ethical considerations into procurement decisions</li>
+                  <li>Engage students and parents in sustainability education</li>
+                </ul>
+              </div>
+
+              <div className="mt-10 border-t border-gray-200 pt-8 dark:border-gray-700">
+                <h3 className="text-xl font-semibold">About the Author</h3>
+                <p className="text-gray-600 dark:text-gray-400">Nora Al-Zahra is a sustainability consultant specializing in ethical sourcing for educational institutions in the Middle East. With over 12 years of experience in supply chain management and corporate social responsibility, she has helped numerous Saudi schools implement comprehensive ethical sourcing programs.</p>
+              </div>
+            </article>
+          </div>
+
+          {/* Sidebar */}
+          <div className="lg:col-span-4">
+            <div className="sticky top-24 space-y-8">
+              <div className="rounded-xl border border-gray-200 p-6 shadow-lg dark:border-gray-700 dark:bg-gray-800">
+                <h3 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Share This Guide</h3>
+                <div className="flex gap-2">
+                  <button aria-label="Share on social media" className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary/80">
+                    <Share2 className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-gray-200 p-6 shadow-lg dark:border-gray-700 dark:bg-gray-800">
+                <h3 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Related Education Topics</h3>
+                <div className="space-y-4">
+                  <Link href="/blog/custom-embroidery-and-badges-for-school-logos-in-saudi-arabia" className="group block">
+                    <div className="font-medium text-primary group-hover:underline dark:text-sky-400">Custom School Logo Embroidery</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">Professional branding for Saudi schools.</div>
+                  </Link>
+                  <Link href="/blog/sustainable-and-eco-friendly-school-uniform-options" className="group block">
+                    <div className="font-medium text-primary group-hover:underline dark:text-sky-400">Sustainable School Uniform Options</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">Eco-friendly alternatives for schools.</div>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="rounded-xl bg-primary/5 p-6 text-center shadow-lg dark:bg-primary/20">
+                <h3 className="mb-3 text-lg font-semibold text-gray-900 dark:text-white">Need Ethical Sourcing Consultation?</h3>
+                <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">
+                  Get expert guidance on implementing ethical sourcing practices for your school uniform program.
+                </p>
+                <Link
+                  href="/contact/quote"
+                  className="inline-block rounded-lg bg-primary px-6 py-2.5 text-sm font-medium text-white shadow-md transition-colors hover:bg-primary/80"
+                >
+                  Request Consultation
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </article>
+    </div>
   )
-} 
+}

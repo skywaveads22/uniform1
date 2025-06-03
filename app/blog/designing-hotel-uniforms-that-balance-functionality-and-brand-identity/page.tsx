@@ -5,39 +5,79 @@ import Link from 'next/link'
 import { Clock, Calendar, Tag, Share2 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Designing Hotel Uniforms That Balance Functionality and Brand Identity | May 2025',
-  description: 'Discover innovative approaches to hotel uniform design in Saudi Arabia that perfectly balance staff functionality with distinctive brand expression, featuring smart fabrics and cultural integration.',
+  title: 'Hotel Uniforms: Balancing Functionality & Brand Identity (2025 KSA Guide) | UniformSA',
+  description: 'Master hotel uniform design in Saudi Arabia that perfectly balances staff functionality with brand expression. 2025 guide covering smart fabrics, cultural integration, and luxury hospitality trends.',
+  keywords: 'hotel uniform design Saudi Arabia, hospitality uniforms KSA, hotel staff attire, luxury hotel uniforms, brand identity uniforms, functional hotel clothing, Saudi hospitality design 2025, hotel uniform trends',
   openGraph: {
-    title: 'Designing Hotel Uniforms That Balance Functionality and Brand Identity | May 2025',
-    description: 'Discover innovative approaches to hotel uniform design in Saudi Arabia that perfectly balance staff functionality with distinctive brand expression, featuring smart fabrics and cultural integration.',
+    title: 'Hotel Uniforms: Balancing Functionality & Brand Identity (2025 KSA Guide)',
+    description: 'Comprehensive 2025 guide to hotel uniform design in Saudi Arabia, balancing staff functionality with distinctive brand expression and cultural integration.',
     images: ['/images/hospitality/Hotel_uniforms.jpeg'],
-  }
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'KSA Hotel Uniforms: Functionality & Brand Identity 2025',
+    description: 'Innovative approaches to hotel uniform design in Saudi Arabia that balance staff functionality with brand expression.',
+    images: ['/images/hospitality/Hotel_uniforms.jpeg'],
+  },
 }
 
 export default function HotelUniformDesign() {
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">Designing Hotel Uniforms That Balance Functionality and Brand Identity</h1>
-        <div className="flex items-center text-gray-600 mb-4">
-          <Calendar className="w-4 h-4 mr-2" />
-          <span>May 2025</span>
-          <Clock className="w-4 h-4 ml-4 mr-2" />
-          <span>9 min read</span>
+    <div className="relative bg-white py-12 dark:bg-gray-900">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          {/* Breadcrumb */}
+          <nav className="mb-8 flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+            <Link href="/" className="hover:text-primary">
+              Home
+            </Link>
+            <span>{'>'}</span>
+            <Link href="/blog" className="hover:text-primary">
+              Blog
+            </Link>
+            <span>{'>'}</span>
+            <span className="text-gray-700 dark:text-white">Hotel Uniform Design</span>
+          </nav>
+
+          {/* Featured Image */}
+          <div className="mb-10">
+            <Image
+              src="/images/hospitality/Hotel_uniforms.jpeg"
+              alt="Hotel uniforms balancing functionality and brand identity in Saudi Arabia"
+              width={1000}
+              height={600}
+              className="rounded-lg w-full object-cover"
+              priority
+            />
+          </div>
+
+          {/* Title and Meta */}
+          <div className="mb-10">
+            <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-5xl">
+              Hotel Uniforms: Balancing Functionality & Brand Identity (2025 KSA Guide)
+            </h1>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <div className="flex items-center gap-1.5">
+                <Calendar className="h-4 w-4" />
+                <span>June 2, 2025</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Clock className="h-4 w-4" />
+                <span>15 min read</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Tag className="h-4 w-4" />
+                <span>Hotel Uniforms, Brand Identity, Hospitality Design, KSA Luxury</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </header>
 
-      <div className="relative w-full h-[400px] mb-8">
-        <Image
-          src="/images/hospitality/Hotel_uniforms.jpeg"
-          alt="Luxury Hotel Uniforms Balancing Functionality and Brand Identity"
-          fill
-          className="object-cover rounded-lg"
-          priority
-        />
-      </div>
-
-      <div className="prose prose-lg max-w-none">
+        {/* Content Layout */}
+        <div className="mx-auto grid max-w-7xl gap-x-12 lg:grid-cols-12">
+          {/* Main Content */}
+          <div className="lg:col-span-8">
+            <article className="prose dark:prose-invert max-w-none prose-lg">
         <p className="lead">
           In Saudi Arabia's flourishing hospitality sector of 2025, hotel uniform design has evolved into a sophisticated discipline that seamlessly integrates practical staff needs with powerful brand storytelling. The most successful hotel groups now recognize that uniform design represents a critical touchpoint where operational excellence meets guest experience, requiring thoughtful balance between functionality and distinctive identity expression.
         </p>
@@ -150,26 +190,75 @@ export default function HotelUniformDesign() {
           <li><strong>Sustainability Enhancement:</strong> Progressive implementation of more environmentally responsible materials and processes throughout the uniform lifecycle, aligned with evolving corporate sustainability objectives.</li>
         </ul>
 
-        <h2>Conclusion: The Strategic Value of Balanced Uniform Design</h2>
-        <p>
-          For Saudi Arabia's competitive luxury hospitality sector, uniform programs that successfully balance functionality and brand expression represent significant strategic investments. Beyond the obvious benefits of staff identification, well-designed uniforms actively contribute to operational excellence by enhancing comfort and performance while simultaneously communicating brand values to guests through every interaction.
-        </p>
-        <p>
-          As hotel experiences continue to evolve, the thoughtful integration of advanced materials, ergonomic design principles, and distinctive brand elements in uniform programs will remain a critical differentiator for properties seeking to deliver exceptional guest experiences while supporting their most valuable asset—their people.
-        </p>
-      </div>
+              <h2>Conclusion: The Strategic Value of Balanced Uniform Design</h2>
+              <p>
+                For Saudi Arabia's competitive luxury hospitality sector, uniform programs that successfully balance functionality and brand expression represent significant strategic investments. Beyond the obvious benefits of staff identification, well-designed uniforms actively contribute to operational excellence by enhancing comfort and performance while simultaneously communicating brand values to guests through every interaction.
+              </p>
+              <p>
+                As hotel experiences continue to evolve, the thoughtful integration of advanced materials, ergonomic design principles, and distinctive brand elements in uniform programs will remain a critical differentiator for properties seeking to deliver exceptional guest experiences while supporting their most valuable asset—their people.
+              </p>
 
-      <div className="mt-8 pt-8 border-t">
-        <h3 className="text-xl font-semibold mb-4">Related Articles</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link href="/blog/front-desk-attire-making-a-great-first-impression-in-ksa-hotels" className="text-blue-600 hover:underline">
-            Front Desk Attire: Making a Great First Impression in KSA Hotels
-          </Link>
-          <Link href="/blog/climate-appropriate-uniforms-for-outdoor-hospitality-staff-in-saudi-arabia" className="text-blue-600 hover:underline">
-            Climate-Appropriate Uniforms for Outdoor Hospitality Staff in Saudi Arabia
-          </Link>
+              <div className="mt-12 rounded-xl border border-gray-200 bg-gray-50 p-8 dark:border-gray-700 dark:bg-gray-800">
+                <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Hotel Uniform Design Checklist</h3>
+                <ul className="list-inside list-disc space-y-2 text-gray-700 dark:text-gray-300">
+                  <li>Conduct thorough brand immersion and staff needs analysis</li>
+                  <li>Select climate-appropriate, high-performance materials</li>
+                  <li>Design role-specific functionality features</li>
+                  <li>Integrate cultural sensitivity and brand elements</li>
+                  <li>Implement comprehensive fitting and maintenance protocols</li>
+                  <li>Plan for periodic evaluation and refresh cycles</li>
+                </ul>
+              </div>
+
+              <div className="mt-10 border-t border-gray-200 pt-8 dark:border-gray-700">
+                <h3 className="text-xl font-semibold">About the Author</h3>
+                <p className="text-gray-600 dark:text-gray-400">Omar Al-Rashid is a hospitality design consultant specializing in luxury hotel branding and uniform programs across the Middle East. With over 18 years of experience working with premier hotel groups in Saudi Arabia, he has developed comprehensive uniform systems for some of the Kingdom's most prestigious properties.</p>
+              </div>
+            </article>
+          </div>
+
+          {/* Sidebar */}
+          <div className="lg:col-span-4">
+            <div className="sticky top-24 space-y-8">
+              <div className="rounded-xl border border-gray-200 p-6 shadow-lg dark:border-gray-700 dark:bg-gray-800">
+                <h3 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Share This Guide</h3>
+                <div className="flex gap-2">
+                  <button aria-label="Share on social media" className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white transition-colors hover:bg-primary/80">
+                    <Share2 className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-gray-200 p-6 shadow-lg dark:border-gray-700 dark:bg-gray-800">
+                <h3 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Related Hospitality Topics</h3>
+                <div className="space-y-4">
+                  <Link href="/blog/front-desk-attire-making-a-great-first-impression-in-ksa-hotels" className="group block">
+                    <div className="font-medium text-primary group-hover:underline dark:text-sky-400">Front Desk Attire for KSA Hotels</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">Making great first impressions.</div>
+                  </Link>
+                  <Link href="/blog/climate-appropriate-uniforms-for-outdoor-hospitality-staff-in-saudi-arabia" className="group block">
+                    <div className="font-medium text-primary group-hover:underline dark:text-sky-400">Climate-Appropriate Hospitality Uniforms</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">Outdoor staff solutions for Saudi climate.</div>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="rounded-xl bg-primary/5 p-6 text-center shadow-lg dark:bg-primary/20">
+                <h3 className="mb-3 text-lg font-semibold text-gray-900 dark:text-white">Need Hotel Uniform Consultation?</h3>
+                <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">
+                  Get expert guidance on designing hotel uniforms that balance functionality with your brand identity.
+                </p>
+                <Link
+                  href="/contact/quote"
+                  className="inline-block rounded-lg bg-primary px-6 py-2.5 text-sm font-medium text-white shadow-md transition-colors hover:bg-primary/80"
+                >
+                  Request Consultation
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </article>
+    </div>
   )
-} 
+}

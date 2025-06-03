@@ -3,20 +3,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
 
-export const generateMetadata = (): Metadata => {
-  return {
-    title: `Identity Integration Systems: Advanced Customization Frameworks for Organizational Attire 2025 | UniformSA`,
-    description: `Comprehensive analysis of next-generation identity integration systems for Saudi organizational environments, featuring precision embroidery technology, advanced personalization frameworks, and brand amplification methodologies aligned with Vision 2030 commercial objectives.`,
-    keywords: `identity integration systems Saudi Arabia 2025, precision embroidery technology KSA, advanced personalization frameworks, digital asset synchronization, organizational identity projection, Saudi brand amplification architecture, cohesion optimization systems`,
-    openGraph: {
-      images: ['/images/education/School_logo_embroidery.jpg'],
-      title: `Identity Integration Systems: Advanced Customization Frameworks for Organizational Attire 2025`,
-      description: `Strategic implementation framework for deploying sophisticated identity integration architectures across Saudi organizational environments, delivering unprecedented brand cohesion through advanced personalization engineering.`,
-    },
-  }
+export const metadata: Metadata = {
+  title: 'Uniform Customization: Embroidery, Name Tags & Accessories | UniformSA',
+  description: 'Explore various customization options for professional uniforms, including embroidery, name tags, and accessories, to enhance brand identity and functionality.',
+  openGraph: {
+    title: 'Uniform Customization: Embroidery, Name Tags & Accessories',
+    description: 'Explore various customization options for professional uniforms, including embroidery, name tags, and accessories, to enhance brand identity and functionality.',
+    images: ['/images/services/custom_design_branding.jpg'],
+  },
 }
 
-export default function BlogPost() {
+export default function BlogPostPage() {
   return (
     <div className="relative bg-white py-12 dark:bg-gray-900">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -26,338 +23,129 @@ export default function BlogPost() {
             <Link href="/" className="hover:text-primary">
               Home
             </Link>
-            <span>&gt;</span>
+            <span>{'>'}</span>
             <Link href="/blog" className="hover:text-primary">
               Blog
             </Link>
-            <span>&gt;</span>
-            <span className="text-gray-700 dark:text-white">Identity Integration Systems</span>
+            <span>{'>'}</span>
+            <span className="text-gray-700 dark:text-white">Uniform Customization Options</span>
           </nav>
 
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/education/School_logo_embroidery.jpg"
-              alt="Next-generation identity integration systems for Saudi Arabia's organizational environments"
+              src="/images/services/custom_design_branding.jpg"
+              alt="Uniform customization options including embroidery and accessories"
               width={1000}
               height={600}
-              className="rounded-lg w-full"
+              className="rounded-lg w-full object-cover"
+              priority
             />
           </div>
 
           {/* Title and Meta */}
           <div className="mb-10">
             <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Identity Integration Systems: Advanced Customization Frameworks for Organizational Attire 2025
+              Customization Options: Embroidery, Name Tags, and Accessories for Professional Uniforms
             </h1>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
               <div className="flex items-center gap-1.5">
                 <Calendar className="h-4 w-4" />
-                <span>May 12, 2025</span>
+                <span>June 5, 2025</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Clock className="h-4 w-4" />
-                <span>16 min read</span>
+                <span>8 min read</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Tag className="h-4 w-4" />
-                <span>Identity Integration Architecture, Precision Embroidery Systems, Organizational Cohesion</span>
+                <span>Uniform Customization, Branding, Professional Accessories</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Content Layout (2 columns on desktop) */}
+        {/* Content Layout */}
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12">
           {/* Main Content */}
           <div className="lg:col-span-8">
             <div className="prose dark:prose-invert max-w-none">
               <p className="lead">
-                As Saudi Arabia's commercial landscape evolves toward Vision 2030 objectives, organizations are implementing sophisticated identity integration systems that transcend conventional customization paradigms. Contemporary enterprises now deploy comprehensive frameworks engineered to synchronize brand projection, optimize operational efficiency, and systematically enhance stakeholder engagement through strategic customization architecture.
+                Customizing professional uniforms is essential for reinforcing brand identity, enhancing team cohesion, and improving functionality. From intricate embroidery to practical accessories, the right customizations can transform a standard uniform into a powerful branding tool and a more effective work garment.
               </p>
 
-              <h2>Strategic Identity Projection Frameworks</h2>
+              <h2>The Power of Embroidery</h2>
               <p>
-                Advanced customization systems represent an essential strategic investment:
-              </p>
-
-              <div className="bg-blue-50 p-6 rounded-lg my-8 dark:bg-blue-900/30">
-                <h4 className="text-lg font-semibold mb-2">Performance Metrics of Next-Generation Identity Integration Systems</h4>
-                <ul className="grid grid-cols-2 gap-4 text-sm mb-0">
-                  <li className="flex flex-col">
-                    <span className="text-3xl font-bold text-primary">94%</span>
-                    <span>Enhanced stakeholder brand recognition with precision-engineered identity elements</span>
-                  </li>
-                  <li className="flex flex-col">
-                    <span className="text-3xl font-bold text-primary">2.7x</span>
-                    <span>Increased organizational cohesion metrics with synchronized identity systems</span>
-                  </li>
-                  <li className="flex flex-col">
-                    <span className="text-3xl font-bold text-primary">83%</span>
-                    <span>Operational efficiency improvement through role identification optimization</span>
-                  </li>
-                  <li className="flex flex-col">
-                    <span className="text-3xl font-bold text-primary">76%</span>
-                    <span>Enhanced customer trust indices with advanced professional signaling frameworks</span>
-                  </li>
-                </ul>
-              </div>
-
-              <p>
-                Contemporary identity integration architecture transcends traditional customization approaches:
+                Embroidery is a classic and durable method for adding logos, names, and titles to uniforms. It offers a premium look and feel that screen printing often cannot match.
               </p>
               <ul>
-                <li><strong>Multi-platform identity synchronization:</strong> Uniform customization engineered for cross-channel brand consistency</li>
-                <li><strong>Precision-engineered embroidery systems:</strong> Micro-detailed brand reproduction at previously unattainable scales</li>
-                <li><strong>Role-optimization frameworks:</strong> Strategic identification systems enhancing operational efficiency</li>
-                <li><strong>Cultural alignment architecture:</strong> Systems balancing global brand standards with Saudi identity values</li>
-                <li><strong>Dynamic customization ecosystems:</strong> Adaptable frameworks responding to organizational evolution</li>
+                <li><strong>Logo Placement:</strong> Common placements include the chest (left or right), sleeves, collar, or back yoke. The size and complexity of the logo will influence the best placement.</li>
+                <li><strong>Thread Quality and Color Matching:</strong> Using high-quality threads ensures longevity and vibrancy. Precise color matching to brand guidelines is crucial.</li>
+                <li><strong>Types of Embroidery:</strong> Options range from standard flat embroidery to 3D puff embroidery for a more pronounced effect, or appliqué for larger designs.</li>
+                <li><strong>Durability:</strong> Well-executed embroidery can withstand numerous washes and daily wear, making it ideal for workwear.</li>
               </ul>
 
-              <h2>Precision Identity Technology Frameworks</h2>
+              <h2>Professional Identification: Name Tags and Badges</h2>
               <p>
-                Advanced technological systems driving customization excellence:
-              </p>
-
-              <h3>Next-Generation Embroidery Architecture</h3>
-              <p>
-                Revolutionary approaches to thread-based identity integration:
+                Clear identification is vital in many professions, particularly in customer-facing roles and security.
               </p>
               <ul>
-                <li><strong>Micro-precision thread placement:</strong> Sub-millimeter accuracy for complex logo reproduction</li>
-                <li><strong>Multi-dimensional embroidery systems:</strong> Volumetric depth techniques creating textural brand experiences</li>
-                <li><strong>Digital-physical translation algorithms:</strong> Advanced systems ensuring exact brand specification adherence</li>
-                <li><strong>Structural integrity engineering:</strong> Reinforcement frameworks ensuring long-term identity projection</li>
-                <li><strong>Thread-color calibration systems:</strong> Precise color-matching technology reproducing exact brand palettes</li>
+                <li><strong>Embroidered Name Tags:</strong> Names and titles can be directly embroidered onto the uniform for a permanent solution.</li>
+                <li><strong>Detachable Name Badges:</strong> Offer flexibility, especially for roles with high staff turnover or for temporary staff. Options include magnetic, pin-on, or clip-on badges.</li>
+                <li><strong>Materials for Badges:</strong> Metal, plastic, or engraved badges offer different aesthetics and levels of formality.</li>
+                <li><strong>Security and ID Badges:</strong> These often require specific features like photo ID integration, barcodes, or RFID chips, and must be displayed clearly and securely.</li>
               </ul>
 
-              <h3>Advanced Personalization Technologies</h3>
-              <p>
-                Sophisticated systems for individual identity integration:
-              </p>
-              <ul>
-                <li><strong>Multi-script name adaptation frameworks:</strong> Systems accommodating Latin, Arabic, and international character sets</li>
-                <li><strong>Variable data integration:</strong> Dynamic customization enabling title and role specification</li>
-                <li><strong>Authentication feature incorporation:</strong> Security elements verifying organizational association</li>
-                <li><strong>Hierarchy signaling architecture:</strong> Subtle design elements communicating organizational position</li>
-                <li><strong>Digital-physical identity synchronization:</strong> Integration with electronic identification systems</li>
-              </ul>
-
-              <div className="bg-gray-100 p-6 rounded-lg my-8 dark:bg-gray-800">
-                <h4 className="text-lg font-semibold mb-2">Case Study: Advanced Identity Integration Implementation at NEOM Project Management Organization</h4>
-                <p className="text-sm mb-0">
-                  In Q4 2024, NEOM implemented a comprehensive identity integration architecture across its 12,000+ workforce. The system featured multi-tier identity frameworks, precision embroidery systems, and role optimization elements specifically calibrated for Saudi Arabia's flagship development project.
-                </p>
-                <p className="text-sm mt-2 mb-0">
-                  Implementation data revealed 97% enhancement in stakeholder recognition metrics, 89% improvement in operational efficiency through role clarity, and 93% increase in reported team cohesion assessments. Management identified significant operational enhancement with the customization framework becoming an integral component of project governance architecture and establishing new standards in large-scale Saudi development operations.
+              <div className="not-prose my-8 p-6 bg-sky-50 rounded-lg dark:bg-sky-900/20">
+                <h3 className="text-lg font-semibold mb-3 text-sky-800 dark:text-sky-200">Design Tip: Consistency is Key</h3>
+                <p className="text-sm mb-4 text-sky-700 dark:text-sky-300">
+                  Ensure that all customization elements—embroidery style, name tag format, logo placement—are consistent across all uniforms to maintain a cohesive and professional brand image.
                 </p>
               </div>
 
-              <h2>Organizational Cohesion Architecture</h2>
+              <h2>Functional and Branding Accessories</h2>
               <p>
-                Strategic systems enhancing internal alignment and performance:
-              </p>
-
-              <h3>Team Integration Frameworks</h3>
-              <p>
-                Advanced approaches to collective identity optimization:
+                Accessories can enhance both the functionality of the uniform and its branding impact.
               </p>
               <ul>
-                <li><strong>Departmental delineation systems:</strong> Strategic color and design elements for operational clarity</li>
-                <li><strong>Functional group identification:</strong> Visual frameworks communicating specialized capabilities</li>
-                <li><strong>Project affiliation signaling:</strong> Temporal identification systems for initiative association</li>
-                <li><strong>Hierarchical relationship architecture:</strong> Subtle elements establishing organizational structure</li>
-                <li><strong>Cross-functional collaboration indicators:</strong> Systems promoting inter-departmental integration</li>
+                <li><strong>Ties and Scarves:</strong> Can incorporate company colors or subtle patterns. Custom-designed ties and scarves with logos are popular in corporate and hospitality sectors.</li>
+                <li><strong>Epaulets and Shoulder Boards:</strong> Used to denote rank or position, particularly in aviation, security, and maritime industries.</li>
+                <li><strong>Belts:</strong> Can be customized with branded buckles or specific colors.</li>
+                <li><strong>Hats and Caps:</strong> Offer branding opportunities and can be essential for outdoor roles or specific hygiene requirements (e.g., food service).</li>
+                <li><strong>Aprons:</strong> Widely used in hospitality and healthcare, aprons can be heavily branded with logos and come in various styles to suit different roles.</li>
+                <li><strong>Lanyards and ID Holders:</strong> Custom lanyards with company branding are a practical way to display ID badges.</li>
               </ul>
 
-              <h3>Cultural Identity Integration</h3>
+              <h2>Other Customization Techniques</h2>
               <p>
-                Specialized frameworks honoring Saudi heritage within organizational contexts:
+                Beyond embroidery and accessories, other techniques include:
               </p>
               <ul>
-                <li><strong>Heritage-element incorporation:</strong> Subtle integration of traditional Saudi design motifs</li>
-                <li><strong>Cultural value signalization:</strong> Identification systems reinforcing core Saudi principles</li>
-                <li><strong>Regional affiliation indicators:</strong> Systems acknowledging Kingdom geographical diversity</li>
-                <li><strong>National pride architecture:</strong> Strategic alignment with Saudi Vision 2030 visual language</li>
-                <li><strong>Multi-cultural integration frameworks:</strong> Systems honoring international workforces within Saudi context</li>
+                <li><strong>Screen Printing:</strong> Cost-effective for large designs or bulk orders, especially on t-shirts or casual wear. Less durable than embroidery for workwear.</li>
+                <li><strong>Heat Transfers:</strong> Good for intricate, multi-color designs. Durability can vary based on quality.</li>
+                <li><strong>Custom Zippers and Buttons:</strong> Subtle details like branded zipper pulls or buttons can add a touch of exclusivity.</li>
+                <li><strong>Reflective Trims and Piping:</strong> Essential for safety in low-light conditions for industrial and security uniforms, can also be a design element.</li>
               </ul>
 
-              <h2>Operational Efficiency Optimization</h2>
+              <h2>Working with a Uniform Provider</h2>
               <p>
-                Systems enhancing functional performance through strategic identification:
-              </p>
-
-              <h3>Role Classification Architectures</h3>
-              <p>
-                Advanced frameworks for operational clarity:
+                When choosing customization options, collaborate closely with your uniform provider. They can offer:
               </p>
               <ul>
-                <li><strong>Decision authority signalization:</strong> Visual systems communicating organizational empowerment</li>
-                <li><strong>Expertise identification frameworks:</strong> Elements reflecting specialized knowledge domains</li>
-                <li><strong>Certification and qualification indicators:</strong> Systems acknowledging professional accomplishments</li>
-                <li><strong>Emergency response identification:</strong> High-visibility customization for critical function personnel</li>
-                <li><strong>Cross-functional capability mapping:</strong> Systems indicating secondary operational capacities</li>
+                <li>Expert advice on the best customization methods for your specific fabrics and uniform types.</li>
+                <li>Digital mock-ups and physical samples to approve before full production.</li>
+                <li>Guidance on logo sizing and placement for maximum impact and professionalism.</li>
+                <li>Ensuring all customizations meet industry standards and your brand guidelines.</li>
               </ul>
 
-              <h3>Workflow Optimization Systems</h3>
+              <h2>Conclusion</h2>
               <p>
-                Strategic customization enhancing process efficiency:
-              </p>
-              <ul>
-                <li><strong>Access authorization signaling:</strong> Visual frameworks indicating security clearance levels</li>
-                <li><strong>Process stage indicators:</strong> Customization elements reflecting workflow position</li>
-                <li><strong>Multi-site operational identifiers:</strong> Systems for personnel working across multiple locations</li>
-                <li><strong>Temporal assignment indication:</strong> Frameworks identifying time-limited project roles</li>
-                <li><strong>Shift differentiation architecture:</strong> Systems optimizing 24-hour operational environments</li>
-              </ul>
-
-              <h2>Stakeholder Relationship Enhancement</h2>
-              <p>
-                Strategic frameworks optimizing external engagement:
+                Thoughtful customization transforms standard uniforms into powerful assets that enhance brand recognition, foster team spirit, and improve practical functionality. By carefully selecting embroidery, name tags, accessories, and other embellishments, organizations can create a distinctive and professional image that resonates with both employees and clients.
               </p>
 
-              <h3>Client Confidence Architecture</h3>
-              <p>
-                Advanced systems building stakeholder trust:
-              </p>
-              <ul>
-                <li><strong>Expertise signalization frameworks:</strong> Visual systems communicating capability domains</li>
-                <li><strong>Trust-building identification:</strong> Elements designed to enhance credibility perception</li>
-                <li><strong>Client relationship personalization:</strong> Systems adapted for specific stakeholder contexts</li>
-                <li><strong>Service level indication:</strong> Customization reflecting premium engagement categories</li>
-                <li><strong>Accountability signalization:</strong> Identity elements reinforcing responsibility structures</li>
-              </ul>
-
-              <h3>Brand Experience Integration</h3>
-              <p>
-                Sophisticated frameworks extending brand engagement:
-              </p>
-              <ul>
-                <li><strong>Brand narrative reinforcement:</strong> Customization elements aligned with organizational storytelling</li>
-                <li><strong>Value proposition visualization:</strong> Systems communicating core organizational differentiators</li>
-                <li><strong>Brand promise embodiment:</strong> Identity integration reinforcing stakeholder commitments</li>
-                <li><strong>Multi-sensory brand expression:</strong> Tactile customization creating dimensional brand experiences</li>
-                <li><strong>Heritage-innovation balance:</strong> Systems reflecting organizational evolution within established identity</li>
-              </ul>
-
-              <h2>Implementation Excellence Architecture</h2>
-              <p>
-                Strategic frameworks ensuring customization system optimization:
-              </p>
-
-              <h3>Quality Assurance Systems</h3>
-              <p>
-                Advanced approaches ensuring identity integration excellence:
-              </p>
-              <ul>
-                <li><strong>Brand specification adherence verification:</strong> Multi-point inspection protocols ensuring identity accuracy</li>
-                <li><strong>Durability engineering confirmation:</strong> Testing frameworks validating customization longevity</li>
-                <li><strong>Color consistency validation:</strong> Advanced spectral analysis ensuring precise brand reproduction</li>
-                <li><strong>Detail resolution verification:</strong> Microscopic inspection confirming micro-element integrity</li>
-                <li><strong>Washability performance certification:</strong> Rigorous testing ensuring sustainability through maintenance</li>
-              </ul>
-
-              <h3>Logistics Optimization Frameworks</h3>
-              <p>
-                Strategic systems streamlining customization deployment:
-              </p>
-              <ul>
-                <li><strong>Digital specification transmission:</strong> Error-elimination through direct digital workflow integration</li>
-                <li><strong>Personnel data synchronization:</strong> Systems integrating with HR databases for accuracy assurance</li>
-                <li><strong>Just-in-time customization architecture:</strong> On-demand systems reducing inventory complexity</li>
-                <li><strong>Multi-location implementation coordination:</strong> Frameworks ensuring consistency across regional sites</li>
-                <li><strong>Organizational growth accommodation:</strong> Scalable systems adapting to workforce expansion</li>
-              </ul>
-
-              <h2>Accessory Integration Architecture</h2>
-              <p>
-                Comprehensive approaches to extended identity projection:
-              </p>
-
-              <h3>Complementary Identification Systems</h3>
-              <p>
-                Strategic coordination of accessory-based identity elements:
-              </p>
-              <ul>
-                <li><strong>Badge and holder optimization:</strong> Advanced systems for credential presentation</li>
-                <li><strong>Portable identity architecture:</strong> Strategic lanyard and attachment frameworks</li>
-                <li><strong>Formal identity enhancement:</strong> Specialized systems for pins and formal accessories</li>
-                <li><strong>Functional accessory integration:</strong> Identity incorporation on tool-centric attachments</li>
-                <li><strong>Temporary identification optimization:</strong> Systems for visitor and provisional personnel</li>
-              </ul>
-
-              <h3>Identity Synchronization Frameworks</h3>
-              <p>
-                Advanced systems ensuring multi-element consistency:
-              </p>
-              <ul>
-                <li><strong>Cross-platform design coherence:</strong> Systems ensuring uniformity across diverse customization media</li>
-                <li><strong>Material variation compensation:</strong> Frameworks adjusting design for different substrate characteristics</li>
-                <li><strong>Scale-adaptive identity architecture:</strong> Systems maintaining recognition across dimensional ranges</li>
-                <li><strong>Multi-technique integration:</strong> Frameworks coordinating embroidery, printing, and attachment systems</li>
-                <li><strong>Digital-physical identity alignment:</strong> Ensuring consistency between electronic and physical identity elements</li>
-              </ul>
-
-              <h2>Future-Oriented Identity Architecture</h2>
-              <p>
-                Strategic frameworks anticipating emerging customization paradigms:
-              </p>
-
-              <h3>Smart Customization Integration</h3>
-              <p>
-                Advanced systems incorporating technological elements:
-              </p>
-              <ul>
-                <li><strong>NFC capability integration:</strong> Frameworks embedding digital functionality within physical identity elements</li>
-                <li><strong>Tracking system incorporation:</strong> Advanced location and movement optimization technology</li>
-                <li><strong>Biometric synchronization:</strong> Systems coordinating with advanced authorization frameworks</li>
-                <li><strong>Environmental response integration:</strong> Customization elements adapting to situational contexts</li>
-                <li><strong>Augmented reality interaction capabilities:</strong> Systems enabling enhanced information access</li>
-              </ul>
-
-              <h3>Sustainability-Forward Customization</h3>
-              <p>
-                Eco-conscious frameworks for responsible identity integration:
-              </p>
-              <ul>
-                <li><strong>Biodegradable thread systems:</strong> Environmentally optimized embroidery materials</li>
-                <li><strong>Energy-efficient customization:</strong> Reduced-impact production methodologies</li>
-                <li><strong>Water conservation techniques:</strong> Process optimization reducing resource utilization</li>
-                <li><strong>Recyclable accessory frameworks:</strong> End-of-life consideration for identity elements</li>
-                <li><strong>Carbon-neutral customization architecture:</strong> Offset systems balancing production impact</li>
-              </ul>
-
-              <div className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-800">
-                <h3 className="text-2xl font-semibold mb-4">About the Author</h3>
-                <div className="flex items-start gap-4">
-                  <Image
-                    src="/images/author/default-author.jpg"
-                    alt="Dr. Nasser Al-Qahtani"
-                    width={80}
-                    height={80}
-                    className="rounded-full"
-                  />
-                  <div>
-                    <h4 className="text-xl font-medium">Dr. Nasser Al-Qahtani</h4>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      Director of Identity Integration Systems at the Saudi Brand Architecture Institute with 15+ years of experience implementing advanced personalization frameworks across the GCC region. Specializes in strategic brand projection systems and organizational identity architecture with a focus on Vision 2030 alignment.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Call to Action */}
-              <div className="mt-12 bg-primary/5 p-6 rounded-xl dark:bg-primary/20">
-                <h3 className="text-xl font-semibold mb-2">Upgrade Your Organizational Identity Integration</h3>
-                <p className="mb-4">
-                  Discover how our advanced customization frameworks can transform your brand projection and organizational cohesion. Our strategic identity systems are engineered specifically for Saudi enterprises pursuing excellence.
-                </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-white hover:bg-primary/90"
-                >
-                  Schedule a Consultation
-                </Link>
+              <div className="mt-10 p-6 border border-gray-200 rounded-lg dark:border-gray-700">
+                <h3 className="text-lg font-semibold">About the Author</h3>
+                <p className="text-gray-600 dark:text-gray-400">UniformSA offers comprehensive uniform customization services, from expert design consultation to high-quality embroidery and accessory sourcing, helping businesses in Saudi Arabia create impactful and professional attire.</p>
               </div>
             </div>
           </div>
@@ -365,30 +153,8 @@ export default function BlogPost() {
           {/* Sidebar */}
           <div className="lg:col-span-4">
             <div className="sticky top-24 space-y-8">
-              {/* Related Articles */}
-              <div className="rounded-xl border border-gray-200 p-6 dark:border-gray-800">
-                <h3 className="mb-4 text-lg font-semibold">Related Articles</h3>
-                <div className="space-y-4">
-                  <Link href="/blog/the-role-of-uniforms-in-creating-a-cohesive-brand-experience-across-hotel-chains-in-ksa" className="group block">
-                    <div className="text-sm font-medium group-hover:text-primary">Brand Cohesion Architecture for Hotel Chains</div>
-                    <div className="text-xs text-gray-500">Creating unified brand experiences across multiple properties</div>
-                  </Link>
-                  <Link href="/blog/how-uniforms-impact-staff-morale-and-guest-satisfaction-scores" className="group block">
-                    <div className="text-sm font-medium group-hover:text-primary">Performance Enhancement Through Strategic Attire</div>
-                    <div className="text-xs text-gray-500">Optimizing workforce engagement and stakeholder satisfaction</div>
-                  </Link>
-                  <Link href="/blog/spa-and-wellness-center-uniforms-promoting-relaxation-and-professionalism" className="group block">
-                    <div className="text-sm font-medium group-hover:text-primary">Therapeutic Attire Architecture</div>
-                    <div className="text-xs text-gray-500">Advanced frameworks for wellness experience enhancement</div>
-                  </Link>
-                  <Link href="/blog" className="group block mt-4">
-                    <div className="text-sm font-medium group-hover:text-primary">View All Articles</div>
-                  </Link>
-                </div>
-              </div>
-
               {/* Share Section */}
-              <div className="rounded-xl border border-gray-200 p-6 dark:border-gray-800">
+              <div className="rounded-xl border border-gray-200 p-6 dark:border-gray-700">
                 <h3 className="mb-4 text-lg font-semibold">Share Article</h3>
                 <div className="flex gap-2">
                   <button className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white hover:bg-primary/90">
@@ -397,18 +163,19 @@ export default function BlogPost() {
                 </div>
               </div>
 
-              {/* Call to Action */}
-              <div className="rounded-xl bg-gray-100 p-6 dark:bg-gray-800">
-                <h3 className="mb-4 text-lg font-semibold">Request a Consultation</h3>
-                <p className="mb-4 text-sm">
-                  Our identity integration specialists can develop a customized framework for your organization's specific requirements.
-                </p>
-                <Link
-                  href="/request-quote"
-                  className="inline-flex w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm text-white hover:bg-primary/90"
-                >
-                  Get Started
+              {/* Related Articles */}
+              <div className="rounded-xl border border-gray-200 p-6 dark:border-gray-700">
+                <h3 className="mb-4 text-lg font-semibold">Related Articles</h3>
+                <div className="space-y-4">
+                  <Link href="/blog/custom-embroidery-and-badges-for-school-logos-in-saudi-arabia" className="group block">
+                    <div className="text-sm font-medium group-hover:text-primary">School Uniform Embroidery</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">Branding for educational institutions.</div>
                   </Link>
+                  <Link href="/blog/custom-security-name-tags-professional-identification-solutions" className="group block">
+                    <div className="text-sm font-medium group-hover:text-primary">Security Name Tags</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400">Professional ID for security staff.</div>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

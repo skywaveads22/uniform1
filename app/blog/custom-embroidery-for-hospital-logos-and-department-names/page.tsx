@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Custom Embroidery for Hospital Logos and Department Names | UniformSA',
     description: 'Learn about professional embroidery solutions for healthcare uniforms, including best practices for hospital branding and department identification.',
-    images: ['/images/healthcare/custom_embroidery.jpg'],
+    images: ['/images/healthcare/Embroidery_on_medical_uniforms.jpg'],
   },
 }
 
@@ -34,7 +34,7 @@ export default async function Page() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/healthcare/custom_embroidery.jpg"
+              src="/images/healthcare/Embroidery_on_medical_uniforms.jpg"
               alt="Professional embroidery of hospital logos and department names on healthcare uniforms"
               width={1000}
               height={600}
