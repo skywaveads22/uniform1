@@ -2,8 +2,8 @@
 const nextConfig = {
   staticPageGenerationTimeout: 300,
   output: 'export',
-  basePath: process.env.NETLIFY ? '' : '/uniform1',
-  assetPrefix: process.env.NETLIFY ? '' : '/uniform1/',
+  basePath: '',
+  assetPrefix: '',
   images: {
     unoptimized: true,
     remotePatterns: [],
