@@ -138,15 +138,14 @@ export default function AviationServicePage() {
             <h2 className="mb-8 text-center text-3xl font-bold">Aviation Regulatory Compliance</h2>
             <div className="grid gap-6 md:grid-cols-2">
               <div className="relative aspect-square w-full overflow-hidden rounded-lg">
-                                <Image                  src="/images/aviation/Aviation_uniform_fabrics.jpg"                  alt="Aviation uniform regulatory compliance"                  fill                  className="object-cover"                />
+                                <Image                  src="/images/aviation/aviation_uniforms.jpg"                  alt="Aviation uniform regulatory compliance"                  fill                  className="object-cover"                />
               </div>
               <div className="flex flex-col justify-center">
                 <h3 className="mb-4 text-xl font-bold">Meeting Saudi & International Aviation Standards</h3>
                 <p className="mb-4 text-muted-foreground">
                   Our aviation uniforms adhere to all relevant GACA regulations and international aviation authority guidelines while providing the distinctive appearance that sets your airline apart.
                 </p>
-                <ul className="space-y-2">
-                  {[
+                <ul>{[
                     "Compliance with General Authority of Civil Aviation (GACA) requirements",
                     "Adherence to international aviation dress code standards",
                     "Fire safety and flame-resistant materials where required",
@@ -158,8 +157,7 @@ export default function AviationServicePage() {
                       <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
                       <span className="text-muted-foreground">{item}</span>
                     </li>
-                  ))}
-                </ul>
+                  ))}</ul>
               </div>
             </div>
           </div>
@@ -223,8 +221,7 @@ export default function AviationServicePage() {
                 <p className="mb-4 text-muted-foreground">
                   A premium Saudi airline partnered with Fakhr Khaleej to develop a new uniform program for their 3,000+ aviation personnel. They required uniforms that would distinguish their brand while enhancing staff comfort during long-haul international flights.
                 </p>
-                <ul className="mb-6 space-y-2">
-                  <li className="flex items-start space-x-3">
+                <ul><li className="flex items-start space-x-3">
                     <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
                     <span className="text-muted-foreground">Created a coordinated collection across eight aviation departments</span>
                   </li>
@@ -235,8 +232,7 @@ export default function AviationServicePage() {
                   <li className="flex items-start space-x-3">
                     <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
                     <span className="text-muted-foreground">Improved comfort ratings by 62% through advanced material technologies</span>
-                  </li>
-                </ul>
+                  </li></ul>
                 <div className="text-sm italic text-muted-foreground">
                   "Fakhr Khaleej transformed our airline's visual presence with uniforms that have become an integral part of our brand identity. Our staff report significant improvements in comfort during long-haul flights, and passenger feedback has been overwhelmingly positive."
                   <div className="mt-2 font-semibold not-italic">— Brand Director, Premium Saudi Carrier</div>

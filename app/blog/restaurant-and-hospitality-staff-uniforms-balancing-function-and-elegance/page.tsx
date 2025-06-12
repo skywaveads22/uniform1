@@ -84,20 +84,17 @@ export default function RestaurantHospitalityUniforms() {
               <p>
                 In a market welcoming millions of new international tourists and fostering a burgeoning domestic leisure scene, hospitality uniforms serve critical strategic functions:
               </p>
-              <ul>
-                <li><strong>Brand Embodiment:</strong> Uniforms are a primary visual touchpoint, instantly communicating the establishment's positioning, quality, and service philosophy.</li>
+              <ul><li><strong>Brand Embodiment:</strong> Uniforms are a primary visual touchpoint, instantly communicating the establishment's positioning, quality, and service philosophy.</li>
                 <li><strong>Guest Experience Enhancement:</strong> Well-dressed, easily identifiable staff contribute to a sense of security, professionalism, and service accessibility, directly impacting guest satisfaction.</li>
                 <li><strong>Cultural Bridge-Building:</strong> Thoughtfully designed uniforms can navigate the delicate balance of international service standards and local Saudi customs, making diverse guests feel comfortable and respected.</li>
                 <li><strong>Staff Empowerment:</strong> Elegant and functional uniforms instill pride and confidence in staff, positively influencing their performance and interactions.</li>
-                <li><strong>Operational Excellence:</strong> Purpose-built designs enhance efficiency, safety, and comfort for staff across various demanding roles.</li>
-              </ul>
+                <li><strong>Operational Excellence:</strong> Purpose-built designs enhance efficiency, safety, and comfort for staff across various demanding roles.</li></ul>
 
               <div className="my-8 rounded-xl bg-gradient-to-r from-purple-50 to-pink-50 p-6 shadow-lg dark:from-purple-900/20 dark:to-pink-900/20">
                 <h3 className="mb-3 flex items-center text-xl font-semibold text-purple-800 dark:text-purple-300">
                   🏨 2025 KSA Hospitality Uniform Trends & Insights
                 </h3>
-                <ul className="grid grid-cols-2 gap-4 text-sm">
-                  <li className="flex flex-col">
+                <ul><li className="flex flex-col">
                     <span className="text-2xl font-bold text-primary">70+</span>
                     <span>New luxury hotel brands entering KSA by 2030</span>
                   </li>
@@ -112,136 +109,103 @@ export default function RestaurantHospitalityUniforms() {
                   <li className="flex flex-col">
                     <span className="text-2xl font-bold text-primary">Customization</span>
                     <span>Essential for differentiating in a competitive market</span>
-                  </li>
-                </ul>
+                  </li></ul>
               </div>
 
               <h2>Core Principles for Designing Hospitality Uniforms in KSA:</h2>
 
               <h3>1. Functionality: Engineered for Excellence</h3>
               <p>Practicality is the bedrock of effective hospitality uniforms, especially in KSA's demanding environment.</p>
-              <ul>
-                <li><strong>Climate Adaptability:</strong>
+              <ul><li><strong>Climate Adaptability:</strong>
                   <ul>
                     <li>Lightweight, breathable fabrics (e.g., high-quality cottons, linens, Tencel™, performance blends) are essential.</li>
                     <li>Moisture-wicking and quick-drying properties for comfort in heat and humidity.</li>
                     <li>Consideration for indoor (air-conditioned) vs. outdoor roles (e.g., poolside, valet).</li>
-                    <li>Layering options for temperature fluctuations or varied environments.</li>
-                  </ul>
+                    <li>Layering options for temperature fluctuations or varied environments.</li></ul>
                 </li>
                 <li><strong>Role-Specific Ergonomics:</strong>
-                  <ul>
-                    <li><strong>Front Desk/Concierge:</strong> Designs allowing for comfortable standing for long periods, easy access to tools/tablets.</li>
+                  <ul><li><strong>Front Desk/Concierge:</strong> Designs allowing for comfortable standing for long periods, easy access to tools/tablets.</li>
                     <li><strong>Housekeeping:</strong> Freedom of movement for bending, stretching, lifting. Durable fabrics, ample pockets.</li>
                     <li><strong>F&B Service:</strong> Stain-resistant, wrinkle-resistant materials. Aprons with functional pockets. Non-restrictive fit for carrying trays. ([Link to F&B uniforms article])</li>
-                    <li><strong>Maintenance/Engineering:</strong> Robust, protective fabrics. Tool loops, reinforced areas.</li>
-                  </ul>
+                    <li><strong>Maintenance/Engineering:</strong> Robust, protective fabrics. Tool loops, reinforced areas.</li></ul>
                 </li>
                 <li><strong>Durability and Maintenance:</strong>
-                  <ul>
-                    <li>Fabrics that withstand frequent industrial laundering and maintain color/shape.</li>
-                    <li>Easy-care properties (e.g., wrinkle resistance) to ensure staff always look polished.</li>
-                  </ul>
+                  <ul><li>Fabrics that withstand frequent industrial laundering and maintain color/shape.</li>
+                    <li>Easy-care properties (e.g., wrinkle resistance) to ensure staff always look polished.</li></ul>
                 </li>
               </ul>
 
               <h3>2. Elegance: Reflecting Brand Prestige and Service Quality</h3>
               <p>Aesthetics play a crucial role in conveying luxury, professionalism, and attention to detail.</p>
-              <ul>
-                <li><strong>Tailoring and Fit:</strong>
+              <ul><li><strong>Tailoring and Fit:</strong>
                   <ul>
                     <li>Impeccable tailoring is key. Even simple designs look sophisticated with a good fit.</li>
                     <li>Offering a range of fits (e.g., classic, slim) to suit diverse body types and preferences.</li>
-                    <li>Structured silhouettes for formal roles, softer lines for more relaxed environments.</li>
-                  </ul>
+                    <li>Structured silhouettes for formal roles, softer lines for more relaxed environments.</li></ul>
                 </li>
                 <li><strong>Material Quality:</strong>
-                  <ul>
-                    <li>Premium fabrics that drape well and have a luxurious hand-feel.</li>
-                    <li>Attention to detail in buttons, stitching, linings, and accessories.</li>
-                  </ul>
+                  <ul><li>Premium fabrics that drape well and have a luxurious hand-feel.</li>
+                    <li>Attention to detail in buttons, stitching, linings, and accessories.</li></ul>
                 </li>
                 <li><strong>Color Palette and Design Language:</strong>
-                  <ul>
-                    <li>Cohesive color schemes that align with the hotel/restaurant's branding and interior design.</li>
+                  <ul><li>Cohesive color schemes that align with the hotel/restaurant's branding and interior design.</li>
                     <li>Sophisticated use of patterns – subtle textures, classic motifs, or custom-designed brand patterns.</li>
-                    <li>Timeless designs that avoid fleeting trends, ensuring longevity.</li>
-                  </ul>
+                    <li>Timeless designs that avoid fleeting trends, ensuring longevity.</li></ul>
                 </li>
               </ul>
 
               <h3>3. Cultural Sensitivity: Respecting Local Values (SEO Keyword: Saudi Cultural Sensitivity Uniforms)</h3>
               <p>Navigating cultural nuances with grace is essential for success in KSA.</p>
-              <ul>
-                <li><strong>Modesty:</strong>
+              <ul><li><strong>Modesty:</strong>
                   <ul>
                     <li>Appropriate coverage for all staff, particularly for female employees. This typically means longer sleeves (to wrist or elbow), higher necklines, and skirts/dresses at or below the knee, or tailored trousers.</li>
                     <li>Avoiding overly tight or revealing garments.</li>
-                    <li>Providing options that cater to varying levels of personal observance among staff.</li>
-                  </ul>
+                    <li>Providing options that cater to varying levels of personal observance among staff.</li></ul>
                 </li>
                 <li><strong>Head Coverings (Hijab):</strong>
-                  <ul>
-                    <li>Offering elegantly designed, brand-coordinated hijabs for female staff who choose to wear them.</li>
+                  <ul><li>Offering elegantly designed, brand-coordinated hijabs for female staff who choose to wear them.</li>
                     <li>Materials should be comfortable, breathable, and easy to style professionally.</li>
-                    <li>Ensuring hijab designs integrate seamlessly with the overall uniform aesthetic.</li>
-                  </ul>
+                    <li>Ensuring hijab designs integrate seamlessly with the overall uniform aesthetic.</li></ul>
                 </li>
                 <li><strong>Gender-Specific Considerations:</strong>
-                  <ul>
-                    <li>While maintaining a cohesive brand look, designs for male and female staff should be distinct and appropriate.</li>
-                    <li>Avoiding unisex designs that may not adequately address modesty or fit for both genders in a culturally sensitive manner.</li>
-                  </ul>
+                  <ul><li>While maintaining a cohesive brand look, designs for male and female staff should be distinct and appropriate.</li>
+                    <li>Avoiding unisex designs that may not adequately address modesty or fit for both genders in a culturally sensitive manner.</li></ul>
                 </li>
                 <li><strong>Incorporating Saudi Heritage (Tastefully):</strong>
-                  <ul>
-                    <li>Subtle integration of traditional Saudi patterns (e.g., Sadu, Al-Qatt Al-Asiri), calligraphy, or architectural motifs into uniform details (e.g., trim, scarves, lapel pins).</li>
+                  <ul><li>Subtle integration of traditional Saudi patterns (e.g., Sadu, Al-Qatt Al-Asiri), calligraphy, or architectural motifs into uniform details (e.g., trim, scarves, lapel pins).</li>
                     <li>This must be done with authenticity and respect, often in collaboration with local artists or cultural consultants, to avoid caricature.</li>
-                    <li>Modern interpretations of traditional garments can be effective for specific roles or themed establishments.</li>
-                  </ul>
+                    <li>Modern interpretations of traditional garments can be effective for specific roles or themed establishments.</li></ul>
                 </li>
               </ul>
 
               <h2>Uniform Design Strategies for Different Hospitality Segments in KSA:</h2>
 
               <h3>A. Luxury Hotels (Riyadh, Jeddah, AlUla, Red Sea Global)</h3>
-              <ul>
-                <li><strong>Focus:</strong> Uncompromising elegance, bespoke tailoring, premium materials, subtle branding.</li>
+              <ul><li><strong>Focus:</strong> Uncompromising elegance, bespoke tailoring, premium materials, subtle branding.</li>
                 <li><strong>Examples:</strong> Custom-woven fabrics, designer collaborations, intricate detailing, sophisticated accessories. Uniforms often reflect the hotel's unique narrative or location.</li>
-                <li><strong>Image:</strong> [`public/images/hospitality/Luxury_hotel_staff_uniforms_Saudi_Arabia_KSA.jpeg`](public/images/hospitality/Luxury_hotel_staff_uniforms_Saudi_Arabia_KSA.jpeg)</li>
-              </ul>
+                <li><strong>Image:</strong> [`public/images/hospitality/Luxury_hotel_staff_uniforms_Saudi_Arabia_KSA.jpeg`](public/images/hospitality/Luxury_hotel_staff_uniforms_Saudi_Arabia_KSA.jpeg)</li></ul>
 
               <h3>B. Business Hotels (Major Cities)</h3>
-              <ul>
-                <li><strong>Focus:</strong> Professionalism, efficiency, modern aesthetics, durability.</li>
-                <li><strong>Examples:</strong> Sharp suits for FOH, smart separates, functional yet stylish designs for operational staff. Consistent branding across all roles.</li>
-              </ul>
+              <ul><li><strong>Focus:</strong> Professionalism, efficiency, modern aesthetics, durability.</li>
+                <li><strong>Examples:</strong> Sharp suits for FOH, smart separates, functional yet stylish designs for operational staff. Consistent branding across all roles.</li></ul>
 
               <h3>C. Resorts and Leisure Destinations (Coastal Areas, NEOM)</h3>
-              <ul>
-                <li><strong>Focus:</strong> Relaxed elegance, climate-appropriate designs, durability for outdoor conditions, brand storytelling reflecting the destination.</li>
-                <li><strong>Examples:</strong> High-quality natural fibers (linen, cotton), lighter colors, resort-chic styling, practical elements for sun/sand exposure.</li>
-              </ul>
+              <ul><li><strong>Focus:</strong> Relaxed elegance, climate-appropriate designs, durability for outdoor conditions, brand storytelling reflecting the destination.</li>
+                <li><strong>Examples:</strong> High-quality natural fibers (linen, cotton), lighter colors, resort-chic styling, practical elements for sun/sand exposure.</li></ul>
 
               <h3>D. Boutique Hotels and Heritage Properties</h3>
-              <ul>
-                <li><strong>Focus:</strong> Authenticity, unique character, often incorporating local craftsmanship and cultural motifs.</li>
-                <li><strong>Examples:</strong> Custom designs that tell the story of the property, use of traditional textiles or patterns in a contemporary way.</li>
-              </ul>
+              <ul><li><strong>Focus:</strong> Authenticity, unique character, often incorporating local craftsmanship and cultural motifs.</li>
+                <li><strong>Examples:</strong> Custom designs that tell the story of the property, use of traditional textiles or patterns in a contemporary way.</li></ul>
 
               <h3>E. Restaurants (Fine Dining, Casual, Themed)</h3>
-              <ul>
-                <li><strong>Focus:</strong> Varies greatly by concept. Fine dining demands elegance; casual concepts prioritize comfort and brand personality; themed restaurants require immersive designs. ([Link to F&B specific article])</li>
-                <li><strong>Image:</strong> [`public/images/hospitality/Restaurant_and_cafe_uniforms.jpeg`](public/images/hospitality/Restaurant_and_cafe_uniforms.jpeg)</li>
-              </ul>
+              <ul><li><strong>Focus:</strong> Varies greatly by concept. Fine dining demands elegance; casual concepts prioritize comfort and brand personality; themed restaurants require immersive designs. ([Link to F&B specific article])</li>
+                <li><strong>Image:</strong> [`public/images/hospitality/Restaurant_and_cafe_uniforms.jpeg`](public/images/hospitality/Restaurant_and_cafe_uniforms.jpeg)</li></ul>
 
               <h2>Material Selection: The Foundation of Success</h2>
-              <ul>
-                <li><strong>Natural Fibers:</strong> Cotton (especially Pima or Egyptian), linen, wool (tropical weights for KSA). Offer breathability and comfort.</li>
+              <ul><li><strong>Natural Fibers:</strong> Cotton (especially Pima or Egyptian), linen, wool (tropical weights for KSA). Offer breathability and comfort.</li>
                 <li><strong>Advanced Synthetics & Blends:</strong> Polyester, Tencel™, Modal, spandex blends. Provide durability, wrinkle resistance, moisture-wicking, and stretch.</li>
                 <li><strong>Performance Fabrics:</strong> Textiles with specific treatments for stain resistance, antimicrobial properties, UV protection, and enhanced cooling.</li>
-                <li><strong>Sustainable Options:</strong> Increasing demand for organic cotton, recycled polyester, and other eco-friendly materials. ([Link to sustainable hospitality article])</li>
-              </ul>
+                <li><strong>Sustainable Options:</strong> Increasing demand for organic cotton, recycled polyester, and other eco-friendly materials. ([Link to sustainable hospitality article])</li></ul>
 
               <h2>The Uniform Design and Procurement Process in KSA</h2>
               <ol>
@@ -263,16 +227,14 @@ export default function RestaurantHospitalityUniforms() {
 
               <div className="mt-12 rounded-xl border border-gray-200 bg-gray-50 p-8 dark:border-gray-700 dark:bg-gray-800">
                 <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">KSA Hospitality Uniform Success Factors</h3>
-                <ul className="list-inside list-disc space-y-2 text-gray-700 dark:text-gray-300">
-                  <li>Deep understanding of the specific brand identity and target guest profile.</li>
+                <ul><li>Deep understanding of the specific brand identity and target guest profile.</li>
                   <li>Prioritization of climate-appropriate fabrics and functional design for KSA.</li>
                   <li>Genuine respect and thoughtful integration of Saudi cultural values and modesty.</li>
                   <li>Impeccable tailoring and attention to detail in construction and finishing.</li>
                   <li>Involvement of staff in the design and testing process.</li>
                   <li>Selection of durable, high-quality materials that project prestige and withstand rigorous use.</li>
                   <li>A clear uniform policy and consistent enforcement of grooming standards.</li>
-                  <li>Partnership with experienced uniform designers and suppliers familiar with the KSA market.</li>
-                </ul>
+                  <li>Partnership with experienced uniform designers and suppliers familiar with the KSA market.</li></ul>
               </div>
 
               <div className="mt-10 border-t border-gray-200 pt-8 dark:border-gray-700">
@@ -303,11 +265,11 @@ export default function RestaurantHospitalityUniforms() {
                     <div className="font-medium text-primary group-hover:underline dark:text-sky-400">KSA Restaurant & F&B Uniforms</div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">Style meets practicality in Saudi dining.</div>
                   </Link>
-                  <Link href="/blog/cultural-sensitivity-in-hospitality-uniform-design-saudi-arabia" className="group block">
+                  <Link href="/blog/teacher-and-staff-attire-setting-professional-standards-in-ksa-educational-institutions" className="group block">
                     <div className="font-medium text-primary group-hover:underline dark:text-sky-400">Cultural Sensitivity in KSA Uniforms</div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">Designing with respect and understanding.</div>
                   </Link>
-                  <Link href="/blog/luxury-hotel-uniforms-crafting-an-image-of-excellence-in-saudi-arabia" className="group block">
+                  <Link href="/blog/uniforms-for-event-security-vs-static-guarding-in-saudi-arabia" className="group block">
                     <div className="font-medium text-primary group-hover:underline dark:text-sky-400">Luxury Hotel Uniforms in KSA</div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">Crafting an image of excellence.</div>
                   </Link>

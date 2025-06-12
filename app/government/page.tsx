@@ -10,24 +10,6 @@ import { getImagePath } from '@/lib/image-helper'
 // Sample posts for government category
 const governmentPosts = [
   {
-    id: '1',
-    title: 'Ensuring Comfort for Government Employees Working Outdoors in KSA',
-    slug: 'ensuring-comfort-for-government-employees-working-outdoors-in-ksa',
-    excerpt: 'Desipio tristis versus tamquam demo sono. Debitis volaticus sto. Cibus aestas deporto vesper ait.',
-    image: '/images/government/government_field_staff_wear.jpg',
-    createdAt: '2025-04-15T10:00:00.000Z',
-    category: 'government'
-  },
-  {
-    id: '2',
-    title: 'Durable Workwear for Field Operatives in Government Agencies',
-    slug: 'durable-workwear-for-field-operatives-in-government-agencies',
-    excerpt: 'Demum tenus conicio tonsor subnecto sperno asporto basium bardus. Anser caveo adolescens.',
-    image: '/images/government/Government_uniforms_Saudi_Arabia_KSA.jpg',
-    createdAt: '2025-02-28T10:00:00.000Z',
-    category: 'government'
-  },
-  {
     id: '3',
     title: 'Procurement Processes for Government Uniforms in Saudi Arabia',
     slug: 'procurement-processes-for-government-uniforms-in-saudi-arabia',

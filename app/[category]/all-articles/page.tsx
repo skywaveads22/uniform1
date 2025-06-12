@@ -216,7 +216,7 @@ export default function AllCategoryArticlesPage({ params }: PageProps) {
         {/* No Articles Found - Hidden by default */}
         <div className="hidden rounded-xl border border-gray-200 bg-white p-12 text-center">
           <Image 
-            src="/images/empty-results.svg" 
+            src="/images/hero-bg.jpg" 
             alt="No articles found" 
             width={200} 
             height={200} 

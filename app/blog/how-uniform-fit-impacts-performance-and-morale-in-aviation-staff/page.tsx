@@ -73,70 +73,58 @@ export default function ArticlePage() {
             <p>
               Aviation staff perform a wide range of physical tasks throughout their workday, from reaching overhead bins and maneuvering through narrow aisles to potentially responding to emergency situations. Properly fitted uniforms directly impact their ability to perform these functions effectively:
               </p>
-              <ul>
-              <li><strong>Range of motion:</strong> Uniforms that are too tight restrict movement, while those that are too loose can catch on equipment or create trip hazards.</li>
+              <ul><li><strong>Range of motion:</strong> Uniforms that are too tight restrict movement, while those that are too loose can catch on equipment or create trip hazards.</li>
               <li><strong>Heat regulation:</strong> In Saudi Arabia's hot climate, properly sized uniforms with appropriate ventilation are vital for maintaining comfortable body temperature.</li>
               <li><strong>Ergonomic considerations:</strong> Well-fitted uniforms reduce physical strain during repetitive tasks, decreasing fatigue and the potential for repetitive stress injuries.</li>
-              <li><strong>Safety response capabilities:</strong> In emergencies, uniforms that allow proper movement can mean the difference between swift action and dangerous hindrance.</li>
-              </ul>
+              <li><strong>Safety response capabilities:</strong> In emergencies, uniforms that allow proper movement can mean the difference between swift action and dangerous hindrance.</li></ul>
 
             <h2>The Psychological Impact of Uniform Fit</h2>
               <p>
               Beyond the physical considerations, the psychological impact of wearing well-fitted uniforms is profound:
               </p>
-              <ul>
-              <li><strong>Professional confidence:</strong> Staff wearing uniforms that fit properly demonstrate greater confidence in passenger interactions.</li>
+              <ul><li><strong>Professional confidence:</strong> Staff wearing uniforms that fit properly demonstrate greater confidence in passenger interactions.</li>
               <li><strong>Brand representation:</strong> Employees feel more pride in representing their airline when their uniforms present a polished, professional appearance.</li>
               <li><strong>Cultural comfort:</strong> In Saudi Arabia, uniforms that respectfully incorporate cultural expectations regarding modesty while maintaining proper fit are essential for staff comfort.</li>
-              <li><strong>Reduced self-consciousness:</strong> Ill-fitting uniforms can cause staff to be preoccupied with their appearance, distracting them from their duties.</li>
-              </ul>
+              <li><strong>Reduced self-consciousness:</strong> Ill-fitting uniforms can cause staff to be preoccupied with their appearance, distracting them from their duties.</li></ul>
 
             <h2>The Data Behind Fit and Performance</h2>
             <p>
               Research from the aviation industry provides compelling evidence for the importance of proper fit:
               </p>
-              <ul>
-              <li>A 2021 study of cabin crew members found that properly fitted uniforms correlated with a 27% reduction in reported physical discomfort during long-haul flights.</li>
+              <ul><li>A 2021 study of cabin crew members found that properly fitted uniforms correlated with a 27% reduction in reported physical discomfort during long-haul flights.</li>
               <li>Airlines that implemented comprehensive sizing programs saw a 15% decrease in uniform-related complaints from staff.</li>
               <li>When Saudi Arabian carriers introduced improved fit options for their uniforms, they recorded a 22% increase in positive customer service ratings over the following year.</li>
-              <li>Surveys indicate that 78% of aviation personnel rank proper fit as one of the top three most important aspects of their work attire.</li>
-              </ul>
+              <li>Surveys indicate that 78% of aviation personnel rank proper fit as one of the top three most important aspects of their work attire.</li></ul>
 
             <h2>Challenges in Achieving Proper Fit in Saudi Arabia</h2>
               <p>
               Several factors make achieving optimal uniform fit particularly challenging in the Saudi Arabian aviation sector:
               </p>
-              <ul>
-              <li><strong>Diverse workforce:</strong> Saudi airlines employ staff from many different countries and body types, making standardized sizing challenging.</li>
+              <ul><li><strong>Diverse workforce:</strong> Saudi airlines employ staff from many different countries and body types, making standardized sizing challenging.</li>
               <li><strong>Cultural requirements:</strong> Incorporating traditional elements and modesty standards while maintaining functionality requires specialized design approaches.</li>
               <li><strong>Climate considerations:</strong> Uniforms must be designed to provide comfort in both air-conditioned environments and Saudi Arabia's extreme heat.</li>
-              <li><strong>Multiple layering needs:</strong> Staff often need different uniform components for various roles and settings, all of which must fit well together.</li>
-              </ul>
+              <li><strong>Multiple layering needs:</strong> Staff often need different uniform components for various roles and settings, all of which must fit well together.</li></ul>
 
             <h2>Solutions for Better Uniform Fit</h2>
               <p>
               Progressive aviation companies in Saudi Arabia are implementing several strategies to improve uniform fit:
               </p>
-              <ul>
-              <li><strong>Expanded size ranges:</strong> Moving beyond limited standard sizes to offer more inclusive sizing options.</li>
+              <ul><li><strong>Expanded size ranges:</strong> Moving beyond limited standard sizes to offer more inclusive sizing options.</li>
               <li><strong>On-site professional fitting:</strong> Bringing in uniform specialists to ensure each employee receives the correct size and alterations.</li>
               <li><strong>Stretch fabrics:</strong> Incorporating modern stretch materials that accommodate a wider range of movements and body types.</li>
               <li><strong>Modular uniform systems:</strong> Creating mix-and-match components that allow staff to customize their uniforms within approved guidelines.</li>
               <li><strong>Regular fit assessments:</strong> Implementing scheduled reviews of uniform fit, particularly for staff whose body shape may change over time.</li>
-              <li><strong>3D body scanning:</strong> Using technology to create precise measurements for more accurate uniform production.</li>
-              </ul>
+              <li><strong>3D body scanning:</strong> Using technology to create precise measurements for more accurate uniform production.</li></ul>
 
             <h2>Case Study: Uniform Fit Transformation at a Major Saudi Carrier</h2>
             <p>
               One prominent Saudi airline recently undertook a comprehensive uniform fit initiative with remarkable results. The program included:
               </p>
-              <ul>
-              <li>Professional measurement sessions for all customer-facing staff</li>
+              <ul><li>Professional measurement sessions for all customer-facing staff</li>
               <li>An expanded range of sizes, including half-sizes in critical measurements</li>
               <li>Training for uniform management staff on proper fitting techniques</li>
               <li>A feedback mechanism for staff to report fit issues</li>
-              <li>Regular follow-up assessments and alterations as needed</li>
-              </ul>
+              <li>Regular follow-up assessments and alterations as needed</li></ul>
             <p>
               The results were significant: employee satisfaction with uniforms increased by 48%, reported physical discomfort decreased by 35%, and customer feedback about staff appearance improved by 29%. Perhaps most telling, absenteeism related to uniform discomfort (particularly foot and back pain) dropped by 18%.
             </p>
@@ -145,13 +133,11 @@ export default function ArticlePage() {
             <p>
               Aviation industry leaders play a critical role in prioritizing uniform fit:
               </p>
-              <ul>
-              <li>Allocating sufficient budget for quality materials and individual sizing</li>
+              <ul><li>Allocating sufficient budget for quality materials and individual sizing</li>
               <li>Creating clear policies about fit expectations and alteration procedures</li>
               <li>Training supervisors to recognize fit issues and address them constructively</li>
               <li>Soliciting regular feedback from staff about uniform comfort and functionality</li>
-              <li>Recognizing that proper fit is an investment in staff performance, not merely an expense</li>
-              </ul>
+              <li>Recognizing that proper fit is an investment in staff performance, not merely an expense</li></ul>
 
             <h2>Conclusion</h2>
             <p>
@@ -192,7 +178,7 @@ export default function ArticlePage() {
           <div className="mt-10 border-t border-gray-200 pt-8 dark:border-gray-700">
             <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Related Articles</h3>
             <div className="grid gap-6 md:grid-cols-2">
-              <Link href="/blog/designing-professional-security-guard-uniforms-for-ksa-context" className="group">
+              <Link href="/blog/the-role-of-uniforms-in-creating-a-cohesive-brand-experience-across-hotel-chains-in-ksa" className="group">
                 <div className="overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
                   <div className="p-4">
                     <h4 className="mb-2 text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">

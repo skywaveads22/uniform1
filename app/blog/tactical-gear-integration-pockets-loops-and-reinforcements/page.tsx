@@ -92,24 +92,20 @@ export default function BlogPost() {
                 Effective tactical uniform design employs a multi-tier pocket system that organizes equipment based on frequency of use, operational priority, and accessibility requirements:
               </p>
               
-              <ul>
-                <li><strong>Primary Access Pockets:</strong> Chest-mounted pockets for frequently accessed items like radios, notebooks, and identification</li>
+              <ul><li><strong>Primary Access Pockets:</strong> Chest-mounted pockets for frequently accessed items like radios, notebooks, and identification</li>
                 <li><strong>Secondary Storage:</strong> Cargo pockets on thighs for larger items, spare equipment, and backup supplies</li>
                 <li><strong>Utility Pockets:</strong> Smaller specialized pockets for specific tools, ammunition, or medical supplies</li>
-                <li><strong>Concealed Storage:</strong> Internal pockets for sensitive items, backup identification, or emergency equipment</li>
-              </ul>
+                <li><strong>Concealed Storage:</strong> Internal pockets for sensitive items, backup identification, or emergency equipment</li></ul>
 
               <h3>Ergonomic Placement Principles</h3>
               <p>
                 Pocket placement follows ergonomic principles that optimize accessibility while minimizing interference with natural movement patterns:
               </p>
               
-              <ul>
-                <li><strong>Dominant Hand Access:</strong> Critical equipment positioned for easy access with the dominant hand</li>
+              <ul><li><strong>Dominant Hand Access:</strong> Critical equipment positioned for easy access with the dominant hand</li>
                 <li><strong>Cross-Body Reach:</strong> Secondary items placed for efficient cross-body access when primary hand is occupied</li>
                 <li><strong>Seated Position Compatibility:</strong> Pocket placement that remains accessible when seated in vehicles or at desks</li>
-                <li><strong>Movement Clearance:</strong> Strategic positioning to avoid interference during running, climbing, or tactical movements</li>
-              </ul>
+                <li><strong>Movement Clearance:</strong> Strategic positioning to avoid interference during running, climbing, or tactical movements</li></ul>
 
               <h2>Equipment Loop and Attachment Systems</h2>
               
@@ -118,12 +114,10 @@ export default function BlogPost() {
                 Modular Lightweight Load-carrying Equipment (MOLLE) systems provide versatile attachment points for tactical accessories:
               </p>
               
-              <ul>
-                <li><strong>Chest Panel MOLLE:</strong> Front-mounted webbing for radio pouches, magazine holders, and utility accessories</li>
+              <ul><li><strong>Chest Panel MOLLE:</strong> Front-mounted webbing for radio pouches, magazine holders, and utility accessories</li>
                 <li><strong>Sleeve Integration:</strong> Arm-mounted MOLLE panels for patches, lights, or communication devices</li>
                 <li><strong>Back Panel Systems:</strong> Rear-mounted attachment points for hydration systems or additional storage</li>
-                <li><strong>Belt Interface:</strong> MOLLE-compatible belt systems that integrate with uniform-mounted webbing</li>
-              </ul>
+                <li><strong>Belt Interface:</strong> MOLLE-compatible belt systems that integrate with uniform-mounted webbing</li></ul>
 
               <h2>Strategic Reinforcement Implementation</h2>
               
@@ -132,12 +126,10 @@ export default function BlogPost() {
                 Tactical uniforms require reinforcement at areas subject to increased wear and stress:
               </p>
               
-              <ul>
-                <li><strong>Knee Reinforcement:</strong> Additional padding and durable materials for kneeling operations</li>
+              <ul><li><strong>Knee Reinforcement:</strong> Additional padding and durable materials for kneeling operations</li>
                 <li><strong>Elbow Protection:</strong> Reinforced patches that withstand crawling and prone positions</li>
                 <li><strong>Shoulder Reinforcement:</strong> Enhanced durability for equipment strap contact points</li>
-                <li><strong>Pocket Stress Points:</strong> Reinforced stitching and backing material at pocket attachment points</li>
-              </ul>
+                <li><strong>Pocket Stress Points:</strong> Reinforced stitching and backing material at pocket attachment points</li></ul>
 
               <h2>Saudi-Specific Operational Considerations</h2>
               
@@ -146,12 +138,10 @@ export default function BlogPost() {
                 Tactical gear integration must account for Saudi Arabia's challenging climate conditions:
               </p>
               
-              <ul>
-                <li><strong>Heat Management:</strong> Ventilation features that prevent equipment-related heat buildup</li>
+              <ul><li><strong>Heat Management:</strong> Ventilation features that prevent equipment-related heat buildup</li>
                 <li><strong>Moisture Control:</strong> Drainage and breathability features for high-humidity coastal areas</li>
                 <li><strong>Sand Resistance:</strong> Sealed closures and smooth surfaces that resist sand infiltration</li>
-                <li><strong>UV Protection:</strong> Material selection that maintains integrity under intense solar exposure</li>
-              </ul>
+                <li><strong>UV Protection:</strong> Material selection that maintains integrity under intense solar exposure</li></ul>
 
               <h2>Conclusion: Optimizing Tactical Integration</h2>
               <p>
@@ -194,7 +184,7 @@ export default function BlogPost() {
                     <div className="text-sm font-medium group-hover:text-primary">Weather-Appropriate Security Outerwear</div>
                     <div className="text-xs text-gray-500">Climate protection solutions</div>
                   </Link>
-                  <Link href="/blog/security-equipment-integration" className="group block">
+                  <Link href="/blog/uniforms-for-event-security-vs-static-guarding-in-saudi-arabia" className="group block">
                     <div className="text-sm font-medium group-hover:text-primary">Security Equipment Integration</div>
                     <div className="text-xs text-gray-500">Advanced tactical solutions</div>
                   </Link>
