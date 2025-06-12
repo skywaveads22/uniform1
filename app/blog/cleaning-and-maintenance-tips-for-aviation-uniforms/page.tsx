@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: `Comprehensive guide to aviation uniform care and maintenance. Expert tips for preserving airline crew uniforms, extending garment life, and maintaining professional appearance in Saudi Arabia's aviation sector.`,
     keywords: `aviation uniform cleaning, airline crew uniform maintenance, professional uniform care, aviation garment preservation, uniform cleaning tips Saudi Arabia, airline uniform longevity, crew attire maintenance, aviation textile care, uniform cleaning best practices`,
     openGraph: {
-      images: ['/images/aviation/cabin_crew_clothing.jpeg'],
+      images: ['/images/hospitality/cabin_crew_clothing.jpeg'],
       title: `Professional Aviation Uniform Cleaning & Maintenance Guide 2025`,
       description: `Expert strategies for maintaining aviation uniforms. Preserve appearance, extend garment life, and ensure professional standards for airline crew attire.`,
     },
@@ -17,7 +17,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: `Professional Aviation Uniform Cleaning & Maintenance Guide 2025`,
       description: `Expert strategies for maintaining aviation uniforms and preserving professional appearance.`,
-      images: ['/images/aviation/cabin_crew_clothing.jpeg'],
+      images: ['/images/hospitality/cabin_crew_clothing.jpeg'],
     },
   }
 }
@@ -43,7 +43,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
             <Image
-              src="/images/aviation/cabin_crew_clothing.jpeg"
+              src="/images/hospitality/cabin_crew_clothing.jpeg"
               alt="Professional aviation uniform cleaning and maintenance for airline crew attire"
               fill
               className="object-cover"

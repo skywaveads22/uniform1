@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Case Study: Implementing a Successful Workwear Program for a Saudi Factory | 2024',
     description: 'Explore how a major Saudi manufacturing facility developed and implemented an effective workwear program that improved safety, productivity, and employee satisfaction.',
-    images: ['/images/industrial/saudi_factory_workwear.jpeg'],
+    images: ['/images/industrial/Industrial_uniforms.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function WorkwearProgramCaseStudy() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/industrial/saudi_factory_workwear.jpeg"
+          src="/images/industrial/Industrial_uniforms.jpeg"
           alt="Saudi Factory Workwear Program"
           fill
           className="object-cover rounded-lg"

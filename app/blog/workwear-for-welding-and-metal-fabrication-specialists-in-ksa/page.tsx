@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Workwear for Welding and Metal Fabrication Specialists in KSA | 2024',
     description: 'Explore specialized workwear solutions for welding and metal fabrication professionals in Saudi Arabia, including flame-resistant clothing, protective gear, and compliance with local safety regulations.',
-    images: ['/images/industrial/welding_workwear_ksa.jpeg'],
+    images: ['/images/industrial/welder_uniforms_apparel.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function WeldingMetalFabricationWorkwear() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/industrial/welding_workwear_ksa.jpeg"
+          src="/images/industrial/welder_uniforms_apparel.jpeg"
           alt="Specialized welding workwear for Saudi Arabian industrial environments"
           fill
           className="object-cover rounded-lg"

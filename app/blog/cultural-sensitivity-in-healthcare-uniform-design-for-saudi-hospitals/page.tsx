@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: `Explore culturally sensitive healthcare uniform design for Saudi hospitals. Balance Islamic values, professional standards, and patient comfort in 2025's evolving healthcare landscape.`,
     keywords: `culturally sensitive healthcare uniforms KSA, Islamic healthcare attire, Saudi hospital uniforms, modest medical scrubs, cultural healthcare design, religious accommodation uniforms, professional Islamic attire, Saudi medical uniforms`,
     openGraph: {
-      images: ['/images/healthcare/cultural_sensitive_uniforms_ksa.jpeg'], // Placeholder - ensure this image exists or update
+      images: ['/images/healthcare/Hospital_uniforms.jpg'],
       title: `Cultural Sensitivity in Healthcare Uniform Design for Saudi Hospitals 2025`,
       description: `Comprehensive guide to designing culturally sensitive healthcare uniforms that honor Islamic values while maintaining professional medical standards in Saudi Arabia.`,
     },
@@ -17,7 +17,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: `Cultural Sensitivity in Healthcare Uniform Design for Saudi Hospitals 2025`,
       description: `Culturally sensitive healthcare uniform design for Saudi hospitals in 2025.`,
-      images: ['/images/healthcare/cultural_sensitive_uniforms_ksa.jpeg'], // Placeholder
+      images: ['/images/healthcare/Hospital_uniforms.jpg'],
     },
   }
 }
@@ -43,7 +43,7 @@ export default function CulturalSensitivityHealthcareUniformsPage() {
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
             <Image
-              src="/images/healthcare/cultural_sensitive_uniforms_ksa.jpeg" // Placeholder - ensure this image exists or update
+              src="/images/healthcare/Hospital_uniforms.jpg"
               alt="Healthcare professionals wearing culturally sensitive uniforms that respect Islamic values while maintaining professional medical standards in a Saudi hospital"
               fill
               className="object-cover"

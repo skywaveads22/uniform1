@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: `Explore advanced heritage systems that seamlessly integrate Saudi cultural identity with modern hospitality uniform design. Discover 2025's cutting-edge approaches to authentic, professional attire.`,
     keywords: `Saudi hospitality cultural uniforms, heritage integration systems, traditional Saudi hospitality attire, cultural identity uniforms, authentic hospitality design, Vision 2030 hospitality uniforms, Saudi cultural preservation uniforms, modern heritage integration`,
     openGraph: {
-      images: ['/images/hospitality/cultural_heritage_hospitality_uniforms.jpeg'], // Placeholder - ensure this image exists or update
+      images: ['/images/hospitality/Hotel_uniforms.jpeg'],
       title: `Cultural Identity Integration: Advanced Heritage Systems for Saudi Hospitality Attire 2025`,
       description: `Revolutionary heritage systems that blend traditional Saudi cultural elements with cutting-edge hospitality uniform design for authentic, professional attire solutions.`,
     },
@@ -17,7 +17,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: `Cultural Identity Integration: Advanced Heritage Systems for Saudi Hospitality Attire 2025`,
       description: `Advanced heritage systems for authentic Saudi hospitality uniform design in 2025.`,
-      images: ['/images/hospitality/cultural_heritage_hospitality_uniforms.jpeg'], // Placeholder
+      images: ['/images/hospitality/Hotel_uniforms.jpeg'],
     },
   }
 }
@@ -43,7 +43,7 @@ export default function CulturalIdentityIntegrationPage() {
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
             <Image
-              src="/images/hospitality/cultural_heritage_hospitality_uniforms.jpeg" // Placeholder - ensure this image exists or update
+              src="/images/hospitality/Hotel_uniforms.jpeg"
               alt="Advanced heritage systems integrating Saudi cultural identity with modern hospitality uniform design"
               fill
               className="object-cover"

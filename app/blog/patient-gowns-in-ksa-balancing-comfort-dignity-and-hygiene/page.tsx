@@ -41,12 +41,11 @@ export default async function Page() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/healthcare/Patient_gowns_KSA.jpg" // Ensure this image exists or use a relevant one like /images/healthcare/patient_gowns.jpg
-              alt="Culturally sensitive and hygienic patient gowns in a Saudi Arabian healthcare setting"
+              src="/images/healthcare/patient_gowns_hospital.jpg"
+              alt="Patient gowns in KSA balancing comfort, dignity, and hygiene"
               width={1000}
               height={600}
               className="rounded-lg w-full object-cover"
-              priority
             />
           </div>
 

@@ -41,13 +41,13 @@ export default function ComparingSchoolUniformPolicies() {
           </nav>
 
           {/* Featured Image */}
-          <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
+          <div className="mb-10">
             <Image
               src="/images/education/public_private_school_uniforms_ksa.jpeg"
-              alt="Comparison of public and private school uniforms in Saudi Arabia, showcasing different styles and policies"
-              fill
-              className="object-cover"
-              priority
+              alt="Comparison of public and private school uniforms in Saudi Arabia"
+              width={1000}
+              height={600}
+              className="rounded-lg w-full object-cover"
             />
           </div>
 

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Clock, Calendar, Tag, Share2 } from 'lucide-react'
+import { Clock, Calendar, Tag } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Advanced Materials in Security Equipment: Cutting-Edge Innovations for 2025 | May 2025',

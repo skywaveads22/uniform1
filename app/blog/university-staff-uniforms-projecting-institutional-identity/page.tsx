@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'University Staff Uniforms: Projecting Institutional Identity | 2024',
     description: 'Discover how Saudi universities use staff uniforms to project institutional identity, strengthen brand recognition, and foster professionalism while respecting cultural traditions.',
-    images: ['/images/education/university_staff_uniforms.jpeg'],
+    images: ['/images/education/School_staff_uniforms.jpg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function UniversityStaffUniforms() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/education/university_staff_uniforms.jpeg"
+          src="/images/education/School_staff_uniforms.jpg"
           alt="University Staff Uniforms in Saudi Arabia"
           fill
           className="object-cover rounded-lg"

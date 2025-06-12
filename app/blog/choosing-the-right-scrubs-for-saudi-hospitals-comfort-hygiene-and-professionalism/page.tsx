@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Clock, Calendar, Tag, Share2, Heart, Shield, Users, Stethoscope } from 'lucide-react'
+import { Clock, Calendar, Tag, Heart, Shield, Users, Stethoscope } from 'lucide-react'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -387,15 +387,6 @@ export default function BlogPost() {
           {/* Sidebar */}
           <div className="lg:col-span-4">
             <div className="sticky top-24 space-y-8">
-              {/* Share Section */}
-              <div className="rounded-xl border border-gray-200 p-6 dark:border-gray-800">
-                <h3 className="mb-4 text-lg font-semibold">Share Article</h3>
-                <div className="flex gap-2">
-                  <button className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white hover:bg-primary/90">
-                    <Share2 className="h-5 w-5" />
-                  </button>
-                </div>
-              </div>
 
               {/* Related Articles */}
               <div className="rounded-xl border border-gray-200 p-6 dark:border-gray-800">

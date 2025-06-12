@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Banquet and Events Staff Attire: Versatility and Elegance | UniformSA 2024',
     description: 'Explore how versatile and elegant uniform solutions for banquet and events staff in Saudi Arabia enhance guest experience, adapt to different event types, and reinforce brand identity while meeting cultural requirements.',
-    images: ['/images/hospitality/banquet_events_staff_attire.jpeg'],
+    images: ['/images/hospitality/Banquet_staff_uniforms_Event_staff_uniforms.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function BanquetEventsStaffAttire() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/hospitality/banquet_events_staff_attire.jpeg"
+          src="/images/hospitality/Banquet_staff_uniforms_Event_staff_uniforms.jpeg"
           alt="Elegant banquet and events staff uniforms"
           fill
           className="object-cover rounded-lg"

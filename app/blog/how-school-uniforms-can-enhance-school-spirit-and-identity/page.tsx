@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How School Uniforms Can Enhance School Spirit and Identity | 2024',
     description: 'Discover how thoughtfully designed school uniforms in Saudi Arabia foster a sense of belonging, promote school spirit, and strengthen institutional identity among students and the broader community.',
-    images: ['/images/education/school_spirit_uniforms.jpeg'],
+    images: ['/images/education/School_uniforms_Saudi_Arabia_KSA.jpg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function SchoolUniformsAndSpirit() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/education/school_spirit_uniforms.jpeg"
+          src="/images/education/School_uniforms_Saudi_Arabia_KSA.jpg"
           alt="School Uniforms Enhancing School Spirit"
           fill
           className="object-cover rounded-lg"

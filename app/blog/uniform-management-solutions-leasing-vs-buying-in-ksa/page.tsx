@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Uniform Management Solutions: Leasing vs. Buying in KSA | UniformSA',
     description: 'Compare the benefits and considerations of leasing versus buying uniforms for healthcare and hospitality institutions in Saudi Arabia.',
-    images: ['/images/management/uniform_solutions.jpg'],
+    images: ['/images/services/uniform_program_management.jpg'],
   },
 }
 
@@ -34,7 +34,7 @@ export default async function Page() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/management/uniform_solutions.jpg"
+              src="/images/services/uniform_program_management.jpg"
               alt="Professional uniform management solutions showcasing both leasing and purchasing options"
               width={1000}
               height={600}

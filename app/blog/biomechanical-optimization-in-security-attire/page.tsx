@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Biomechanical Optimization in Security Attire | UniformSA',
     description: 'Discover how biomechanical research is revolutionizing security uniform design in Saudi Arabia, enhancing mobility, comfort, and operational effectiveness.',
-    images: ['/images/security/biomechanical_design.jpg'],
+    images: ['/images/security/Security_uniforms.jpeg'],
   },
 }
 
@@ -34,7 +34,7 @@ export default async function Page() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/security/biomechanical_design.jpg"
+              src="/images/security/Security_uniforms.jpeg"
               alt="Biomechanically optimized security uniforms demonstrating enhanced mobility and functionality"
               width={1000}
               height={600}

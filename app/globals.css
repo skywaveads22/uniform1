@@ -317,4 +317,259 @@
 /* Dark mode fix for related articles */
 .dark .text-gray-900 {
   color: rgba(255, 255, 255, 0.9);
+}
+
+/* Custom animations for blog */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translate3d(30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Blog specific styles */
+.blog-grid-item {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.blog-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blog-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Arabic RTL support */
+[dir="rtl"] .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* Category badge styles */
+.category-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  transition: all 0.2s ease-in-out;
+}
+
+.category-badge.aviation {
+  @apply bg-blue-100 text-blue-800 hover:bg-blue-200;
+}
+
+.category-badge.healthcare {
+  @apply bg-green-100 text-green-800 hover:bg-green-200;
+}
+
+.category-badge.security {
+  @apply bg-red-100 text-red-800 hover:bg-red-200;
+}
+
+.category-badge.hospitality {
+  @apply bg-purple-100 text-purple-800 hover:bg-purple-200;
+}
+
+.category-badge.industrial {
+  @apply bg-orange-100 text-orange-800 hover:bg-orange-200;
+}
+
+.category-badge.education {
+  @apply bg-indigo-100 text-indigo-800 hover:bg-indigo-200;
+}
+
+.category-badge.government {
+  @apply bg-gray-100 text-gray-800 hover:bg-gray-200;
+}
+
+/* Search highlighting */
+.search-highlight {
+  @apply bg-yellow-200 px-1 rounded;
+}
+
+/* Loading states */
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Enhanced focus states */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+}
+
+/* Smooth transitions */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Blog article content styling */
+.blog-content {
+  @apply prose max-w-none text-lg;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+  @apply font-bold text-gray-900 dark:text-white;
+}
+
+.blog-content h1 {
+  @apply text-3xl md:text-4xl mb-6;
+}
+
+.blog-content h2 {
+  @apply text-2xl md:text-3xl mb-4 mt-8;
+}
+
+.blog-content h3 {
+  @apply text-xl md:text-2xl mb-3 mt-6;
+}
+
+.blog-content p {
+  @apply text-gray-700 dark:text-gray-300 leading-relaxed mb-4;
+}
+
+.blog-content ul,
+.blog-content ol {
+  @apply mb-6 space-y-2;
+}
+
+.blog-content li {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.blog-content blockquote {
+  @apply border-l-4 border-primary pl-6 italic text-gray-600 dark:text-gray-400 my-6;
+}
+
+.blog-content img {
+  @apply rounded-lg shadow-md;
+}
+
+.blog-content a {
+  @apply text-primary hover:text-primary/80 underline;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .blog-grid-item {
+    animation-delay: 0ms !important;
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+    background-size: 1000px 100%;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .blog-content {
+    @apply text-black;
+  }
+  
+  .blog-card-hover {
+    box-shadow: none !important;
+    transform: none !important;
+  }
 } 

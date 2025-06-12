@@ -41,13 +41,13 @@ export default function CustomAviationUniformDesignPage() {
           </nav>
 
           {/* Featured Image */}
-          <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
+          <div className="mb-10">
             <Image
-              src="/images/aviation/custom_airline_uniform_design.jpeg" // Placeholder - ensure this image exists or update
-              alt="Custom aviation uniform design showcasing airline identity and brand elements for flight crew in Saudi Arabia"
-              fill
-              className="object-cover"
-              priority
+              src="/images/aviation/custom_airline_uniform_design.jpeg"
+              alt="Custom aviation uniform design reflecting airline identity in Saudi Arabia"
+              width={1000}
+              height={600}
+              className="rounded-lg w-full object-cover"
             />
           </div>
 

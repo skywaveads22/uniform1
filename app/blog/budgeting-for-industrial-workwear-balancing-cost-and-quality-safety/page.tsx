@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Budgeting for Industrial Workwear: Balancing Cost and Quality Safety | 2024',
     description: 'Learn effective strategies for budgeting industrial workwear in Saudi Arabia while maintaining safety standards and quality, including lifecycle costing and procurement best practices.',
-    images: ['/images/industrial/industrial_workwear_budget.jpeg'],
+    images: ['/images/industrial/Industrial_workwear_Saudi_Arabia_KSA.jpeg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function BudgetingForIndustrialWorkwear() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/industrial/industrial_workwear_budget.jpeg"
+          src="/images/industrial/Industrial_workwear_Saudi_Arabia_KSA.jpeg"
           alt="Industrial Workwear Budget Planning"
           fill
           className="object-cover rounded-lg"

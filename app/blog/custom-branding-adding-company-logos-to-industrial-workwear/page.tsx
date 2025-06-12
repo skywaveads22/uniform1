@@ -41,13 +41,13 @@ export default function CustomBrandingIndustrialWorkwearPage() {
           </nav>
 
           {/* Featured Image */}
-          <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
+          <div className="mb-10">
             <Image
-              src="/images/industrial/custom_branded_workwear_ksa.jpeg" // Placeholder - ensure this image exists or update
-              alt="Industrial workers wearing custom-branded workwear with company logos in a Saudi Arabian manufacturing facility"
-              fill
-              className="object-cover"
-              priority
+              src="/images/industrial/custom_branded_workwear_ksa.jpeg"
+              alt="Custom branding and company logos on industrial workwear in Saudi Arabia"
+              width={1000}
+              height={600}
+              className="rounded-lg w-full object-cover"
             />
           </div>
 

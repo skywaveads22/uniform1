@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: `Strategic guide to color selection for security uniforms in Saudi Arabia (2025). Balancing psychological impact, operational practicality, cultural nuances, and advanced color science.`,
     keywords: `security uniform colors KSA, color psychology security, practical security uniforms, Saudi security attire perception, high visibility uniforms, low visibility uniforms, cultural color significance, advanced color technology security`,
     openGraph: {
-      images: ['/images/security/Security_uniform_palette_KSA.jpeg'], // Placeholder - ensure this image exists or update
+      images: ['/images/security/Security_uniforms.jpeg'],
       title: `Security Uniform Colors: Practicality, Perception & KSA Context 2025`,
       description: `In-depth analysis of color choices for security uniforms in Saudi Arabia, covering psychological effects, practicality, cultural factors, and 2025 color tech.`,
     },
@@ -17,7 +17,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: `Security Uniform Colors: Practicality, Perception & KSA Context 2025`,
       description: `Strategic color selection for security uniforms in KSA: psychology, practicality, and culture.`,
-      images: ['/images/security/Security_uniform_palette_KSA.jpeg'], // Placeholder
+      images: ['/images/security/Security_uniforms.jpeg'],
     },
   }
 }
@@ -43,7 +43,7 @@ export default function SecurityUniformColors() {
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
             <Image
-              src="/images/security/Security_uniform_palette_KSA.jpeg" // Placeholder - ensure this image exists or update
+              src="/images/security/Security_uniforms.jpeg"
               alt="Strategic color choices for security uniforms in Saudi Arabia, balancing practicality and perception"
               fill
               className="object-cover"

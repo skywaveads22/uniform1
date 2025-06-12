@@ -41,13 +41,13 @@ export default function CustomEmbroideryAndBadgesPage() {
           </nav>
 
           {/* Featured Image */}
-          <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
+          <div className="mb-10">
             <Image
-              src="/images/education/school_logo_embroidery_ksa.jpeg" // Placeholder - ensure this image exists or update
-              alt="Examples of custom embroidery and badges for school logos on uniforms in Saudi Arabia"
-              fill
-              className="object-cover"
-              priority
+              src="/images/education/school_logo_embroidery_ksa.jpeg"
+              alt="Custom embroidery and badges for school logos in Saudi Arabia"
+              width={1000}
+              height={600}
+              className="rounded-lg w-full object-cover"
             />
           </div>
 

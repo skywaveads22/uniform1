@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Clock, Calendar, Tag, ArrowLeft, Share2 } from 'lucide-react'
+import { Clock, Calendar, Tag, ArrowLeft } from 'lucide-react'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -69,10 +69,47 @@ export default function BlogPost() {
           {/* Main Content */}
           <div className="lg:col-span-8">
             <div className="prose dark:prose-invert max-w-none">
+              <p className="lead">
+                Few uniforms command the respect and immediate recognition of airline pilot attire. In Saudi Arabia's
+                expanding aviation sector, pilot uniforms represent a careful balance of international standards, local
+                regulations, cultural considerations, and brand identity. This article examines the comprehensive framework
+                governing these distinctive garments and their evolution within the kingdom's unique aviation context.
+              </p>
               <h2>Regulatory Framework and Governing Standards</h2>
+              <p>
+                Pilot uniforms in Saudi Arabia operate within a multi-layered regulatory environment:
+              </p>
               <h3>1. General Authority of Civil Aviation (GACA) Requirements</h3>
+              <p>
+                As Saudi Arabia's aviation regulator, GACA establishes specific parameters for pilot attire:
+              </p>
+              <ul>
+                <li><strong>Operational Directive 141.55:</strong> Core GACA regulation outlining minimum requirements for pilot identification and visibility</li>
+                <li><strong>Safety Circular SC-09-17:</strong> Guidance on uniform materials and construction related to emergency operations</li>
+                <li><strong>Professionalism Protocols:</strong> Standards addressing appearance and grooming for flight deck personnel</li>
+                <li><strong>Regulatory Alignment:</strong> Requirements ensuring compatibility with international standards</li>
+              </ul>
               <h3>2. International Standards Integration</h3>
+              <p>
+                Saudi Arabia has adopted relevant international guidance while maintaining appropriate localization:
+              </p>
+              <ul>
+                <li><strong>ICAO Recognition Requirements:</strong> Compliance with international identification standards</li>
+                <li><strong>IATA Professional Standards:</strong> Alignment with global industry best practices</li>
+                <li><strong>Oneworld Alliance Compatibility:</strong> Coordination with alliance-wide standards for Saudia</li>
+                <li><strong>Star Alliance Compatibility:</strong> Relevant standards for interline agreements and partnerships</li>
+              </ul>
               <h3>3. Airline-Specific Regulations</h3>
+              <p>
+                Individual Saudi carriers maintain comprehensive uniform codes building upon regulatory foundations:
+              </p>
+              <ul>
+                <li><strong>Standard Operating Procedures (SOPs):</strong> Detailed uniform requirements incorporated into operational manuals</li>
+                <li><strong>Brand Standards:</strong> Specific parameters ensuring visual alignment with carrier identity</li>
+                <li><strong>Contractual Requirements:</strong> Employment terms specifying uniform compliance obligations</li>
+                <li><strong>Enforcement Mechanisms:</strong> Protocols for ensuring consistent implementation across operations</li>
+              </ul>
+              <p className="mt-2 text-sm text-gray-600">Flight operations quality assurance personnel conducting a uniform standards review before international operations</p>
               <h2>Core Elements of Saudi Pilot Uniforms</h2>
               <h3>1. Primary Garments and Structure</h3>
               <h3>2. Insignia and Rank Indicators</h3>
@@ -105,36 +142,6 @@ export default function BlogPost() {
               <h3>2. Cultural and Brand Evolution</h3>
               <h3>3. Operational Optimization</h3>
               <h2>Conclusion</h2>
-              <h3 className="text-lg font-semibold">Capt. Khalid Al-Dossari</h3>
-              <h3 className="mb-4 text-lg font-semibold">Share Article</h3>
-              <h3 className="mb-4 text-lg font-semibold">Related Articles</h3>
-              <h4 className="text-base font-medium group-hover:text-primary">Epaulettes and Insignia: Understanding Ranks</h4>
-              <h4 className="text-base font-medium group-hover:text-primary">In-Flight Uniform Evolution</h4>
-              <h4 className="text-base font-medium group-hover:text-primary">Fire-Resistant Materials for Aviation Uniforms</h4>
-              <h3 className="mb-3 text-lg font-semibold">Pilot Uniform Excellence</h3>
-              <h3 className="text-lg font-semibold">About the Author</h3>
-              <h3 className="text-lg font-semibold">About the Author</h3>
-              <h3 className="mb-4 text-lg font-semibold">Share Article</h3>
-              <h3 className="mb-4 text-lg font-semibold">Related Articles</h3>
-              <p className="lead">
-                Few uniforms command the respect and immediate recognition of airline pilot attire. In Saudi Arabia's 
-                expanding aviation sector, pilot uniforms represent a careful balance of international standards, local 
-                regulations, cultural considerations, and brand identity. This article examines the comprehensive framework 
-                governing these distinctive garments and their evolution within the kingdom's unique aviation context.
-              </p>
-              <p>
-                Pilot uniforms in Saudi Arabia operate within a multi-layered regulatory environment:
-              </p>
-              <p>
-                As Saudi Arabia's aviation regulator, GACA establishes specific parameters for pilot attire:
-              </p>
-              <p>
-                Saudi Arabia has adopted relevant international guidance while maintaining appropriate localization:
-              </p>
-              <p>
-                Individual Saudi carriers maintain comprehensive uniform codes building upon regulatory foundations:
-              </p>
-              <p className="mt-2 text-sm text-gray-600">Flight operations quality assurance personnel conducting a uniform standards review before international operations</p>
               <p>
                 Saudi airline pilot uniforms incorporate several essential components with specific standards for each:
               </p>
@@ -249,33 +256,6 @@ export default function BlogPost() {
                 the careful balance of tradition and innovation that characterizes Saudi Arabia's approach to its expanding 
                 global aviation presence.
               </p>
-              <p className="text-gray-600">Former Chief Pilot with 28 years of experience in Saudi aviation operations. Aviation consultant specializing in operational standards and regulatory compliance for Middle Eastern carriers.</p>
-              <p className="text-sm text-gray-600">Hierarchy systems in Saudi aviation uniforms</p>
-              <p className="text-sm text-gray-600">The changing face of Saudi cabin crew attire</p>
-              <p className="text-sm text-gray-600">Safety standards in Saudi operations</p>
-              <p className="mb-4 text-white/90">
-                  We design and produce pilot uniforms that meet all regulatory requirements while expressing your airline's unique identity and values.
-                </p>
-              <p className="text-gray-600">Industry expert with extensive experience in uniform design and implementation for various sectors across Saudi Arabia.</p>
-              <p className="text-gray-600">Industry expert with extensive experience in uniform design and implementation for various sectors across Saudi Arabia.</p>
-              <ul>
-                <li><strong>Operational Directive 141.55:</strong> Core GACA regulation outlining minimum requirements for pilot identification and visibility</li>
-                <li><strong>Safety Circular SC-09-17:</strong> Guidance on uniform materials and construction related to emergency operations</li>
-                <li><strong>Professionalism Protocols:</strong> Standards addressing appearance and grooming for flight deck personnel</li>
-                <li><strong>Regulatory Alignment:</strong> Requirements ensuring compatibility with international standards</li>
-              </ul>
-              <ul>
-                <li><strong>ICAO Recognition Requirements:</strong> Compliance with international identification standards</li>
-                <li><strong>IATA Professional Standards:</strong> Alignment with global industry best practices</li>
-                <li><strong>Oneworld Alliance Compatibility:</strong> Coordination with alliance-wide standards for Saudia</li>
-                <li><strong>Star Alliance Compatibility:</strong> Relevant standards for interline agreements and partnerships</li>
-              </ul>
-              <ul>
-                <li><strong>Standard Operating Procedures (SOPs):</strong> Detailed uniform requirements incorporated into operational manuals</li>
-                <li><strong>Brand Standards:</strong> Specific parameters ensuring visual alignment with carrier identity</li>
-                <li><strong>Contractual Requirements:</strong> Employment terms specifying uniform compliance obligations</li>
-                <li><strong>Enforcement Mechanisms:</strong> Protocols for ensuring consistent implementation across operations</li>
-              </ul>
               <ul>
                 <li><strong>Shirt Standards:</strong> Typically white or light blue with specific fabric weight and composition requirements</li>
                 <li><strong>Jacket Parameters:</strong> Structured design with standardized closure systems and pocket configurations</li>
@@ -412,15 +392,6 @@ export default function BlogPost() {
           {/* Sidebar */}
           <div className="lg:col-span-4">
             <div className="sticky top-24 space-y-8">
-              {/* Share Section */}
-              <div className="rounded-xl border border-gray-200 p-6">
-                <h3 className="mb-4 text-lg font-semibold">Share Article</h3>
-                <div className="flex gap-2">
-                  <button className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white hover:bg-primary/90">
-                    <Share2 className="h-5 w-5" />
-                  </button>
-                </div>
-              </div>
 
               {/* Related Articles */}
               <div className="rounded-xl border border-gray-200 p-6">

@@ -45,12 +45,12 @@ export default function ArticleImage({
     const category = getCategoryFromPath(path);
     const fallbacks: Record<string, string[]> = {
       security: ['/images/security/Security_uniforms.jpeg'],
-      education: ['/images/education/School_uniforms.jpg'],
+      education: ['/images/placeholder-image.jpg'],
       healthcare: ['/images/healthcare/Healthcare_uniforms.jpg'],
       hospitality: ['/images/hospitality/Hotel_uniforms.jpeg'],
-      government: ['/images/government/Civil_service_uniforms.jpg'],
-      aviation: ['/images/aviation/aviation_uniforms.jpg'],
-      industrial: ['/images/industrial/industrial_uniform_fittings.jpeg'],
+      government: ['/images/placeholder-image.jpg'],
+      aviation: ['/images/aviation/Aviation_uniforms.jpg'],
+      industrial: ['/images/industrial/Industrial_uniforms.jpeg'],
     };
     
     return fallbacks[category]?.[0] || '/images/placeholder-image.jpg';

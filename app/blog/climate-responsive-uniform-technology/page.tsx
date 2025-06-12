@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Explore 2025 advancements in climate-responsive uniform tech for Saudi Arabia. Smart fabrics, thermal regulation, and sustainable solutions for extreme weather. SEO June 2025.',
     keywords: `climate-responsive uniforms KSA, smart fabric technology Saudi Arabia, thermal regulation workwear, adaptive clothing, Saudi weather uniforms, innovative textiles, sustainable uniform tech, extreme climate workwear`,
     openGraph: {
-      images: ['/images/technology/climate_adaptive_textiles_KSA.jpeg'], // Placeholder - ensure this image exists or update
+      images: ['/images/industrial/Industrial_uniforms.jpeg'], // Placeholder - ensure this image exists or update
       title: 'Climate-Responsive Uniform Technology: KSA Innovations 2025',
       description: 'Cutting-edge climate-responsive uniform technologies adapted for Saudi Arabia\'s unique weather, enhancing comfort, performance, and sustainability in 2025.',
     },
@@ -17,7 +17,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: 'Climate-Responsive Uniform Technology: KSA Innovations 2025',
       description: 'Advanced climate-adaptive uniform tech for Saudi Arabia\'s extreme weather conditions.',
-      images: ['/images/technology/climate_adaptive_textiles_KSA.jpeg'], // Placeholder
+      images: ['/images/industrial/Industrial_uniforms.jpeg'], // Placeholder
     },
   }
 }
@@ -43,7 +43,7 @@ export default function ClimateResponsiveUniformPage() {
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
             <Image
-              src="/images/technology/climate_adaptive_textiles_KSA.jpeg" // Placeholder - ensure this image exists or update
+              src="/images/industrial/Industrial_uniforms.jpeg" // Placeholder - ensure this image exists or update
               alt="Advanced climate-responsive uniform technology showcasing adaptive fabrics in a Saudi Arabian professional setting"
               fill
               className="object-cover"

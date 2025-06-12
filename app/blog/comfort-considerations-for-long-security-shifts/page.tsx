@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => {
     description: 'Explore ergonomic designs and comfort-enhancing tech for security professionals on extended shifts in Saudi Arabia. Boost performance and well-being. SEO June 2025.',
     keywords: 'security uniform comfort KSA, long security shifts, ergonomic security uniforms, fatigue reduction security, Saudi security wellbeing, performance security attire, climate adaptive security gear, advanced uniform technology',
     openGraph: {
-      images: ['/images/security/comfort_long_shifts_security.jpeg'], // Placeholder, ensure this image exists or update
+      images: ['/images/security/Security_uniforms.jpeg'],
       title: 'Comfort in Long Security Shifts: Advanced Uniform Solutions for KSA',
       description: 'Enhancing security personnel performance and well-being during extended shifts in Saudi Arabia through cutting-edge uniform comfort technologies.',
     },
@@ -17,7 +17,7 @@ export const generateMetadata = (): Metadata => {
       card: 'summary_large_image',
       title: 'Comfort in Long Security Shifts: Advanced Uniform Solutions for KSA',
       description: 'Advanced uniform comfort for security professionals on long shifts in Saudi Arabia.',
-      images: ['/images/security/comfort_long_shifts_security.jpeg'], // Placeholder
+      images: ['/images/security/Security_uniforms.jpeg'],
     },
   }
 }
@@ -43,7 +43,7 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="relative mb-8 aspect-video overflow-hidden rounded-2xl">
             <Image
-              src="/images/security/comfort_long_shifts_security.jpeg" // Placeholder, ensure this image exists or update
+              src="/images/security/Security_uniforms.jpeg"
               alt="Security professional in an ergonomically designed uniform optimized for comfort during long shifts in Saudi Arabia"
               fill
               className="object-cover"

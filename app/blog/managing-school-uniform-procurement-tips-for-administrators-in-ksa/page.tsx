@@ -29,8 +29,8 @@ export default function ManagingSchoolUniformProcurement() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/education/school_uniform_administrator.jpeg"
-          alt="School administrators managing uniform procurement in Saudi Arabian educational institution"
+          src="/images/education/School_uniform_companies_in_Saudi_Arabia.jpg"
+          alt="Managing school uniform procurement for administrators in KSA"
           fill
           className="object-cover rounded-lg"
           priority

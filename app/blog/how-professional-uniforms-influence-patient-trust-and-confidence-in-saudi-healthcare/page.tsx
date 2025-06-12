@@ -8,7 +8,7 @@ export const generateMetadata = (): Metadata => {
     title: 'How Professional Uniforms Influence Patient Trust and Confidence in Saudi Healthcare | UniformSA',
     description: 'Explore how professional medical uniforms impact patient trust and confidence in Saudi Arabian healthcare settings, including cultural considerations and modern design approaches.',
     openGraph: {
-      images: ['/images/healthcare/healthcare_trust.jpg'],
+      images: ['/images/healthcare/Doctor_uniforms_attire.jpg'],
     },
   }
 }
@@ -34,11 +34,11 @@ export default function BlogPost() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/healthcare/healthcare_trust.jpg"
+              src="/images/healthcare/Doctor_uniforms_attire.jpg"
               alt="Healthcare professionals in Saudi Arabia wearing professional uniforms while interacting with patients"
               width={1000}
               height={600}
-              className="rounded-lg w-full"
+              className="rounded-lg w-full object-cover"
             />
           </div>
 

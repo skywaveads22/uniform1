@@ -10,7 +10,7 @@ const { globSync } = require('glob');
 console.log('Generating sitemap URLs...');
 
 // Base URL of the site
-const baseUrl = 'https://fakhrkhaleej.com';
+const baseUrl = 'https://skywaveads22.github.io/uniform1';
 
 // Static pages
 const staticPages = [
@@ -52,12 +52,18 @@ const industryCategories = [
 // Function to get all blog post paths
 function getBlogPaths() {
   try {
-    const blogDirs = globSync('app/blog/*/page.tsx');
+    console.log('Looking for blog posts in app/blog/*/page.tsx...');
+    const blogDirs = globSync('app/blog/*/page.tsx', { cwd: process.cwd() });
+    console.log(`Found ${blogDirs.length} blog directories:`, blogDirs.slice(0, 10)); // Show first 10 for debugging
+    
     return blogDirs.map(dir => {
-      // Convert file path to URL path
-      const match = dir.match(/app\/blog\/(.+?)\/page\.tsx$/);
-      if (match && match[1]) {
-        return `/blog/${match[1]}`;
+      // Convert file path to URL path - handle both Windows and Unix paths
+      const normalizedPath = dir.replace(/\\/g, '/');
+      const match = normalizedPath.match(/app\/blog\/(.+?)\/page\.tsx$/);
+      if (match && match[1] && match[1] !== '[slug]') { // Exclude dynamic route
+        const blogPath = `/blog/${match[1]}`;
+        console.log(`Generated blog path: ${blogPath}`);
+        return blogPath;
       }
       return null;
     }).filter(Boolean);
@@ -79,6 +85,7 @@ function writeSitemapUrls(urls) {
     
     fs.writeFileSync(outputFile, JSON.stringify(urls, null, 2));
     console.log(`Sitemap URLs written to ${outputFile}`);
+    console.log(`Total URLs generated: ${urls.length}`);
   } catch (error) {
     console.error('Error writing sitemap URLs:', error);
   }
@@ -86,17 +93,30 @@ function writeSitemapUrls(urls) {
 
 // Main function
 function generateSitemap() {
-  const blogPaths = getBlogPaths();
+  console.log('Starting sitemap generation...');
   
   const staticPaths = [
     '/',
     '/about',
     '/contact',
     '/services',
-    '/blog'
+    '/blog',
+    '/portfolio',
+    '/request-quote',
+    '/careers',
+    '/terms',
+    '/privacy',
+    '/faq'
   ];
   
+  console.log('Static paths:', staticPaths);
+  
+  const blogPaths = getBlogPaths();
+  console.log('Blog paths found:', blogPaths);
+  
   const allPaths = [...staticPaths, ...blogPaths];
+  console.log('All paths to include in sitemap:', allPaths);
+  
   writeSitemapUrls(allPaths);
 }
 

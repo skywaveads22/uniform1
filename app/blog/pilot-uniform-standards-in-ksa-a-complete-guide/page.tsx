@@ -41,13 +41,13 @@ export default function BlogPost() {
           </nav>
 
           {/* Featured Image */}
-          <div className="relative mb-8 aspect-[16/9] overflow-hidden rounded-2xl shadow-xl">
+          <div className="mb-10">
             <Image
-              src="/images/aviation/Pilot_uniform_KSA.jpg" // Ensure this image exists or use /images/portfolio/portfolio_pilot_uniform.jpg
-              alt="Professional pilot in uniform compliant with KSA standards, in a modern cockpit setting"
-              fill
-              priority
-              className="object-cover"
+              src="/images/aviation/Pilot_uniforms.jpg"
+              alt="Pilot uniform standards in KSA - complete guide"
+              width={1000}
+              height={600}
+              className="rounded-lg w-full object-cover"
             />
           </div>
 

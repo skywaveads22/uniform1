@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Future of Sustainable Workwear | UniformSA',
     description: 'Explore emerging trends and innovations in sustainable workwear, focusing on eco-friendly materials, smart technologies, and circular economy principles.',
-    images: ['/images/sustainability/future_workwear.jpg'],
+    images: ['/images/industrial/Industrial_workwear_Saudi_Arabia_KSA.jpeg'],
   },
 }
 
@@ -34,11 +34,11 @@ export default async function Page() {
           {/* Featured Image */}
           <div className="mb-10">
             <Image
-              src="/images/sustainability/future_workwear.jpg"
+              src="/images/industrial/Industrial_workwear_Saudi_Arabia_KSA.jpeg"
               alt="Innovative sustainable workwear featuring smart technologies and eco-friendly materials"
               width={1000}
               height={600}
-              className="rounded-lg w-full"
+              className="rounded-lg w-full object-cover"
             />
           </div>
 

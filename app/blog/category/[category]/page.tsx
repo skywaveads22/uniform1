@@ -1,12 +1,10 @@
-﻿
-
-
-import fs from 'fs'
+﻿import fs from 'fs'
 import path from 'path'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import BlogPostCard from '@/components/BlogPostCard'
+import BlogGrid from '@/components/BlogGrid'
+import { ArrowLeft, Home } from 'lucide-react'
 
 // List of valid categories
 const validCategories = [
@@ -19,15 +17,26 @@ const validCategories = [
   "security"
 ]
 
+// Enhanced categories with Arabic names
+const categoriesInfo = {
+  'aviation': { nameAr: 'الطيران', emoji: '✈️', description: 'أزياء موحدة لقطاع الطيران والمطارات' },
+  'education': { nameAr: 'التعليم', emoji: '🎓', description: 'الأزياء المدرسية والجامعية' },
+  'government': { nameAr: 'الحكومة', emoji: '🏛️', description: 'أزياء موظفي القطاع الحكومي' },
+  'healthcare': { nameAr: 'الرعاية الصحية', emoji: '🏥', description: 'الأزياء الطبية والمستشفيات' },
+  'hospitality': { nameAr: 'الضيافة', emoji: '🏨', description: 'أزياء الفنادق والمطاعم' },
+  'industrial': { nameAr: 'الصناعة', emoji: '🏭', description: 'ملابس العمل الصناعية والمصانع' },
+  'security': { nameAr: 'الأمن', emoji: '🛡️', description: 'أزياء الأمن والحراسة' },
+}
+
 // Default images for each category
 const defaultCategoryImages = {
-  'aviation': '/images/aviation/Aviation_uniforms_Saudi_Arabia_KSA.jpg',
+  'aviation': '/images/aviation/aviation_uniforms.jpg',
   'education': '/images/education/School_uniforms_Saudi_Arabia_KSA.jpg',
   'government': '/images/government/Government_uniforms_Saudi_Arabia_KSA.jpg',
-  'healthcare': '/images/healthcare/Medical_scrubs_supplier_for_hospitals.jpg',
+  'healthcare': '/images/healthcare/Hospital_uniforms.jpg',
   'hospitality': '/images/hospitality/Hotel_uniforms.jpeg',
   'industrial': '/images/industrial/Industrial_uniforms.jpeg',
-  'security': '/images/security/Security_guard_uniforms_Saudi_Arabia_KSA.jpeg',
+  'security': '/images/security/Security_uniforms.jpeg',
 }
 
 // For dynamic metadata
@@ -36,15 +45,22 @@ export async function generateMetadata({ params }: { params: { category: string 
   
   if (!validCategories.includes(category.toLowerCase())) {
     return {
-      title: 'Category Not Found | Uniform SA',
+      title: 'التصنيف غير موجود | UniformSA',
+      description: 'التصنيف المطلوب غير متاح في الوقت الحالي'
     }
   }
   
-  const formattedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase()
+  const categoryInfo = categoriesInfo[category.toLowerCase() as keyof typeof categoriesInfo]
   
   return {
-    title: `${formattedCategory} Uniforms | Uniform SA Blog`,
-    description: `Explore our collection of articles about ${formattedCategory.toLowerCase()} uniforms in Saudi Arabia.`
+    title: `أزياء ${categoryInfo.nameAr} | مدونة UniformSA`,
+    description: `اكتشف مجموعتنا من المقالات المتخصصة في أزياء ${categoryInfo.nameAr} في المملكة العربية السعودية. ${categoryInfo.description}`,
+    keywords: `أزياء ${categoryInfo.nameAr} السعودية، زي موحد ${categoryInfo.nameAr}، ملابس عمل ${categoryInfo.nameAr}`,
+    openGraph: {
+      title: `أزياء ${categoryInfo.nameAr} المتخصصة - UniformSA`,
+      description: categoryInfo.description,
+      images: [defaultCategoryImages[category.toLowerCase() as keyof typeof defaultCategoryImages]],
+    }
   }
 }
 
@@ -58,9 +74,14 @@ export function generateStaticParams() {
 interface Article {
   id: number
   title: string
-  internalLink: string
+  slug: string
+  description: string
   imagePath: string
   category: string
+  tags: string[]
+  publishDate: string
+  readTime: string
+  author: string
 }
 
 export default async function CategoryPage({ params }: { params: { category: string } }) {
@@ -71,91 +92,169 @@ export default async function CategoryPage({ params }: { params: { category: str
     notFound()
   }
   
-  // Format category name for display (first letter uppercase)
-  const formattedCategory = category.charAt(0).toUpperCase() + category.slice(1).toLowerCase()
+  const categoryInfo = categoriesInfo[category.toLowerCase() as keyof typeof categoriesInfo]
   
-  // Get articles filtered by category
-  const articles = await getArticlesByCategory(category)
+  // Get all articles and filter by category
+  const allArticles = await getArticlesFromFileSystem()
+  const categoryArticles = allArticles.filter(article => article.category === category.toLowerCase())
+  
+  // Prepare categories data for the BlogGrid component
+  const categories = validCategories.map(cat => {
+    const info = categoriesInfo[cat as keyof typeof categoriesInfo]
+    return {
+      name: cat,
+      nameAr: info.nameAr,
+      href: `/blog/category/${cat}`,
+      description: info.description,
+      count: allArticles.filter(article => article.category === cat).length
+    }
+  })
   
   return (
-    <div className="bg-primary">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero section */}
-      <div className="container mx-auto px-4 py-12 text-center">
-        <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">{formattedCategory} Uniforms</h1>
-        <p className="mx-auto max-w-2xl text-lg text-white/80">
-          Explore our articles about {formattedCategory.toLowerCase()} uniforms and attire in Saudi Arabia
-        </p>
+      <div className="bg-gradient-to-r from-primary to-primary/80">
+        <div className="container mx-auto px-4 py-12">
+          {/* Breadcrumb */}
+          <nav className="mb-6 flex items-center space-x-2 space-x-reverse text-sm text-white/80">
+            <Link href="/" className="flex items-center hover:text-white transition-colors">
+              <Home className="h-4 w-4 ml-1" />
+              الرئيسية
+            </Link>
+            <span>›</span>
+            <Link href="/blog" className="hover:text-white transition-colors">
+              المدونة
+            </Link>
+            <span>›</span>
+            <span className="text-white font-medium">{categoryInfo.nameAr}</span>
+          </nav>
+
+          <div className="text-center">
+            <div className="mb-4 text-6xl">{categoryInfo.emoji}</div>
+            <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">
+              أزياء {categoryInfo.nameAr}
+            </h1>
+            <p className="mx-auto max-w-2xl text-lg text-white/90 md:text-xl">
+              {categoryInfo.description}
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-2">
+              <span className="rounded-full bg-white/20 px-4 py-2 text-sm text-white">
+                {categoryArticles.length} مقال متخصص
+              </span>
+              <span className="rounded-full bg-white/20 px-4 py-2 text-sm text-white">
+                محتوى سعودي حصري
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
       
       {/* Main content section */}
-      <div className="bg-gray-50 py-12">
-        <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
-            {/* Categories sidebar */}
+          {/* Enhanced sidebar */}
             <div className="lg:col-span-1">
-              <div className="rounded-xl bg-white p-6 shadow-md">
-                <h2 className="mb-4 text-xl font-bold text-gray-900">Categories</h2>
-                <ul className="space-y-2">
-                  {validCategories.map((cat) => {
-                    const formattedCat = cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase()
-                    return (
-                      <li key={cat}>
+            <div className="space-y-6">
+              {/* Back to blog */}
+              <div className="rounded-xl bg-white p-6 shadow-lg">
+                <Link 
+                  href="/blog" 
+                  className="flex items-center text-primary hover:text-primary/80 transition-colors font-medium"
+                >
+                  <ArrowLeft className="h-4 w-4 ml-2" />
+                  العودة إلى جميع المقالات
+                </Link>
+              </div>
+
+              {/* Categories */}
+              <div className="rounded-xl bg-white p-6 shadow-lg">
+                <h2 className="mb-6 text-xl font-bold text-gray-900 flex items-center">
+                  <span className="ml-2">📂</span>
+                  التصنيفات الأخرى
+                </h2>
+                <ul className="space-y-3">
+                  {categories
+                    .filter(cat => cat.name !== category.toLowerCase())
+                    .map((cat) => (
+                    <li key={cat.name}>
                         <Link 
-                          href={`/blog/category/${cat}`} 
-                          className={`block rounded-lg py-2 font-medium ${
-                            cat === category.toLowerCase() 
-                              ? 'text-primary font-bold' 
-                              : 'text-gray-700 hover:text-primary'
-                          }`}
-                        >
-                          {formattedCat}
+                        href={cat.href} 
+                        className="flex items-center justify-between rounded-lg py-3 px-4 font-medium text-gray-700 transition-all hover:bg-primary/5 hover:text-primary group"
+                        title={cat.description}
+                      >
+                        <span className="flex items-center">
+                          <span className="ml-2">
+                            {categoriesInfo[cat.name as keyof typeof categoriesInfo].emoji}
+                          </span>
+                          {cat.nameAr}
+                        </span>
+                        <span className="text-sm text-gray-500 group-hover:text-primary">
+                          {cat.count}
+                        </span>
                         </Link>
                       </li>
-                    )
-                  })}
+                  ))}
                 </ul>
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <Link 
-                    href="/blog" 
-                    className="text-primary hover:underline font-medium"
-                  >
-                    ← Back to all articles
-                  </Link>
+              </div>
+
+              {/* Category Stats */}
+              <div className="rounded-xl bg-gradient-to-r from-primary/5 to-primary/10 p-6">
+                <h3 className="mb-4 text-lg font-semibold text-gray-900 flex items-center">
+                  <span className="ml-2">📊</span>
+                  إحصائيات التصنيف
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-600">مقالات {categoryInfo.nameAr}:</span>
+                    <span className="font-bold text-primary">{categoryArticles.length}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-600">إجمالي المقالات:</span>
+                    <span className="font-bold text-primary">{allArticles.length}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-gray-600">النسبة:</span>
+                    <span className="font-bold text-primary">
+                      {Math.round((categoryArticles.length / allArticles.length) * 100)}%
+                    </span>
+                  </div>
+                </div>
                 </div>
               </div>
             </div>
             
             {/* Blog posts grid */}
             <div className="lg:col-span-3">
-              {articles.length > 0 ? (
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
-                  {articles.map((article, index) => {
-                    // فحص صحة عناصر المقالة قبل محاولة عرضها
-                    if (!article || !article.title || !article.internalLink) {
-                      // Invalid article detected
-                      return null;
-                    }
-                    
-                    return (
-                      <BlogPostCard
-                        key={article.id || index}
-                        title={article.title}
-                        imagePath={article.imagePath || ''}
-                        internalLink={article.internalLink}
-                        category={article.category}
-                      />
-                    );
-                  })}
+            {categoryArticles.length > 0 ? (
+              <BlogGrid 
+                articles={categoryArticles} 
+                categories={categories.filter(cat => cat.name === category.toLowerCase())}
+              />
+            ) : (
+              <div className="rounded-xl bg-white p-12 text-center shadow-lg">
+                <div className="mb-4 text-6xl">{categoryInfo.emoji}</div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                  لا توجد مقالات في تصنيف {categoryInfo.nameAr} حالياً
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  نعمل على إضافة محتوى متخصص في هذا التصنيف. تابعونا للحصول على أحدث المقالات.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    href="/blog"
+                    className="rounded-lg bg-primary px-6 py-3 text-white hover:bg-primary/90 transition-colors"
+                  >
+                    استعراض جميع المقالات
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="rounded-lg border border-gray-300 px-6 py-3 text-gray-700 hover:bg-gray-50 transition-colors"
+                  >
+                    اقترح موضوعاً
+                  </Link>
                 </div>
-              ) : (
-                <div className="rounded-xl bg-white p-8 text-center shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">No articles found</h3>
-                  <p className="text-gray-600">
-                    There are currently no articles in this category. Please check back later.
-                  </p>
                 </div>
               )}
-            </div>
           </div>
         </div>
       </div>
@@ -163,154 +262,220 @@ export default async function CategoryPage({ params }: { params: { category: str
   )
 }
 
-async function getArticlesByCategory(category: string): Promise<Article[]> {
+async function getArticlesFromFileSystem(): Promise<Article[]> {
   try {
-    // Read the articles.md file
-    const filePath = path.join(process.cwd(), 'articles.md')
-    const fileContent = fs.readFileSync(filePath, 'utf8')
-    
-    // Parse the content to extract article information
+    const articlesDir = path.join(process.cwd(), 'app', 'blog')
+    const articleSlugs = fs.readdirSync(articlesDir, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory() && dirent.name !== 'category' && dirent.name !== '[slug]')
+      .map(dirent => dirent.name)
+
     const articles: Article[] = []
+    let articleIdCounter = 1
+
+    // Create image pools for each category
+    const categoryImagePools: Record<string, string[]> = {}
+    const usedImages: Record<string, Set<string>> = {}
+
+    // Initialize image pools
+    const categoryDirs = ['aviation', 'education', 'government', 'healthcare', 'hospitality', 'industrial', 'security']
     
-    // Split the content by lines
-    const lines = fileContent.split('\n')
-    
-    // Lowercase category for case-insensitive comparison
-    const searchCategory = category.toLowerCase()
-    
-    let currentArticle: Partial<Article> = {}
-    
-    // Process the file line by line
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim()
-      
-      // Skip empty lines and the header
-      if (!line || line === '# Articles List') continue
-      
-      // Check if line contains article information (starts with a number)
-      const articleMatch = line.match(/^(\d+)\.\s+(.+?)\s+-\s+\(المسار\/الرابط الداخلي:\s+(.+?)\)$/)
-      
-      if (articleMatch) {
-        // If we have a previous article waiting to be added and it matches the category, add it
-        if (currentArticle.id && currentArticle.title && currentArticle.internalLink && 
-            currentArticle.category === searchCategory) {
-          articles.push(currentArticle as Article)
-        }
-        
-        // Start a new article
-        const id = parseInt(articleMatch[1])
-        const title = articleMatch[2]
-        const internalLink = articleMatch[3]
-        
-        // Determine the category from the title
-        const articleCategory = getCategoryFromTitle(title)
-        
-        // Only continue processing if this article belongs to the requested category
-        if (articleCategory === searchCategory) {
-          // Default image for this category
-          const defaultImage = defaultCategoryImages[searchCategory as keyof typeof defaultCategoryImages] || '/images/placeholder-image.jpg'
+    for (const category of categoryDirs) {
+      try {
+        const categoryImagesDir = path.join(process.cwd(), 'public', 'images', category)
+        if (fs.existsSync(categoryImagesDir)) {
+          const imageFiles = fs.readdirSync(categoryImagesDir)
+            .filter(file => /\.(jpg|jpeg|png|webp)$/i.test(file))
+            .map(file => `/images/${category}/${file}`)
           
-          currentArticle = {
-            id,
-            title,
-            internalLink,
-            imagePath: defaultImage,
-            category: searchCategory
-          }
-        } else {
-          // Not in the requested category, reset current article
-          currentArticle = {}
+          categoryImagePools[category] = imageFiles
+          usedImages[category] = new Set()
         }
-      } 
-      // Check if the line contains image information and we have a current article in process
-      else if (line.startsWith('- صور التصنيفات:') && currentArticle.id) {
-        // Extract the image path
-        const imagePath = line.replace('- صور التصنيفات:', '').trim()
-        
-        // Remove 'public' from the beginning if it exists
-        const finalImagePath = imagePath.replace('public', '').split(',')[0].trim()
-        
-        // Set the image path in the current article
-        currentArticle.imagePath = finalImagePath
+      } catch (error) {
+        console.error(`Error reading images for category ${category}:`, error)
+        categoryImagePools[category] = []
+        usedImages[category] = new Set()
+        }
+    }
+
+    for (const slug of articleSlugs) {
+      const articlePagePath = path.join(articlesDir, slug, 'page.tsx')
+      if (fs.existsSync(articlePagePath)) {
+        try {
+          const fileContent = fs.readFileSync(articlePagePath, 'utf8')
+          
+          // Extract metadata using regex
+          let title = formatSlugToTitle(slug)
+          let description = ''
+          let imagePath = '/images/placeholder-image.jpg'
+          let category = getCategoryFromTitle(title) || 'general'
+          let author = 'فريق UniformSA'
+          let readTime = '5 دقائق'
+          let publishDate = '2025'
+          let tags: string[] = []
+
+          const metadataBlockMatch = fileContent.match(/export\s+const\s+generateMetadata[^}]*?:\s*Metadata\s*=\s*({[\s\S]*?})/m) ||
+                                   fileContent.match(/export\s+const\s+metadata\s*:\s*Metadata\s*=\s*({[\s\S]*?})/m)
+
+          if (metadataBlockMatch && metadataBlockMatch[1]) {
+            let metadataString = metadataBlockMatch[1]
+            metadataString = metadataString.replace(/\/\/.*$/gm, '').replace(/\/\*[\s\S]*?\*\//g, '')
+
+            // Extract title
+            const titleMatch = metadataString.match(/title:\s*['"`]([^'"`]+?)['"`]/i) ||
+                              metadataString.match(/title:\s*{\s*default:\s*['"`]([^'"`]+?)['"`]/i)
+            if (titleMatch && titleMatch[1]) {
+              title = titleMatch[1].replace(/\|\s*UniformSA.*$/, '').trim()
+            }
+
+            // Extract description
+            const descMatch = metadataString.match(/description:\s*['"`]([^'"`]+?)['"`]/i)
+            if (descMatch && descMatch[1]) {
+              description = descMatch[1].trim()
+            }
+
+            // Extract keywords for tags
+            const keywordsMatch = metadataString.match(/keywords:\s*['"`]([^'"`]+?)['"`]/i)
+            if (keywordsMatch && keywordsMatch[1]) {
+              tags = keywordsMatch[1].split(',').map(tag => tag.trim()).slice(0, 3)
+            }
+
+            // Extract image path from metadata
+            const imageMatch = metadataString.match(/images:\s*\[\s*['"`]([^'"`]+?)['"`]/i) ||
+                              metadataString.match(/url:\s*['"`]([^'"`]+?)['"`]/i)
+            if (imageMatch && imageMatch[1]) {
+              imagePath = imageMatch[1].trim()
       }
     }
     
-    // Add the last article if it exists and matches the category
-    if (currentArticle.id && currentArticle.title && currentArticle.internalLink && 
-        currentArticle.category === searchCategory) {
-      articles.push(currentArticle as Article)
+          // Extract author from content
+          const authorMatch = fileContent.match(/<h4[^>]*>([^<]+?(?:المهندس|الدكتور|الكابتن|الرائد|الشيف|Chef|Captain|Major|Dr\.|Eng\.)[^<]*?)<\/h4>/i)
+          if (authorMatch && authorMatch[1]) {
+            author = authorMatch[1].replace(/(<([^>]+)>)/gi, '').trim()
     }
     
-    // Make each article have a unique image
-    const usedImages: Set<string> = new Set()
-    
-    // Get a list of all available images for this category
-    let availableImages: string[] = []
-    
-    try {
-      const categoryImagesDir = path.join(process.cwd(), 'public', 'images', searchCategory)
-      if (fs.existsSync(categoryImagesDir)) {
-        availableImages = fs.readdirSync(categoryImagesDir)
-          .filter(file => file.endsWith('.jpg') || file.endsWith('.jpeg') || file.endsWith('.png'))
-          .map(file => `/images/${searchCategory}/${file}`)
-      }
-    } catch (err) {
-      // Error reading image directory
+          // Extract read time from content
+          const readTimeMatch = fileContent.match(/(\d+)\s*min\s*read/i) ||
+                               fileContent.match(/(\d+)\s*دقائق/i)
+          if (readTimeMatch && readTimeMatch[1]) {
+            readTime = `${readTimeMatch[1]} دقائق`
+          }
+
+          // Extract publish date
+          const dateMatch = fileContent.match(/(\w+\s+\d+,\s+2025)/) ||
+                           fileContent.match(/(2025)/)
+          if (dateMatch && dateMatch[1]) {
+            publishDate = dateMatch[1]
     }
     
-    // Process each article to ensure unique images
-    const processedArticles = articles.map((article, index) => {
-      // If no available images, use the default
-      if (availableImages.length === 0) {
-        return article
+          // Update category based on final title
+          category = getCategoryFromTitle(title) || category
+
+          // Smart image assignment - assign unique images from category pool
+          if (imagePath === '/images/placeholder-image.jpg' || !imagePath) {
+            imagePath = assignUniqueImage(category, categoryImagePools, usedImages, slug)
+          } else {
+            // If image exists in metadata, mark it as used
+            if (categoryImagePools[category]?.includes(imagePath)) {
+              usedImages[category].add(imagePath)
+            }
+          }
+
+          articles.push({
+            id: articleIdCounter++,
+            title,
+            slug,
+            description: description || `مقال متخصص حول ${title}`,
+            imagePath,
+            category,
+            tags,
+            publishDate,
+            readTime,
+            author
+          })
+        } catch (readError) {
+          console.error(`Error processing article file ${articlePagePath}:`, readError)
+        }
+      }
       }
       
-      // Check if the current image path is valid
-      const currentImagePath = article.imagePath
-      const publicPath = path.join(process.cwd(), 'public', currentImagePath.replace(/^\//, ''))
-      
-      // If current image exists and not used before, mark it as used and keep it
-      if (fs.existsSync(publicPath) && !usedImages.has(currentImagePath)) {
-        usedImages.add(currentImagePath)
-        return article
-      }
-      
-      // Current image doesn't exist or already used, pick a new one
-      const unusedImages = availableImages.filter(img => !usedImages.has(img))
-      
-      if (unusedImages.length > 0) {
-        // Randomly select one of the unused images
-        const newImage = unusedImages[Math.floor(Math.random() * unusedImages.length)]
-        usedImages.add(newImage)
-        return { ...article, imagePath: newImage }
-      }
-      
-      // If all images are used, reset the used images and pick a new one
-      usedImages.clear()
-      const newImage = availableImages[Math.floor(Math.random() * availableImages.length)]
-      usedImages.add(newImage)
-      
-      return { ...article, imagePath: newImage }
+    // Sort articles by relevance/date
+    return articles.sort((a, b) => {
+      // Prioritize articles with better metadata
+      const aScore = (a.description.length > 50 ? 2 : 0) + (a.tags.length > 0 ? 1 : 0)
+      const bScore = (b.description.length > 50 ? 2 : 0) + (b.tags.length > 0 ? 1 : 0)
+      return bScore - aScore
     })
     
-    return processedArticles
-    
   } catch (error) {
-    // Error parsing articles for category
+    console.error('Error in getArticlesFromFileSystem:', error)
     return []
   }
 }
 
-// دالة مساعدة لاستخراج الفئة من العنوان
+// Function to assign unique images to articles
+function assignUniqueImage(
+  category: string, 
+  categoryImagePools: Record<string, string[]>, 
+  usedImages: Record<string, Set<string>>,
+  slug: string
+): string {
+  const imagePool = categoryImagePools[category] || []
+  
+  if (imagePool.length === 0) {
+    return defaultCategoryImages[category as keyof typeof defaultCategoryImages] || '/images/placeholder-image.jpg'
+  }
+
+  // Find unused images
+  const unusedImages = imagePool.filter(img => !usedImages[category]?.has(img))
+  
+  if (unusedImages.length > 0) {
+    // Use hash of slug to consistently assign same image to same article
+    const hash = slug.split('').reduce((a, b) => {
+      a = ((a << 5) - a) + b.charCodeAt(0)
+      return a & a
+    }, 0)
+    
+    const imageIndex = Math.abs(hash) % unusedImages.length
+    const selectedImage = unusedImages[imageIndex]
+    
+    usedImages[category].add(selectedImage)
+    return selectedImage
+  }
+  
+  // If all images are used, reset and start over
+  usedImages[category].clear()
+  const hash = slug.split('').reduce((a, b) => {
+    a = ((a << 5) - a) + b.charCodeAt(0)
+    return a & a
+  }, 0)
+  
+  const imageIndex = Math.abs(hash) % imagePool.length
+  const selectedImage = imagePool[imageIndex]
+  
+  usedImages[category].add(selectedImage)
+  return selectedImage
+}
+
+function formatSlugToTitle(slug: string): string {
+  return slug
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, l => l.toUpperCase())
+    .replace(/\bAnd\b/g, 'and')
+    .replace(/\bFor\b/g, 'for')
+    .replace(/\bIn\b/g, 'in')
+    .replace(/\bOf\b/g, 'of')
+    .replace(/\bThe\b/g, 'the')
+}
+
 function getCategoryFromTitle(title: string): string | null {
   const categoryKeywords = {
-    'aviation': ['aviation', 'airline', 'airport', 'flight', 'pilot', 'cabin crew'],
-    'education': ['education', 'school', 'college', 'university', 'student', 'teacher'],
-    'government': ['government', 'ministry', 'public sector', 'civil service'],
-    'healthcare': ['healthcare', 'medical', 'hospital', 'clinic', 'nurse', 'doctor', 'health'],
-    'hospitality': ['hospitality', 'hotel', 'restaurant', 'resort', 'chef', 'housekeeping'],
-    'industrial': ['industrial', 'workwear', 'factory', 'manufacturing', 'construction'],
-    'security': ['security', 'guard', 'protection', 'safety officer']
+    'aviation': ['aviation', 'airline', 'airport', 'flight', 'pilot', 'cabin crew', 'aircraft'],
+    'education': ['education', 'school', 'college', 'university', 'student', 'teacher', 'academic'],
+    'government': ['government', 'ministry', 'public sector', 'civil service', 'municipal', 'official'],
+    'healthcare': ['healthcare', 'medical', 'hospital', 'clinic', 'nurse', 'doctor', 'health', 'scrubs'],
+    'hospitality': ['hospitality', 'hotel', 'restaurant', 'resort', 'chef', 'housekeeping', 'banquet', 'culinary'],
+    'industrial': ['industrial', 'workwear', 'factory', 'manufacturing', 'construction', 'worker', 'safety'],
+    'security': ['security', 'guard', 'protection', 'safety officer', 'tactical', 'armor', 'enforcement']
   }
   
   const lowercaseTitle = title.toLowerCase()

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'How Uniforms Prepare Students for Professional Life | 2024',
     description: 'Discover how school uniforms in Saudi Arabia help develop essential professional skills including discipline, presentation awareness, brand representation, and other workplace readiness competencies.',
-    images: ['/images/education/professional_preparation_uniforms.jpeg'],
+    images: ['/images/education/School_staff_uniforms.jpg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function UniformsProfessionalPreparation() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/education/professional_preparation_uniforms.jpeg"
+          src="/images/education/School_staff_uniforms.jpg"
           alt="Students in uniforms preparing for professional careers"
           fill
           className="object-cover rounded-lg"

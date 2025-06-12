@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Getting the Right Fit: Measuring Students Accurately for Uniforms | 2024',
     description: 'Learn best practices for measuring students accurately for school uniforms in Saudi Arabian schools, including measurement techniques, growth considerations, and technology solutions.',
-    images: ['/images/education/student_uniform_measuring.jpeg'],
+    images: ['/images/education/Custom_school_uniforms.jpg'],
   }
 }
 
@@ -29,7 +29,7 @@ export default function MeasuringStudentsForUniforms() {
 
       <div className="relative w-full h-[400px] mb-8">
         <Image
-          src="/images/education/student_uniform_measuring.jpeg"
+          src="/images/education/Custom_school_uniforms.jpg"
           alt="Measuring Students for School Uniforms"
           fill
           className="object-cover rounded-lg"
