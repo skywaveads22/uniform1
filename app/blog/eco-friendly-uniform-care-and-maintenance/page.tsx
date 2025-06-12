@@ -312,7 +312,7 @@ export default async function Page() {
                 <li><strong>Carbon Trust Certification:</strong> Verified carbon footprint reduction and climate change mitigation efforts</li>
                 <li><strong>Water Stewardship Certification:</strong> Responsible water use verification through the Alliance for Water Stewardship</li>
                 <li><strong>Cradle to Cradle Certification:</strong> Comprehensive product and process sustainability assessment and optimization</li>
-              </ul>
+                </ul>
 
               <h2>Economic Analysis and Financial Performance</h2>
               

@@ -446,7 +446,7 @@ export default async function Page() {
                 <li><strong>Train-the-Trainer Programs:</strong> Internal champion development for sustainable knowledge transfer and ongoing support</li>
                 <li><strong>Continuous Learning Platforms:</strong> Ongoing education systems providing updates on new features and best practices</li>
                 <li><strong>Performance Support Tools:</strong> Just-in-time help systems and job aids supporting users during daily operations</li>
-              </ul>
+                </ul>
 
               <h2>Return on Investment and Financial Performance</h2>
               

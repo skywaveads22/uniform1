@@ -1,0 +1,138 @@
+{
+  "timestamp": "2025-06-12T03:26:03.850Z",
+  "summary": {
+    "blogFilesFixed": 14,
+    "categoryFilesFixed": 0,
+    "brokenLinksRemoved": 22,
+    "brokenImagesFixed": 3
+  },
+  "brokenLinksRemoved": [
+    "kindergarten-uniforms-prioritizing-comfort-safety-and-playfulness",
+    "benefits-of-school-uniforms-in-fostering-discipline-and-equality-in-saudi-schools",
+    "footwear-guide-for-healthcare-workers-prioritizing-comfort-and-safety",
+    "infection-control-features-in-modern-healthcare-uniforms",
+    "fabric-guide-best-materials-for-student-uniforms",
+    "ensuring-comfort-for-government-employees-working-outdoors-in-ksa",
+    "durable-workwear-for-field-operatives-in-government-agencies",
+    "future-trends-integrating-wearable-technology-into-security-uniforms",
+    "case-study-rebranding-a-saudi-hotel-through-new-uniform-concepts",
+    "breathable-fabrics-for-medical-staff-working-in-hot-saudi-climates",
+    "different-uniform-needs-doctors-vs-nurses-vs-lab-technicians-vs-support-staff-in-ksa",
+    "layering-systems-for-varying-temperatures-in-industrial-settings",
+    "choosing-durable-and-comfortable-school-uniforms-for-the-ksa-climate",
+    "accessorizing-school-uniforms-approved-items-in-ksa-schools",
+    "iron-free-school-uniform-options-a-parent-s-guide",
+    "aviation-safety-standards",
+    "aviation-uniform-design-trends",
+    "security-equipment-integration",
+    "luxury-hotel-uniforms-crafting-an-image-of-excellence-in-saudi-arabia",
+    "cultural-sensitivity-in-hospitality-uniform-design-saudi-arabia",
+    "cultural-aviation-uniforms",
+    "designing-professional-security-guard-uniforms-for-ksa-context"
+  ],
+  "brokenImagesFixed": [
+    "/images/education/school_uniform_administrator.jpeg",
+    "/images/empty-results.svg",
+    "/images/aviation/Aviation_uniform_fabrics.jpg"
+  ],
+  "workingArticlesUsed": [
+    "accessories-for-security-uniforms-belts-pouches-communication-device-holders",
+    "airline-pilot-uniform-standards-in-saudi-arabia-design-regulations-and-evolution",
+    "anti-static-workwear-essential-for-specific-saudi-industries",
+    "airport-security-uniforms-balancing-authority-functionality-and-passenger-assurance",
+    "advanced-material-science-in-security-uniforms",
+    "accessorizing-aviation-uniforms-ties-scarves-and-pins",
+    "workwear-for-welding-and-metal-fabrication-specialists-in-ksa",
+    "workwear-considerations-for-female-employees-in-saudi-industrial-settings",
+    "women-s-uniform-options-in-the-saudi-security-sector",
+    "weather-appropriate-outerwear-for-security-guards-in-ksa"
+  ],
+  "blogFileChanges": [
+    {
+      "file": "app\\blog\\advanced-materials-in-security-equipment\\page.tsx",
+      "changes": [
+        "Replaced future-trends-integrating-wearable-technology-into-security-uniforms with working article"
+      ]
+    },
+    {
+      "file": "app\\blog\\case-study-upgrading-security-uniforms-for-a-large-saudi-facility\\page.tsx",
+      "changes": [
+        "Replaced designing-professional-security-guard-uniforms-for-ksa-context with working article"
+      ]
+    },
+    {
+      "file": "app\\blog\\headwear-options-for-saudi-cabin-crew-style-and-practicality\\page.tsx",
+      "changes": [
+        "Replaced cultural-aviation-uniforms with working article"
+      ]
+    },
+    {
+      "file": "app\\blog\\how-uniform-fit-impacts-performance-and-morale-in-aviation-staff\\page.tsx",
+      "changes": [
+        "Replaced designing-professional-security-guard-uniforms-for-ksa-context with working article"
+      ]
+    },
+    {
+      "file": "app\\blog\\incorporating-national-symbols-and-colors-in-government-uniform-design\\page.tsx",
+      "changes": [
+        "Replaced ensuring-comfort-for-government-employees-working-outdoors-in-ksa with working article"
+      ]
+    },
+    {
+      "file": "app\\blog\\managing-school-uniform-procurement-tips-for-administrators-in-ksa\\page.tsx",
+      "changes": [
+        "Replaced broken image /images/education/school_uniform_administrator.jpeg"
+      ]
+    },
+    {
+      "file": "app\\blog\\meeting-gaca-regulations-what-you-need-to-know-about-aviation-uniform-compliance-in-saudi-arabia\\page.tsx",
+      "changes": [
+        "Replaced aviation-safety-standards with working article"
+      ]
+    },
+    {
+      "file": "app\\blog\\restaurant-and-hospitality-staff-uniforms-balancing-function-and-elegance\\page.tsx",
+      "changes": [
+        "Replaced luxury-hotel-uniforms-crafting-an-image-of-excellence-in-saudi-arabia with working article",
+        "Replaced cultural-sensitivity-in-hospitality-uniform-design-saudi-arabia with working article"
+      ]
+    },
+    {
+      "file": "app\\blog\\summer-vs-winter-aviation-uniforms-for-the-saudi-climate\\page.tsx",
+      "changes": [
+        "Replaced aviation-uniform-design-trends with working article"
+      ]
+    },
+    {
+      "file": "app\\blog\\tactical-gear-integration-pockets-loops-and-reinforcements\\page.tsx",
+      "changes": [
+        "Replaced security-equipment-integration with working article"
+      ]
+    },
+    {
+      "file": "app\\blog\\uniform-standards-across-different-saudi-government-ministries-a-comparative-look\\page.tsx",
+      "changes": [
+        "Replaced ensuring-comfort-for-government-employees-working-outdoors-in-ksa with working article"
+      ]
+    },
+    {
+      "file": "app\\blog\\women-s-uniform-options-in-the-saudi-security-sector\\page.tsx",
+      "changes": [
+        "Replaced designing-professional-security-guard-uniforms-for-ksa-context with working article"
+      ]
+    },
+    {
+      "file": "app\\services\\aviation\\page.tsx",
+      "changes": [
+        "Replaced broken image /images/aviation/Aviation_uniform_fabrics.jpg"
+      ]
+    },
+    {
+      "file": "app\\[category]\\all-articles\\page.tsx",
+      "changes": [
+        "Replaced broken image /images/empty-results.svg"
+      ]
+    }
+  ],
+  "categoryFileChanges": []
+}
